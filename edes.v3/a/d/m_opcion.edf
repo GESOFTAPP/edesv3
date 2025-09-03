@@ -1,0 +1,56 @@
+#include(*) lng
+[Title]@OPCION/ES DEL ARBOL@
+[DBTable]{$_ENV['eDesDictionary']}gs_op
+[DBIndex]cd_gs_op
+[DBOrder]caption
+[DBLimit]2000,200
+[AddCode]cR|cd_gs_op|A|<i class="ICONINPUT" title='@Ejecutar opción@' onclick='ExeOp()'>&#230;</i>
+[AddOption]cR,mR|type|O,@Option@; F,@Folder@; L,@Line@
+[Fields]
+@Código·Opción@|cd_gs_op|+|T|4||Q-|||
+#!(l) ,@Tipo@|type|0|SV|6||-||#|
+#(l) ,@Tipo@|type|0|SV|6||-||=|
+@Nombre Opción@|caption|#D|T|80||QM||#|
+|indent|+|T|5||*|||
+|seq|+|T|5||*|||
+@Acción@|script_url|#X|A|255,80,3|caption|QM|||
+@Icon@|icon|#|T|25|caption|M|||
+-|@Opción padre@
+|_padre_0|D|T|30|caption|-|||
+|_padre_1|D|T|30|caption|-|||
+|_padre_2|D|T|30|caption|-|||
+|_padre_3|D|T|30|caption|-|||
+|_padre_4|D|T|30|caption|-|||
+|_padre_5|D|T|30|caption|-|||
+|_padre_6|D|T|30|caption|-|||
+|_padre_7|D|T|30|caption|-|||
+[PHPForm]cR,mR
+global $_Fila;
+$indent = $_Fila['indent'];
+$seq = $_Fila['seq'];
+$n = 0;
+while( $indent>0 ){
+qQuery("select * from {$_ENV['eDesDictionary']}gs_op where seq<{$seq} and indent=".($indent-1).' order by seq desc' );
+$row = qArray();
+$_Fila['_padre_'.$n] = str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $n++).trim($row["caption"]);
+$indent = $row['indent'];
+$seq = $row['seq'];
+}
+[JSEnd]cR,mR
+for(let n=0; n<8; n++){
+if( S(":_padre_"+n).val()=="" ){
+eHide("_padre_"+n, "tr");
+}
+}
+[JSIni]cR
+function ExeOp(){
+var txt = S(":script_url").val(),
+SeekPadre = (txt.substr(txt.length-1,1)==':');
+if( SeekPadre ){
+top.S.eventFire(S("tr[op='"+txt+"']",top).obj, "onclick");
+}else{
+var tr = S("tr[op='"+txt+"']",top).obj,
+trs = S.toTag(tr,"table").rows;
+top.S.eventFire(trs[tr.rowIndex+1], "click");
+}
+}

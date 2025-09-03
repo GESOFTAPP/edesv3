@@ -1,0 +1,212 @@
+[Title]=ASIGNACIÓN MASIVA DE PERMISO ESPECIAL
+[Expire]600
+[Button]*|[exe] Ejecutar acción
+[FormButtons]|-
+[AddOption]?|_action|,; A,Asignar permiso; E,Eliminar permiso; C,Contar usuarios
+[Fields]?
+DNI|dni|DNI|T|8||Qq|||
+,  Usuario|cd_gs_user|+|T|8|<email|Qq|||
+E-Mail|email|@|T|65||Qq|||
+-||||||Q|||
+Acción|_action|X|SV|20||Q|||
+Permiso Especial|cd_gs_tpermission{gs_tpermission,cd_gs_tpermission,note}|+|S|30|email|Q|||
+[JSCheck]?
+var fieldToFilter = 0;
+if( $dni!="" ){
+fieldToFilter++;
+}
+if( window.$_FILTER_dni && $_FILTER_dni!="" ){
+fieldToFilter++;
+}
+if( $cd_gs_user>0 ){
+fieldToFilter++;
+}
+if( window.$_FILTER_cd_gs_user && $_FILTER_cd_gs_user!="" ){
+fieldToFilter++;
+}
+if( $email!="" ){
+fieldToFilter++;
+}
+if( window.$_FILTER_email && $_FILTER_email!="" ){
+fieldToFilter++;
+}
+if( fieldToFilter==0 ){
+ePE("email", "Falta definir alguna condición");
+}
+if( $_action=="" ){
+ePE("_action", 'Falta definir la "Acción"');
+}
+if( $cd_gs_tpermission=="" && $_action!="C" ){
+ePE("cd_gs_tpermission", 'Falta definir el "Permiso Especial"');
+}
+if( fieldToFilter>1 ){
+ePE("email", "Solo se puede filtrar por un campo");
+}
+document.FRM1.target = "";
+if( $_action=="C" ){
+document.FRM1.target = "TLF";
+setTimeout(function(){
+eDisableButton(0);
+eLoading(false);
+top.eLoading(false);
+}, 1000);
+}
+console.log(window["_$_"]);
+[PHPIni]?R
+list($_POST["dni"]		 , $dniTotal	, $dniTest  ) = getMultipleFilter($_POST["dni"]		  , $_POST["_FILTER_dni"]		);
+list($_POST["cd_gs_user"], $userTotal	, $userTest ) = getMultipleFilter($_POST["cd_gs_user"], $_POST["_FILTER_cd_gs_user"]);
+list($_POST["email"]	 , $emailTotal	, $emailTest) = getMultipleFilter($_POST["email"]	  , $_POST["_FILTER_email"]		);
+$_POST["email"] = str_replace(".", "&#46;", $_POST["email"]);
+$cd_gs_tpermission = $_POST["cd_gs_tpermission"];
+unset($_POST["cd_gs_tpermission"]);
+$condition = str_replace("&#46;", ".", qGetWhere());
+$total = max($dniTotal, $userTotal, $emailTotal);
+$tReg = 0;
+$peticiones = 0;
+$asignados = 0;
+$alreadyAssignedUsers = 0;
+$usersWithoutPermission = array();
+qQuery("select cd_gs_user, email, dni, permission from {$_ENV['eDesDictionary']}gs_user where {$condition}", $pnt);
+while( $r=qArray($pnt) ){
+$tReg++;
+$user = $r["cd_gs_user"];
+$dniTest[trim($r["dni"])] = 1;
+$userTest[$user] = 1;
+$emailTest[trim($r["email"])] = 1;
+if( $r["permission"]!="S" ){
+array_push($usersWithoutPermission, trim($r["email"]));
+}
+if( $_POST["_action"]=="A" ){
+if( qCount("{$_ENV['eDesDictionary']}gs_permission", "cd_gs_user={$user} and cd_gs_tpermission={$cd_gs_tpermission}")==0 ){
+$asignados++;
+$sql = "insert into {$_ENV['eDesDictionary']}gs_permission values ({$user}, {$cd_gs_tpermission})";
+qQuery($sql);
+}else{
+$alreadyAssignedUsers++;
+}
+}else if( $_POST["_action"]=="E" ){
+if( qCount("{$_ENV['eDesDictionary']}gs_permission", "cd_gs_user={$user} and cd_gs_tpermission={$cd_gs_tpermission}")>0 ){
+$asignados++;
+$sql = "delete from {$_ENV['eDesDictionary']}gs_permission where cd_gs_user={$user} and cd_gs_tpermission=={$cd_gs_tpermission}";
+qQuery($sql);
+}else{
+$alreadyAssignedUsers++;
+}
+}
+}
+$noUser = array();
+if( $dniTotal>0 ){
+$noEncontrado = $dniTest;
+}
+if( $userTotal>0 ){
+$noEncontrado = $userTest;
+}
+if( $emailTotal>0 ){
+$noEncontrado = $emailTest;
+}
+foreach($noEncontrado as $k=>$v){
+if( $v==0 ){
+array_push($noUser, $k);
+}
+}
+$usersNotFound = "";
+$noPermission = "";
+$xPermisoOnOff = "";
+if( count($noUser)>0 ){
+$usersNotFound .= "<hr>Usuarios no encontrados: ".count($noUser);
+if( $_POST["_action"]!="C" ){
+$usersNotFound .= "<hr>".implode("<br>", $noUser)."<br>";
+}
+}
+if( $_POST["_action"]!="C" ){
+$nm_gs_tpermission = $_POST["_INPUT_cd_gs_tpermission"];
+$txtAlreadyAssignedUsers = "<br>";
+if( $_POST["_action"]=="A" ){
+$xPermisoOnOff .= "Permisos asignados.....: ";
+$txtAlreadyAssignedUsers .= "Permisos ya asignados..: ";
+}else{
+$xPermisoOnOff .= "Permisos eliminados....: ";
+$txtAlreadyAssignedUsers .= "Sin Permiso previo.....: ";
+}
+$xPermisoOnOff .= $asignados;
+$txtAlreadyAssignedUsers .= $alreadyAssignedUsers;
+if( count($usersWithoutPermission)>0 ){
+$noPermission .= ((count($noUser)>0) ? "<hr>" : "<br>")."Usuarios sin permiso...: ".count($usersWithoutPermission)."<hr>".implode("<br>", $usersWithoutPermission);
+}
+$message = "
+<center style='padding-bottom:0px'>
+<img src='g/l_d_xls.gif' style='margin-top:2px;margin-right:7px;' onclick='exportToExcel(this.parentNode.parentNode.innerText);' title='Exportar datos a Excel'>PERMISO ESPECIAL ".(($_POST["_action"]=="A") ? "ASIGNADO":"ELIMINADO")."
+</center><hr>
+<font face='monospace'>
+<b>{$nm_gs_tpermission}</b><br><hr>
+Total peticiones.......: {$total}<br>
+Usuarios encontrados...: {$tReg}<br>{$xPermisoOnOff}{$txtAlreadyAssignedUsers}{$usersNotFound}{$noPermission}
+</font>
+<script>
+function exportToExcel(txt){
+top.eInfo(window, \"Exportando datos a Excel...\", 5);
+txt = txt.replace(/\.\./g, \"\").replace(/\.\:/g, \":\");
+var dim = txt.split(\"\\n\"), tmp, i;
+WE.eExcel(\"New\");
+for(i=0; i<dim.length; i++){
+if( dim[i]==\"\" ){
+continue;
+}
+if( dim[i].indexOf(\":\")>-1 ){
+tmp = dim[i].split(\":\");
+WE.eExcel(\"P|\"+(i+1)+\",1|\"+tmp[0]+\":\");
+WE.eExcel(\"P|\"+(i+1)+\",2|\"+tmp[1]);
+WE.eExcel(\"B|\"+(i+1)+\",1|\");
+WE.eExcel(\"B|\"+(i+1)+\",2\");
+}else{
+WE.eExcel(\"P|\"+(i+1)+\",1|\"+dim[i]);
+if( i<10 ){
+WE.eExcel(\"B|\"+(i+1)+\",1|\");
+}
+}
+}
+WE.eExcel(\"A\");
+WE.eExcel(\"VISIBLE|1\");
+top.eInfo(window, \"Datos exportados a Excel\", 3);
+}
+</script>";
+}else{
+if( count($usersWithoutPermission)>0 ){
+$noPermission .= ((count($noUser)>0) ? "<hr>" : "<br>")."Usuarios sin permiso: ".count($usersWithoutPermission);
+}
+for($i=0; $i<9; $i++){
+$usersNotFound = str_replace(array("<hr>", "<HR>"), "<br>", $usersNotFound);
+$noPermission  = str_replace(array("<hr>", "<HR>"), "<br>", $noPermission );
+}
+$message = "
+USUARIOS AFECTADOS<br><br>
+{$nm_gs_tpermission}<br>
+Total peticiones.............: {$total}<br>
+Usuarios encontrados....: {$tReg}<br>{$xPermisoOnOff}{$txtAlreadyAssignedUsers}<br>{$usersNotFound}{$noPermission}";
+}
+eMessage($message, "HS");
+function getMultipleFilter($value, $values){
+$value = trim($value);
+if( $value!="" ){
+return array($value, 1, array($value));
+}
+$values = trim($values);
+if( $values=="" ){
+return array("", 0, array());
+}
+$values = str_replace(",", "\n", $values);
+$oDim = explode("\n", $values);
+$nDim = array();
+$total = count($oDim);
+$dataFill = 0;
+$test = array();
+for($i=0; $i<$total; $i++){
+$oDim[$i] = trim($oDim[$i]);
+if( $oDim[$i]!="" ){
+$dataFill++;
+array_push($nDim, $oDim[$i]);
+$test[$oDim[$i]] = 0;
+}
+}
+return array("('".implode("','", $nDim)."')", $dataFill, $test);
+}

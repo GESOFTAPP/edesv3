@@ -1,0 +1,89 @@
+#WindowSize {
+HEIGHT: 298px;
+WIDTH: 398px;
+}
+#MarginForm {
+MARGIN-LEFT: 125px;
+MARGIN-TOP: 153px;
+}
+#InputSpacing {
+HEIGHT: 16px;
+}
+#MarginIconos {
+MARGIN-LEFT: 45px;
+MARGIN-TOP: 22px;
+}
+#LabelTitle {
+COLOR: #0000c2;
+FILTER: glow(strength=5, color=#FFFFFF, enabled=1);
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 24px;
+FONT-WEIGHT: 900;
+PADDING-BOTTOM: 35px;
+TEXT-ALIGN: center;
+}
+#LabelLogin {
+COLOR: #000099;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-RIGHT: 10px;
+}
+#LabelPassword {
+COLOR: #000099;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-RIGHT: 10px;
+}
+#Login {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-RIGHT: 0px;
+BORDER-TOP: 0px;
+COLOR: #682779;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+WIDTH: 244px;
+}
+#Password {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-RIGHT: 0px;
+BORDER-TOP: 0px;
+COLOR: #682779;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+WIDTH: 245px;
+}
+INPUT {
+PADDING-LEFT: 3px;
+}
+#IconAccept {
+CURSOR: hand;
+WIDTH: 86px;
+}
+#IconCancel {
+CURSOR: hand;
+WIDTH: 86px;
+MARGIN-LEFT: 23px;
+}
+BODY {
+BACKGROUND: #3a6ea5;
+}
+#Cargando {
+BACKGROUND: #52aaff;
+BORDER-BOTTOM: #52aaff 2px outset;
+BORDER-LEFT: #52aaff 2px outset;
+BORDER-RIGHT: #52aaff 2px outset;
+BORDER-TOP: #52aaff 2px outset;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 25px;
+FONT-WEIGHT: bold;
+}

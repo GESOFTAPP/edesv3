@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" style="width: 100%;" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta" style="height: 19px;">Preview</td>
+</tr>
+<tr style="height: 19px;">
+<td id="tSintaxis" style="height: 19px;">SINTAXIS</td>
+</tr>
+<tr style="height: 38px;">
+<td id="Sintaxis" style="height: 38px;">[Preview] Mode | field | calcX | calcY | calcX2 | calcY2 | borderColor</td>
+</tr>
+<tr style="height: 19px;">
+<td id="tDescripcion" style="height: 19px;">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Define una zona donde se visualizar&aacute; una imagen al elecionarla y al traer los datos del servidor.</td>
+</tr>
+<tr style="height: 19px;">
+<td id="tParametro" style="height: 19px;">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro">Los par&aacute;metros qu empiezan por "calc" define como calcular una de las coordenadas de la zona de Preview y consta de 3 pares:<br />- Objeto a localizar, normalmente un campo<br />- Coordenada a obtener su valor (x, y, x2, y2)<br />- Opcionalmente "+Valor" /&nbsp; "-valor"<br /><br />Las coordenadas "calcX2" y "calcY2" se puede definir un ancho fijo.</td>
+</tr>
+<tr style="height: 19px;">
+<td id="tEjemplo" style="height: 19px;">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">
+<span style="font-family: sans-serif;">[Preview] a,?R | imagen&nbsp; &nbsp; &nbsp; &nbsp; |</span>
+<span style="font-family: sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:_INPUT_cd_auto, x2+30 |</span>
+<span style="font-family: sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:_INPUT_cd_auto, y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
+<span style="font-family: sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:_usuario, x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</span>
+<span style="font-family: sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:_usuario, y-10&nbsp; &nbsp; &nbsp; &nbsp; |&nbsp;</span>
+<span style="font-family: sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#dddddd</span>
+</td>
+</tr>
+<tr style="height: 19px;">
+<td id="tEjemplo" style="height: 19px;">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[Preview] a,?R | imagen | .IMGBOX, x2+30 | .IMGBOX, y | :hora_2, x2 | :hora_2, y-10 | #dddddd</code><br /><br /><code>[Preview] a,?R | imagen | .IMGBOX, x2+30 | .IMGBOX, y | 300 | 200 | #dddddd</code></td>
+</tr>
+<tr style="height: 19px;">
+<td id="txt" style="height: 19px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,343 @@
+[Title]=Translator
+[Button]a|[u] Grabar
+[PHPIni]A
+$result = [];
+$line = [];
+$note = "";
+if( $_POST["_end_"]!="ok" ) ePrintR("Error: No se envian todos los datos");
+foreach($_POST as $k=>$v){
+$v = trim($v);
+if( $k[0]=="_" ) continue;
+if( mb_substr($k,0,5)=="code_" ){
+$v = str_replace(["&#60;", "&#62;", "&#92;", "&#34;", "&#39;"], ["<", ">", "\\", '"', "'"], $v);
+$result[] = $v;
+}
+}
+natcasesort($result);
+$txt = "[Language] ".$_POST["_list_lng"]."\n".implode("\n", $result);
+if( file_exists($_POST["_file_lng"]) ){
+copy($_POST["_file_lng"], $_POST["_file_lng"].".bak");
+}
+if( file_exists($_POST["_file_lng"]) ){
+copy($_POST["_file_lng"], $_POST["_file_lng"].".bak");
+}
+file_put_contents($_POST["_file_lng"], $txt);
+eInclude("message");
+eMessage("Datos grabados", "HS");
+[CSSAdd]a
+LABEL {
+padding-left:20px;
+}
+.BOX_LNG {
+display: grid;
+border: 1px solir blue;
+}
+.LNG_es {
+display:table;
+}
+.LNG_en {
+display:table;
+}
+.LNG_ca {
+-display:table;
+display:none;
+}
+.LNG_fr {
+-display:table;
+display:none;
+}
+.LABEL_PK {
+display:inline-block;
+min-width:50px;
+color: blue;
+}
+.LABEL_TEXT {
+display:inline-block;
+min-width:50px;
+}
+TEXTAREA {
+min-height: 14px;
+display: block;
+overflow: hidden;
+resize: none;
+}
+INPUT {
+margin-top: 3px;
+}
+INPUT, TEXTAREA {
+padding-left	: 2px !important;
+padding-right	: 1px !important;
+padding-top		: 2px !important;
+padding-bottom	: 2px !important;
+border-radius	: 3px;
+}
+.AddButton2 {
+padding-right: 8px;
+}
+[Fields]a
+{P} xCampos
+[JSIni]a
+function viewInputLng(lng){
+S(`DIV[class^='LNG_'] TEXTAREA`).css("border-color:");
+S(`DIV[class='LNG_${lng}'] TEXTAREA`).css("border-color:#b30000");
+S(`DIV[class^='LNG_'] .LABEL_TEXT`).css("color:;background-color:");
+S(`DIV[class='LNG_${lng}'] .LABEL_TEXT`).css("color:#b30000;background-color:#fff0f5");
+document.body.style.overflow = "scroll";
+}
+function insertText(){
+var oLast, pkLast, pkNew;
+S("INPUT[name^='code_']").each(function(k,o){
+oLast = o;
+});
+pkLast = S.mid(oLast.name,5,0)*1;
+pkNew = S.padL(pkLast+1, 3, "0");
+var  oFirst = oLast.parentNode
+,oParent = oFirst.parentNode
+,copy = false
+,text = "";
+oFirst = oFirst.previousElementSibling;
+S(oParent.children).each(function(k,o){
+if( o==oFirst ){
+copy = true;
+}
+if( copy ){
+text += S.replace(o.outerHTML, "_"+S.padL(pkLast,3,"0"), "_"+pkNew);
+oLast = o;
+}
+});
+S("<span id='__tmp__'></span>").nodeAfter(document.body);
+S("#__tmp__").html(text);
+S("#__tmp__").nodeEnd(oParent);
+S(":code_"+pkNew).class("-READONLY,+EDITABLE");
+S(":code_"+pkNew).obj.readOnly = false;
+S("#__tmp__").HTML(S("#__tmp__").html());
+S("#__tmp__").nodeRemove();
+S(":code_"+pkNew).obj.onclick = null;
+S("INPUT[name*='_"+pkNew+"']").val("");
+S("TEXTAREA[name*='_"+pkNew+"']").val("");
+}
+[JSCheck]a
+if( eGF("_to_")!="file" ){
+ePE("_to_", "Grabado en el editor", true);
+let  $result = []
+,$line = []
+,$note = "";
+S("INPUT,TEXTAREA").each(function(k,o){
+let $k = o.name;
+let $v = S.trim(o.value);
+if( $v=="" || $k[0]=="_" ) return;
+$v = S.replace($v, [["|", "~"], ["&#124;", "&#126;"]]);
+if( S.left($k,5)=="code_" ){
+if( $line.length ){
+$result.push( $line.join("|")+(($note=="") ? "" : "~"+$note) );
+}
+$line = [];
+$note = "";
+}
+if( S.left($k,5)=="note_" ){
+$note = $v;
+return;
+}
+$line.push($v);
+});
+if( $line.length ){
+$result.push( $line.join("|")+(($note=="") ? "" : "~"+$note) );
+}
+$result.sort(function(a, b){
+return a.toLowerCase().localeCompare(b.toLowerCase());
+});
+let $txt = "[Language] "+eGF("_list_lng")+"\n"+$result.join("\n");
+return false;
+}
+var ele = document.forms["FRM1"].elements, n, pk, tmp;
+for(n=0; n<ele.length; n++){
+if( S.left(ele[n].name,4)=="lng_" ){
+pk = ele[n].name.split("_")[1];
+ele["code_"+pk].value += "|"+S.replace(ele[n].value, "|", "&#124;", "~", "&#126;");
+}
+if( S.left(ele[n].name,5)=="note_" && ele[n].value!="" ){
+pk = ele[n].name.split("_")[1];
+ele["code_"+pk].value += "~"+S.replace(ele[n].value, "|", "&#124;", "~", "&#126;");
+}
+}
+S("TEXTAREA[name^='lng_']").nodeRemove();
+S("TEXTAREA[name^='note_']").nodeRemove();
+_cForm = [];
+[PHPEnd]a
+if( $_GET["_file"]=="../_tmp/php/{$_ENV['user']}.lng" ){
+?>
+<script>
+_Action = '_grabarEnEditor(<?=$_GET["_line"]?>)';
+S(window).windowCaption("[Language]", true);
+function _grabarEnEditor(line){
+var newDim = [];
+var dim = _WOPENER._Editor.doc.getValue().split("\n"), hasta=-1, n;
+for(n=0; n<line; n++){
+newDim.push(dim[n]);
+}
+newDim.push("[Language] "+S(":_list_lng").val());
+var idiomas = S(":_list_lng").val().split(",");
+S("INPUT[name^=code_]").each(function(k,o){
+var pk = S.mid(o.name,5,3), lng=[], i, nota, newLine="";
+lng.push(o.value);
+for(i=0; i<idiomas.length; i++){
+lng.push(S(":lng_"+pk+"_"+idiomas[i]).val());
+}
+newLine = lng.join(" | ");
+while( S.right(newLine,3)==" | " ){
+newLine = S.mid(newLine, 0, -3);
+}
+nota = S(":note_"+pk).val();
+if( nota!="" ){
+newLine += " ~ "+nota;
+}
+if( S.trim(newLine)!="" ){
+newDim.push(newLine);
+}
+});
+newDim.push("\n");
+for(n=line+1; n<dim.length; n++){
+txt = S.trim(dim[n]);
+if( txt!="" ){
+if( txt[0]=="[" ){
+hasta = n;
+break;
+}
+}
+}
+for(n=hasta; n<=dim.length; n++){
+newDim.push(dim[n]);
+}
+_WOPENER._CargaEDF(newDim.join("\n"));
+_WOPENER._Editor.setCursor(line, 0);
+S.info("Grabado...", 3);
+_OkChange = null;
+return;
+}
+</script>
+<?PHP
+}
+[PHPIni]a
+$_file_lng = eScript($_GET["_file"]);
+if( file_exists($_file_lng) ){
+$dimTextos = file($_file_lng);
+}else{
+$_file_lng = DIREDES."lng/".eFileFullName($_file_lng);
+if( file_exists($_file_lng) ){
+$dimTextos = file($_file_lng);
+}else{
+$dimTextos = [];
+}
+}
+$lenguage = explode(",",  str_replace("]", ",", $dimTextos[0]));
+$_ADDBUTTON[] = ["Insert Text", "", "insertText()"];
+for($n=1; $n<count($lenguage); $n++){
+$lenguage[$n] = trim($lenguage[$n]);
+if( empty($lenguage[$n]) ) continue;
+$_ADDBUTTON[] = ["{$lenguage[$n]}", "", "viewInputLng('{$lenguage[$n]}')"];
+}
+[]
+[P]xCampos
+global $dimTextos, $_file_lng;
+$fusionar = !true;
+if( $fusionar ){
+$translate = file("../_tmp/php/lng_en.txt");
+$pTranslate = 0;
+}
+$dim = $dimTextos;
+$lenguage = explode(",",  str_replace("]", ",", $dim[0]));
+$lenguage[0] = "";
+for($n=0; $n<count($lenguage); $n++){
+$lenguage[$n] = trim($lenguage[$n]);
+$expLng[$lenguage[$n]] = [];
+}
+$listLng = $lenguage;
+array_shift($listLng);
+$fileFrom = empty($_GET["_file"]) ? "edit": "file";
+eAddField("| _to_      | # | T | 80 || * | {$fileFrom}  ||");
+eAddField("| _file_lng | # | T | 80 || * | {$_file_lng} ||");
+eAddField('| _list_lng | # | T | 80 || * |'.implode(",", $listLng).'||');
+for($n=1; $n<count($dim); $n++){
+$txt = trim($dim[$n]);
+if( empty($txt) || $txt[0]=="." ) continue;
+list($txt, $note) = explode("~", $txt);
+$txt = str_replace('"', '&#34;', $txt);
+$lng = explode("|", $txt.str_repeat("|", count($lenguage)));
+$line = str_pad($n, 3, "0", STR_PAD_LEFT);
+echo "<label class='LABEL_PK'>PK</label>";
+$lng[0] = trim($lng[0]);
+eAddField('PK | code_'.$line.' | # | T | 60 || - |'.$lng[0].'||');
+for($i=1; $i<count($lenguage); $i++){
+$expLng[$lenguage[$i]][] = $lng[$i];
+$lng[$i] = "=".trim($lng[$i]);
+if( $fusionar ){
+if( $lenguage[$i]=="en" ){
+$lng[$i] = "=".ucfirst($translate[$pTranslate]);
+$pTranslate++;
+}
+}
+echo "<div class='LNG_{$lenguage[$i]}'>";
+echo "<label class='LABEL_TEXT'>".$lenguage[$i].'</label>';
+eAddField('| lng_'.$line.'_'.$lenguage[$i].' | # | A | 500,80,1 || M |'.$lng[$i].'||');
+echo "</div>";
+}
+eAddField('| note_'.$line.' | # | A | 500,80,1 || * |'.$note.'||');
+}
+eAddField('| _end_ | # | A | 500,80,1 || * | ok ||');
+for($n=1; $n<count($lenguage); $n++){
+file_put_contents("../_tmp/php/lng_".$lenguage[$n].".txt", implode("\n", $expLng[$lenguage[$n]]));
+}
+[JSEnd]a
+document.body.style.visibility = "visible";
+S("TEXTAREA").each(function(k, o){
+o.setAttribute("style", "height:"+(o.scrollHeight)+"px; overflow-y:hidden;");
+o.addEventListener("input", OnInput, false);
+if( S.left(o.name,5)=="note_" || o.name=="_end_" ){
+o.style.display = "none";
+}
+o.addEventListener("contextmenu", uMenu, false);
+});
+function OnInput(){
+this.style.height = 0;
+this.style.height = (this.scrollHeight)+"px";
+}
+function OnInputObj(o){
+o.style.height = 0;
+o.style.height = (o.scrollHeight)+"px";
+}
+function uMenu(){
+var  obj = S.event(window)
+,menu = [
+["-MenÃº"]
+,["Uppercase" ,"","u"]
+,["Lowercase" ,"","l"]
+,["Capitalize","","c"]
+];
+if( obj.tagName=="INPUT" ){
+menu.push(["-"]);
+menu.push(["Delete","","d"]);
+}
+S(obj).menu(menu
+, {	function:function(op, a,b,c,d, oTextarea){
+if( op=="u" ) oTextarea.value = oTextarea.value.toUpperCase();
+if( op=="l" ) oTextarea.value = oTextarea.value.toLowerCase();
+if( op=="c" ) oTextarea.value = oTextarea.value.charAt(0).toUpperCase()+oTextarea.value.toLowerCase().slice(1)
+if( op=="d" ){
+let name = S.right(oTextarea.name,3);
+S(`[name*='${name}']`).each(function(k,o){
+if( S.left(o.name,4)=="lng_" ){
+let oDiv = S.toTag(o,"DIV");
+S(oDiv).nodeRemove();
+}else{
+let oNoBr = S.toTag(o,"NOBR");
+S(oNoBr).nodeRemove();
+}
+});
+}
+}
+}, obj);
+return S.eventClear(window);
+}
+S("INPUT").each(function(k, o){
+o.addEventListener("contextmenu", uMenu, false);
+});

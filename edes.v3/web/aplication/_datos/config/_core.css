@@ -1,0 +1,405 @@
+//	-o-		 = opera
+//	-moz-	 = firefox/mozilla
+//	-webkit- = safari, chrome
+//	-ms-	 = microsoft so IE & Edge
+
+
+// $fontFamily: font-family: helvetica;
+// $fontFamily: font-family: 'Montserrat', sans-serif;
+$fontFamily: font-family: 'Roboto_regular';
+
+$fBase: 12px				// 20px
+$fBaseBIG: 18px				// 20px
+$fBaseTLF: 50px				// modo teléfono
+
+$ficontab: {%9}px;				// 1{%5}px - tamaño iconos
+
+$iconSelectRight: {%13}px		// icono del select justificado a la derecha 11px "j"
+$iconSelectTop: 0px			// y arriba {%3}px
+
+
+$H1:130%
+$H2:113%
+$H3:110%
+$H4:100%
+$H5:90%
+$H6:70%
+$H7:60%
+
+
+//---------
+// fuentes
+//---------
+	$fcaption {					// sin fondo
+		font-size: {$H1};
+		font-family: 'Roboto_700';
+	}
+	$fheader {					// con fondo
+		font-size: {$H2};
+		font-weight: normal;
+	}
+	$fMenuHorizontal {			// con fondo
+		font-size: {$H2};
+		font-weight: normal;
+	}
+	$ftext {
+		font-size: {$H4};
+		font-weight: normal;
+	}
+	$fdata {
+		font-size: {$H4};
+		font-weight: normal;
+	}
+	$foption {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fbutton {
+		font-size: {$H1};
+		font-weight: normal;
+	}
+
+	$fSubListHeader {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fSubListData {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fSubListIcon {
+		font-size: {$H6};
+	}
+
+//
+
+	$cText: #333333			// gris
+	$cData: #000000			// negro
+	$cOption: #333333		// gris
+	$cIcon: #1B6B8D			// azul de iconos #228AA8
+	$cIconHeader: #ffffff	// blanco de iconos
+	$cMessage: #ffffff		// blanco
+
+
+	$sInfo: #F5F5F5				// gris
+	$sInfoBorder: {$sInfo-30}
+
+	$sError: #EB3941			// rojo
+	$sErrorBorde: {$sError-30}
+
+	$sWarning: #F4BD0E			// naranja
+	$sWarningBorde: {$sWarning-30}
+
+	$sOk: #10681B				// verde
+	$sOkBorde: {$sOk-30}
+
+
+
+//----------
+// Prefijos
+//----------
+	// f - font
+	// p - papel
+	// c - color
+	// b - borde
+	// i - icono
+	// d - degradado
+
+//--------------
+// Colores base
+//--------------
+	$color0:#000000		// negro
+	$color1:#1B6B8D		// azul oscuro
+	$color2:#96CFDA		// azul claro
+	$color3:#A4A4A4		// gris oscuro
+	$color4:#CFCFCF		// gris intermedio
+	$color5:#C3C3C3		// gris claro
+	$color6:#F8F8F8		// blanco sucio
+	$color7:#ffffff		// blanco
+
+	$color8:#E8F1EB		// azul muy claro	- #f6fbff
+	$color9:#96CFDA		// azul claro		- #E8F4FF
+	$color10:#2692BA	// azul medio
+	$color11:#228AA8	// azul oscuro
+	$color12:#1B6B8D	// azul muy oscuro
+
+	$color13:#7C7B7B	// Gris muy oscuro
+	$color14:#F0F3F6	// Blanco grisaceo
+	$color15:#4C4B4B	// Gris hacia el negro
+	$color16:#EEF1F5	// Gris clarito azulado
+	$color17:#FAFAFA	// Gris clarito azulado fondo ficha
+	$color18:#1A2E47	// Negro letra listado
+	$color19:#666666	// Gris letra petañas
+	$color20:#FF5000	// Naranja
+	$color21:#F3F3F3	// Gris claro pestañas
+	$color22:#E1E1E1	// Gris fondo totales
+
+	$color23:#24498D	// azul panel
+	$color24:#4273B4	// azul web mibms
+	$color25:#FFA961	// Naranja claro para cursores
+	$color26:#E07370	// granate
+	$color27:#7b9ea9	// azul grisaceo - border input Required
+
+	$color28:#f6fbff	// azul muy claro (editList)
+	$color29:#E8F4FF	// azul un poco mas oscuro (editListGreenBar)
+
+	$color30:rgb(247,247,199)
+
+//-----------------
+// controles input
+//-----------------
+	$cReadOnly: {$color15}
+	$pReadOnly: {$color6}
+
+	$cEditable: {$color12}
+	$pEditable: {$color7}
+
+	$cEditableFocus: {$color0}
+	$pEditableFocus: {$color30}
+
+	$cError: {$color7}
+	$pError: {$sError}
+
+	$cErrorFocus: {$color7}
+	$pErrorFocus: {$sError}
+
+	$cSelected: {$color7}
+	$pSelected: {$color3}
+
+	$bInput: {$color4}			// borde de los input
+	$bRequired: {$color27}
+
+//---------
+// submenu
+//---------
+	$cSubMenuHeader: {$color7}
+	$pSubMenuHeader: {$color1}
+	$iSubMenu: {$color7}
+	$cSubMenu: {$color3}
+	$pSubMenu: {$color7}
+	$bSubMenu: {$color5}
+	$cSubMenuCursor: {$color18}
+	$pSubMenuCursor: {$color25}
+
+//---------
+// listado
+//---------
+	$cTitleMain: {$color1}
+	$cTitleSecondary: {$color12}
+	$cListCondition: {$color11}
+	$cTitleBegin: {$color12}
+	$cTitleEnd: {$color12}
+	$cPagination: {$color18}
+
+	$cListHeader: {$color16}			// con fondo
+	$pListHeader: {$color11}
+	$cListData: {$color18}
+	$pListData: {$color7}
+	$cListTotal: {$color18}				// fila de totales
+	$pListTotal: {$color22}
+
+	$cListGrid: {$color5}
+
+	$cListCursor: {$color15}
+	$pListCursor: {$color25}
+
+	$cListGreenbar: {$color18}
+	$pListGreenbar: {$color16}
+
+	$cListDataFound: {$color7}			// al buscar texto en el listado
+	$pListDataFound: {$color2}
+
+	$pEditList: {$color28}
+	$pEditListGreenBar: {$color29}
+
+//------------
+// SubListado
+//------------
+	$cSubListTitle: {$color1}
+	$bSubList: {$color4}
+	$cSubListHeader: {$color16}			// con fondo
+	$pSubListHeader: {$color11}
+	$cSubListData: {$color12}
+	$pSubListData: {$color7}
+	$cSubListTotal: {$color18}			// fila de totales
+	$pSubListTotal: {$color22}
+	$cSubListGrid: {$color5}
+
+//-------
+// ficha
+//-------
+	$bTab: {$color9}				// $bTab: {$tab-25}
+	$cTabHeader: {$color8}
+	$pTabHeader: {$color11}
+	$pTab: {$color17}
+	$cTabText: {$color15}
+
+//--------
+// iconos
+//--------
+	$cIconInsert: blue;
+	$cIconDelete: red;
+	$cIconHelp: greys;
+	$cIconView: orange;
+	$cIconUpdate: green;
+	$cIconSeek: purple;
+	$cIconCount: purple;
+	$cIconClose: brown;
+	$cIconOption: red;					// color del menu de la etiqueta [Option]
+	$cIconLoading: #1a667b;
+	$cIconDevelopment: #e648e0;
+
+//----------------------
+// ficha - TABMenu - ok
+//----------------------
+	$cTabMenuOn: {$color20}
+	$bTabMenuOn: {$color3}
+
+	$cTabMenuOff: {$color19} 
+	$pTabMenuOff: {$color21}
+	$bTabMenuOff: {$color3}	
+
+	$cTabMenuOver: {$color16}
+	$pTabMenuOver: {$color11}
+
+//-------------------------
+// loader - icono cargando
+//-------------------------
+	$cLoader: {$color1}			// color
+	$pLoader: {$color5}			// fondo
+
+//--------
+// varios
+//--------
+	$pBody: {$color6}			// fondo de pantalla
+
+
+//-----
+// fin
+//-----
+
+$shadowWinDef: {%5}px {%5}px {%5}px rgba(0,0,0,0.2)
+$shadowWin{
+	box-shadow: {$shadowWinDef};
+	-moz-box-shadow: {$shadowWinDef};
+	-webkit-box-shadow: {$shadowWinDef};
+}
+
+$shadowObjDef: {%3}px {%3}px {%5}px rgba(0,0,0,0.2)
+$shadowObj{
+	box-shadow: {$shadowObjDef};
+	-moz-box-shadow: {$shadowObjDef};
+	-webkit-box-shadow: {$shadowObjDef};
+}
+
+$shadowButtonDef: {%2}px {%2}px {%3}px rgba(0,0,0,0.2)
+$shadowButton{
+	box-shadow: {$shadowButtonDef};
+	-moz-box-shadow: {$shadowButtonDef};
+	-webkit-box-shadow: {$shadowButtonDef};
+}
+
+
+$roundedBig {
+	-moz-border-radius: {%4}px;
+	-webkit-border-radius: {%4}px;
+	border-radius: {%4}px;
+}
+$roundedSmall {
+	-moz-border-radius: {%5}px;
+	-webkit-border-radius: {%5}px;
+	border-radius: {%5}px;
+}
+$roundedBigTop {
+	-moz-border-radius: {%4}px {%4}px 0px 0px;
+	-webkit-border-radius: {%4}px {%4}px 0px 0px;
+	border-radius: {%4}px {%4}px 0px 0px;
+}
+
+
+$gcolor1: rgba(254,254,254,1)
+$gcolor2: rgba(209,209,209,1)
+$gcolor3: rgba(219,219,219,1)
+$gcolor4: rgba(226,226,226,1)
+$gcolor1rgb: #fefefe
+$gcolor4rgb: #e2e2e2
+
+$colorA: {$gcolor1rgb-50%}
+$colorB: {$gcolor1rgb-60%}
+$colorC: {$gcolor1rgb-70%}
+
+$gcolor%1: 0%
+$gcolor%2: 49%
+$gcolor%3: 50%
+$gcolor%4: 100%
+$gcolor2: rgba(22,22,22,1)
+
+//$gradient1a: {$gcolor1} {$gcolor%1}, {$gcolor2} {$gcolor%2}, {$gcolor3} {$gcolor%3}, {$gcolor4} {$gcolor%4}
+//$gradient1b: color-stop({$gcolor%1}, {$gcolor1}), color-stop({$gcolor%2}, {$gcolor2}), color-stop({$gcolor%3}, {$gcolor3}), color-stop({$gcolor%4}, {$gcolor4})
+
+$gcolor%1: 50%
+$gcolor%2: 100%
+
+$gradient1a: {$gcolor1} {$gcolor%1}, {$gcolor4} {$gcolor%2}
+$gradient1b: color-stop({$gcolor%1}, {$gcolor1}), color-stop({$gcolor%2}, {$gcolor2})
+
+
+$bbutton {
+	background: {$gcolor1};
+	background: -moz-linear-gradient(top, $gradient1a});
+	background: -webkit-gradient(left top, left bottom, {$gradient1b});
+	background: -webkit-linear-gradient(top, {$gradient1a});
+	background: -o-linear-gradient (top, {$gradient1a});
+	background: -ms-linear-gradient(top, {$gradient1a});
+	background: linear-gradient(to bottom, {$gradient1a});
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{$gcolor1:hex}', endColorstr='{$gcolor4:hex}', GradientType=0 );
+}
+
+
+$header1: {$color26}
+$header2: {$header1-30}
+
+$headera: {$header1}, {$header2}
+$headerb: color-stop({$header1}), color-stop({$header2})
+
+$header {
+	background: {$header1};
+	background: -moz-linear-gradient(top, {$headera});
+	background: -webkit-gradient(left top, left bottom, {$headerb});
+	background: -webkit-linear-gradient(top, {$headera});
+	background: -o-linear-gradient (top, {$headera});
+	background: -ms-linear-gradient(top, {$headera});
+	background: linear-gradient(to bottom, {$headera});
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$header1:hex}', endColorstr='{$header2:hex}', GradientType=0);
+}
+
+
+[ $FUENTES
+	/* Roboto_regular */
+	@font-face {
+	  font-family: 'Roboto_regular';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: url('../fonts/roboto-v15-latin-regular.eot');										/* IE9 Compat Modes */
+	  src: local('Roboto'), local('Roboto-Regular'),
+		   url('../fonts/roboto-v15-latin-regular.eot?#iefix') format('embedded-opentype'),	/* IE6-IE8 */
+		   url('../fonts/roboto-v15-latin-regular.woff2') format('woff2'),						/* Super Modern Browsers */
+		   url('../fonts/roboto-v15-latin-regular.woff') format('woff'),						/* Modern Browsers */
+		   url('../fonts/roboto-v15-latin-regular.ttf') format('truetype'),					/* Safari, Android, iOS */
+		   url('../fonts/roboto-v15-latin-regular.svg#Roboto') format('svg');					/* Legacy iOS */
+	}
+
+	/* Roboto_700 */
+	@font-face {
+	  font-family: 'Roboto_700';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: url('../fonts/roboto-v15-latin-700.eot');											/* IE9 Compat Modes */
+	  src: local('Roboto Bold'), local('Roboto-Bold'),
+		   url('../fonts/roboto-v15-latin-700.eot?#iefix') format('embedded-opentype'),		/* IE6-IE8 */
+		   url('../fonts/roboto-v15-latin-700.woff2') format('woff2'),							/* Super Modern Browsers */
+		   url('../fonts/roboto-v15-latin-700.woff') format('woff'),							/* Modern Browsers */
+		   url('../fonts/roboto-v15-latin-700.ttf') format('truetype'),						/* Safari, Android, iOS */
+		   url('../fonts/roboto-v15-latin-700.svg#Roboto') format('svg');						/* Legacy iOS */
+	}
+]

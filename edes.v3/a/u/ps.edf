@@ -1,0 +1,107 @@
+[Title]=LISTA DE PROCESOS - PS
+[ColsOp]user=C, cpu=+, mem=+
+[Fields]||TRIM
+USER|user|#|T|20||-|||
+PID|pid|+|T|6||-|||
+%CPU|cpu|+,|T|2,1||-|||
+%MEM|mem|+,|T|2,1||-|||
+VSZ|vsz|+|T|9||-|||
+RSS|rss|+|T|9||-|||
+TTY|tty|#|T|5||-|||
+STAT|stat|#|T|2||-||=|
+START|start|#|T|5||-||=|
+TIME|time2|H5|T|5||-|||
+COMMAND|command|#|T|100||-|||
+[ColsWidth]command=400
+[JSOnClickRow]l||pid,cpu
+if( _ColName=="pid" ){
+S.alert({
+icon	: '<i class="ICONDESKTOP">?</i>',
+button	: "Y,N",
+title	: 210,
+text	: "Matar el proceso "+$pid,
+function: function(yn){
+if(yn!=1) return;
+S.callSrv("pid="+$pid);
+_oTR.style.textDecoration = "line-through";
+}
+});
+}
+if( _ColName=="cpu" ){
+S.alert({
+icon	: '<i class="ICONDESKTOP">?</i>',
+button	: "Y,N",
+title	: 210,
+text	: "Dar prioridad al proceso "+$pid,
+function: function(yn){
+if(yn!=1) return;
+S.callSrv("cpu="+$pid);
+}
+});
+}
+[CallSrv]pid
+echo "<script>";
+$lastLine = system("kill -9 {$pid}", $retval);
+eTron("Valor de retorno: ".$retval);
+eTron("Ultima linea: ".$lastLine);
+echo "top.S.info(\"Proceso {$pid} eliminado\");";
+echo "</script>";
+[CallSrv]cpu
+echo "<script>";
+$lastLine = system("renice -19 {$pid}", $retval);
+eTron("Valor de retorno: ".$retval);
+eTron("Ultima linea: ".$lastLine);
+echo "top.S.info(\"Proceso {$pid} con prioridad 19\");";
+echo "</script>";
+[PHPIni]l
+$_CurrentUser = get_current_user();
+[Format]
+if( $_vF["user"]==$GLOBALS["_CurrentUser"] ){
+$_CellsStyle[0] = "font-weight:bold";
+}
+if( mb_substr($_vF["command"], 0, 4)=="php " ){
+$_RowStyle = "font-weight:bold";
+}
+[DBSql]l
+$txt = "";
+$fp=popen("/bin/ps -waux","r");
+while( !feof($fp) ){
+$txt .= fgets($fp, 4096);
+}
+pclose($fp);
+$dim = explode("\n", $txt);
+$pos = array(0);
+$xTH = rtrim($dim[0]);
+for($n=0; $n<mb_strlen($xTH)-1; $n++){
+if( mb_substr($xTH, $n, 1)==" " && mb_substr($xTH, $n+1, 1)!=" " ){
+array_push($pos, $n);
+}
+}
+array_push($pos, 300);
+for($n=1; $n<count($dim); $n++){
+$data = array();
+$cadena = "";
+$totalTD = count($pos)-1;
+$nTD = 0;
+$txt = trim($dim[$n]);
+if( empty($txt) ) continue;
+$last = " ";
+for($i=0; $i<mb_strlen($txt); $i++){
+$chr = mb_substr($txt, $i, 1);
+if( $chr!=" " ){
+if( $last==" " && $nTD<$totalTD ){
+if( $i>0 ){
+array_push($data, $cadena);
+$cadena = "";
+}
+$nTD++;
+}
+$cadena .= $chr;
+}else if( $nTD>=$totalTD ){
+$cadena .= " ";
+}
+$last = $chr;
+}
+array_push($data, $cadena);
+array_push($usuCursor, $data);
+}

@@ -1,0 +1,17 @@
+<strong><span class="AYUDA" style="width: 378px;"><span class="AYUDA" style="width: 378px;">Tipo de Uso de los Formatos</span></span></strong>
+<table id="Opciones" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td>Privado </td>
+<td>Visible y Editable sólo por el usuario</td>
+</tr>
+<tr>
+<td>Compartido</td>
+<td>Visible por todos y Editable sólo por el usuario</td>
+</tr>
+<tr>
+<td>Público</td>
+<td>Visible y Editable por todo el mundo</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,16 @@
+#F_LISTA TABLE CAPTION {
+FONT-WEIGHT: bold;
+FONT-SIZE: 10px;
+COLOR: #ffffff;
+}
+#F_LISTA TH {
+FONT-WEIGHT: bold;
+FONT-SIZE: 9px;
+BACKGROUND: #e1cdb5;
+COLOR: #ffffff;
+}
+#F_LISTA TABLE {
+FONT-SIZE: 9px;
+BACKGROUND: #e1cdb5;
+FONT-FAMILY: "verdana";
+}

@@ -1,0 +1,124 @@
+#include(*) lng
+[Title]Configurar textos
+[RadioList]radiolist|4|ListarIdiomas()|text
+[Button]*|[U] Editar texto
+[FormAction]*|uEditar()
+[AddButton]*|[help2] Ver resultado||VerResultado()
+[Fields]||trim
+Idioma|radiolist|o|SV|60||QM|es||
+-
+Texto a editar|texto|#|SV|40||M|||
+[CC]#SYS|$_GET["_EDES"]==18
+¿ $_GET["_EDES"]==18 ?¿
+[AddOption]*|texto
+TA,Buscar en listados
+HK,Help KEY
+FM,Filtro múltiple
+CA,Calculadora
+FL,Filtro de listados
+~
+DF,Actualizar por FTP
+DH,Actualizar por HTTP
+DU,Usuarios de desarrollo
+IX,Importar XLS
+LD,Definición de listados
+MD,Markdown.mark
+?¿
+[AddOption]*|texto
+DS,Documento de seguridad
+LG,Login
+ME,Mensaje al exportar
+MS,Mensaje al salir
+CC,Política de cookies - Texto corto
+CL,Política de cookies - Texto largo
+NU,Password	New User
+RM,Password Remember
+RS,Password Reset
+TV,Textos varios
+V2,Verificación en 2 pasos
+?
+[JSIni]*
+function uEditar(){
+var full = true,
+idioma = "_"+$radiolist;
+switch($texto){
+case "ME":
+url = "#a:$a/d/lng_expor";
+full = false;
+break;
+case "LG":
+url = "E:$t/translate.php&_EDF=/_datos/config/login.lng&_NOSORT=1&_lngTranslate="+$radiolist;
+break;
+case "TV":
+url = "E:$t/translate.php&_EDF=/_datos/config/various.lng&_NOSORT=1&_lngTranslate="+$radiolist;
+break;
+case "CC":
+url = "E:$wysiwyg_file.php&file=cookies_short"+idioma;
+break;
+case "CL":
+url = "E:$wysiwyg_file.php&file=cookies_long"+idioma;
+break;
+case "NU":
+url = "E:$wysiwyg_file.php&file=user_new"+idioma;
+break;
+case "RS":
+url = "E:$wysiwyg_file.php&file=pass_reset"+idioma;
+break;
+case "RM":
+url = "E:$wysiwyg_file.php&file=pass_remember"+idioma;
+break;
+case "V2":
+url = "E:$wysiwyg_file.php&file=pass_verify"+idioma;
+break;
+case "MS":
+url = "E:$wysiwyg_file.php&file=exit"+idioma;
+break;
+case "DS":
+url = "E:/_datos/config/docsecurity"+idioma+".htm&T=H&D=P&TRACE=-1";
+break;
+case "HK":
+url = "E:$lng/help/key_help"+idioma+".html&T=H&D=P&TRACE=-1";
+break;
+default:
+if( S.right(dimFile[$texto],5)==".mark" ){
+var key = S.left(dimFile[$texto],0,-5)+idioma+".mark";
+S.helpFile(key);
+return;
+}else{
+var key = (dimFile[$texto]+idioma).replace("$", "$lng/help/");
+}
+url = "E:$wysiwyg_help.php&file="+key;
+break;
+}
+S.window(url, {fullscreen:full, title:S(":texto").option()+((S(":__radiolist").length>1)? " ("+S(":radiolist").option()+")":"")});
+}
+var dimFile = {
+"TA": "$seek"
+,"HK": "$lng/help/key_help"
+,"FM": "$condi_list"
+,"CA": "$calculator"
+,"FL": "$filter_list"
+,"DF": "$dv_ftp"
+,"DH": "$dv_http"
+,"DU": "$dv_usuarios"
+,"IX": "$import_xls"
+,"LD": "$listados_def"
+,"MD": "$markdown.mark"
+};
+function VerResultado(){
+var  idioma = "_"+$radiolist
+,key = dimFile[$texto]
+,o = S.event(window);
+S(o).attr({"eHelp":null, "e-lng":null});
+S(o).help(key, window.event, idioma);
+return S.eventClear(window);
+}
+[PHPIni]*||UNIQUE
+function ListarIdiomas(){
+$p = array();
+qQuery("SELECT cd_gs_language,nm_gs_language FROM {$_ENV['eDesDictionary']}gs_language");
+while( $row=qRow() ){
+$p[] = array($row[0], $row[1]);
+}
+return $p;
+}

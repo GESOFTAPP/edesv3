@@ -1,0 +1,271 @@
+[Title]=RESTORE PACK
+[NoButton]a
+[AddButton]a|Select All||SelectAll()
+[AddButton]a|Create Restore||GenerateInfo()
+[PHPIni]a
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where email='{$_GET['_user']}'");
+$r = qArray();
+$user = $r["cd_gs_user"];
+qQuery("select * from {$_ENV['eDesDictionary']}gs_activity where cdi='{$_GET['_cdi']}' and cd_gs_user='{$user}'");
+$activity = qArray();
+$data = UnPack::infoAPack($activity["script"]);
+$_Form[0][7] = $data["script"];
+$_Form[1][7] = $data["cd_gs_user"];
+$_Form[2][7] = $data["cdi"];
+$_Form[3][7] = $data["ftp"];
+$_Form[4][7] = $data["cd_type"];
+$_Form[5][7] = $data["description"];
+$_Form[6][7] = $data["options"];
+$_Form[7][7] = implode("\n", $data["trace"]);
+[AddCode]a|cd_type|A|<img src='g/t_op_update.gif' title='View files' onclick='viewFiles()'>
+[AddOption]a|cd_type|,; O,Nueva Opción; M,Mejora; E,Error; ~,~; A,Arreglo Datos; I,Importación; C,Proceso Cron; X,Proceso Interno; V,Varios; R,Restore
+[Fields]a
+Script|script|#|T|60||-|||
+User|cd_gs_user{gs_user,cd_gs_user,user_name,' ',user_surname}|+|S|60||-|||
+CDI|cdi|CDI|T|19||-|||
+,FTP|ftp|CDI|T|19||-|||
+Type|cd_type|D|SV|15||-|||
+Descripción|description|#|H|2000,80,5|480|-|||
+|options|#|T|70||*|||
+Trace|trace|#|A|2000,80,5|480|-|||
+|restore|#|A|2000,80,5||*|||
+{P} TableInfo
+[P]TableInfo
+global $activity;
+$data = UnPack::info($activity["script"]);
+?>
+<SPAN class=SubLista>
+<table border=0 cellSpacing=1 cellPadding=2 class='SubLista' id='InfoPack'>
+<thead>
+<tr>
+<th rowspan=2>Scripts Package</th>
+<th colspan=4>Last Version</th>
+<th colspan=4>Later Version</th>
+<th rowspan=2>Sel</th>
+<th rowspan=2>Op</th>
+</tr>
+<tr>
+<th>User</th>
+<th>CDI</th>
+<th>Package</th>
+<th>FTP</th>
+<th>User</th>
+<th>CDI</th>
+<th>Package</th>
+<th>FTP</th>
+</tr>
+</thead>
+<tbody>
+<?PHP
+foreach($data as $k=>$v){
+echo "<tr onclick='SelectFile(this)'>";
+for($i=0; $i<count($v); $i++){
+echo "<td>{$v[$i]}&nbsp;</td>";
+}
+if( empty($v[3]) && empty($v[7]) ){
+echo "<td style='background-color:#cccccc' disabled>&nbsp;</td>";
+}else{
+echo "<td>&nbsp;</td>";
+}
+echo "<td><img src='g/t_op_view.gif' onclick='viewFile(this)' title='View File'><img src='g/t_op_select.gif' title='View Differences'></td>";
+echo "</tr>";
+}
+?>
+</tbody>
+</table>
+</span>
+<?PHP
+[JSEnd]a
+if( eGF("ftp")=="" ){
+DGI("AddButton1").style.display = "none";
+DGI("AddButton2").style.display = "none";
+DGI("OpButtons").outerHTML = "<span style='color:red'>This packet has not been sent to processes</span>";
+}
+[JSIni]a
+var _ColSelect = 9;
+function SelectFile(o){
+if( o.cells[_ColSelect].children.length ){
+o.cells[_ColSelect].innerHTML = "&nbsp;";
+o.style.backgroundColor = "";
+return;
+}
+if( eTrim(o.cells[3].innerText)=="" && eTrim(o.cells[7].innerText)=="" ){
+return;
+}
+o.cells[_ColSelect].innerHTML = "<img src='g/tf_1.gif'>";
+o.style.backgroundColor = "#eeeeee";
+}
+function GenerateInfo(){
+var oRows = DGI("InfoPack").children[1].rows, i, c, td=Array(), tr=Array();
+for(i=0; i<oRows.length; i++){
+if( oRows[i].cells[_ColSelect].children.length==0 ){
+continue;
+}
+if( eTrim(oRows[i].cells[3].innerText)=="" && eTrim(oRows[i].cells[7].innerText)=="" ){
+continue;
+}
+td = Array();
+for(c=0; c<_ColSelect; c++){
+td.push(eTrim(oRows[i].cells[c].innerText));
+}
+tr.push(td.join("|"));
+}
+if( tr.length==0 ){
+top.eAlert("Warning", "You have not selected any files to restore", "ACCEPT", "g/sys_warning.gif");
+return;
+}
+ePF("restore", tr.join("~"));
+eSubmit();
+}
+function SelectAll(){
+var oRows = DGI("InfoPack").children[1].rows, i;
+for(i=0; i<oRows.length; i++){
+if( oRows[i].cells[_ColSelect].disabled ){
+continue;
+}
+oRows[i].cells[_ColSelect].innerHTML = "<img src='g/tf_1.gif'>";
+oRows[i].style.backgroundColor = "#eeeeee";
+}
+}
+function viewFile(o){
+var  oTR  = o.parentNode.parentNode
+,file = eTrim(oTR.cells[0].innerText)
+,filePrevious = eTrim(oTR.cells[3].innerText)
+,ftpPrevious  = eTrim(oTR.cells[4].innerText)
+,fileNext	  = eTrim(oTR.cells[7].innerText)
+,ftpNext	  = eTrim(oTR.cells[8].innerText)
+,filePack	  = ((fileNext!="") ? fileNext : filePrevious)
+,fileFTP	  = ((fileNext!="") ? ftpNext  : ftpPrevious)
+;
+top.eCallSrv(window, 'ViewFileInPack='+file+"|"+filePack+"|"+fileFTP);
+return eClearEvent(event);
+}
+function viewFiles(){
+var  files = Array()
+,file
+,filePrevious, ftpPrevious
+,fileNext	 , ftpNext
+,filePack	 , fileFTP
+,oRows = DGI("InfoPack").children[1].rows
+,i
+;
+for(i=0; i<oRows.length; i++){
+if( oRows[i].cells[_ColSelect].disabled ){
+continue;
+}
+file		 = eTrim(oRows[i].cells[0].innerText);
+filePrevious = eTrim(oRows[i].cells[3].innerText);
+ftpPrevious  = eTrim(oRows[i].cells[4].innerText);
+fileNext	 = eTrim(oRows[i].cells[7].innerText);
+ftpNext		 = eTrim(oRows[i].cells[8].innerText);
+filePack	 = ((fileNext!="") ? fileNext : filePrevious);
+fileFTP		 = ((fileNext!="") ? ftpNext  : ftpPrevious)
+files.push(file+"|"+filePack+"|"+fileFTP);
+}
+top.eCallSrv(window, 'ViewFileInPack='+files.join("|"));
+return eClearEvent(event);
+}
+[CallSrv]ViewFileInPack
+include("../../edes.v3/class/pack.class.php");
+$dimFile = explode("|", $ViewFileInPack);
+$loadIni = array();
+$fileExists = false;
+for($i=0; $i<count($dimFile); $i+=3){
+$file = $dimFile[$i+0];
+$pack = $dimFile[$i+1];
+$ftp  = $dimFile[$i+2];
+$data = UnPack::listFile($pack, $ftp, true);
+if( mb_substr($file,0,14)!="/_bak_/update/" ){
+if( !count($data) ){
+continue;
+}
+$file = $data[0][0];
+$tmp = explode("/", $file);
+$file = "/_tmp/php/".$tmp[count($tmp)-1];
+array_push($loadIni, $file);
+file_put_contents("..{$file}", $data[0][3]);
+$fileExists = true;
+continue;
+}
+for($n=0; $n<count($data); $n++){
+if( $data[$n][0]!=$file ){
+continue;
+}
+$tmp = explode("/", $file);
+$file = "/_tmp/php/".$tmp[count($tmp)-1];
+array_push($loadIni, $file);
+file_put_contents("..{$file}", $data[$n][3]);
+$fileExists = true;
+break;
+}
+}
+$file = $loadIni[0];
+if( count($loadIni)>1 ){
+$txt = file_get_contents("..{$file}");
+$dimLoadIni = array();
+for($i=1; $i<count($loadIni); $i++){
+array_push($dimLoadIni, "[LoadIni] ".str_pad($loadIni[$i], 50)."/"."/ (line only for the viewer)");
+}
+$txt = implode("\n", $dimLoadIni)."\n\n".$txt;
+file_put_contents("..{$file}", $txt);
+}
+if( !$fileExists || empty($file) ){
+?>
+<script>
+top.eInfo(top, "File not found", 3);
+</script>
+<?PHP
+eEnd();
+}
+?>
+<script>
+top.gsEditor("<?=$file?>", 10);
+</script>
+<?PHP
+eEnd();
+[PHPStart]a,A
+include("../../edes.v3/class/pack.class.php");
+[PHPIni]A
+$pack	 = $_POST["script"];
+$data	 = explode("~", $_POST["restore"]);
+$extraer = array();
+for($n=0; $n<count($data); $n++){
+$dataFile = explode("|", $data[$n]);
+if( empty($dataFile[3]) ){
+continue;
+}
+$inPack = $dataFile[3];
+$ftp	= $dataFile[4];
+array_push($extraer, array("file"=>$dataFile[0], "pack"=>$inPack, "ftp"=>$ftp));
+}
+$scripts = UnPack::extract($extraer);
+$user  = S::$_User;
+$i     = (int)eGetMicrotime();
+$cdi   = date('Y-m-d H:i:s', $i);
+for($n=0; $n<count($scripts); $n++){
+$file = $scripts[$n]["file"];
+$data = $scripts[$n]["data"];
+file_put_contents(eScript($file), $data);
+qQuery("insert into {$_ENV['eDesDictionary']}gs_activity (cd_gs_user, cdi, script) values ({$user}, '{$cdi}', '{$file}')");
+}
+$MFile = "/_bak_/update/_update_.{$i}";
+@unlink($MFile);
+$fp = fopen("..{$MFile}", 'w');
+for($n=0; $n<count($scripts); $n++){
+$file = $scripts[$n]["file"];
+$data = $scripts[$n]["data"];
+fwrite($fp, str_pad(mb_strlen($file), 2, '0', STR_PAD_LEFT));
+fwrite($fp, $file);
+if( mb_substr($file, 0, 4)!='[OP]' ){
+fwrite($fp, str_pad(mb_strlen($data), 8, '0', STR_PAD_LEFT));
+fwrite($fp, $data);
+}else{
+fwrite($fp, str_pad(0, 8, '0', STR_PAD_LEFT));
+}
+}
+fclose($fp);
+qQuery("insert into {$_ENV['eDesDictionary']}gs_activity (cd_gs_user, cdi, script) values ({$user}, '{$cdi}', '{$MFile}')");
+$options	 = $_POST["options"];
+$description = "RESTORE: ".$_POST["description"];
+qQuery("insert into {$_ENV['eDesDictionary']}gs_pack (cdi, cd_gs_activity, cd_type, options, description, cd_gs_user) values ('{$cdi}', 0, 'R', '{$options}', '{$description}', {$user})");
+eMessage('Restore Pack. Pending update', 'HS');

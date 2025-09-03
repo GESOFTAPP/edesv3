@@ -1,0 +1,9 @@
+create table gs_color (
+orden int(11),
+cd_gs_color char(7),
+nm_gs_color varchar(25),
+luminosidad decimal(7,3),
+luma decimal(7,3),
+graph char(1),
+graph_ord int(11)
+)

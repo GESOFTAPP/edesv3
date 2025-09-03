@@ -1,0 +1,32 @@
+@media print {
+BODY {
+BACKGROUND: #FFFFFF;
+COLOR: #000000;
+}
+}
+@media screen {
+BODY {
+BACKGROUND: #FFFFFF;
+COLOR: #000099;
+}
+}
+BODY {
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+MARGIN: 30 40 10 40;
+cursor:default;
+BACKGROUND: #FFFFFF;
+}
+BUTTON {
+BORDER: 1 solid #0000CC;
+BACKGROUND: #000099;
+COLOR: #f8f8e3;
+FONT-WEIGHT: bold;
+cursor: hand;
+}
+P {
+text-align: justify;
+}
+TD {
+FONT-SIZE: 14px;
+}

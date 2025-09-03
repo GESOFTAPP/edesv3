@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">Language</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[Language] Idioma1 [,Idioma2,...] | VariablesPublicas | Tron=false<br />  VarLNG  | TextoIdioma1 [ | TextoIdioma2 | ... ] [ ~ Comentario ]<br />  ...</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Esta etiqueta se tienen que definir la primera y se utiliza para tener la aplicación en mas de un idioma. el DF donde se quiera poner el texto "TextoIdioma1" se pondrá "@VarLNG@", las variables tienen el mismo nombre que la primera columna con el caracter "@" antes y despues de la variable.<br />Esta etiqueta se puede definir en un fichero independiente, que se tiene que llamar igual que el escript añadiendo ".lng", si este fichero existe se cargará automáticamente. En los grupos de fichas se definirá en el "gdf"<br />Hay una variable para la extensión del lenguage "@LNG@" y otra para una barra baja y la extensión "@LNGFILE@" de la propiedad SESS::$_LANGUAGE_.<br />y las funciones eLng(), y eLngLoad() <br />y la variable $_Lng[$Cod], $_LngPublic[&#39;@&#39;.$Cod.&#39;@&#39;] <br />Desde el fichero "sql.ini" se puede activar una variable de configuración de [Language] para ver los textos que se han traducido y es "$_LanguageTron" que indicará el caracter de inicio y el final de todos los textos traducidos se suele poner el caracter Alt+126 "~". <br />Para utilizar el traductor "gsTranslater" es aconsejable utilizar la variable "_PROMP", "_PROMP2", "$_PROMP" o "$_PROMP2" para pasar variables de cadena a las funciones o pasar cadenas delimitadas por comillas. <br />Hay unas variables genéricas en  el top que son:<br />_xMESSAGE<br />_xCONFIRM<br />_xWARNING<br />_xERROR<br /><br />_xACCEPT<br />_xYES<br />_xNO<br />_xCANCEL<br /><br /></td>
+</tr>
+<tr style="display: none;">
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr style="display: none;">
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">&nbsp;</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

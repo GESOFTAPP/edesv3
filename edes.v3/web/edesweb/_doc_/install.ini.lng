@@ -1,0 +1,55 @@
+[Language] es,en,fr
+KeyCode|Código de Instalación
+
+Configuración de la instalación|Configuración de la instalación
+Datos generales|Datos generales
+Empresa|Empresa
+Título aplicación|Título aplicación
+SubTítulo aplicación|SubTítulo aplicación
+Dirección web|Dirección web
+
+DDBB|DDBB
+Base de datos|Base de datos
+Añade definición a cada tabla|Añade definición a cada tabla
+Host|Host
+Diccionario|Diccionario
+Usuario|Usuario
+Password|Password
+
+Configura generación|Configura generación
+Tipo de Login|Tipo de Login
+Orden y texto de las opciones|Orden y texto de las opciones
+Listar|Listar
+
+Consultar|Consultar
+Modificar|Modificar
+Insertar|Insertar
+Borrar|Borrar
+Solapas|Solapas
+Vertical|Vertical
+Horizontal|Horizontal
+Azul|Azul
+
+Idioma|Idioma
+Tipo desktop|Tipo desktop
+Color base|Color base
+
+Elementos a generar|Elementos a generar
+Crear DataBase|Crear DataBase
+Crear Tablas|Crear Tablas
+Crear ficheros de Definición|Crear ficheros de Definición
+Crear Arbol de Opciones|Crear Arbol de Opciones
+Borrar Directorios|Borrar Directorios
+
+Generación DF|Generación DF
+Wrap en INPUTEXT|Wrap en INPUTEXT
+Tamaño TEXTAREA|Tamaño TEXTAREA
+
+Lanzador|Lanzador
+Directorio de trabajo local|Directorio de trabajo local
+Titulo del lanzador|Titulo del lanzador
+Nombre del acceso directo|Nombre del acceso directo
+Nombre del grupo de opciones|Nombre del grupo de opciones
+Usuario|Usuario|User
+Password por defecto de la aplicación|Password por defecto de la aplicación
+Password de entrada con la web parada|Password de entrada con la web parada

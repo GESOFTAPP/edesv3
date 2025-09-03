@@ -1,0 +1,14 @@
+<TABLE id=Esquema cellSpacing="1px" cellPadding="2px" width=100%>
+<TBODY>
+<TR><TD id=Etiqueta>
+<TR><TD id=tSintaxis>SINTAXIS
+<TR><TD id=Sintaxis>[]
+<TR><TD id=tDescripcion>DESCRIPCIÓN
+<TR><TD id=Descripcion>
+<TR><TD id=tParametro>PARÁMETROS
+<TR><TD id=Parametro>
+<TR><TD id=tEjemplo>EJEMPLO
+<TR><TD id=Ejemplo>
+<TR><TD id=txt>
+</TBODY>
+</TABLE>

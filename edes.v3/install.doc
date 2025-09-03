@@ -1,0 +1,42 @@
+Proceso para crear una nueva intranet:
+
+1. Desplegar el motor
+	Desplegar el motor "edes.v3" en el directorio base donde se ubicará la aplicación.
+	Desde este directorio se crearán automáticamente las subcarpetas [folderIntranet]/http.
+	Una vez creadas las carpetas, será necesario configurar el acceso HTTP/HTTPS al directorio http, que servirá como directorio base de la intranet.
+
+2. Configuración de credenciales de instalación
+	Edita el archivo "/edes.v3/t/install_key.php" para establecer las credenciales de instalación:
+	Las variables "$loginInstall" y "$passwordInstall" ([a-zA-Z0-9]{10,50}) definen las credenciales necesarias.
+	Por seguridad, estas variables vienen comentadas por defecto. Descoméntalas únicamente durante el proceso de instalación.
+	Asigna los valores personalizados para tu nueva instalación.
+
+3. Ejecución del instalador
+	Colocate en el directorio "/edes.v3/http/" y ejecuta lo siguiente, sustituyendo los valores correspondientes:
+	php install.php [loginInstall]/[passwordInstall]/[folderIntranet]/[httpPort]
+	El dato [httpPort] es opcional, solo cuando es distinto de 80.
+
+4. Archivos generados
+	Al ejecutar el paso anterior, se crearán tres archivos de configuración en la carpeta "/edes.v3/install/", con el prefijo "[folderIntranet]_":
+	- [folderIntranet]_setup.ini: contiene las variables de configuración de la aplicación.
+	- [folderIntranet]_setup.sql: define las estructuras SQL necesarias para la base de datos.
+	- [folderIntranet]_setup.tree: define el árbol de opciones por defecto. No requiere modificaciones manuales.
+
+5. Segunda ejecución del instalador
+	Una vez adaptados los archivos, vuelve a ejecutar el mismo comando de instalación.
+	Este segundo paso puede tardar unos minutos y generará automáticamente un nuevo directorio [folderIntranet] (paralelo a /edes.v3/) con todos los archivos y la base de datos correspondiente.
+
+6. Acceso a la nueva intranet
+	En el fichero "[folderIntranet]_setup.ini" se encuentra las credenciales para entrar a la nueva intranet y las variables "$MasterEMail" y "$DefPassword".
+	Accede a la nueva intranet, con las credenciales definidas durante el proceso de instalación, apuntando al directorio:
+	http://<tu_dominio>/[folderIntranet]/http/edes.php
+	o
+	http://<nuevo_dominio>/edes.php
+
+7. Nada mas entrar te pedirá la clave de Desarrollador que es la misma que la de acceso.
+
+8. Reestablecer seguridad
+	Por seguridad, una vez finalizada la instalación y comprobado el acceso, vuelve a comentar las variables "$loginInstall" y "$passwordInstall" en "/edes.v3/t/install_key.php".
+
+9. Proceso finalizado
+	Tu nueva intranet ya está activa y lista para usar.

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'>
+<table id="Esquema" style="width: 100%;" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr>
+<td id="Etiqueta">eBar</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">eBar( $numeric/$hash )</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Devuelve una barra con un número o tanto por ciendo representando una proporción, es paracedo al elemento "meter".</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro">
+<table id="Opciones" border="0" cellspacing="1px" cellpadding="2px"><colgroup> <col style="font-weight: bold;" /> </colgroup>
+<tbody>
+<tr>
+<td>&nbsp;$number</td>
+<td>Este puede ser positivo o negativo (verde/rojo)</td>
+</tr>
+<tr>
+<td>&nbsp;$hash</td>
+<td>Los posibles valores son:
+<br>- value: valor del dato a representar (obligatorio)
+<br>- total: Valor máximo
+<br>- view: cuando se mandan los valores de "value" y "total" define si se muestra el porcentaje "%" o el valor numérico con "N" y el nº de decimales
+<br>- title: cuando se mandan los valores de "value" y "total" define si en el title se muestra lo contrario a lo mostrado en "view", definiendolo con una "Y" y el nº de decimales
+<br>- width
+<br>- colors: papel[,lapiz[,papel[,borde]. Los colores primero son de la barra que representa al value y los otros al contenedor.
+<br><br>- "view" y "title" se pueden separar los dos datos con cualquier otro (",", " ", etc).
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>Format]</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(30);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30]);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "total"=>200]);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "total"=>200, "view"=>"n,2");</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "total"=>200, "view"=>"%,2"]);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "total"=>200, "view"=>"%,2", "title"=>"y,2"]);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "total"=>200, "view"=>"N,2", "title"=>"y,2"]);</code>
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code></code>$_vF[...] = eBar(["value"=>30, "width"=>400, "colors"=>"papel,lapiz,papel,borde"]);</code>
+</tr>
+<tr style="height: 18px;">
+<td id="txt" style="height: 18px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

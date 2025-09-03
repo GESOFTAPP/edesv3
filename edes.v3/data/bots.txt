@@ -1,0 +1,27 @@
+Anarchie
+ASPSeek
+attach
+autoemailspider
+Xaldon
+Xenu
+Zeus
+Googlebot
+Bingbot
+Yahoo Slurp
+Yandex Bot
+Baiduspider
+DuckDuckBot
+Twitterbot
+Facebookbot
+LinkedInBot
+MJ12bot
+AhrefsBot
+SemrushBot
+DotBot
+Exabot
+Sogou web spider
+SeznamBot
+Applebot
+Naverbot
+BingPreview
+Discordbot

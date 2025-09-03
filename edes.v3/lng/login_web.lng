@@ -1,0 +1,19 @@
+[Language] es,ca,en,fr
+checkBotton|Verificar código||Check code|
+check|Código de Verificación||Verification code|
+cookiesAcept|Lo entiendo||I understand|
+cookies|Política de cookies||Cookies policy|
+db_path|Empresa||Company|
+login|Usuario|Usuari|User|Utilisateur
+password|Contraseña|Contrasenya|Password|Mot de passe
+rememberButton|Pulse aquí||Click here|
+rememberPrefix|¿No puede acceder?||Can not access?|
+rememberTitle|Recordar clave||Remember password|
+submit|Iniciar sesión|Inicia sessió|Log in|Commencer la session
+title1|Iniciar sesión|Inicia sessió|Log in|Commencer la session
+title2|Introduzca su usuario y contraseña|Introduïu el vostre usuari i contrasenya|Enter your username and password|Entrez votre nom d'utilisateur et votre mot de passe
+verifySave|Autentificar dispositivo||Authenticate device|
+waitEmail|Recibirá un email para confirmar el acceso||You will receive an email to confirm access|
+verPassword|Ver clave||View password
+getPutPassword|Obtener/Grabar password||Get/Put password
+waitingForEmail|En espera de confirmación por medio del correo electrónico||Awaiting confirmation via email

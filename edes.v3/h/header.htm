@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" style="height: 136px; width: 100%;" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta" style="height: 17px;">Header</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tSintaxis" style="height: 17px;">SINTAXIS</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Sintaxis" style="height: 17px;">[Header] Definition</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tDescripcion" style="height: 17px;">DESCRIPCION</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Descripcion" style="height: 17px;">Genera la función Header() de PHP.</td>
+</tr>
+<tr style="display: none;">
+<td id="tParametro" style="height: 0px;">PARAMETROS</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Parametro" style="height: 17px;"> </td>
+</tr>
+<tr style="display: none;">
+<td id="tEjemplo" style="height: 0px;">EJEMPLO</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Ejemplo" style="height: 17px;"><code>[Header] Content-Type: text/html; charset=utf-8</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

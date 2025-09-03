@@ -1,0 +1,362 @@
+$fontFamily: font-family: 'Libre Franklin';
+$fBase:    14px
+$fBaseBIG: 18px
+$fBaseTLF: 50px
+$fBaseSmall: 10px
+$fIconTabSmall: 8px;
+$fIconTab:     13px;
+$fIconTabBIG:  12px;
+$fIconWin:     13px;
+$iconSelectRight: {%13}px
+$iconSelectTop: 0px
+$H1:130%
+$H2:113%
+$H3:110%
+$H4:100%
+$H5:90%
+$H6:70%
+$H7:60%
+$zoom90: 0.9
+$fcaption {
+font-size: {$H1};
+font-weight: bold;
+}
+$fheader {
+font-size: {$H2};
+font-weight: bold;
+}
+$fMenuHorizontal {
+font-size: {$H2};
+font-weight: normal;
+}
+$ftext {
+font-size: {$H4};
+font-weight: normal;
+}
+$fdata {
+font-size: {$H4};
+font-weight: normal;
+}
+$foption {
+font-size: {$H5};
+font-weight: normal;
+}
+$fbutton {
+font-size: {$H1};
+font-weight: normal;
+}
+$fSubListHeader {
+font-size: {$H5};
+font-weight: normal;
+}
+$fSubListData {
+font-size: {$H5};
+font-weight: normal;
+}
+$fSubListIcon {
+font-size: {$H6};
+}
+$pDesktop: #123A53
+$cDesktop: #FFFFFF
+$iDesktop: #A9CCE3
+$boxBreadcrumb: #F4F4F4
+$pBreadcrumb: #F8F9F9
+$cBreadcrumb: #555555
+$opBreadcrumb: #2692BA
+$cFavorite: #eaea0d
+$pTree: #123A53
+$iTree: #A9CCE3
+$cTree: #A9CCE3
+$mTree: #A9CCE3
+$pTree2: #154360
+$pTreeCursor: #123A53
+$iTreeCursor: #FFFFFF
+$cTreeCursor: #FFFFFF
+$mTreeCursor: #FFFFFF
+$pTreeClick: {$pTreeCursor-10}
+$pTreeFather: #123A53
+$iTreeFather: #FFFFFF
+$cTreeFather: #FFFFFF
+$pBody: #F4F4F4
+$pWin: #F0F0F0
+$cWin: #000000
+$bWin: {$pWin-10}
+$pSubWin: #FFFFFF
+$cSubWin: #333333
+$pSubWinCaption: #F9F9F9
+$cSubWinCaption: #000000
+$cLine: #DDDDDD
+$pCaption: #F9F9F9
+$cCaption: #555555
+$pText: #FFFFFF
+$cText: #555555
+$cTab: #123A53
+$cRadioCheck: #555555
+$cButton:#FFFFFF
+$pButtonIni:#2692BA
+$pButtonMid:#2692BA
+$pButtonEnd:#2692BA
+$bButton:{$pButtonEnd-10}
+$pButtonOverIni:{$pButtonIni-7}
+$pButtonOverMid:{$pButtonMid-7}
+$pButtonOverEnd:{$pButtonEnd-7}
+$bButtonOver:{$pButtonOverEnd-10}
+$pButtonClickIni:{$pButtonIni-14}
+$pButtonClickMid:{$pButtonMid-14}
+$pButtonClickEnd:{$pButtonEnd-14}
+$bButtonClick:{$pButtonClickEnd-20}
+$cTitle: #555555
+$pCursor: #FEF9E7
+$cCursor: #000000
+$pGreenBar: #F4F6F7
+$cGreenBar: #000000
+$pListTotals: #FDFDE4
+$cListTotals: #000000
+$pEditable: #FFFFFF
+$cEditable: #555555
+$pEditableFocus: #FDFDE4
+$cEditableFocus: #000000
+$pReadOnly: #E1E1E1
+$cReadOnly: #4C4B4B
+$pError: #EB3941
+$cError: #FFFFFF
+$pErrorFocus: #EB3941
+$cErrorFocus: #FFFFFF
+$pSelected: #969696
+$cSelected: #FFFFFF
+$bInput: #C3C3C3
+$bRequired: #993399
+$pItemBox: #E1E1E1
+$cItemBox: #4C4B4B
+$bItemBox: #993399
+$pItemBoxRead: #FEF9E7
+$cItemBoxRead: #C39BD3
+$bItemBoxRead: #CD6155
+$cCheckboxTrue: #58A577
+$cCheckboxFalse: #C70039
+$pInfo: #FBFCFC
+$cInfo: #000000
+$pInfoIni: {$pInfo+10}
+$pInfoMid: {$pInfo-5}
+$pInfoEnd: {$pInfo-10}
+$bInfo: {$pInfoEnd}
+$pInfoOver: {$pInfo-10}
+$cInfoOver: {$cInfo-10}
+$pInfoOverIni: {$pInfoOver+10}
+$pInfoOverMid: {$pInfoOver}
+$pInfoOverEnd: {$pInfoOver-10}
+$bInfoOver: {$pInfoOverEnd}
+$pInfoClick: {$pInfo-20}
+$cInfoClick: {$cInfo-20}
+$pInfoClickIni: {$pInfoClick+20}
+$pInfoClickMid: {$pInfoClick}
+$pInfoClickEnd: {$pInfoClick-20}
+$bInfoClick: {$pInfoClickEnd}
+$pInfoOk: #10681B
+$cInfoOk: #FFFFFF
+$pInfoOkIni: {$pInfoOk+30}
+$pInfoOkEnd: {$pInfoOk-30}
+$bInfoOk: {$pInfoOkEnd}
+$pInfoWarning: #F4BD0E
+$cInfoWarning: #FFFFFF
+$pInfoWarningIni: {$pInfoWarning+30}
+$pInfoWarningEnd: {$pInfoWarning-30}
+$bInfoWarning: {$pInfoWarningEnd}
+$pInfoError: #FF0000
+$cInfoError: #FFFFFF
+$pInfoErrorIni: {$pInfoError+30}
+$pInfoErrorEnd: {$pInfoError-30}
+$bInfoError: {$pInfoErrorEnd}
+$cIcon: #555555
+$cIconClose: #555555
+$cIconCount: #555555
+$cIconDelete: #555555
+$cIconDevelopment: #E648E0
+$cIconHeader: #FFFFFF
+$cIconInsert: #555555
+$bIconLoading: #C3C3C3
+$cIconLoading: #1A667B
+$cIconOption: #1A667B
+$cIconSeek: #555555
+$cIconUpdate: #555555
+$cIconHelp: #555555
+$cIconView: #555555
+$cIconTitle: #1B6B8D
+$cIconWin: #1B6B8D
+$bTab: {$cLine}
+$bTab50: {$pText-50}
+$cTabHeader: {$cCaption}
+$pTabHeader: {$pCaption}
+$pTab: {$pText}
+$cTabText: {$cText}
+$cTabMenuOn: {$cTab}
+$bTabMenuOn: {$cLine}
+$cTabMenuOff: {$cText-10}
+$pTabMenuOff: {$pText-10}
+$bTabMenuOff: {$cLine}
+$cTabMenuOver: {$cCursor}
+$pTabMenuOver: {$pCursor}
+$cSubMenuHeader: {$cSubWinCaption}
+$pSubMenuHeader: {$pSubWinCaption}
+$iSubMenu: {$cIcon}
+$cSubMenu: {$cSubWin}
+$pSubMenu: {$pSubWin}
+$bSubMenu: {$pSubWin-10}
+$cSubMenuCursor: {$cCursor}
+$pSubMenuCursor: {$pCursor}
+$cTitleMain: {$cTitle}
+$cTitleSecondary: {$cTitle}
+$cListCondition: {$cTitle}
+$cTitleBegin: {$cText}
+$cTitleEnd: {$cText}
+$cPagination: {$cText}
+$cListHeader: {$cCaption}
+$pListHeader: {$pCaption}
+$cListData: {$cText}
+$pListData: {$pText}
+$cListTotal: {$cListTotals}
+$pListTotal: {$pListTotals}
+$cListGrid: {$cLine}
+$cListCursor: {$cCursor}
+$pListCursor: {$pCursor}
+$cListGreenbar: {$cGreenBar}
+$pListGreenbar: {$pGreenBar}
+$cListDataFound: {$cCursor}
+$pListDataFound: {$pCursor}
+$cEditList: {$cGreenBar}
+$pEditList: {$pGreenBar}
+$cEditListGreenBar: {$cGreenBar}
+$pEditListGreenBar: {$pGreenBar}
+$cSubListTitle: {$cTitle}
+$bSubList: {$cTitle}
+$cSubListHeader: {$cCaption}
+$pSubListHeader: {$pCaption}
+$cSubListData: {$cText}
+$pSubListData: {$pText}
+$cSubListTotal: {$cListTotal}
+$pSubListTotal: {$pListTotal}
+$cSubListGrid: {$bTab}
+$xGCDegradado: 20,40,60
+$pGC1: #2692BA
+$pGC2: #51A8C8
+$pGC3: #7DBED6
+$pGC4: #A8D4E4
+$cGC1: #06006F
+$cGC2: #06006F
+$cGC3: #06006F
+$cGC4: #06006F
+$xGRDegradado: 20,40,60
+$pGR1: #B3B6B7
+$pGR2: #C2C4C5
+$pGR3: #D1D3D4
+$pGR4: #E1E2E2
+$cGR1: #06006F
+$cGR2: #06006F
+$cGR3: #06006F
+$cGR4: #06006F
+$inputPaddingV:5
+$inputPaddingH:5
+$inputRadius:5
+$shadowWinDef: {%5}px {%5}px {%5}px rgba(0,0,0,0.2)
+$shadowWin{
+box-shadow: {$shadowWinDef};
+-moz-box-shadow: {$shadowWinDef};
+-webkit-box-shadow: {$shadowWinDef};
+}
+$shadowObjDef: {%3}px {%3}px {%5}px rgba(0,0,0,0.2)
+$shadowObj{
+box-shadow: {$shadowObjDef};
+-moz-box-shadow: {$shadowObjDef};
+-webkit-box-shadow: {$shadowObjDef};
+}
+$shadowButtonDef: {%2}px {%2}px {%3}px rgba(0,0,0,0.2)
+$shadowButton{
+box-shadow: {$shadowButtonDef};
+-moz-box-shadow: {$shadowButtonDef};
+-webkit-box-shadow: {$shadowButtonDef};
+}
+$shadowTabDef: 0px 0px 5px 2px rgba(0,0,0,0.2)
+$shadowTab{
+box-shadow: {$shadowTabDef};
+-moz-box-shadow: {$shadowTabDef};
+-webkit-box-shadow: {$shadowTabDef};
+}
+$shadowListDef: 0px 0px 5px 2px rgba(0,0,0,0.2)
+$shadowList{
+box-shadow: {$shadowListDef};
+-moz-box-shadow: {$shadowListDef};
+-webkit-box-shadow: {$shadowListDef};
+}
+$roundedBig {
+-moz-border-radius: {%4}px;
+-webkit-border-radius: {%4}px;
+border-radius: {%4}px;
+}
+$roundedSmall {
+-moz-border-radius: {%5}px;
+-webkit-border-radius: {%5}px;
+border-radius: {%5}px;
+}
+$roundedBigTop {
+-moz-border-radius: {%4}px {%4}px 0px 0px;
+-webkit-border-radius: {%4}px {%4}px 0px 0px;
+border-radius: {%4}px {%4}px 0px 0px;
+}
+[ $FUENTES-NO
+@font-face {
+font-family: 'Roboto_regular';
+font-style: normal;
+font-weight: 400;
+font-display:fallback;
+src: url('../fonts/roboto-v15-latin-regular.eot');
+src: local('Roboto'), local('Roboto-Regular'),
+url('../fonts/roboto-v15-latin-regular.eot?#iefix') format('embedded-opentype'),
+url('../fonts/roboto-v15-latin-regular.woff') format('woff'),
+url('../fonts/roboto-v15-latin-regular.ttf') format('truetype'),
+url('../fonts/roboto-v15-latin-regular.svg#Roboto') format('svg'),
+url('../fonts/roboto-v15-latin-regular.woff2') format('woff2');
+}
+@font-face {
+font-family: 'Roboto_700';
+font-style: normal;
+font-weight: 700;
+font-display:fallback;
+src: url('../fonts/roboto-v15-latin-700.eot');
+src: local('Roboto Bold'), local('Roboto-Bold'),
+url('../fonts/roboto-v15-latin-700.eot?#iefix') format('embedded-opentype'),
+url('../fonts/roboto-v15-latin-700.woff') format('woff'),
+url('../fonts/roboto-v15-latin-700.ttf') format('truetype'),
+url('../fonts/roboto-v15-latin-700.svg#Roboto') format('svg'),
+url('../fonts/roboto-v15-latin-700.woff2') format('woff2');
+}
+]
+[ $FUENTES
+@font-face {
+font-family: 'Libre Franklin';
+font-style:  normal;
+font-weight: 400;
+font-display:fallback;
+src: local('Libre Franklin'), local('LibreFranklin-Regular'),
+url('../fonts/libre-franklin-v4-latin-regular.woff2') format('woff2'),
+url('../fonts/libre-franklin-v4-latin-regular.woff') format('woff'),
+url('../fonts/libre-franklin-v4-latin-regular.ttf') format('truetype'),
+url('../fonts/libre-franklin-v4-latin-regular.svg#LibreFranklin') format('svg'),
+url('../fonts/libre-franklin-v4-latin-regular.eot'),
+url('../fonts/libre-franklin-v4-latin-regular.eot?#iefix') format('embedded-opentype');
+}
+@font-face {
+font-family: 'Libre Franklin';
+font-style:  normal;
+font-weight: 700;
+font-display:fallback;
+src: local('Libre Franklin Bold'), local('LibreFranklin-Bold'),
+url('../fonts/libre-franklin-v4-latin-700.woff2') format('woff2'),
+url('../fonts/libre-franklin-v4-latin-700.woff') format('woff'),
+url('../fonts/libre-franklin-v4-latin-700.ttf') format('truetype'),
+url('../fonts/libre-franklin-v4-latin-700.svg#LibreFranklin') format('svg'),
+url('../fonts/libre-franklin-v4-latin-700.eot'),
+url('../fonts/libre-franklin-v4-latin-700.eot?#iefix') format('embedded-opentype');
+}
+]
+[ $CSSADD
+]

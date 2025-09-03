@@ -1,0 +1,119 @@
+BODY {
+BACKGROUND: #ffffff;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 10px;
+MARGIN: 15px 0px 0px;
+SCROLLBAR-ARROW-COLOR: #000000;
+SCROLLBAR-BASE-COLOR: #bbbbbb;
+}
+TH {
+BACKGROUND: #cccccc;
+}
+TD {
+CURSOR: hand;
+WHITE-SPACE: nowrap;
+}
+H2 {
+COLOR: #000000;
+FONT-SIZE: 140%;
+FONT-WEIGHT: bold;
+}
+TABLE {
+BACKGROUND: #dddddd;
+FONT-SIZE: 100%;
+}
+.Flotante {
+BACKGROUND: #336600;
+}
+TR {
+BACKGROUND: #ffffff;
+COLOR: #332211;
+}
+#BROWSE {
+BORDER-BOTTOM: #888888 1px solid;
+BORDER-LEFT: #888888 1px solid;
+BORDER-RIGHT: #888888 1px solid;
+BORDER-TOP: #888888 1px solid;
+}
+#CursorOVER {
+BACKGROUND: #99bb88;
+COLOR: #000000;
+}
+#P {
+BACKGROUND: #eeeeee;
+COLOR: #000000;
+}
+#MasInfo {
+BACKGROUND: #008800;
+BORDER-BOTTOM: #00cc00 2px outset;
+BORDER-LEFT: #00cc00 2px outset;
+BORDER-RIGHT: #00cc00 2px outset;
+BORDER-TOP: #00cc00 2px outset;
+COLOR: #ffff00;
+DISPLAY: none;
+LEFT: 0px;
+PADDING-BOTTOM: 5px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+PADDING-TOP: 5px;
+POSITION: absolute;
+TOP: 0px;
+}
+#MasInfo CENTER {
+BACKGROUND: #00bb00;
+}
+.PieLista {
+BACKGROUND: #eeeeee;
+COLOR: #662200;
+}
+INPUT {
+FONT-SIZE: 100%;
+}
+SELECT {
+FONT-SIZE: 100%;
+}
+TEXTAREA {
+FONT-SIZE: 100%;
+}
+radio {
+FONT-SIZE: 100%;
+}
+checkbox {
+FONT-SIZE: 100%;
+}
+#CngRESPUESTA {
+BACKGROUND: #aacc99;
+BORDER-BOTTOM: #668866 3px solid;
+BORDER-LEFT: #bbddaa 2px solid;
+BORDER-RIGHT: #668866 3px solid;
+BORDER-TOP: #bbddaa 2px solid;
+COLOR: #336600;
+FONT-SIZE: 130%;
+FONT-WEIGHT: bold;
+PADDING-BOTTOM: 15px;
+PADDING-LEFT: 30px;
+PADDING-RIGHT: 30px;
+PADDING-TOP: 15px;
+}
+#MensaError {
+BACKGROUND: #ff0000;
+BORDER-BOTTOM: #aa2200 3px solid;
+BORDER-LEFT: #ff7755 2px solid;
+BORDER-RIGHT: #aa2200 3px solid;
+BORDER-TOP: #ff7755 2px solid;
+COLOR: #ffffcc;
+FONT-SIZE: 130%;
+FONT-WEIGHT: bold;
+PADDING-BOTTOM: 15px;
+PADDING-LEFT: 30px;
+PADDING-RIGHT: 30px;
+PADDING-TOP: 15px;
+}
+#sT {
+BACKGROUND: #ffffff;
+COLOR: #6a4325;
+FONT-SIZE: 100%;
+}
+.Titulo2 {
+COLOR: #669900;
+}

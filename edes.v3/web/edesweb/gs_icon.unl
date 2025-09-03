@@ -1,0 +1,340 @@
+28|Spider|&#28;||2020-12-12 06:58:42|,P,|S|S||
+29|Columnas a visualizar|&#29;||2020-12-11 13:22:12|,L,||S||
+30|-|&#30;||2020-12-12 06:50:15||S|S||
+33|Flecha abajo|!|CreaciÃ³n de Chart, siguiente pÃ¡gina de un tab|2020-12-11 18:31:39|,C,||S||
+34|Fullscreen|&quot;||2020-12-11 18:40:17||S|S||
+35|AÃ±o anterior|#||2020-12-11 18:40:42|,F,||S||
+36|Siguiente aÃ±o|$||2020-12-11 18:41:33|,F,||S||
+37|Ir al principio|%|Primera pÃ¡gina del listado|2020-12-11 18:41:51|,L,|S|S||
+38|Ir al final|&|Ãšltima pÃ¡gina del listado|2020-12-11 18:42:15|,L,|S|S||
+39|MenÃº|&#39;|Icono dentro de un botÃ³n|2020-12-11 18:58:58|,L,||S||
+40|OpciÃ³n de paginar|(|Listado: OpciÃ³n de Paginar{&#13;}{&#10;}Programador: Primer plano|2020-12-11 18:59:16|,P,L,||S||
+41|Pausa|)||2020-12-11 18:59:30||S|S||
+42|Grabar|*||2020-12-11 18:59:48|,C,I,E,||S||
+43|-|&#43;||2020-12-11 18:59:55||S|S||
+44|Calendario|,|Ayuda de calendario: Fechas y Periodos|2020-12-11 19:00:17|,F,||S||
+45|Calendario|-||2020-12-11 19:06:53||S|S||
+46|Cerrar|.|Icono para cerrar el calendario|2020-12-11 19:07:38|,F,||S||
+47|Anclar|/|Ancla la ventana de informaciÃ³n arriba a la derecha|2020-12-11 19:07:50|,P,||S||
+48|MenÃº|0||2020-12-11 19:07:58|,V,L,||S||
+49|Imprimir|1||2020-12-11 19:08:50|,V,L,||S||
+50|Minimizar|2||2020-12-11 19:10:13|,V,||S||
+51|Maximizar|3||2020-12-11 19:20:01|,V,||S||
+52|TamaÃ±o ventana original|4|DespuÃ©s de haber maximizado|2020-12-11 19:20:16|,V,||S||
+53|Cerrar|5|Ventanas{&#13;}{&#10;}SubVentanas varias|2020-12-11 19:22:49|,V,||S||
+54|Redimensionar ventana|6||2020-12-11 19:23:58|,V,||S||
+55|-|&#55;||2020-12-11 19:26:06|,V,|S|S||
+56|Imprimir|8||2020-12-11 19:26:42|,E,||S||
+57|Contar|9||2020-12-11 19:28:31||S|S||
+58|Maximizar pantalla|:||2020-12-11 19:34:40|,D,||S||
+59|Restaurar pantalla|;||2020-12-11 19:35:07|,D,||S||
+60|PÃ¡gina anterior|<|Listado: PÃ¡gina anterior{&#13;}{&#10;}Programador: Indentar opciÃ³n a la izquierda|2020-12-11 19:36:07|,L,P,||S||
+61|MenÃº|=||2020-12-11 19:37:28|,F,L,C,||S||
+62|Siguiente PÃ¡gina|>|Listado: PÃ¡gina anterior{&#13;}{&#10;}Programador: Indentar opciÃ³n a la derecha|2020-12-11 19:37:46|,L,P,||S||
+63|Ayuda|?||2020-12-11 19:38:02|,G,||S||
+64|Ayuda|@||2020-12-11 19:38:15|,G,||S||
+65|La acciÃ³n se ejecutarÃ¡ en la ventana actual|A||2020-12-11 19:38:36|,L,||S||
+66|MenÃº|B||2020-12-11 19:39:28|,F,||S||
+67|Copy|C||2020-12-11 19:39:43|,F,P,||S||
+68|Borrar|D||2020-12-11 19:39:55|,F,G,L,P,||S||
+69|Ejecutar en una subventana|E||2020-12-11 19:40:15|,L,||S||
+70|Regresar al listado|F|Ficha: Regresar al listado{&#13;}{&#10;}Listado: Ver Documento|2020-12-11 19:40:29|,F,L,||S||
+71|Carpeta|G||2020-12-11 19:40:36||S|S||
+72|Carpeta abierta|H||2020-12-11 19:40:51||S|S||
+73|AÃ±adir|I|En las sublistas ejecuta una nueva ventana de alta|2020-12-11 19:41:07|,F,L,G,||S||
+74|Contar|J||2020-12-11 19:42:17|,F,||S||
+75|Contar|K||2020-12-11 19:42:30||S|S||
+76|Abajo|L|En un menÃº indica carpeta abierta|2020-12-11 19:42:40|,G,||S||
+77|Derecha|M|En un menÃº indica que es una carpeta cerrada|2020-12-11 19:45:02|,G,||S||
+78|MenÃº|N||2020-12-11 19:45:08||S|S||
+79|Arriba|O||2020-12-11 19:45:24||S|S||
+80|Paste|P||2020-12-11 19:45:32|,F,P,||S||
+81|Abajo|Q||2020-12-11 19:45:56||S|S||
+82|Cerrar|R|Cierra ventana en el icono del submit|2020-12-11 19:46:18|,F,||S||
+83|Buscar|S|Buscar cadena en el listado|2020-12-11 19:46:54|,L,F,||S||
+84|Herramientas|T||2020-12-11 19:47:04||S|S||
+85|Modificar|U||2020-12-11 19:47:13|,L,G,F,||S||
+86|Visualizar|V||2020-12-11 19:47:22|,F,G,L,||S||
+87|Ventanas minimizadas|W|Icono en el desktop que indicas si tienes una o varias ventanas minimizadas|2020-12-11 19:47:32|,D,||S||
+88|Ventana|X||2020-12-11 19:47:43||S|S||
+89|Tarjetas|Y|Convierte el listado en Tarjetas|2020-12-11 19:47:51|,L,||S||
+90|Estrella|Z|Tipo de pregunta en una encuesta|2020-12-11 19:48:12|,E,||S||
+91|Tipo de grÃ¡fico|[||2020-12-11 19:48:43|,P,||S||
+92|Tipo de grÃ¡fico|&#92;||2020-12-11 19:49:11|,P,||S||
+93|Tipo de grÃ¡fico|]||2020-12-11 19:49:17|,P,||S||
+94|Tipo de grÃ¡fico|^||2020-12-11 19:49:25|,P,||S||
+95|Tipo de grÃ¡fico|_||2020-12-11 19:49:31|,P,||S||
+96|Tipo de grÃ¡fico|&#96;||2020-12-11 19:49:37|,E,||S||
+97|-|a||2020-12-11 19:49:50||S|S||
+98|Documento|b||2020-12-11 19:49:57|,F,L,G,||S||
+99|Carpeta cerrada|c|SelectTree|2020-12-11 19:50:06|,F,||S||
+100|Carpeta abierta|d|SelectTree|2020-12-11 19:50:12|,F,||S||
+101|Explorador|e|Acceso a la pagina web indicada (251)|2020-12-11 19:50:23||S|S||
+102|Filtrar|f|En la Ficha: Filtra un campo con mÃºltiples datos{&#13;}{&#10;}En el Listado: Ver las condiciones del listado|2020-12-11 19:51:03|,F,L,||S||
+103|Valor por defecto asignado|g||2020-12-11 19:51:57|,F,||S||
+104|Valor por defecto sin asignar|h||2020-12-11 19:52:24|,F,||S||
+105|Checkbox OFF|i||2020-12-11 19:52:48|,L,||S||
+106|Checkbox ON|j||2020-12-11 19:53:16|,L,||S||
+107|Checkbox OFF|k||2020-12-11 19:54:13||S|S||
+108|Checkbox ON|&#108;||2020-12-11 19:54:47||S|S||
+109|EMail|m||2020-12-11 19:55:15||S|S||
+110|EMail|n||2020-12-11 19:55:22|,F,||S||
+111|Grabar|o||2020-12-11 19:55:30||S|S||
+112|Borrar|p||2020-12-11 19:55:39||S|S||
+113|Usuario|q||2020-12-11 19:55:48|,P,C,||S||
+114|Calculando|r||2020-12-11 19:55:55|,D,||S||
+115|Aumentar/Disminuir valor|s|Puede ser un valor numÃ©rico o de periodo|2020-12-11 19:56:13|,F,||S||
+116|SÃ­mbolo que indica un campo desplegable|&#116;|Se utiliza una imagen|2020-12-11 19:57:05|,F,|S|S||
+117|Usuario|u||2020-12-11 19:57:44|,P,|S|S||
+118|Descargar fichero del servidor|v||2020-12-11 19:57:53|,F,||S||
+119|Subir fichero al servidor|w||2020-12-11 19:58:07|,F,||S||
+120|Cerrar aplicaciÃ³n|x||2020-12-11 19:58:33|,D,||S||
+121|Ver contenido de un campo clave|y|Ficha: Ver el contenido de un campo clave{&#13;}{&#10;}Programador: Muestra un iframe|2020-12-11 19:58:43|,F,P,||S||
+122|Oculta contenido de un campo clave|z|Ficha: Ocultar el contenido de un campo clave{&#13;}{&#10;}Programador: Ocultar un iframe|2020-12-11 19:59:33|,F,P,||S||
+123|Visualizar|{||2020-12-11 20:00:29|,I,||S||
+124|Siguiente impreso|{&#124;}||2020-12-11 20:00:41|,I,||S||
+125|MenÃº|}|Listado: MenÃº de utilidades{&#13;}{&#10;}Encuesta: MenÃº|2020-12-11 20:01:23|,E,L,||S||
+126|Icono para arrastrar un submenÃº|~||2020-12-11 20:01:33|,P,||S||
+160|CÃ³digo de barras|&#160;||2020-12-11 18:30:03|,F,||S||
+161|Arriba|&#161;|CreaciÃ³n de Chart, pÃ¡gina anterior de un tab|2020-12-11 20:02:16|,C,||S||
+162|InformaciÃ³n|&#162;||2020-12-11 20:03:04|,G,||S||
+163|Facebook|&#163;|Acceder a Facebook|2020-12-11 20:03:15|,F,||S||
+164|Twitter|&#164;|Acceso a Twitter|2020-12-11 20:04:46|,F,||S||
+165|Instagram|&#165;|Acceso a Instagram|2020-12-11 20:05:25|,F,||S||
+166|Video|&#166;||2020-12-11 20:06:12||S|S||
+167|posiciÃ³n geogrÃ¡fica|&#167;||2020-12-11 20:06:23|,G,||S||
+168|Red social de Google|&#168;|Acceso a la red social de Google|2020-12-11 20:06:38||S|S||
+169|Carpeta cerrada|&#169;||2020-12-11 20:07:54|,G,||S||
+170|Carpeta abierta|&#170;||2020-12-11 20:08:08|,G,||S||
+171|Carpeta abierta|&#171;||2020-12-11 20:08:18||S|S||
+172|Procesando|&#172;|HistÃ³rico de modificaciones de ficheros{&#13;}{&#10;}HistÃ³rico de movimientos|2020-12-11 20:08:29|,F,||S||
+174|Procesando|&#174;|Calendario de meses, Seleccionar aÃ±o y mes|2020-12-11 20:08:41|,F,||S||
+175|Subir o submenÃº|&#175;||2020-12-11 20:09:42||S|S||
+176|Icono eDes 1/2|&#176;||2020-12-11 13:12:57|,D,||S||
+177|Icono eDes 2/2|&#177;||2020-12-11 13:13:33|,D,||S||
+178|PÃ¡gina anterior|&#178;|Listado: PÃ¡gina anterior de SubList{&#13;}{&#10;}AcciÃ³n de exportar|2020-12-11 20:46:04|,L,F,||S||
+179|PÃ¡gina siguiente|&#179;|En SubList|2020-12-11 20:46:21|,L,||S||
+180|Negrita|&#180;|Uso futuro|2020-12-11 20:46:29|,W,|S|S||
+181|ItÃ¡lica|&#181;|Uso futuro|2020-12-11 20:47:31|,W,|S|S||
+182|Subrayado|&#182;|Uso futuro|2020-12-11 20:47:40|,W,|S|S||
+183|Borrar|&#183;|Editor:{&#13;}{&#10;}Ficha: Los datos de un formulario de bÃºsqueda{&#13;}{&#10;}Programador: Desmarca las opciones encontradas{&#13;}{&#10;}Varios|2020-12-11 20:48:02|,F,W,P,||S||
+184|Color del lapiz|&#184;||2020-12-11 20:48:35|,W,E,||S||
+185|Color del papel|&#185;||2020-12-11 20:49:02|,W,E,||S||
+186|-|&#186;||2020-12-11 20:49:20||S|S||
+187|Resumen|&#187;|Visualiza el informe en formato resumen|2020-12-11 20:49:46|,L,||S||
+188|-|&#188;||2020-12-11 20:49:53||S|S||
+189|Justificar a la izquierda|&#189;|Futuro uso|2020-12-11 20:50:02|,W,|S|S||
+190|Alinear en el centro|&#190;|Futuro uso|2020-12-11 20:50:21|,W,|S|S||
+191|Justificar pÃ¡rrafo|&#191;|Futuro uso|2020-12-11 20:50:55|,W,|S|S||
+192|Indentar a la izquierda|&#192;|Futuro uso|2020-12-11 20:51:12|,W,|S|S||
+193|Indentar a la derecha|&#193;|Futuro uso|2020-12-11 20:52:35|,W,|S|S||
+194|Lista ordenada|&#194;|Futuro uso|2020-12-11 20:52:56|,W,|S|S||
+195|Lista no ordenada|&#195;|Futuro uso|2020-12-11 20:53:09|,W,|S|S||
+196|Cerrar|&#196;|En un SelectBox elimina una opciÃ³n|2020-12-11 20:53:34|,F,||S||
+197|Grabar opciones|&#197;||2020-12-11 20:53:41|,P,||S||
+198|Dialogo|&#198;|Chat: Ver respuestas{&#13;}{&#10;}Ficha: Ver etiquetas|2020-12-11 20:54:30|,C,F,||S||
+199|Tipo mensaje|&#199;||2020-12-11 20:54:47|,C,||S||
+200|Preguntas/Respuestas|&#200;|Preguntas{&#13;}{&#10;}Importar respuestas|2020-12-11 20:55:03|,C,||S||
+201|-|&#201;||2020-12-11 20:56:00|,C,|S|S||
+202|PDF|&#202;|Exportar a PDF|2020-12-11 20:56:11|,T,L,||S||
+203|Excel|&#203;|Exportar a XLS|2020-12-11 20:56:58|,T,L,||S||
+204|Word|&#204;||2020-12-11 20:57:12|,T,||S||
+205|Imagen/Foto|&#205;|Editar la imagen|2020-12-11 20:57:20|,F,||S||
+206|Imagen|&#206;||2020-12-11 20:57:49|,T,||S||
+207|Zoom reduciendo|&#207;||2020-12-11 20:58:04|,I,||S||
+208|Zoom ampliando|&#208;||2020-12-11 20:58:43|,I,||S||
+209|Home|&#209;||2020-12-11 20:58:55|,G,||S||
+210|Editar|&#210;||2020-12-11 20:59:03||S|S||
+211|Enviar comando|&#211;||2020-12-11 21:00:07|,P,||S||
+212|Wifi|&#212;||2020-12-11 21:00:20||S|S||
+213|Imagen/Foto|&#213;||2020-12-11 21:00:45||S|S||
+214|Alerta/Aviso|&#214;||2020-12-11 21:00:55|,C,||S||
+215|-|&#215;||2020-12-11 21:01:02||S|S||
+216|Explorador completo|&#216;||2020-12-11 21:01:10||S|S||
+217|Explorador restaurar|&#217;||2020-12-11 21:01:32||S|S||
+218|Mover OpciÃ³n|&#218;||2020-12-11 21:01:44|,P,||S||
+219|MenÃº|&#219;||2020-12-11 21:02:01|,G,||S||
+220|Documento|&#220;||2020-12-11 21:02:08||S|S||
+221|Documento|&#221;|Resultado en ventana actual|2020-12-11 21:02:16|,F,||S||
+222|Ãšltimos registros|&#222;||2020-12-11 21:02:24|,L,||S||
+223|Archivador|&#223;||2020-12-11 21:02:32||S|S||
+224|Documento|&#224;||2020-12-11 21:02:41||S|S||
+225|Valor asignado|&#225;||2020-12-11 21:02:51||S|S||
+226|Datos sin asignar por defecto|&#226;||2020-12-11 21:03:16||S|S||
+227|BÃºsqueda con SubListado|&#227;||2020-12-11 21:03:50|,F,||S||
+228|Audio|&#228;||2020-12-11 21:04:01|,T,||S||
+229|Video|&#229;||2020-12-11 21:04:17|,T,||S||
+230|Ejecutar|&#230;||2020-12-11 21:04:31|,P,I,||S||
+231|Buscar|&#231;||2020-12-11 21:04:46||S|S||
+232|MenÃº|&#232;||2020-12-11 21:04:54||S|S||
+233|Arriba o cerrar subopciones|&#233;||2020-12-11 21:05:02||S|S||
+234|Documento|&#234;||2020-12-11 21:05:34|,T,||S||
+235|Usuarios|&#235;||2020-12-11 21:05:42||S|S||
+236|Usuario|&#236;||2020-12-11 21:05:51||S|S||
+237|Imagen/Foto|&#237;||2020-12-11 21:05:59||S|S||
+238|Audio|&#238;||2020-12-11 21:06:12||S|S||
+239|Video|&#239;||2020-12-11 21:06:31||S|S||
+240|Enviar Fichero|&#240;||2020-12-11 21:06:42|,C,||S||
+241|Usuarios|&#241;|En varios sitios|2020-12-11 21:17:15|,G,||S||
+242|Reloj|&#242;||2020-12-11 21:17:22|,C,||S||
+243|Calendario|&#243;||2020-12-11 21:17:43||S|S||
+244|Calendario|&#244;||2020-12-11 21:19:22||S|S||
+245|Euro|&#245;||2020-12-11 21:19:42||S|S||
+246|Video|&#246;||2020-12-11 21:19:51|,T,||S||
+247|TelÃ©fono|&#247;||2020-12-11 21:20:15||S|S||
+248|Grabar|&#248;||2020-12-11 21:20:30||S|S||
+249|Ordenador|&#249;||2020-12-11 21:21:13||S|S||
+250|Key/Clave|&#250;||2020-12-11 21:21:33|,F,||S||
+251|Web|&#251;|Acceso al explorador|2020-12-11 21:21:42|,F,||S||
+252|Ordenar Ascendente|&#252;||2020-12-11 21:22:22||S|S||
+253|Ordenar Descendente|&#253;||2020-12-11 21:23:15||S|S||
+254|GrÃ¡fica|&#254;||2020-12-11 21:23:30||S|S||
+255|GrÃ¡fica|&#255;||2020-12-11 21:23:55||S|S||
+256|GrÃ¡fica|&#256;||2020-12-11 21:47:37||S|S||
+257|GrÃ¡fica|&#257;||2020-12-11 21:47:49||S|S||
+258|Ayuda|&#258;||2020-12-11 21:47:56||S|S||
+259|-|&#259;||2020-12-11 21:48:06||S|S||
+260|Setup|&#260;|Chat: Configurar mensaje{&#13;}{&#10;}Encuesta: CampaÃ±a|2020-12-11 21:48:12|,C,E,||S||
+261|-|&#261;||2020-12-11 21:48:23||S|S||
+262|-|&#262;||2020-12-11 21:48:32||S|S||
+263|-|&#263;||2020-12-11 21:48:46||S|S||
+264|-|&#264;||2020-12-11 21:48:55||S|S||
+265|-|&#265;||2020-12-11 21:49:01||S|S||
+266|-|&#266;||2020-12-11 21:49:07||S|S||
+267|-|&#267;||2020-12-11 21:49:12||S|S||
+268|-|&#268;||2020-12-11 21:49:44||S|S||
+269|EMail|&#269;||2020-12-11 21:49:51||S|S||
+270|Ediar|&#270;||2020-12-11 21:49:58||S|S||
+271|Documento|&#271;||2020-12-11 21:50:06||S|S||
+272|Gestionar Ã¡rboles|&#272;||2020-12-11 21:50:14|,P,||S||
+273|Arbol|&#273;||2020-12-11 21:50:30||S|S||
+274|Redo|&#274;|Girar a la derecha una imagen|2020-12-11 21:50:38|,I,||S||
+275|Undo|&#275;|Girar a la izquierda una imagen{&#13;}{&#10;}Recuperar registro borrado{&#13;}{&#10;}Undo: Editor de mapa de imagen, zonas calientes de la imagen|2020-12-11 21:50:48|,W,F,E,||S||
+276|-|&#276;||2020-12-11 21:50:55||S|S||
+277|-|&#277;||2020-12-11 21:51:00||S|S||
+278|Filtrar Datos|&#278;||2020-12-11 21:51:08|,L,|S|S||
+279|Empresa|&#279;||2020-12-11 21:51:21||S|S||
+280|Alinear a la derecha|&#280;||2020-12-11 21:51:31|,W,|S|S||
+281|Editar|&#281;|Editar PDF|2020-12-11 21:51:47|,I,||S||
+282|Cortar|&#282;||2020-12-11 21:52:17|,I,||S||
+283|Candado|&#283;||2020-12-11 21:52:31||S|S||
+284|Candado|&#284;||2020-12-11 21:52:42||S|S||
+285|Texto tachado|&#285;||2020-12-11 21:52:50|,W,|S|S||
+286|-|&#286;||2020-12-11 21:53:06||S|S||
+287|Calendario|&#287;||2020-12-11 21:53:14||S|S||
+288|-|&#288;||2020-12-11 21:53:23||S|S||
+289|Subrrayado|&#289;||2020-12-11 21:53:30|,W,|S|S||
+290|-Falta por generar-|&#290;||2020-12-11 21:53:44||S|S||
+291|-|&#291;||2020-12-11 21:57:54||S|S||
+292|YouTube|&#292;||2020-12-11 21:58:00||S|S||
+293|Bold|&#293;||2020-12-11 21:58:32|,W,|S|S||
+294|Ordenar manualmente|&#294;||2020-12-11 21:58:47|,L,||S||
+295|Texto Tachado|&#295;||2020-12-11 21:59:05||S|S||
+296|YouTube|&#296;||2020-12-11 21:59:22||S|S||
+297|Color texto|&#297;||2020-12-11 21:59:41||S|S||
+298|Imagen|&#298;||2020-12-11 21:59:57|,I,||S||
+299|Color|&#299;||2020-12-11 22:00:05||S|S||
+300|Nivel Inferior|&#300;||2020-12-11 22:00:13|,P,||S||
+301|Nivel Superior|&#301;||2020-12-11 22:00:20|,P,||S||
+302|Movil|&#302;||2020-12-11 22:00:27||S|S||
+303|Movil|&#303;||2020-12-11 22:00:36||S|S||
+304|WhatsApp|&#304;||2020-12-11 22:00:48||S|S||
+305|TelÃ©fono|&#305;||2020-12-11 22:01:04||S|S||
+306|MenÃº|&#306;||2020-12-11 22:01:15|,G,||S||
+307|TelÃ©fono|&#307;||2020-12-11 22:01:26||S|S||
+308|TelÃ©fono|&#308;||2020-12-11 22:01:36|,F,||S||
+309|TelÃ©fono|&#309;||2020-12-11 22:01:51|,F,|S|S||
+310|Linea vertical|&#310;||2020-12-11 22:02:07|,I,||S||
+311|Linea Horizontal|&#311;||2020-12-11 22:02:13|,I,||S||
+312|Linea Oblicua|&#312;||2020-12-11 22:02:18|,I,||S||
+313|Padding de celdas|&#313;||2020-12-11 22:02:22|,L,||S||
+314|Texto Horizontal|&#314;||2020-12-11 22:02:48|,I,||S||
+315|-|&#315;||2020-12-11 22:04:28||S|S||
+316|RectÃ¡ngulo|&#316;||2020-12-11 22:04:33|,I,||S||
+317|CÃ­rculo|&#317;||2020-12-11 22:04:39|,I,||S||
+318|Seleccionar|&#318;|Editor de documentos|2020-12-11 22:04:44||S|S||
+319|Rejilla|&#319;||2020-12-11 22:05:06|,I,||S||
+320|Checkbox|&#320;||2020-12-11 22:05:31|,P,||S||
+321|Checkbox|&#321;||2020-12-11 22:05:46|,P,||S||
+322|-|&#322;||2020-12-11 22:05:57||S|S||
+323|-|&#323;||2020-12-11 22:06:03||S|S||
+324|-|&#324;||2020-12-11 22:06:10||S|S||
+325|-|&#325;||2020-12-11 22:06:15||S|S||
+326|-|&#326;||2020-12-11 22:06:20||S|S||
+327|-|&#327;||2020-12-11 22:06:25||S|S||
+328|-|&#328;||2020-12-11 22:06:32||S|S||
+329|Carpeta cerrada|&#329;|En Select tipo tree|2020-12-11 22:07:20||S|S||
+330|Carpeta abierta|&#330;|En Select tipo Tree|2020-12-11 22:07:50||S|S||
+331|-|&#331;||2020-12-11 22:08:26||S|S||
+332|-|&#332;||2020-12-11 22:08:33||S|S||
+333|Seleccionar grupo de opciones|&#333;||2020-12-11 22:12:58|,P,||S||
+334|Borrar|&#334;||2020-12-11 22:13:05|,E,||S||
+335|Grabar|&#335;||2020-12-11 22:28:36|,E,||S||
+336|Imprimir|&#336;||2020-12-11 22:28:43|,E,||S||
+337|Gestor de imÃ¡genes|&#337;||2020-12-11 22:28:57|,I,||S||
+338|Imagen|&#338;||2020-12-11 22:29:08||S|S||
+339|Modificar|&#339;||2020-12-11 22:29:18|,E,||S||
+340|Mover|&#340;||2020-12-11 22:29:36|,I,||S||
+341|Texto vertical|&#341;||2020-12-11 22:30:46|,I,||S||
+342|Juntar rectas|&#342;||2020-12-11 22:30:55|,I,||S||
+343|Emoticonos|&#343;||2020-12-11 22:31:01|,C,||S||
+344|-|&#344;||2020-12-11 22:31:07||S|S||
+345|Zip|&#345;||2020-12-11 22:31:12|,T,L,||S||
+346|Listado|&#346;||2020-12-11 22:31:19||S|S||
+347|Enviar enlace|&#347;||2020-12-11 22:31:27|,C,||S||
+348|-|&#348;||2020-12-11 22:31:34||S|S||
+349|-|&#349;||2020-12-11 22:31:39||S|S||
+350|-|&#350;||2020-12-11 22:31:59||S|S||
+360|NotificaciÃ³n|&#360;||2020-12-11 22:32:21|,C,||S||
+361|Listado|&#361;||2020-12-11 22:32:52|,L,||S||
+362|Buscar|&#362;||2020-12-11 22:33:00||S|S||
+363|CÃ³digo de barras QR|&#363;||2020-12-11 22:33:08|,F,||S||
+364|Cerrar SubmenÃº|&#364;||2020-12-11 22:34:05|,D,G,||S||
+365|Abrir SubmenÃº|&#365;||2020-12-11 22:34:11|,G,D,||S||
+366|-|&#366;||2020-12-11 22:34:15||S|S||
+367|Agrupar opciones|&#367;||2020-12-11 22:34:21|,P,||S||
+368|Marcar opciones sin &quot;Mode&quot;|&#368;||2020-12-11 22:34:26|,P,||S||
+369|OpciÃ³n en Ã¡rboles|&#369;||2020-12-11 22:34:30|,P,||S||
+370|Opciones sin Ã¡rbol|&#370;||2020-12-11 22:34:35|,P,||S||
+371|-|&#371;||2020-12-11 22:34:39||S|S||
+372|Ver 1 nivel|&#372;||2020-12-11 22:34:58|,P,||S||
+373|Ver 2 niveles|&#373;||2020-12-11 22:35:07|,P,||S||
+374|Ver todos los niveles|&#374;||2020-12-11 22:35:13|,P,||S||
+375|-|&#375;||2020-12-11 22:35:26||S|S||
+376|MenÃº|&#376;|Opciones del usuario{&#13;}{&#10;}Utilidades del sistema|2020-12-11 22:35:32|,L,||S||
+377|-|&#377;||2020-12-11 22:35:47||S|S||
+378|-|&#378;||2020-12-11 22:35:52||S|S||
+379|-|&#379;||2020-12-11 22:35:57||S|S||
+380|-|&#380;||2020-12-11 22:36:01||S|S||
+381|-|&#381;||2020-12-11 22:36:06||S|S||
+382|-|&#382;||2020-12-11 22:36:11||S|S||
+383|-|&#383;||2020-12-11 22:36:15||S|S||
+384|PDF|&#384;||2020-12-11 22:36:21||S|S||
+385|Word|&#385;||2020-12-11 22:36:33||S|S||
+386|Excel|&#386;||2020-12-11 22:36:41||S|S||
+387|-|&#387;||2020-12-11 22:36:48||S|S||
+388|Imagen|&#388;||2020-12-11 22:36:56||S|S||
+389|Zip|&#389;||2020-12-11 22:37:04||S|S||
+390|Audio|&#390;||2020-12-11 22:37:11||S|S||
+391|Video|&#391;||2020-12-11 22:37:21||S|S||
+392|CÃ³digo de programaciÃ³n|&#392;||2020-12-11 22:37:32||S|S||
+393|Socumento|&#393;||2020-12-11 22:37:48||S|S||
+394|Listado|&#394;||2020-12-11 22:37:56||S|S||
+395|PÃ¡gina Anterio|&#395;||2020-12-11 22:38:04|,L,||S||
+396|PÃ¡gina Siguiente|&#396;||2020-12-11 22:38:10|,L,||S||
+397|MenÃº|&#397;|Icono superior izquierdo|2020-12-11 22:38:15|,D,||S||
+398|-|&#398;||2020-12-11 22:38:25||S|S||
+399|-|&#399;||2020-12-11 22:38:31||S|S||
+400|-|&#400;||2020-12-11 22:38:36||S|S||
+401|-|&#401;||2020-12-11 22:39:16||S|S||
+402|-|&#402;||2020-12-11 22:39:28||S|S||
+403|-|&#403;||2020-12-11 22:39:33||S|S||
+404|-|&#404;||2020-12-11 22:39:37||S|S||
+405|Cerrar|&#405;||2020-12-11 22:39:45||S|S||
+406|Insertar|&#406;||2020-12-11 22:39:54|,L,||S||
+407|Borrar|&#407;||2020-12-11 22:40:06||S|S||
+408|Modificar|&#408;||2020-12-11 22:40:13||S|S||
+409|Visualizar|&#409;||2020-12-11 22:40:18||S|S||
+410|XML|&#410;|Exportar a XML|2020-12-14 10:36:18|,T,L,||S||
+411|TXT|&#411;|Exportar a TXT|2020-12-14 10:37:06|,T,L,||S||
+412|CSV|&#412;|Exportar a CSV|2020-12-14 10:37:19|,T,L,||S||

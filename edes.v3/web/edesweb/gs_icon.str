@@ -1,0 +1,13 @@
+create table gs_icon (
+cd_gs_icon int(6) NOT NULL,
+nm_gs_icon varchar(60) NOT NULL,
+hexa varchar(6),
+description varchar(255),
+cdi datetime,
+contexto varchar(15),
+sin_uso char(1),
+verificado char(1),
+tipo char(1),
+origen varchar(25),
+UNIQUE gs_icon (cd_gs_icon)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

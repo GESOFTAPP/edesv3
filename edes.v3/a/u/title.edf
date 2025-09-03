@@ -1,0 +1,182 @@
+[Title]AUTO
+[Fields]
+Title|title|D|T|100||-|||
+Script|script|#|T|100||-|||
+[JSIni]l
+function Editar(s){
+setTimeout(function(){
+top.gsEditor(s, 10);
+});
+}
+var _MenuScript = Array();
+function FuncPrueba(op, script, c, d, e, f, g){
+eClearEvent();
+if(op==null ) return;
+top.eTron(">>>op: "+op+' >> script:'+script);
+top.eTron(">>>c: "+c);
+top.eTron(">>>c: "+c.outerHTML);
+top.eTron(">>>d: "+d);
+top.eTron(">>>d: "+d.outerHTML);
+}
+[JSOnClickRow]l
+var  scripts = _oTR.cells[1].innerText.split("|"), i
+,dimOpDirecta=Array()
+,dimOpInDirecta=Array();
+dimOpInDirecta = {};
+dimOpInDirecta["-"] = "MENU";
+for(i=0; i<scripts.length; i++){
+var script, opDirecta, tmp, pk;
+tmp = scripts[i].split(",");
+script    = tmp[0];
+opDirecta = tmp[1]==1 || false;
+pk = "_"+i+"*"+script;
+_MenuScript[i] = script;
+dimOpInDirecta["ABCDEF".substr(i,1)] = script;
+top.eTron("---- "+"ABCDEF".substr(i,1)+ ' = '+ script);
+}
+var menu = top.eMenu(window, _oTD, dimOpInDirecta, FuncPrueba, true);
+[PHPStart]l
+function treeTitle($dir){
+global $dimExtensiones, $dimTitle, $dimTitleScript, $dimScriptTitle;
+global $filterUserExe, $filterUser, $filterString;
+$rem = REM;
+if( !is_dir($dir) ){
+return;
+}
+if( $dh = opendir($dir) ){
+while( ($file=readdir($dh))!==false ){
+$source = $dir.$file;
+if( filetype($source)=="dir" ){
+if( $file=="." || $file==".." ) continue;
+treeTitle($source."/");
+continue;
+}
+$extension = pathinfo($file, PATHINFO_EXTENSION);
+if( !in_array($extension, $dimExtensiones) ){
+continue;
+}
+$txt = file_get_contents($source)."\n";
+preg_match_all('/\[Title\]/iu', $txt, $matches, PREG_OFFSET_CAPTURE);
+if( count($matches[0])==0 ){
+continue;
+}
+for($i=0; $i<count($matches[0]); $i++){
+$posicionTitle = $matches[0][$i][1]+7;
+$positionEnter = mb_strpos($txt, CHR10, $posicionTitle);
+$xTitle = trim(mb_substr($txt, $posicionTitle, $positionEnter-$posicionTitle));
+if( $xTitle=="NoTitle" ){
+continue;
+}
+if( mb_strpos($xTitle, $rem)!==false ){
+list($xTitle) = explode($rem, $xTitle);
+$xTitle = trim($xTitle);
+}
+if( $xTitle[0]=="=" ){
+$xTitle = trim(mb_substr($xTitle, 1));
+}
+if( mb_substr_count($xTitle, '@')==2 ){
+}
+list($xTitle) = explode("|", $xTitle);
+if( trim($xTitle)=="" ) continue;
+if( !empty($filterUserExe) ){
+preg_match_all($filterUserExe, $xTitle, $matchesUser, PREG_OFFSET_CAPTURE);
+if( count($matchesUser[0])==0 ){
+continue;
+}
+}
+$xTitle = str_replace(array("<", ">", "  "), array("&#60;", "&#62;", " "), $xTitle);
+if( !empty($filterUserExe) ){
+$xTitle = preg_replace($filterUserExe, '<b style="color:#7B241C">'.$filterString.'</b>', $xTitle);
+}
+$source = str_replace("../d/", "", $source);
+$dimTitle[$xTitle] = "";
+$dimTitleScript[$xTitle][$source] = "";
+$dimScriptTitle[$source] = $xTitle;
+}
+}
+closedir($dh);
+}
+}
+[DBSql]l
+$dimScript = array();
+$nivel = array();
+qQuery("select script_url, seq, indent from {$_ENV['eDesDictionary']}gs_op where script_url<>'' order by seq");
+while($r=qArray()){
+$url = $r["script_url"];
+if( !preg_match('/^.{0,5}\:/u',$url) || preg_match('/^(http|www.)/u',$url) ){
+continue;
+}
+list($url) = explode("&", $url);
+$url = trim($url);
+if( $url[0]==":" ){
+$nivel[(int)$r["indent"]] = $url;
+continue;
+}
+if( preg_match('/^(W|w)/u',$url) ){
+$url = mb_substr($url,1);
+}
+if( preg_match('/^(E|>)/u',$url) || preg_match('/(.php)$/u',$url) ){
+continue;
+}
+if( preg_match('/(:)$/u',$url) ){
+$url = $url.mb_substr($nivel[(int)$r["indent"]-1],1);
+}
+if( !preg_match('/\./u',$url) ){
+if( preg_match('/^(@|G)/u',$url) ){
+$url .= ".gdf";
+}else{
+$url .= ".edf";
+}
+}
+$url = str_replace(array("#","@","="), array("F","G","L"), $url);
+list(,$soloScript) = explode(":", $url);
+$dimScript[$soloScript] = 1;
+}
+global $dimExtensiones, $dimTitle, $dimTitleScript, $dimScriptTitle;
+global $filterUserExe, $filterUser, $filterString;
+$dir =  "../d/" ;
+$rem = REM;
+$filterUser = "VIDA";
+$filterUser = "";
+$filterUser = "EMPRE";
+$filterUserExe = str_replace(
+array("*",			"$",		 "-",		  "[", 		   "]",		    "(", 		 ")",		  CHR92)
+,array(".", CHR92."$", CHR92."-", CHR92."[", CHR92."]", CHR92."(", CHR92.")", CHR92.CHR92)
+,$filterUser
+);
+$filterString = $filterUserExe;
+$filterUserExe = '/'.$filterUserExe.'/i';
+if( empty($filterUser) ){
+$filterUserExe = "";
+}
+$dimExtensiones = explode(",", "edf,gdf,ldf,fdf,idf");
+$dimTitle = array();
+$dimTitleScript = array();
+$dimScriptTitle = array();
+treeTitle($dir);
+ksort($dimTitle);
+$dimTitle = array_keys($dimTitle);
+$dimTitleUnique = array_unique($dimTitle);
+?>
+<script>
+</script>
+<?PHP
+$usuCursor = array();
+for($n=0; $n<count($dimTitleUnique); $n++){
+$opDirecta = false;
+$tmp = array();
+foreach($dimTitleScript[$dimTitleUnique[$n]] as $k=>$v){
+$add = ($dimScript[$k] ? ",1":"");
+if( $add!="" ){
+$opDirecta = true;
+}
+array_push($tmp, $k.$add);
+}
+array_push($usuCursor, array($dimTitleUnique[$n], implode("|", $tmp)));
+}
+[Format]
+$_vF[0] = str_replace(
+array("&lt;", "&gt;", "&#60;", "&#62;")
+,array(	"<"  ,  ">"  ,   "<"  ,   ">"  )
+,$_vF[0]
+);

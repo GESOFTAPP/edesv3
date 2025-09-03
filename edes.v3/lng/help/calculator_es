@@ -1,0 +1,26 @@
+<div style="width: 100%; text-align: center;"><strong>Calculadora</strong></div>
+<hr />
+<table style="border-collapse: collapse;" border="1px" cellpadding="1px">
+<tbody>
+<tr>
+<td style="text-align: left; width: 83.9915px;"><strong>C</strong></td>
+<td style="text-align: left; width: 235px;">Iniciar calculadora</td>
+</tr>
+<tr>
+<td style="text-align: left; width: 83.9915px;"><strong>+, -, *, /, %</strong></td>
+<td style="text-align: left; width: 235px;">Operaci&oacute;n a ejecutar</td>
+</tr>
+<tr>
+<td style="text-align: left; width: 83.9915px;"><strong>M, G</strong></td>
+<td style="text-align: left; width: 235px;">Recuperar &uacute;ltimo resultado</td>
+</tr>
+<tr>
+<td style="text-align: left; width: 83.9915px;"><strong>Enter, =</strong></td>
+<td style="text-align: left; width: 235px;">Resultado</td>
+</tr>
+<tr>
+<td style="text-align: left; width: 83.9915px;"><strong>S</strong>&nbsp;</td>
+<td style="text-align: left; width: 235px;">Suma/Cuenta los datos de la columna&nbsp;</td>
+</tr>
+</tbody>
+</table>

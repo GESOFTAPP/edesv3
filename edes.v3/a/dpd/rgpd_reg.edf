@@ -1,0 +1,97 @@
+[Title]REGISTRO RGPD
+[DBTable]{$_ENV['eDesDictionary']}gs_rgpd_reg
+[DBIndex]cd_rgpd_reg
+[DBSerial]cd_rgpd_reg
+[DBOrder]dni
+[DBLimit]10.000
+[MaxRec]full
+[OnChange]a|dni, entidad|_Chequeadni();
+[Icon]a|dni|user|title="No Existe la Persona" id="ExisteLaPersona" style="color:red"
+[Icon]?R|_emails|V|title="Lista de comunicaciones" id="ListaDeComunicaciones" onclick="ListaEMails()"
+[Fields]||trim
+|cd_rgpd_reg|*|T|5||*|||
+DNI|dni|D|T|9||AQ||=|
+,  Entidad|entidad|#|SV|25|<nombre|AQ||#|
+,|_check|N|T|1||*|||
+#(?R) ,Lista de EMails|_emails|+|T|2|<nombre|-|||
+Nombre|nombre|D|T|45||MQ||#|
+Apellido 1|apel1|D|T|30|nombre|MQ||#|
+Apellido 2|apel2|D|T|30|nombre|MQ||#|
+Código·Postal|cd_postal|CP|T|5||M|||
+Localidad|localidad|D|T|45||M|||
+{H} PruebaH
+EMail|email|@|T|65|-nombre|MQE|||
+{J} PruebaJ
+Origen|origen|#|SV|15|cdi|M|||
+,  Tipo|tipo|#|SV|15|<localidad/cdi_mod|M|||
+Usuario|cd_gs_user|+|T|5||*|_User||
+CDI Alta|cdi|CDI|T|19||-|#y2s#||
+,  CDI Modificación|cdi_mod|CDI|T|19|<tipo|-a|#y2s#||
+[JSCheck]a
+if( $_check!=$_ENV['ON'] ) ePE("dni", "La persona no existe");
+[JSIni]?R
+function ListaEMails(){
+S.window("edes.php?Ll:$a/d/mail_one.edf");
+}
+[PHPEnd]?R
+if( $n=qCount("{$_ENV['eDesDictionary']}gs_log_email", "psource='{$_SourceScript}' and mail_to='{$_vF['email']}'") ){
+ePF('_emails', $n);
+}else{
+eHide('_emails', 'L');
+}
+[JSIni]a
+function _Chequeadni(){
+if( $dni!="" && $entidad!="" ){
+S.callSrv("dni="+$dni+'&entidad='+$entidad);
+}
+}
+[PHPIni]*
+$nn = eFileGetVar("/_datos/config/rgpd.ini->RGPD");
+ePrintR(time(), $nn, $entidad);
+[CallSrv]dni
+list($entidad, $campo) = explode(".", $entidad);
+if( $campo=="" ) $campo = "dni";
+$ok = qCount("{$entidad}", "{$campo}='{$dni}'");
+echo "<script>";
+echo "var w=window.frameElement.WOPENER;";
+$oCampo = array("CopyName"=>"nombre", "CopySurname1"=>"apel1", "CopySurname2"=>"apel2", "CopyZip"=>"cd_postal", "CopyLocality"=>"localidad", "CopyEMail"=>"email");
+if( $ok ){
+echo "w.DGI('ExisteLaPersona').style.color = '';";
+echo "w.DGI('ExisteLaPersona').title = 'Sí existe la Persona';";
+echo "w.DGI('_check').value = '{$_ENV['ON']}';";
+qQuery("select * from {$entidad} where {$campo}='{$dni}'");
+$r = qArray();
+foreach(SETUP::$RGPD as $k=>$v){
+if( mb_substr($k,0,4)=="Copy" && $v!="" ){
+if( eIn(",", $v) ){
+$campos = explode(",", eNsp($v));
+}else{
+$campos = array($v);
+}
+$txt = "";
+for($n=0; $n<count($campos); $n++){
+$txt .= " ".trim($r[$campos[$n]]);
+}
+echo "w.ePF('".$oCampo[$k]."', '".eNsp($txt)."');";
+}
+}
+}else{
+echo "w.DGI('ExisteLaPersona').style.color = 'red';";
+echo "w.DGI('ExisteLaPersona').title = 'No existe la Persona';";
+echo "w.DGI('_check').value = '';";
+foreach(SETUP::$RGPD as $k=>$v){
+if( mb_substr($k,0,4)=="Copy" && $v!="" ){
+if( eIn(",", $v) ){
+$campos = explode(",", eNsp($v));
+}else{
+$campos = array($v);
+}
+for($n=0; $n<count($campos); $n++){
+if( $r[$campos[$n]]!="" ) echo "w.ePF('{$k}', '');";
+}
+}
+}
+}
+echo "w.S('body').info('No Existe la Persona');";
+}
+echo "</script>";

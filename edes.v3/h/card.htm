@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td id="Etiqueta">Card</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[Card] Mode | %, MínimoAncho [,MáximoAncho] | ... | AnchoEnPxSeparación (%,min,max / default)</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Convierte las fichas en tarjetas, si en la definición de tamaño le añadimos una "u" de "unique" el card estará sola en una fila.<br />Para en un formulario tener mas de una card primero tendremos que definir los tamaños/proporciones de cada una y dentro de la etiqueta [Fields] cuando se quiera que empiece otra card pondremos la etiqueta {card}</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">[Card] ? | 50,400,600 | default</td>
+</tr>
+<tr>
+<td id="txt">En modo consultas mostrará una card que como mínimo tendrá 400px y como máximo 600px y si el tamaño está entre este rango tomará el 50% de la pantalla</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">[Card] else | 50,400,600 | 50,400,600 | default</td>
+</tr>
+<tr>
+<td id="txt">Habrá dos card</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[Card] a,?R&nbsp; &nbsp; &nbsp; | _</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50,200, 600 | _</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50,400, 600 | _</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default</code><br /><br /><code>[Fields] a,?R</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- |Datos b&aacute;sicos</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serial&nbsp; | cd_exp&nbsp; | + | T |&nbsp; &nbsp;9 | | A&nbsp; &nbsp; &nbsp;| |&nbsp; &nbsp;|</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N.Ref.&nbsp; | nref&nbsp; &nbsp; | D | T |&nbsp; 15 | | MQcp&nbsp; | | # |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{card}</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- |Otros datos</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S.Ref.&nbsp; | sref&nbsp; &nbsp; | D | T |&nbsp; 40 | | MQcp&nbsp; | | # |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fichero | fichero | f | F | 150 | | MDCPS | |&nbsp; &nbsp;|</code></td>
+</tr>
+<tr>
+<td id="txt">Se definen dos card.</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

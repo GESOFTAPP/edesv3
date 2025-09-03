@@ -1,0 +1,337 @@
+<HTML><HEAD><TITLE>Ayuda de teclado</TITLE>
+<SCRIPT type="text/javascript" name=eDes>
+top.S.init(window, "all");
+</SCRIPT>
+<STYLE>
+* {
+cursor:text;
+}
+TD {
+TEXT-ALIGN: justify;
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+FONT-SIZE: 12px;
+}
+TD:nth-child(1) {
+white-space: nowrap;
+padding-right: 15px;
+}
+TD:nth-child(2) {
+FONT-SIZE: 13px;
+}
+#L {
+BACKGROUND: #eeeeee
+}
+span {
+white-space: nowrap;
+}
+kbd {
+font-size: 100%;
+display: inline-block;
+margin: 0 .1em;
+padding: .1em .6em;
+--line-height: 1.4;
+color: hsl(210,8%,15%);
+background-color: hsl(210,8%,90%);
+border: 1px solid hsl(210,8%,65%);
+border-radius: 3px;
+box-shadow: 0 1px 1px hsla(210,8%,5%,0.15),inset 0 1px 0 0 hsl(0,0%,100%);
+text-shadow: 0 1px 0 hsl(0,0%,100%);
+white-space: nowrap;
+}
+kbd.P {
+padding: 0.06em 0.4em;
+font-size: 86%;
+}
+I {
+font-size: 75%;
+cursor:text;
+}
+#NORESIZE {
+width: calc(100% - 20px);
+}
+@media Screen {
+#T {
+DISPLAY: none
+}
+}
+@media Print {
+#T {
+MARGIN-TOP: 15px;
+DISPLAY: block
+}
+TABLE {
+MARGIN: 15px
+}
+}
+#MESSAGE_OK {
+font-size:130%;
+BORDER:#0c4913 1px outset;
+color:#FFFFFF !important;
+background:#58955f;
+background:-moz-linear-gradient(top, #58955f 0%, #0c4913 100%);
+background:-webkit-linear-gradient(top, #58955f 0%, #0c4913 100%);
+background:linear-gradient(to bottom, #58955f 0%, #0c4913 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#58955f', endColorstr='#0c4913', GradientType=0);
+CURSOR:default;
+PADDING-BOTTOM:9px;
+PADDING-LEFT:18px;
+PADDING-RIGHT:18px;
+PADDING-TOP:9px;
+box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+-moz-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+-webkit-box-shadow:6px 6px 6px rgba(0,0,0,0.2);
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+}
+.AddButton {
+font-size:130%;
+display:table;
+cursor:pointer;
+border-collapse:separate;
+padding-top:4px;
+padding-right:16px;
+padding-bottom:3px;
+padding-left:7px;
+color:#FFFFFF;
+margin-right:7px;
+text-align:center;
+font-weight:normal;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+box-shadow:2px 2px 3px rgba(0,0,0,0.2);
+-moz-box-shadow:2px 2px 3px rgba(0,0,0,0.2);
+-webkit-box-shadow:2px 2px 3px rgba(0,0,0,0.2);
+border:#2384a8 1px outset;
+background:#2692BA;
+background:-moz-linear-gradient(top, #2692BA 0%, #2692BA 47%, #2692BA 100%);
+background:-webkit-linear-gradient(top, #2692BA 0%, #2692BA 47%, #2692BA 100%);
+background:linear-gradient(to bottom, #2692BA 0%, #2692BA 47%, #2692BA 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2692BA', endColorstr='#2692BA', GradientType=0);
+}
+.TAB {
+display:inline-block;
+width:30px;
+}
+.BROWSE TH, .BROWSE TD {
+font-size: 6px;
+padding: 2px;
+}
+INPUT[checkbox] {
+pointer-events: none;
+cursor: var(--cPointer);
+}
+::--webkit-scrollbar{
+background: #555;
+width: 13px;
+}
+::--webkit-scrollbar-thumb{
+background: #252525;
+width: 15px;
+}
+::--webkit-scrollbar-thumb:hover{
+background-color: #333;
+}
+::--webkit-scrollbar-thumb:active{
+background-color: #555;
+}
+</STYLE>
+<script>
+var css = "<style>";
+var txt = localStorage.getItem("e-ccss/message.css");
+txt = S.replace(txt, "{#}","{#1}", '&quot;','"', '&#39;',"'", '&#92;',"\\", '&#43;','+', "&#60;","<", "&#62;",">", "&#0A;",S.char(10), "&#0D;",S.char(13));
+css += "#MESSAGE_OK{"+S.mid(txt, "#MESSAGE_OK{", "}")+"}";
+var txt = localStorage.getItem("e-ccss/all.css");
+txt = S.replace(txt, "{#}","{#1}", '&quot;','"', '&#39;',"'", '&#92;',"\\", '&#43;','+', "&#60;","<", "&#62;",">", "&#0A;",S.char(10), "&#0D;",S.char(13));
+css += ".AddButton{"+S.mid(txt, ".AddButton{", "}")+"padding-top:4px; padding-bottom:3px;"+"}";
+css += "</style>";
+console.log(css);
+document.write(css);
+</script>
+</HEAD>
+<BODY oncontextmenu="return false;" onhelp="return false;" bgColor=#ffffff>
+<DIV id=NORESIZE>
+<TABLE border=0>
+<TBODY>
+<TR>
+<TD>
+Fichas, SubFichas,<br>Multifichas
+</TD>
+<TD>
+<kbd class="P">F10</kbd> Ejecuta la misma acción que el botón principal en las fichas, subfichas y multifichas,
+por ejemplo en los botones de: buscar, insertar, modificar, etc...<br>
+<kbd class="P">F12</kbd> Copia el contenido al portapapeles.<br>
+<kbd class="P">AvPág</kbd> o <kbd class="P">RePág</kbd> Cambia de solapa. Ademas si nos situamos sobre las solapas podremos
+hacer esta función con la rueda del ratón.<br>
+<kbd class="P">Enter</kbd> o <kbd class="P">Tab</kbd> Avanza al siguiente campo.<br>
+<kbd class="P">Shift</kbd class="P">+<kbd class="P">Enter</kbd> o <kbd class="P">Shift</kbd>+<kbd class="P">Tab</kbd> Retrocede al campo anterior.<br>
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+Fichas de búsqueda
+</TD>
+<TD>
+<kbd class="P">F8</kbd> Abre una ventana para poder buscar mas de un dato a la vez.<br>
+<kbd class="P">F9</kbd> Si el campo tiene contenido lo memoriza y si está vacío recupera el último dato memorizado,
+es como tener en todos los campos los iconos de <i>&#67;</i> y <i>&#80;</i>
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+Listados paginados
+</TD>
+<TD>
+<kbd class="P">AvPág</kbd> y <kbd class="P">RePág</kbd> Para avanzar y retrocede de página, también se puede hacer con la rueda del ratón
+y con los números del 1 al 9.<br>
+<kbd class="P">Home</kbd> y <kbd class="P">End</kbd> Para ir al principio y al final del listado.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>Informes</TD>
+<TD>Pulsando en las agrupaciones estas se pueden colapsar o expandir.</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<input value="30-01-2012" style="width:79px;" disabled></TD>
+<TD>
+Campos de fecha. El formato de las fechas es día, mes y año. El carácter separador de día, mes y año es opcional y puede ser "<B>-</B>", "<B>/</B>" o "<B>.</B>".
+Si el campo dispone de un icono <i>&#44;</i> con <kbd id="P">Click</kbd> se abre una ayuda para seleccionar fecha, si se hace <kbd class="P">Click-Dch</kbd> se pone automáticamente la fecha actual.<BR><BR>
+- Para poner el día de hoy se pulsa la inicial de la palabra "hoy" (la inicial de la palabra en el idioma establecido).<BR>
+- Si sólo ponemos el día, el sistema pone automáticamente el mes y el año actual, con uno o dos díguitos.<BR>
+- Si sólo ponemos el día y el mes, el sistema pone automáticamente el año actual ( con o sin guión ).<BR>
+- En el año, se puede poner los últimos dos dígitos, el sistema lo completa con el siglo actual.<BR>
+- Los separadores "<B>-</B>", "<B>/</B>" o "<B>.</B>" son opcionales.<br>
+- Dentro del calendario está aciva la rueda del ratón para cambiar de mes.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<input value="2012-01" style="width:54px;" disabled>
+</TD>
+<TD>
+Campos de periodo (mes y año). Al igual que en las fechas el carácter separador es opcional y puede ser "<B>-</B>", "<B>/</B>" o "<B>.</B>".<BR>
+- Si sólo ponemos el mes, el sistema pone automáticamente el&nbsp;año actual ( con o sin guión ).<BR>
+- En el año, se puede poner los últimos dos dígitos, el sistema lo completa con el siglo actual.<BR>
+- Para poner el día de hoy se pulsa la inicial de la palabra "hoy" (la inicial de la palabra en el idioma establecido).<BR>
+- Dentro del calendario está aciva la rueda del ratón para cambiar de mes.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<input value="123,45" style="width:54px; text-align:right;" disabled>
+</TD>
+<TD>
+Al introducir números con decimales tanto la coma "," como el punto "." generan la coma decimal, para poder utilizar solo el teclado numérico.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<input value="LOPEZ*" style="width:79px;" disabled>
+</TD>
+<TD>
+En las ventanas de filtro se pueden utilizar los asteriscos como comodines.
+Por ejemplo si queremos buscar una persona de la que sabemos el primer apellido pondríamos "LOPEZ*" de esta forma obtendríamos todas las personas cuyos apellidos empezasen por "LOPEZ".
+Si queremos buscar una persona por su NIF y no sabemos los 4 primeros números pondríamos "*5487D".<BR>
+También se pueden usar los siguientes símbolos al principio de la cadena:<BR>
+&nbsp;- "&gt;" Mayor que.<BR>
+- "&lt;" Menor que.<BR>
+- "&gt;=" Mayor o igual que.<BR>
+- "&lt;=" Menor o igual que.<BR>
+Si solo ponemos el símbolo "=" buscará que ese campo esté vacio.<BR>
+Si solo ponemos el símbolo "&gt;" buscará que ese campo esté relleno.<BR>
+Si solo ponemos el símbolo "&lt;" buscará que ese campo tenga el valor "NULL"<BR>
+Todos los símbolo se pueden combinar y poner varios en el mismo campo, ejemplo:<BR>
+-&nbsp;"&gt;=50&lt;=100" Valores entre 50 y 100 ambos inclusive.<BR>
+- "=50=100=200" buscará solo los valores 50, 100 y 200.<BR>
+- "&lt;50&gt;100" Todos los valores menos los comprendidos entre 50 y 100<BR>
+- "&gt;=B&lt;C" Busca las cadenas que empiezan por "B".<BR>
+- "ANTO*Z*" Busca cualquier cadena que empieze por "ANTO" y apartir de esta cadena contenga una "Z".
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<input name="checkbox" id="checkbox" type="checkbox" -disabled diferente="" checkbox="1" conimagen="1" size="1" value="1"   class="EDITABLE" 			ewe="1" edefault="" etrue="1" efalse="0" ehelpno="1">
+<br>
+<input name="checkbox" id="checkbox" type="checkbox" -disabled diferente="" checkbox="1" conimagen="1" size="1" value="1"   class="EDITABLE" 			ewe="1" edefault="" etrue="1" efalse="0" ehelpno="1" checked>
+<br>
+<input name="checkbox" id="checkbox" type="checkbox" -disabled diferente="" checkbox="1" conimagen="1" size="1" value="<>1" class="EDITABLE checkEmpty" ewe="1" edefault="" etrue="1" efalse="0" ehelpno="1">
+</TD>
+<TD>
+En las fichas de búsqueda los campos checkbox tienen tres estados:
+<BR>- El 1º no buscará por el dato
+<BR>- El 2º buscará los datos que tengan el checkbox marcado
+<BR>- El 3º buscará los datos que no tengan el checkbox marcado
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<textarea style="resize:none; width:100px;" disabled>Text...
+</textarea>
+</TD>
+<TD>
+En los campos de anotaciones.
+<BR>- Con <kbd class="P">Ctrl</kbd>+<kbd class="P">Enter</kbd> pasamos al siguiente campo.
+<BR>- Con <kbd class="P">Ctrl</kbd>+<kbd class="P">Tab</kbd> el cursor se desplaza al siguiente punto de tabulación dentro del campo de anotaciones.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<span id="MESSAGE_OK">Grabado</span>
+</TD>
+<TD>
+Para evitar la espera en el mensaje "Grabado" se puede utilizar las teclas <kbd class="P">Enter</kbd>,
+<kbd class="P">AvPag</kbd>, <kbd class="P">F10</kbd> o <kbd class="P">Click</kbd> en el mensaje.
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+<span class="AddButton" ><i class="ICONINPUT ICONSEEK">S</i>Buscar</span>
+</TD>
+<TD>
+El botón tiene dos funcionalidades:<BR>
+- Si pulsamos <kbd class="P">F10</kbd> o hacemos <kbd class="P">Click</kbd> en el botón, ejecutará la acción en la página actual.<BR>
+- Si pulsamos <kbd class="P">Click-Dch</kbd> en el botón nos podrá salir las siguientes opciones:<br>
+<SPAN class="TAB"></SPAN> Ejecutar ventana actual.<br>
+<SPAN class="TAB"></SPAN> Resultado en subventana.<br>
+<SPAN class="TAB"></SPAN> Búsqueda con sublistado.<br>
+<SPAN class="TAB"></SPAN> Opciones para generar una exportación directar.<br>
+</TD>
+</TR>
+<TR><TD id=L colSpan=2></TD></TR>
+<TR>
+<TD>
+Varios
+</TD>
+<TD>
+- En los campos select con
+- Si en una subventana el icono de cerrar parpadea está indicando que la ventana se puede cerrar con la tecla <kbd class="P">Scape</kbd>.<BR>
+- En las ventanas de Alertas/Avisos/confirmación el <kbd class="P">F10</kbd> será como pulsar en el botón de aceptar y escape en el botón de cancelar.<BR>
+- Los campos que no tienen edición se puede copiar su contenido haciendo click con el ratón, pudiendo llevar este dato a cualquier aplicación.<br>
+- <i>P</i>+<kbd class="P">Click-Dch</kbd> Se muestra una ventana de selección con las últimas diez entradas que se hayan copiado.
+- <kbd class="P">F1</kbd> Muestra la ayuda, si la tiene, hasta hacer click.<br>
+- <kbd class="P">F3</kbd> En los campos tipo select maximiza la ventana de opciones y si el select es de selección
+múltiple se abrirá una ventana especial de selección múltiple.<br>
+- <kbd class="P">F4</kbd> Ejecuta el icono que esté a la derecha.<br>
+- <kbd class="P">F8</kbd> En las fichas de búsqueda muestra una ventana de entrada múltiple.<br>
+- En los listados, cuando tienes el icono del cursor que indica que hay submenú pulsando con el botón derecho
+del ratón, al seleccionar la opción de "Selección en subventana" esta acción se establecerá por defecto.
+</TD>
+</TR>
+</TBODY></TABLE></DIV>
+<SCRIPT language=JavaScript>
+if( window.frameElement.id!='CONTENIDO' ) top.eSWView(window);
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,33 @@
+<p>FTP Configuration</p>
+<table id="Opciones" style="font-family: ARIAL; background: #7b8083;" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">NOM.ORIGEN</td>
+<td style="background: #fffff3; font-size: 12px;">Source server name</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">ORIGEN</td>
+<td style="background: #fffff3; font-size: 12px;">IP of the origin server</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">NOM.DESTINO</td>
+<td style="background: #fffff3; font-size: 12px;">Destination server name</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">FTP DESTINO </td>
+<td style="background: #fffff3; font-size: 12px;">Destination FTP IP</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">LOGIN</td>
+<td style="background: #fffff3; font-size: 12px;">FTP login</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">USUARIO</td>
+<td style="background: #fffff3; font-size: 12px;">FTP Password</td>
+</tr>
+<tr>
+<td style="background: #fffff3; font-size: 12px;">DIRECTORIO</td>
+<td style="background: #fffff3; font-size: 12px;">Full path of the application directory</td>
+</tr>
+</tbody>
+</table>

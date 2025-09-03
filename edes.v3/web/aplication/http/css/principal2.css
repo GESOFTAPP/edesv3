@@ -1,0 +1,606 @@
+v\:* {
+BEHAVIOR: url(#default#VML);
+}
+BODY {
+BACKGROUND: #ffffff;
+FONT-FAMILY: verdana;
+FONT-SIZE: 12px;
+MARGIN: 2px;
+}
+#MMOpText {
+BACKGROUND: #cf4000;
+BORDER-RIGHT: #b3b3b3 5px solid;
+COLOR: #ffffff;
+CURSOR: hand;
+FONT-SIZE: 18px;
+HEIGHT: 34px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+TEXT-ALIGN: center;
+WIDTH: 150px;
+}
+.SMContent {
+BORDER-BOTTOM: #5f003b 1px solid;
+BORDER-LEFT: #5f003b 1px solid;
+BORDER-RIGHT: #5f003b 3px solid;
+BORDER-TOP: #5f003b 1px solid;
+WIDTH: 100%;
+}
+.SMContent TR {
+COLOR: #000000;
+}
+.SMContent TD {
+FILTER: none;
+}
+.SMContent .MMOpIcon {
+}
+.SMContent .IcoMMain {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+MARGIN-LEFT: 5px;
+MARGIN-RIGHT: 5px;
+}
+.SMContent .IcoLOp {
+MARGIN-LEFT: 7px;
+MARGIN-RIGHT: 5px;
+}
+.SM3 TR {
+COLOR: #000000;
+HEIGHT: 34px;
+}
+.SM3 TD {
+CURSOR: hand;
+FILTER: none;
+FONT-SIZE: 16px;
+PADDING-BOTTOM: 5px;
+PADDING-BOTTON: 8px;
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 7px;
+PADDING-TOP: 8px;
+TEXT-ALIGN: center;
+}
+.SM0 {
+BORDER-BOTTOM: #003487 1px solid;
+BORDER-LEFT: #003487 1px solid;
+BORDER-RIGHT: #003487 1px solid;
+BORDER-TOP: #003487 1px solid;
+WIDTH: 100%;
+}
+.SM0 TR {
+COLOR: #ffffff;
+}
+.SM0 TD {
+CURSOR: hand;
+BACKGROUND: #8399b3;
+FONT-SIZE: 24px;
+PADDING-BOTTOM: 4px;
+PADDING-BOTTON: 4px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 7px;
+PADDING-TOP: 2px;
+TEXT-ALIGN: center;
+}
+.SM {
+BACKGROUND: #8399b3;
+BORDER-BOTTOM: #5f003b 2px solid;
+BORDER-LEFT: #d7bfce 1px solid;
+BORDER-RIGHT: #5f003b 2px solid;
+BORDER-TOP: #d7bfce 1px solid;
+COLOR: #ffffff;
+CURSOR: hand;
+DISPLAY: none;
+FONT-FAMILY: helvetica;
+FONT-SIZE: 20px;
+POSITION: absolute;
+WIDTH: 1px;
+}
+.SM TD {
+PADDING-BOTTOM: 3px;
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 3px;
+PADDING-TOP: 3px;
+WHITE-SPACE: nowrap;
+}
+.SM TH {
+BACKGROUND: #9fb6f9;
+CURSOR: default;
+FONT-FAMILY: helvetica;
+FONT-SIZE: 18px;
+FONT-WEIGHT: normal;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 1px;
+WHITE-SPACE: nowrap;
+}
+#CursorMain {
+BACKGROUND: #fcd77a;
+COLOR: #1f0300;
+}
+#Cursor {
+BACKGROUND: #fcd77a;
+COLOR: #1f0300;
+}
+.Linea {
+BACKGROUND: #00273c;
+HEIGHT: 1px;
+WIDTH: 100%;
+}
+#WinWork {
+BORDER-BOTTOM: #bca7b4 1px solid;
+BORDER-LEFT: #bca7b4 1px solid;
+BORDER-RIGHT: #bca7b4 1px solid;
+BORDER-TOP: 0px;
+}
+#WinLocation {
+}
+#WinLocation TD {
+FONT-SIZE: 11px;
+}
+#TituloPro {
+COLOR: #ff000f;
+FONT-SIZE: 20px;
+PADDING-LEFT: 25px;
+}
+#TituloExe {
+COLOR: #2c004f;
+FONT-SIZE: 12px;
+FONT-TYPE: verdana;
+PADDING-LEFT: 25px;
+}
+#TituloUsu {
+COLOR: #627a86;
+FONT-SIZE: 12px;
+PADDING-LEFT: 25px;
+}
+#xASAMBLEA {
+COLOR: red;
+DISPLAY: none;
+FONT-SIZE: 28px;
+FONT-WEIGHT: bold;
+LEFT: 480px;
+POSITION: absolute;
+TOP: 6px;
+}
+#iASAMBLEA {
+COLOR: #000000;
+DISPLAY: none;
+FONT-SIZE: 10px;
+LEFT: 480px;
+POSITION: absolute;
+TOP: 35px;
+}
+.uIconos TD {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+CURSOR: hand;
+PADDING-BOTTOM: 1px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+PADDING-TOP: 1px;
+}
+.Cargando {
+BACKGROUND: #fffff8;
+COLOR: #5f003b;
+CURSOR: default;
+FONT-SIZE: 14px;
+TEXT-ALIGN: center;
+VERTICAL-ALIGN: middle;
+}
+#DivMensaje {
+BACKGROUND: #1f8ef1;
+BORDER-BOTTOM: #8fb2c3 3px outset;
+BORDER-LEFT: #8fb2c3 2px outset;
+BORDER-RIGHT: #8fb2c3 3px outset;
+BORDER-TOP: #8fb2c3 2px outset;
+PADDING-BOTTOM: 3px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 3px;
+PADDING-TOP: 0px;
+}
+#DivMensaje DIV CENTER {
+COLOR: #f8f8e3;
+CURSOR: default;
+FONT-SIZE: 15px;
+FONT-WEIGHT: bold;
+}
+IMG {
+CURSOR: hand;
+VERTICAL-ALIGN: middle;
+}
+.AYUDA {
+BACKGROUND: #fffde6;
+BORDER-BOTTOM: #fffde6 2px ridge;
+BORDER-LEFT: #fffde6 2px ridge;
+BORDER-RIGHT: #fffde6 2px ridge;
+BORDER-TOP: #fffde6 2px ridge;
+COLOR: #0040a5;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 14px;
+MARGIN: 10px 20px 10px 10px;
+PADDING-BOTTOM: 10px;
+PADDING-LEFT: 20px;
+PADDING-RIGHT: 20px;
+PADDING-TOP: 10px;
+}
+.AYUDA TABLE {
+BACKGROUND: #7b8083;
+FONT-FAMILY: ARIAL;
+}
+.AYUDA TH {
+BACKGROUND: #d5dce0;
+FONT-SIZE: 12px;
+}
+.AYUDA TD {
+BACKGROUND: #fffff3;
+FONT-SIZE: 12px;
+}
+.WOnBLUR {
+BACKGROUND: #d2d8de;
+}
+.SWOpenON {
+BACKGROUND: #a5bac6;
+BORDER-BOTTOM: #a5bac6 2px outset;
+BORDER-LEFT: #a5bac6 2px outset;
+BORDER-RIGHT: #a5bac6 2px outset;
+BORDER-TOP: #a5bac6 2px outset;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+}
+.SWOpenON .swCaption {
+BORDER-BOTTOM: #7b8a94 1px solid;
+COLOR: #ffffff;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#a5bac6, endColorstr=#7b8a94);
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 5px;
+TEXT-ALIGN: left;
+}
+.SWOpenON .swIFrame {
+BORDER-BOTTOM: #a5bac6 2px inset;
+BORDER-LEFT: #a5bac6 2px inset;
+BORDER-RIGHT: #a5bac6 2px inset;
+BORDER-TOP: #a5bac6 2px inset;
+}
+.SWOpenON .swStatus {
+BACKGROUND-COLOR: #a5bac6;
+BORDER-TOP: #7b8a94 1px solid;
+COLOR: #ffffff;
+FONT-SIZE: 10px;
+TEXT-ALIGN: center;
+}
+.SWOpenOFF {
+BORDER-BOTTOM: #cccccc 2px outset;
+BORDER-LEFT: #cccccc 2px outset;
+BORDER-RIGHT: #cccccc 2px outset;
+BORDER-TOP: #cccccc 2px outset;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+}
+.SWOpenOFF .swCaption {
+BORDER-BOTTOM: #000000 1px solid;
+COLOR: #000000;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#d6d3ce, endColorstr=#a59e9c);
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 5px;
+TEXT-ALIGN: left;
+}
+.SWOpenOFF .swIFrame {
+BORDER-BOTTOM: #d6d3ce 2px inset;
+BORDER-LEFT: #d6d3ce 2px inset;
+BORDER-RIGHT: #d6d3ce 2px inset;
+BORDER-TOP: #d6d3ce 2px inset;
+}
+.SWOpenOFF .swStatus {
+BACKGROUND-COLOR: #d6d3ce;
+BORDER-TOP: #000000 1px solid;
+COLOR: #000000;
+FONT-SIZE: 10px;
+TEXT-ALIGN: center;
+}
+.DFSWOpenON {
+BORDER-BOTTOM: #bf0017 2px outset;
+BORDER-LEFT: #bf0017 2px outset;
+BORDER-RIGHT: #bf0017 2px outset;
+BORDER-TOP: #bf0017 2px outset;
+CURSOR: default;
+FONT-FAMILY: ARIAL;
+}
+.DFSWOpenON .swCaption {
+BORDER-BOTTOM: #000000 1px solid;
+COLOR: #f6f8f9;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#df7f8b, endColorstr=#a70014);
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 5px;
+TEXT-ALIGN: left;
+}
+.DFSWOpenON .swIFrame {
+BORDER-BOTTOM: #df7f8b 2px inset;
+BORDER-LEFT: #df7f8b 2px inset;
+BORDER-RIGHT: #df7f8b 2px inset;
+BORDER-TOP: #df7f8b 2px inset;
+}
+.DFSWOpenON .swStatus {
+BACKGROUND-COLOR: #bf0017;
+BORDER-TOP: #000000 1px solid;
+COLOR: #f6f8f9;
+FONT-SIZE: 10px;
+TEXT-ALIGN: center;
+}
+#swC {
+BORDER-BOTTOM: #000000 1px dotted;
+BORDER-LEFT: #000000 1px dotted;
+BORDER-RIGHT: #000000 1px dotted;
+BORDER-TOP: #000000 1px dotted;
+}
+.swMODAL {
+BACKGROUND-COLOR: #000000;
+FILTER: alpha(opacity=15);
+}
+#swVHIDDEN {
+BORDER-BOTTOM: #7b8a94 2px outset;
+BORDER-LEFT: #7b8a94 2px outset;
+BORDER-RIGHT: #7b8a94 2px outset;
+BORDER-TOP: #7b8a94 2px outset;
+COLOR: #ffffff;
+CURSOR: hand;
+DISPLAY: none;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#a5bac6, endColorstr=#7b8a94);
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 10px;
+POSITION: absolute;
+WHITE-SPACE: nowrap;
+}
+#swVHIDDEN TH {
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#a5bac6, endColorstr=#7b8a94);
+FONT-SIZE: 12px;
+FONT-WEIGHT: bold;
+}
+#ALERT {
+BORDER-BOTTOM: #789aab 2px outset;
+BORDER-LEFT: #789aab 2px outset;
+BORDER-RIGHT: #789aab 2px outset;
+BORDER-TOP: #789aab 2px outset;
+CURSOR: default;
+DISPLAY: none;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#fffbe7, endColorstr=#dde5ea);
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+PADDING-TOP: 5px;
+}
+#ALERT TH {
+COLOR: #5a7380;
+FONT-SIZE: 16px;
+WHITE-SPACE: nowrap;
+}
+#ALERT TD {
+COLOR: #000000;
+FONT-SIZE: 16px;
+}
+#ALERT TD TD {
+COLOR: #5a7380;
+}
+#ALERT .aBOTON DIV {
+COLOR: #000000;
+FONT-SIZE: 12px;
+}
+#ALERT .aBOTON INPUT {
+BACKGROUND: #b4c7d0;
+COLOR: #000000;
+CURSOR: hand;
+FONT-SIZE: 12px;
+}
+#ALERT IMG {
+MARGIN: 10px;
+}
+#ALERT_SOMBRA {
+BACKGROUND: #000000;
+DISPLAY: none;
+FILTER: alpha(opacity=20);
+}
+#ALERT INPUT {
+BACKGROUND: #fffbe7;
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+MARGIN-LEFT: 5px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+}
+#ALERT TEXTAREA {
+BACKGROUND: #fffbe7;
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+MARGIN-LEFT: 5px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+}
+#ALERT SPAN {
+BACKGROUND-COLOR: #dddddd;
+BORDER-BOTTOM: #bbbbbb 1px solid;
+BORDER-LEFT: #bbbbbb 1px solid;
+BORDER-RIGHT: #bbbbbb 1px solid;
+BORDER-TOP: #bbbbbb 1px solid;
+COLOR: #555555;
+CURSOR: hand;
+MARGIN: 5px 20px;
+PADDING-LEFT: 12px;
+PADDING-RIGHT: 12px;
+}
+#ALERT #USERINFO TD {
+FONT-SIZE: 12px;
+}
+#ALERT #USERINFO TH {
+FONT-SIZE: 12px;
+}
+#HORA {
+COLOR: #000066;
+CURSOR: default;
+FONT-SIZE: 12px;
+LEFT: expression(document.body.clientWidth-this.clientWidth-4);
+TOP: expression(document.body.clientHeight-this.clientHeight-3);
+}
+#UtilCargando {
+COLOR: #ff0000;
+LEFT: expression(document.body.clientWidth-this.clientWidth-11);
+TOP: expression(document.body.clientHeight-this.clientHeight-28);
+}
+.SubMenu {
+BACKGROUND-COLOR: #ffffff;
+BORDER-BOTTOM: #cccccc 1px outset;
+BORDER-LEFT: #cccccc 1px outset;
+BORDER-RIGHT: #cccccc 1px outset;
+BORDER-TOP: #cccccc 1px outset;
+POSITION: absolute;
+}
+.SubMenu TR {
+BACKGROUND-COLOR: #f7efff;
+COLOR: #57007f;
+FONT-FAMILY: helvetica;
+FONT-SIZE: 14px;
+FONT-WEIGHT: normal;
+}
+.SubMenu TD {
+CURSOR: hand;
+}
+.SubMenu .ON {
+BACKGROUND-COLOR: #cf0c00;
+COLOR: #f7efff;
+FONT-WEIGHT: normal;
+}
+.SubMenu .Linea {
+BACKGROUND-COLOR: #808080;
+CURSOR: default;
+FONT-SIZE: 1px;
+}
+.SubMenu .TITULO {
+BACKGROUND-COLOR: #57007f;
+BORDER-BOTTOM: #c8c3c0 1px outset;
+COLOR: #ffffff;
+CURSOR: default;
+TEXT-ALIGN: center;
+}
+#LastFiles {
+BACKGROUND-COLOR: #000099;
+BORDER-BOTTOM: #8fb2c3 2px solid;
+BORDER-LEFT: #8fb2c3 1px solid;
+BORDER-RIGHT: #8fb2c3 2px solid;
+BORDER-TOP: #8fb2c3 1px solid;
+DISPLAY: none;
+FONT-SIZE: 100%;
+HEIGHT: 50%;
+POSITION: absolute;
+}
+#LastFiles TH {
+BACKGROUND: #c1d2da;
+BORDER-BOTTOM: #8fb2c3 1px solid;
+BORDER-TOP: #8fb2c3 1px solid;
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#c1d2da, endcolorstr=#ffffff);
+PADDING-BOTTOM: 2px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+PADDING-TOP: 2px;
+}
+#LastFiles TD {
+BACKGROUND: #eaf0f3;
+FONT-SIZE: 90%;
+}
+#LastFiles .Over {
+BACKGROUND: #f5f8f9;
+}
+#LastFiles SPAN TD SPAN {
+BACKGROUND: #fffff8;
+}
+#VER_DNI .INP {
+BORDER-BOTTOM: #777777 1px solid;
+BORDER-LEFT: #777777 1px solid;
+BORDER-RIGHT: #777777 1px solid;
+BORDER-TOP: #777777 1px solid;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 100%;
+MARGIN-LEFT: 5px;
+MARGIN-RIGHT: 5px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 5px;
+}
+#VER_DNI {
+BACKGROUND: #d2d2d2;
+BORDER-BOTTOM: #aaaaaa 2px outset;
+BORDER-LEFT: #aaaaaa 2px outset;
+BORDER-RIGHT: #aaaaaa 2px outset;
+BORDER-TOP: #aaaaaa 2px outset;
+COLOR: #000000;
+}
+#VER_DNI CENTER {
+COLOR: #222222;
+}
+#TRACE {
+BACKGROUND: #ffffff;
+BORDER-BOTTOM: red 1px solid;
+BORDER-LEFT: red 1px solid;
+BORDER-RIGHT: red 1px solid;
+BORDER-TOP: red 1px solid;
+COLOR: #000000;
+}
+#PROGRESS {
+BORDER-BOTTOM: #789aab 1px outset;
+BORDER-LEFT: #789aab 1px outset;
+BORDER-RIGHT: #789aab 1px outset;
+BORDER-TOP: #789aab 1px outset;
+CURSOR: default;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#fffbe7, endColorstr=#dde5ea);
+FONT-FAMILY: ;
+PADDING-BOTTOM: 5px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+PADDING-TOP: 5px;
+WIDTH: 300px;
+}
+#PROGRESS TH {
+COLOR: #5a7380;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+PADDING-BOTTOM: 5px;
+TEXT-ALIGN: left;
+}
+#PROGRESS .Detail {
+COLOR: #777777;
+FONT-SIZE: 12px;
+PADDING-TOP: 5px;
+}
+.progress-wrap {
+BACKGROUND-COLOR: #bdbdbd;
+BORDER-BOTTOM: #cccccc 1px solid;
+BORDER-LEFT: #cccccc 1px solid;
+BORDER-RIGHT: #cccccc 1px solid;
+BORDER-TOP: #cccccc 1px solid;
+HEIGHT: 20px;
+MARGIN: 0px auto;
+POSITION: relative;
+TEXT-ALIGN: left;
+WIDTH: 300px;
+}
+.progress-value {
+BACKGROUND-COLOR: #172125;
+HEIGHT: 20px;
+WIDTH: 100%;
+}
+.progress-text {
+COLOR: #5f8497;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+HEIGHT: 20px;
+LEFT: 0px;
+PADDING-TOP: 1px;
+POSITION: absolute;
+TEXT-ALIGN: center;
+TOP: 0px;
+WIDTH: 100%;
+}

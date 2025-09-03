@@ -1,0 +1,7 @@
+create table prov (
+cd_auto char(2) NOT NULL,
+cd_prov char(2) NOT NULL,
+nm_prov char(15),
+PRIMARY KEY (cd_prov),
+UNIQUE auto_2 (cd_auto, cd_prov)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

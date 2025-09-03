@@ -1,0 +1,129 @@
+._COLORPALETTE {
+_color_1: #2471A3;
+_color_2: #70b7d1;
+_color_3: #fdfde4;
+_color_4: #ffffff;
+_color_5: #000000;
+}
+.Company {
+color: #000000;
+}
+.Date {
+color: #566573;
+}
+HR {
+color: #000000;
+}
+.Circle {
+color: #2471A3;
+}
+.Title_text {
+color: #000000;
+}
+.Title_value {
+color: #000000;
+}
+.Order_text {
+color: #000000;
+}
+.Order_value {
+color: #000000;
+}
+.Condition_text {
+color: #000000;
+}
+.Condition_value {
+color: #000000;
+}
+.FootTitle {
+color: #000000;
+}
+TABLE {
+background: #dddddd;
+}
+TH {
+font-weight: bold;
+background: #2471A3;
+color: #ffffff;
+}
+TD {
+background: #FFFFFF;
+color: #000000;
+}
+.GreenBar {
+background: #FFFDF7;
+color: #000000;
+}
+.Totals {
+font-weight: bold;
+background: #fdfde4;
+color: #000000;
+FONT-STYLE: normal;
+}
+.PagNumber {
+color: #566573;
+}
+.SHOWRECIPIENT {
+color: #dddddd;
+}
+.CDSCRIPT {
+color: #dddddd;
+}
+.GroupHeader_1 {
+font-weight: bold;
+background: #70b7d1;
+color: #000000;
+FONT-STYLE: italic;
+TEXT-ALIGN: left;
+}
+.GroupSubTotal_1 {
+font-weight: bold;
+background: #70b7d1;
+color: #000000;
+FONT-STYLE: normal;
+}
+.GroupHeader_2 {
+font-weight: bold;
+background: #95cadd;
+color: #000000;
+FONT-STYLE: normal;
+TEXT-ALIGN: left;
+}
+.GroupSubTotal_2 {
+font-weight: bold;
+background: #95cadd;
+color: #000000;
+FONT-STYLE: normal;
+}
+.GroupHeader_3 {
+font-weight: bold;
+background: #badce9;
+color: #000000;
+FONT-STYLE: normal;
+TEXT-ALIGN: left;
+}
+.GroupSubTotal_3 {
+font-weight: bold;
+background: #badce9;
+color: #000000;
+FONT-STYLE: normal;
+}
+.GroupHeader_4 {
+font-weight: bold;
+background: #dfeff5;
+color: #000000;
+FONT-STYLE: normal;
+TEXT-ALIGN: left;
+}
+.GroupSubTotal_4 {
+font-weight: bold;
+background: #dfeff5;
+color: #000000;
+FONT-STYLE: normal;
+}
+.DEFAULTCOLOR {
+_degradado: 15;
+_color_textos: #000000;
+_color_listado: #000000;
+_background: #2692ba;
+}

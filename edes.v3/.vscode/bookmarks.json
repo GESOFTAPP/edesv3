@@ -1,0 +1,309 @@
+{
+	"files": [
+		{
+			"path": "../suid/suid.php",
+			"bookmarks": [
+				{
+					"line": 13577,
+					"column": 34,
+					"label": ""
+				},
+				{
+					"line": 13954,
+					"column": 7,
+					"label": ""
+				},
+				{
+					"line": 14117,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 14128,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 15372,
+					"column": 20,
+					"label": ""
+				},
+				{
+					"line": 15429,
+					"column": 29,
+					"label": ""
+				},
+				{
+					"line": 15569,
+					"column": 35,
+					"label": ""
+				},
+				{
+					"line": 16595,
+					"column": 31,
+					"label": ""
+				},
+				{
+					"line": 16666,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 16678,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 17980,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 18004,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 18109,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 18884,
+					"column": 28,
+					"label": ""
+				},
+				{
+					"line": 19615,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 19734,
+					"column": 28,
+					"label": ""
+				},
+				{
+					"line": 20154,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../suid/core.php",
+			"bookmarks": [
+				{
+					"line": 99,
+					"column": 5,
+					"label": ""
+				},
+				{
+					"line": 141,
+					"column": 21,
+					"label": ""
+				},
+				{
+					"line": 192,
+					"column": 36,
+					"label": ""
+				},
+				{
+					"line": 1199,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 1222,
+					"column": 20,
+					"label": ""
+				},
+				{
+					"line": 1460,
+					"column": 21,
+					"label": ""
+				},
+				{
+					"line": 1610,
+					"column": 24,
+					"label": ""
+				},
+				{
+					"line": 2577,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../suid/src/data.elements-type.php",
+			"bookmarks": [
+				{
+					"line": 40,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../i_suid/public/pruebal.html",
+			"bookmarks": [
+				{
+					"line": 30,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 746,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 844,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 1082,
+					"column": 20,
+					"label": ""
+				},
+				{
+					"line": 1090,
+					"column": 17,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "edes.php",
+			"bookmarks": [
+				{
+					"line": 9675,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "login_ser_web.php",
+			"bookmarks": [
+				{
+					"line": 295,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 366,
+					"column": 17,
+					"label": ""
+				},
+				{
+					"line": 412,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 529,
+					"column": 19,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "t/cr.gs",
+			"bookmarks": [
+				{
+					"line": 2,
+					"column": 28,
+					"label": ""
+				},
+				{
+					"line": 450,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 2799,
+					"column": 17,
+					"label": ""
+				},
+				{
+					"line": 3220,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 3713,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 4372,
+					"column": 18,
+					"label": ""
+				},
+				{
+					"line": 4632,
+					"column": 27,
+					"label": ""
+				},
+				{
+					"line": 4987,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 6227,
+					"column": 33,
+					"label": ""
+				},
+				{
+					"line": 8598,
+					"column": 1,
+					"label": ""
+				},
+				{
+					"line": 8916,
+					"column": 16,
+					"label": ""
+				},
+				{
+					"line": 8937,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 9130,
+					"column": 18,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "web/edesweb/_doc_/tbl/_edes_mysql.sql",
+			"bookmarks": [
+				{
+					"line": 362,
+					"column": 18,
+					"label": ""
+				},
+				{
+					"line": 438,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "../i_utf8/_datos/config/group.var",
+			"bookmarks": [
+				{
+					"line": 239,
+					"column": 19,
+					"label": ""
+				}
+			]
+		}
+	]
+}

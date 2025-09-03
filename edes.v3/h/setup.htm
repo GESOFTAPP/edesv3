@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1" cellpadding="2">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">Setup</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[Setup] Mode | listVar ...</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Modifica variables de configuración</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro">El parámetro "listVar" es una lista de variables con su valor, en caso de que el valor esa "true" se puede omitir.<br />Actualmente solo está activa la variable "activateFlush" que desactiva el buffer de salida.</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[Setup] l | activateFlush</code></td>
+</tr>
+<tr>
+<td id="txt">En este ejemplo se activa el flush en los listados, por defecto se guarda la salida en el buffer y se manda al terminar de generar la página, esta funcionalidad nos permite por ejemplo en cualquier punto de la generación limpiar el buffer y generar otro contenido, esto consume mas memoria, cuando tienes que generar listados muy grandes sin paginación activas esta variable permitiendo generarlos.</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">
+&lt;div&gt;
+&lt;div&gt;<code>[Setup] * | var1, var2=string, var3=123, var4=false</code>&lt;/div&gt;
+&lt;/div&gt;
+</td>
+</tr>
+<tr>
+<td id="txt">Ejemplo con definición de varias variables</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

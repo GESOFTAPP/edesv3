@@ -1,0 +1,315 @@
+<?PHP
+class SETUP {
+	public static $System = [
+		 'ApplicationName' => ''
+		,'TabTitle' => ''
+		,'CopyRight' => ''
+		,'EncryptionKey' => ''
+		,'LanguageDefault' => 'es'		
+		,'DevelopmentBackgroundColor' => '#555'
+		,'DocSecurity' => false
+		,'ReportsNews' => true
+		,'UrlStatus' => ''
+		,'StartURL' => ''
+		,'ScreenShot' => true
+		,'EMailSystem' => ''
+		,'EMailType' => 'SERVER'
+		,'EMailFrom' => ''
+		,'EMailCookies' => ''
+		,'TypeUserIdentification' => ''
+		,'SessionMaxLife' => 86400
+		,'SessionReset' => 15
+		,'MaxLifeTime' => ''
+		,'Notification' => false
+		,'ContextActivate' => false
+		,'ZipDownload' => false
+		,'UnloadWrapWidth' => 400
+		,'TabListType' => ''
+		,'WinNoTitle' => true
+		,'TitleIcoNone' => true
+		,'CleanTitle' => false
+		,'SearchWithLike' => false
+		,'WaterMarking' => ''
+		,'Call3CX' => ''
+		,'Call3CXPrefix' => ''
+		,'Call3CXFeatures' => 'width=320,height=400,resizable,scrollbars,status=0,menubar=0,toolbar=0,location=0,titlebar=0'
+		,'Call3CXUrl' => ''
+		,'SharedTables' => ''
+		,'Multitenancy' => [
+		]
+		,'Cache' => true
+		,'TimeZone' => 'Europe/Madrid'
+		,'CharsetText' => false
+		,'CharsetDB' => false
+		,'FormatMonth' => 'yyyy-mm'
+		,'FormatDate' => 'dd-mm-yyyy'
+		,'FormatDateTime' => 'yyyy-mm-dd hh:ii:ss'
+		,'FormatNumber' => '.,'
+		,'FormatPhone' => 999999999
+		,'FirstWeekDay' => 0
+		,'AutoCompletForm' => ' autocomplete=\"off\"'
+		,'AutoComplet' => ' autocomplete=\"new_password\"'
+		,'commandJS' => ''
+		,'SlowSqlWarning' => 3
+		,'SlowSqlFreeScripts' => ''
+		,'ShareDictionary' => ''
+		,'SessionResetMn' => 900
+		,'Call3CX_ON' => false
+		,'PhpOnLine' => true
+		,'_FormatP4' => 'yyyy-mm'
+		,'_FormatP4EXP' => '/([0-9]{4})([0-9]{2})/'
+		,'_FormatP4TKN' => '$1-$2'
+		,'_FormatP4EXPdb' => '/([0-9]{4})([0-9]{2})/'
+		,'_FormatP4TKNdb' => '$1-$2'
+		,'_FormatP4TKNuser' => '$1-$2'
+		,'_FormatF4' => 'dd-mm-yyyy'
+		,'_FormatF4EXP' => '/([0-9]{2})([0-9]{2})([0-9]{4})/'
+		,'_FormatF4TKN' => '$1-$2-$3'
+		,'_FormatF4EXPdb' => '/([0-9]{4})([0-9]{2})([0-9]{2})/'
+		,'_FormatF4TKNdb' => '$3-$2-$1'
+		,'_FormatF4TKNuser' => '$3-$2-$1'
+		,'_FormatCDI' => 'yyyy-mm-dd hh:ii:ss'
+		,'_FormatCDIEXP' => '/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/'
+		,'_FormatCDITKN' => '$1-$2-$3 $4:$5:$6'
+		,'_FormatCDIEXPdb' => '/([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/'
+		,'_FormatCDITKNdb' => '$1-$2-$3 $4:$5:$6'
+		,'_FormatCDITKNuser' => '$1-$2-$3 $4:$5:$6'
+		,'_FormatT' => 999999999
+		,'_FormatTEXP' => '/([0-9]{9})/'
+		,'_FormatTTKN' => '$1'
+		,'_FormatTEXPdb' => '/([0-9]{9})/'
+		,'_FormatTTKNdb' => '$1'
+		,'_FormatTTKNuser' => '$1'
+		,'FormatDelimiter' => '-:'
+	];
+	public static $Desktop = [
+		 'DesktopBannerMinimized' => true
+		,'DesktopTreeType' => 'O'
+		,'DefaultTreeIcon' => false
+		,'DefaultTreeNoIcon' => ''
+		,'DefaultTreeIconChar' => ''
+		,'DefaultTreeFolder' => [
+			 '0'=>'&#364;'
+			,'1'=>'&#365'
+			,'2'=>''
+		]
+		,'DefaultTreeOneLevel' => true
+		,'MenuDefaultType' => 'I'
+		,'MenuIconOverClick' => 'O'
+		,'MenuAutoHidden' => 1
+		,'MenuAutoHiddenOptional' => true
+		,'NumberLevels' => 1
+		,'SVGWidth' => 25
+		,'SVGHeight' => 25
+		,'IMGWidth' => 25
+		,'IMGHeight' => 25
+		,'BOXWidth' => 30
+		,'BOXHeight' => 30
+		,'HeightTitleIcon' => 33
+		,'HeightTitleIconWin' => 16
+		,'ExitToLogin' => true
+		,'Desktop' => 'wepe'
+		,'SeeLastAccess' => true
+		,'JsdWidget' => false
+		,'JSEnd' => ''
+		,'PHPEnd' => ''
+		,'OnLoad' => ''
+		,'RecentOptions' => 20
+	];
+	public static $List = [
+		 'AlignTitle' => 'L'
+		,'AlignTextTH' => 'l'
+		,'AlignTextTD' => 'l'
+		,'AlignFillTH' => 'c'
+		,'AlignFillTD' => 'c'
+		,'AlignNumericTH' => 'r'
+		,'AlignNumericTD' => 'r'
+		,'TypeFormat' => 'S'
+		,'ToolsMenuType' => 'B'
+		,'TypePaging' => 'b'
+		,'NoZeroAll' => true
+		,'TitleIconView' => true
+		,'TCPDF' => true
+		,'WideListing' => 80
+		,'ColsTrim' => true
+		,'OptionsInListMenuRow' => true
+		,'OptionsInListHidden' => true
+		,'OptionsInListLimit' => 100
+		,'OptionsInListDefault' => ''
+		,'SubWindowInIWork' => true
+		,'MaxVisibleRows' => 50
+		,'MaxRec' => 1000
+		,'ShowTotalRecords' => false
+		,'Cursor' => true
+		,'Greenbar' => false
+		,'CardSwitch' => true
+		,'LastRecords' => 30
+		,'FixList' => true
+		,'DBLimit' => 5000
+		,'PDFLimit' => 5000
+		,'XLSLimit' => 15000
+	];
+	public static $CSSDynamic = [
+		 'cListGrid' => '#DDDDDD'
+		,'FontNumbers' => 'numbers'
+	];
+	public static $Tab = [
+		 'HRTypeTab' => true
+		,'ShowZero' => 0
+		,'NextMarginLeft' => '-2'
+		,'EnterForSubmit' => false
+		,'MarkFieldRequired' => false
+		,'MarkLabelRequired' => false
+		,'CardDefault' => '2,10,30'
+	];
+	public static $LogHistory = [
+		 'LogTrace' => 'GA,GB,GM,FA,FB,FM,D*'
+		,'LogFullType' => ''
+		,'LogPathFileVersion' => '//log_doc'
+		,'LogGsAccessFile' => ''
+		,'LogGsAccessDays' => ''
+		,'LogGsErrorDays' => ''
+		,'LogGsConnectionsDays' => ''
+		,'ViewFolder' => false
+	];
+	public static $Permission = [
+		 'EmptyTree' => false
+		,'EmptySpecial' => false
+	];
+	public static $EMail = [
+		 'Log' => 'DDBB'
+		,'ReadOnly' => false
+		,'MaxFileSize' => 500000
+		,'fileEMailFrom' => ''
+		,'include' => ''
+		,'function' => ''
+		,'host' => ''
+		,'user' => ''
+		,'password' => ''
+		,'from' => ''
+		,'nm_from' => ''
+		,'reply' => ''
+		,'nm_reply' => ''
+		,'documents_pass' => false
+		,'documents_certify' => false
+	];
+	public static $Robinson = [
+		 'Status' => false
+		,'Script' => ''
+		,'Check' => ''
+		,'Management' => ''
+		,'Assign' => ''
+	];
+	public static $Background = [
+		 'php' => 'php'
+		,'syntax' => '-l'
+	];
+	public static $LogDownload = [
+		 'LogFileStartDate' => ''
+		,'SaveInfo' => true
+		,'LogFileDownload' => ''
+		,'LogFileDays' => ''
+	];
+	public static $New = [
+		 'PageSize' => 32500
+	];
+	public static $Login = [
+		 'min_login' => 5
+		,'max_login' => 65
+		,'min_password' => 6
+		,'max_password' => 250
+		,'key_case' => 2
+		,'Type' => 'dni'
+		,'HostGet' => false
+		,'TriggerCharOff' => false
+		,'CookieName' => ''
+		,'CookieDaysExpire' => 365
+		,'ClaveReset' => ''
+		,'LoginTextarea' => true
+		,'WorkingHours' => true
+		,'PassDaysToChange' => '-1'
+		,'PassDaysToExpire' => '-1'
+		,'UserPasswordByEmail' => true
+		,'password_tmp_time' => 5
+		,'InitWeb' => ''
+		,'VerificationType' => 'sms,email'
+		,'VerificationSMS' => ''
+		,'VerificationExpire' => 365
+		,'VerificationKey' => ''
+		,'VerificationWait' => 5
+		,'AuthenticationRequired' => 'yes'
+		,'AccessErrors' => 3
+		,'AccessMinutesDelay' => 10
+		,'minSecondsToFill' => 3
+	];
+	public static $RGPD = [
+		 'Entites' => ''
+		,'Source' => ''
+		,'Type' => ''
+		,'CopyName' => ''
+		,'CopySurname1' => ''
+		,'CopySurname2' => ''
+		,'CopyZip' => ''
+		,'CopyLocality' => ''
+		,'CopyEMail' => ''
+	];
+	public static $ImgEdit = [
+		 'ImgClipSize' => '300,300, 100,100, 60,60'
+		,'ImgWatermark' => '/_datos/config/watermark.png'
+		,'ImgMarginRight' => 10
+		,'ImgMarginBottom' => 10
+	];
+	public static $UploadFile = [
+		 'MaxSize' => 'limit'
+		,'BoxSize' => 20
+		,'BoxDir' => ''
+	];
+	public static $LogFile = [
+		 'Password' => ''
+		,'LifeDays' => 195
+		,'Path' => ''
+		,'SavePaths' => 'privado'
+		,'SaveTables' => ''
+		,'MinRecords' => 5
+		,'TypeFile' => '*'
+	];
+	public static $SSOUpdate = [
+		 'sso_user' => ''
+		,'sso_password' => ''
+		,'sso_url' => ''
+		,'sso_dir' => ''
+	];
+	public static $Channel = [
+		 'Status' => false
+		,'Notification' => true
+		,'URL' => ''
+		,'ServicePHP' => ''
+		,'jwtKey' => ''
+		,'phpNodeKey' => ''
+		,'phpNodeService' => ''
+		,'filter' => ''
+	];
+	public static $ChannelDevelopment = [
+		 'Status' => false
+		,'Notification' => true
+		,'URL' => ''
+		,'ServicePHP' => ''
+		,'jwtKey' => ''
+		,'phpNodeKey' => ''
+		,'phpNodeService' => ''
+		,'filter' => ''
+	];
+	public static $_Charset='UTF-8';
+	public static $_DevelopmentSrv=true;
+	public static $LogTrace = [
+		 'GA' => true
+		,'GB' => true
+		,'GM' => true
+		,'FA' => true
+		,'FB' => true
+		,'FM' => true
+		,'D*' => true
+	];
+	public static $SlowSqlWarning=3;
+}
+?>

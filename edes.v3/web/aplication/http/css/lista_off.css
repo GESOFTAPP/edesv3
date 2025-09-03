@@ -1,0 +1,238 @@
+.Visited {
+COLOR: #9d9d9d;
+}
+.SeekInfo {
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#C9A5A5, endcolorstr=#F10000);
+}
+BODY {
+BACKGROUND: url(../g/d5_logo_watermark.png) #d7d7d7 fixed no-repeat right bottom;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+.ClassBackground {
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#CDCDCD, endcolorstr=#F1F1C1);
+}
+.TITULO {
+COLOR: #1c4278;
+}
+.Titulo2 {
+COLOR: #55007b;
+}
+#CONDICIONES TH {
+COLOR: #243a59;
+}
+.Boton {
+BACKGROUND: #8675d3;
+BORDER-BOTTOM: #584c89 3px solid;
+BORDER-LEFT: #a599da 2px solid;
+BORDER-RIGHT: #584c89 3px solid;
+BORDER-TOP: #a89cde 2px solid;
+COLOR: #f5f5f5;
+}
+.Pie {
+COLOR: #1b0027;
+}
+TABLE {
+BACKGROUND: #bbbbbb;
+}
+.Flotante {
+BACKGROUND: #b5b5b5;
+}
+#sT {
+COLOR: #55007b;
+}
+TH {
+BACKGROUND-COLOR: #7d91aa;
+COLOR: #f2f0f5;
+}
+.Celda {
+BACKGROUND: #f5f5f5;
+COLOR: #0b0011;
+}
+.JSOnClickRow {
+BACKGROUND: #f1f0ef;
+}
+HR {
+BACKGROUND: #316200;
+COLOR: #312211;
+}
+#BROWSE {
+BORDER-BOTTOM: #94a3ab 0px solid;
+BORDER-LEFT: #94a3ab 0px solid;
+BORDER-RIGHT: #94a3ab 0px solid;
+BORDER-TOP: #97a6ae 0px solid;
+}
+#CursorOVER {
+BACKGROUND: #f5f5df;
+COLOR: #000000;
+}
+#P {
+BACKGROUND: #f5f0e3;
+COLOR: #000000;
+}
+#MasInfo {
+BACKGROUND: #7b878e;
+BORDER-BOTTOM: #94a3ab 2px solid;
+BORDER-LEFT: #94a3ab 2px solid;
+BORDER-RIGHT: #94a3ab 2px solid;
+BORDER-TOP: #97a6ae 2px solid;
+COLOR: #e7e7ec;
+}
+#MasInfo CENTER {
+BACKGROUND: #97a6ae;
+}
+.PieLista {
+BACKGROUND: #e6e9ed;
+COLOR: #303030;
+}
+.SelectON {
+BACKGROUND: #f5caba;
+COLOR: #000000;
+}
+#CngRESPUESTA {
+BACKGROUND: #7494a5;
+BORDER-BOTTOM: #7292a2 2px solid;
+BORDER-LEFT: #7292a2 2px solid;
+BORDER-RIGHT: #7292a2 2px solid;
+BORDER-TOP: #7494a5 2px solid;
+COLOR: #f5f5f5;
+}
+#MensaError {
+BACKGROUND: #f50000;
+BORDER-BOTTOM: #a12200 3px solid;
+BORDER-LEFT: #f17152 2px solid;
+BORDER-RIGHT: #a12200 3px solid;
+BORDER-TOP: #f57353 2px solid;
+COLOR: #f5f5c4;
+}
+.iWIN {
+BACKGROUND: #f5f5c6;
+BORDER-BOTTOM: #f1f1c3 2px solid;
+BORDER-LEFT: #f1f1c3 2px solid;
+BORDER-RIGHT: #f1f1c3 2px solid;
+BORDER-TOP: #f5f5c6 2px solid;
+}
+.Cargando {
+COLOR: #92979a;
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#CDCDCD, endcolorstr=#F1F1C1);
+}
+.EditList {
+BACKGROUND: #e7e3d9;
+COLOR: #000000;
+}
+.EditListCursor {
+BACKGROUND: #c6bd80;
+}
+.SelectList {
+BORDER-BOTTOM: #554c1e 1px solid;
+BORDER-LEFT: #554c1e 1px solid;
+BORDER-RIGHT: #554c1e 1px solid;
+BORDER-TOP: #564d1e 1px solid;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+.SelectList TABLE {
+BACKGROUND: #c9bc7e;
+}
+.SelectList TD {
+BACKGROUND: #f5e599;
+COLOR: #6b5f00;
+}
+.SelectList .SelON {
+BACKGROUND: #c7ba7d;
+COLOR: #6b5f00;
+}
+#GC1 {
+BACKGROUND: #e06c18;
+COLOR: #06006b;
+}
+#GR1 {
+BACKGROUND: #dc915b;
+COLOR: #06006b;
+}
+#GC2 {
+BACKGROUND: #c39c3d;
+COLOR: #06006b;
+}
+#GR2 {
+BACKGROUND: #c8b173;
+COLOR: #06006b;
+}
+#GC3 {
+BACKGROUND: #4ab0b1;
+COLOR: #06006b;
+}
+#GR3 {
+BACKGROUND: #78bfc1;
+COLOR: #06006b;
+}
+#GC4 {
+BACKGROUND: #2b75a9;
+COLOR: #06006b;
+}
+#GR4 {
+BACKGROUND: #6296bc;
+COLOR: #06006b;
+}
+.ISubListBODY {
+BACKGROUND-COLOR: #ededed;
+}
+#ToolsPaginate .ReadOnly {
+BACKGROUND: #d4ebf5;
+}
+.SubMenu {
+BACKGROUND-COLOR: #f1f1f1;
+BORDER-BOTTOM: #c1c1c1 1px solid;
+BORDER-LEFT: #c1c1c1 1px solid;
+BORDER-RIGHT: #c1c1c1 1px solid;
+BORDER-TOP: #c4c4c4 1px solid;
+}
+.SubMenu TR {
+BACKGROUND-COLOR: #ededed;
+COLOR: #2a496e;
+}
+.SubMenu .On {
+BACKGROUND-COLOR: #f1ad07;
+COLOR: #f5f5f5;
+}
+.SubMenu .Linea {
+BACKGROUND-COLOR: #5575a1;
+}
+.SubMenu .TITULO {
+BACKGROUND-COLOR: #2a486c;
+BORDER-BOTTOM: #bebab7 1px solid;
+COLOR: #f5f5f5;
+}
+#UtilList {
+BORDER-BOTTOM: #001081 1px solid;
+BORDER-LEFT: #001081 1px solid;
+BORDER-RIGHT: #001081 1px solid;
+BORDER-TOP: #001083 1px solid;
+}
+#UtilList TD {
+BACKGROUND: #f5f5f5;
+}
+#UtilList INPUT {
+BORDER-BOTTOM: #66757c 1px solid;
+BORDER-LEFT: #66757c 1px solid;
+BORDER-RIGHT: #66757c 1px solid;
+BORDER-TOP: #68777e 1px solid;
+}
+#UtilSeek {
+BORDER-BOTTOM: #001081 1px solid;
+BORDER-LEFT: #001081 1px solid;
+BORDER-RIGHT: #001081 1px solid;
+BORDER-TOP: #001083 1px solid;
+}
+#UtilSeek TD {
+BACKGROUND: #f5f5f5;
+}
+#UtilSeek INPUT {
+BORDER-BOTTOM: #66757c 1px solid;
+BORDER-LEFT: #66757c 1px solid;
+BORDER-RIGHT: #66757c 1px solid;
+BORDER-TOP: #68777e 1px solid;
+}
+IMG {
+FILTER: gray(enabled=1);
+}

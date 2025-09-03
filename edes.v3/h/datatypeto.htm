@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr>
+<td id="Etiqueta">DataTypeTo</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[DataTypeTo] field | typeField [ | NombreMenú, fieldFrom, fieldTo ] ...</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Los campo de tipo date puedes definirlo con distinta precisión, con esta etiqueta puedes definir el datos con varias precisiones y conmutarlo según la necesidad del usuario, esta etiqueta solo está disponible en las fichas y al preguntar.<br />Esta etiqueta ya genera la etiqueta [DBRange] que haría falta para definir un dato desde/hasta.<br />A la derecha del campo se verá un icono para poder conmutar entre los campos, el orden del menú será el definido en la etiqueta dejando por defecto visible la primera definición, en caso de querer otra se le antenpondrá el "*".<br />Rellenes el dato en el formato que necesites el sistema rellenará los digitos que faltan para formar el campo con el formato "typeField", en el caso del ejemplo con el formato "CDI".</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[DataTypeTo] cdi | CDI |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// CDI, F4, P4, Y
+<br />&nbsp; &nbsp; &nbsp; Instante&nbsp; &nbsp; &nbsp;, _cdi_desde , _cdi_hasta |
+<br />&nbsp; &nbsp; &nbsp; Fecha+Hora&nbsp; &nbsp;, _cdi2_desde, _cdi2_desde_hours, _cdi2_hasta, _cdi2_hasta_hours |
+<br />&nbsp; &nbsp; &nbsp; Fecha&nbsp; &nbsp; &nbsp; &nbsp; , _fe_desde&nbsp; , _fe_hasta&nbsp; |
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Periodo&nbsp; &nbsp; &nbsp; , _per_desde , _per_hasta |
+<br />&nbsp; &nbsp; &nbsp; A&ntilde;o&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, _ayo_desde , _ayo_hasta<br /><br />[Fields] ?<br />.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| cdi&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| CDI | T | 19 | | Q&nbsp; | |&nbsp; &nbsp;|<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instante desde | _cdi2_desde&nbsp; &nbsp; &nbsp; &nbsp;| F4&nbsp; | T | 10 | | QF | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | _cdi2_desde_hours | H&nbsp; &nbsp;| T |&nbsp; 8 | | Q&nbsp; | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, Hasta&nbsp; &nbsp; &nbsp; &nbsp; | _cdi2_hasta&nbsp; &nbsp; &nbsp; &nbsp;| F4&nbsp; | T | 10 | | QF | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | _cdi2_hasta_hours | H&nbsp; &nbsp;| T |&nbsp; 8 | | Q&nbsp; | |&nbsp; &nbsp;|<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instante desde | _cdi_desde&nbsp; &nbsp; &nbsp; &nbsp; | CDI | T | 19 | | QF | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, Hasta&nbsp; &nbsp; &nbsp; &nbsp; | _cdi_hasta&nbsp; &nbsp; &nbsp; &nbsp; | CDI | T | 19 | | QF | |&nbsp; &nbsp;|<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha desde&nbsp; &nbsp; | _fe_desde&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| F4&nbsp; | T | 10 | | QF | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, Hasta&nbsp; &nbsp; &nbsp; &nbsp; | _fe_hasta&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| F4&nbsp; | T | 10 | | QF | |&nbsp; &nbsp;|<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Periodo desde&nbsp; | _per_desde&nbsp; &nbsp; &nbsp; &nbsp; | P4&nbsp; | T |&nbsp; 7 | | QP | |&nbsp; &nbsp;|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, Hasta&nbsp; &nbsp; &nbsp; &nbsp; | _per_hasta&nbsp; &nbsp; &nbsp; &nbsp; | P4&nbsp; | T |&nbsp; 7 | | QP | |&nbsp; &nbsp;|<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&ntilde;o desde&nbsp; &nbsp; &nbsp; | _ayo_desde&nbsp; &nbsp; &nbsp; &nbsp; | 0&nbsp; &nbsp;| T&nbsp; | 4 | | Q&nbsp; | | % |<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, Hasta&nbsp; &nbsp; &nbsp; &nbsp; | _ayo_hasta&nbsp; &nbsp; &nbsp; &nbsp; | 0&nbsp; &nbsp;| T&nbsp; | 4 | | Q&nbsp; | | % |</code><br /><br />...</td>
+</tr>
+<tr>
+<td id="txt">En este ejemplo se tiene en la ddbb el campo "cdi" y se le quiere poder conmutar en: un timestamp normal, en un timestamp separando la fecha de la hora, en una fecha, en un periodo y en un año, por defecto dejamos el periodo como dato visible.</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

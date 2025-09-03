@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">OptionsInList</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[OptionsInList] Opciones [ | Icon | userFunction | label ... ]  [ | Condition/Funcion ]</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Ejecutar un listado con opciones de mantenimiento, la opción se ejecutará como "edes.php?Lcl:..", el modo en que se ejecuta indica la opción por defecto a ejecutar en el listado, también puede ser "ml", o "bl".<br />En los script "gdf" se pondrá la etiqueta en el script de la primera solapa, que es de la que se genera el listado.<br />Si se quiere poder filtrar al entrar se ejcutará con "edes.php?Lgl:.." y activará la condición si existe.<br />En "Opciones" si pones "*" estas indicando que tine las opciones que tenga el usuario en su árbol si defines alguna de las siguientes opciones "abcm" todos los usuarios tendrán esos modos, se puede combinar el "*" con cualquier opción así como desactivarla ponieno un signo menos delate de la opción "*-b" todas las opciones menos la de borrar.<br />La coma "," delimitará mediante una barra vertical las opciones.<br />La "Condición" puede ir en el 2 o 5 parámetro en función de si tiene la opción de usuario o no, la condición puede ser texto o el nombre de una función terminada con "()" que devuelva la cadena del where.<br />En "Opciones" si ponemos una "o" será una o varias opciones del usuario, cada opción constará de tres parámetros: el icono, la función de usuario y el label, estas opciones funcionan igual que las de gestión pulsas la opción y luego un registro de la tabla, si se quiere ejecutar la opción directamente se pondrá el caracter ">" delante del nombre de la función y esta enviará el objeto "this".<br />Esta etiqueta anula a [FormAction].<br />Esta etiqueta al ejecutar listados se activa una variable para saber el modo en que se ejecuta dicha etiqueta:<br />     $_OptionsInListMode:<br /><code>          LR....: LastRecords</code><br /><code>          NLR-NR: NoLastRecords-NoRecords</code><br /><code>          NLR-L.: NoLastRecords-List</code><br /><code>          NLR-AF: NoLastRecords-AddFilter</code></td>
+</tr>
+<tr style="display: none;">
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>&lt;span style="font-family: sans-serif;"&gt;[OptionsInList] *&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td id="txt"><code><span style="font-family: sans-serif;">Establece las opciones de "abcmfou", "f" de Filter, "u" de "últimos registros gestionados" y la "o" representa una opción definida por el usuario.</span></code></td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>&lt;span style="font-family: sans-serif;"&gt;[OptionsInList] mc&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td id="txt">Solo se permiten las opciones de Modificar y Consultar</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">&lt;span style="font-family: sans-serif;"&gt;<code>[OptionsInList] bcmafou | email | uFunction | Mandando email</code><br /><code>[JSIni] *</code><br /><code>function uFunction(oTR, pk1 [,...]){</code><br /><code>&nbsp; &nbsp; &nbsp;// oTR: objeto TR pulsado</code><br /><code>&nbsp; &nbsp; &nbsp;// pk1: primer valor de la etiqueta [DBIndex]</code><br /><code>}</code>&lt;/span&gt;</td>
+</tr>
+<tr>
+<td id="txt">La "o" define una opción del usuario</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[OptionsInList] fu,abcm,o&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ==&amp; #281; | EditarPDF&nbsp; &nbsp; &nbsp; &nbsp;| Editar&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| print&nbsp; &nbsp; &nbsp;| ImprimirPDF&nbsp; &nbsp; &nbsp;| Imprimir&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| copy&nbsp; &nbsp; &nbsp; | DuplicarImpreso | Duplicar Impreso&nbsp; &nbsp;_</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ==&amp; #230; | &gt;TipoDeImpresos | Tipo Impresos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ==&amp; #123; | SiguienteHoja&nbsp; &nbsp;| Ver impreso&nbsp; &nbsp; &nbsp; &nbsp; _</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ==&amp; #124; | SiguienteHoja2&nbsp; | Siguiente impreso | cd_gs_form_type={$cd_gs_form_type}</code><code></code></td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

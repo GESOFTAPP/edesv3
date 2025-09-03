@@ -1,0 +1,45 @@
+[Title]Información en un PNG-
+[AddCode]*|data|I|style="font-family:monospace"
+[Button]*|[u] Update
+[AddOption]*|type|C,Client; S,Server
+[Fields]
+|data|#|A|5000,110,20||M||#|
+Type|type|#|SV|30||M|$_GET["type"]||
+[PHPStart]a
+if( $_GET["type"]=="C" ){
+copy(DIREDES."a/seek.gif", "../seek.gif");
+$img = "seek";
+}else{
+copy(DIREDES."a/users.png", "../users.png");
+$img = "user";
+}
+if( !file_exists("../{$img}.png") ){
+eMessage('No hay datos en "../'.$img.'.png"', "HS");
+}
+$file = file_get_contents("../{$img}.png");
+$leng = substr($file, -3);
+$leng = hexdec($leng);
+$data = gzuncompress(substr($file, -$leng-3, -3));
+[JSEnd]*
+var data = `<?=$data?>`;
+S(":data").val(data);
+[PHPStart]A
+if( $_POST["type"]=="C" ){
+copy(DIREDES."a/seek.gif", "../seek.gif");
+$img = "seek";
+}else{
+copy(DIREDES."a/users.png", "../users.png");
+$img = "user";
+}
+@unlink("../{$img}.png");
+copy(DIREDES."a/{$img}.png" , "../{$img}.png");
+$file = file_get_contents("../{$img}.png");
+$data = trim($_POST["data"]);
+$data = eEntityDecode($data);
+$data = str_replace('&#13;' , chr(13), $data);
+$data = str_replace('&#10;' , chr(10), $data);
+$data = str_replace('&quot;',    '"' , $data);
+$data = gzcompress($data, 9);
+$leng = str_pad( dechex(strlen($data)), 3, "0", STR_PAD_LEFT );
+file_put_contents("../{$img}.png", $file.$data.$leng);
+eMessage('Los datos se han encriptado en "../'.$img.'.png"', "HS");

@@ -1,0 +1,251 @@
+[Title]=LOG DE DESCARGAS|l
+[DBTable]{$_ENV['eDesDictionary']}gs_user
+[DBIndex]cd_gs_user
+[DBSerial]cd_gs_user
+[RelationFields]cd_auto,cd_prov
+[NoEditFilled]*|Session
+[AddOption]c,b,m|permission|,; S,Activado; N,Desactivado; C,Caducado
+[Fields]?
+-|Fechas|||||Q|||
+Fecha Desde|fecha_desde|F4|T|10||Q||#|
+Fecha Hasta|fecha_hasta|F4|T|10||Q|||
+-|Datos Personales|||||Q|||
+DNI|dni|DNI|T|8||AQq|||
+,  Usuario|cd_gs_user|+|T|8|<email|Qq|||
+E-Mail|email|@|T|65||QEq|||
+-|Ámbito|||||Q|||
+Autonomía|cd_auto|0|S|2|26,200|IQ|_Auto_||
+Provincia|cd_prov|0|Ss|2|26,200|IQ|_Prov_||
+Local|cd_gs_node|X|S|7|+email|Q|||
+Acceso SIC|permission|X|SV|10|100|MQ|||
+-||||||Q|||
+{I} En la "Lista de valores" del "Usuario" se puede meter un sql que devuelva una lista de "cd_gs_user"
+[JSCheck]c
+if( eGF("fecha_desde")=="" ){
+ePE("fecha_desde", 'Falta definir el dato "Fecha Desde"');
+}
+var numFilter = 0, bakFilter;
+if( eGF("dni"		)!="" ) numFilter++;
+if( eGF("cd_gs_user")!="" ) numFilter++;
+if( eGF("email"		)!="" ) numFilter++;
+bakFilter = numFilter;
+if( document.all._FILTER_dni		!=undefined && eGF("_FILTER_dni"		)!="" ) numFilter++;
+if( document.all._FILTER_cd_gs_user	!=undefined && eGF("_FILTER_cd_gs_user"	)!="" ) numFilter++;
+if( document.all._FILTER_email		!=undefined && eGF("_FILTER_email"		)!="" ) numFilter++;
+if( numFilter>1 ){
+if( bakFilter!=numFilter ){
+ePE("dni", 'No puede condicionar el "Dato" y en la "Lista de valores"');
+}else{
+ePE("dni", 'Solo se permite condicionar por un "Dato Personal"');
+}
+}
+[JSEnd]c
+ePF("fecha_desde", "<?=date('Y-01-01')?>");
+[PHPStart]cR
+include("../_datos/config/sql.ini");
+include("../../edes/{$_Sql}.inc");
+$listDNI = $_POST["dni"];
+if( $_POST["_FILTER_dni"]!="" ){
+$listDNI = str_replace(",", "\n", $_POST["_FILTER_dni"]);
+}
+$listUser = $_POST["cd_gs_user"];
+if( $_POST["_FILTER_cd_gs_user"]!="" ){
+if( mb_substr(trim($_POST["_FILTER_cd_gs_user"]),0,6)=="select" ){
+$listUser = str_replace("\n", " ", $_POST["_FILTER_cd_gs_user"]);
+}else{
+$listUser = str_replace("\n", ",", $_POST["_FILTER_cd_gs_user"]);
+}
+$listUser = trim($listUser);
+}
+$listEmail = $_POST["email"];
+if( $_POST["_FILTER_email"]!="" ){
+$listEmail = str_replace(",", "\n", $_POST["_FILTER_email"]);
+}
+$fechaDesde = "";
+if( $_POST["fecha_desde"]!="" ){
+list($d, $m, $y) = explode("-", $_POST["fecha_desde"]);
+$fechaDesde = "{$y}-{$m}-{$d}";
+}
+if( mb_strlen($fechaDesde)==10 ){
+$fechaDesde .= " 00:00:00";
+}
+if( mb_strlen($fechaDesde)!=19 ){
+die('ERROR en "$fechaDesde"');
+}
+$fechaHasta = "";
+if( $_POST["fechaHasta"]!="" ){
+list($d, $m, $y) = explode("-", $_POST["fechaHasta"]);
+$fechaHasta = "{$y}-{$m}-{$d}";
+}
+if( $fechaHasta=="" ){
+$fechaHasta = date("Y-m-d 23:59:59");
+}else if( mb_strlen($fechaHasta)==10 ){
+$fechaHasta .= " 23:59:59";
+}
+if( mb_strlen($fechaHasta)!=19 ){
+die('ERROR en "$fechaHasta"');
+}
+$cond = array();
+if( $_POST["cd_auto"]    !="" ) array_push($cond, "cd_auto='{$_POST["cd_auto"]}'");
+if( $_POST["cd_prov"]    !="" ) array_push($cond, "cd_prov='{$_POST["cd_prov"]}'");
+if( $_POST["cd_gs_node"] !="" ) array_push($cond, "cd_gs_node='{$_POST["cd_gs_node"]}'");
+if( $_POST["permission"] !="" ){
+array_push($cond, "permission='{$_POST["permission"]}'");
+if( $_POST["permission"]=="S" ){
+$hoy = date("d-m-Y");
+array_push($cond, "(dt_del is null or dt_del='' or dt_del>'{$hoy}')");
+}
+}
+$where = "";
+if( count($cond)>0 ){
+$where = implode(" and ", $cond);
+$listUser = "select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where {$where}";
+}
+$listUser = trim($listUser);
+$dimUser = array();
+if( trim($listEmail)!="" ){
+$type = "email";
+$dim = array();
+$tmp = explode("\n", $listEmail);
+for($n=0; $n<count($tmp); $n++){
+$tmp[$n] = trim($tmp[$n]);
+if( $tmp[$n]=="" ) continue;
+array_push($dim, $tmp[$n]);
+$dimUser[$tmp[$n]] = 1;
+}
+$listUser = "'".implode("','", $dim)."'";
+$where = "email in ({$listUser})";
+$listUser = array();
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where {$where}");
+while( $r=qArray() ){
+array_push($listUser, $r['cd_gs_user']);
+}
+$listUser = implode(",", $listUser);
+$where = "cd_gs_user in ({$listUser})";
+}else if( trim($listDNI)!="" ){
+$type = "dni";
+$dim = array();
+$tmp = explode("\n", $listDNI);
+for($n=0; $n<count($tmp); $n++){
+$tmp[$n] = trim($tmp[$n]);
+if( $tmp[$n]=="" ) continue;
+array_push($dim, $tmp[$n]);
+$dimUser[$tmp[$n]] = 1;
+}
+$listUser = "'".implode("','", $dim)."'";
+$where = "dni in ({$listUser})";
+$listUser = array();
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where {$where}");
+while( $r=qArray() ){
+array_push($listUser, $r['cd_gs_user']);
+}
+$listUser = implode(",", $listUser);
+$where = "cd_gs_user in ({$listUser})";
+}else if( mb_substr($listUser,0,6)=="select" ){
+$type = "select";
+list(,$where) = explode(" where ", $listUser);
+}else{
+$type = "cd_gs_user";
+$dim = explode(",", $listUser);
+for($n=0; $n<count($dim); $n++){
+$dim[$n] = trim($dim[$n]);
+if( $dim[$n]=="" ) continue;
+$dimUser[$dim[$n]] = 1;
+}
+$where = "cd_gs_user in ({$listUser})";
+}
+echo "<span style='text-align:left'><b>CONDICIONES</b></span><br>";
+if( !empty($_POST["fecha_desde"]) ) echo "Fecha Desde = ".$_POST["fecha_desde"]."<br>";
+if( !empty($_POST["fecha_hasta"]) ) echo "Fecha Hasta = ".$_POST["fecha_hasta"]."<br>";
+echo "<br>";
+echo '<table border=1 cellspacing=1 cellpadding=3>';
+echo "<caption style='text-align:left'><b>LISTA DE USUARIOS A INFORMAR</b></caption>";
+echo '<tr>';
+echo '<th>Cd.';
+echo '<th>Usuario';
+echo '<th>EMail';
+echo '</tr>';
+qQuery("select cd_gs_user, user_name, user_surname, email, dni from {$_ENV['eDesDictionary']}gs_user where {$where} order by user_surname, user_name");
+while( $r=qArray() ){
+echo "<tr>";
+echo '<td align="right">'.number_format($r['cd_gs_user'], 0, ",", ".");
+echo "<td>".trim($r['user_surname']).", ".trim($r['user_name']);
+echo "<td>".$r['email']."&nbsp;";
+if( $type!="select" ){
+$dimUser[$r[$type]] = "";
+}
+echo "</tr>";
+}
+echo '</table>';
+$faltanUsuarios = false;
+foreach($dimUser as $k=>$v){
+if( $v==1 ){
+if( !$faltanUsuarios ){
+echo "<br><b>USUARIOS NO ENCONTRADOS</b><br>";
+$faltanUsuarios = true;
+}
+echo "{$k}<br>";
+}
+}
+$dir = eScript('//_bak_/');
+if ($dh = opendir($dir)) {
+while (($file = readdir($dh))!==false) {
+if( filetype($dir.$file)=="dir" ) continue;
+if( mb_substr($file,-4)!=".zip" ) continue;
+@unlink($dir.$file);
+}
+closedir($dh);
+}
+$ayoDesde = mb_substr($fechaDesde,2,2);
+$ayoHasta = mb_substr($fechaHasta,2,2);
+$where = " where cdi>='{$fechaDesde}' and cdi<='{$fechaHasta}' and objeto='D' and cd_gs_user in ({$listUser}) order by cdi";
+$dim = array();
+for($ayo=$ayoDesde; $ayo<=$ayoHasta; $ayo++){
+array_push($dim, "select * from {$_ENV['eDesDictionary']}gs_acceso_{$ayo} {$where}");
+}
+if( $ayoHasta>=date("y") ){
+array_push($dim, "select * from {$_ENV['eDesDictionary']}gs_acceso		 {$where}");
+}
+echo '<br>';
+echo '<table border=1 cellspacing=1 cellpadding=3>';
+echo "<caption style='text-align:left'><b>LISTA DE FICHEROS DESCARGADOS</b></caption>";
+echo '<tr>';
+echo '<th>Instante';
+echo '<th>Cd.';
+echo '<th>Usuario';
+echo '<th>Registros';
+echo '<th>Formato';
+echo '<th>Fichero';
+echo '</tr>';
+for($n=0; $n<count($dim); $n++){
+qQuery($dim[$n]);
+while( $r=qArray() ){
+$Nom = $r['num_acceso'];
+$OriFile = eScript('//download/'.$Nom.'.zip');
+$DesFile = eScript('//_bak_/'.$Nom.'.zip');
+echo '<tr>';
+qQuery("select * from {$_ENV['eDesDictionary']}gs_user where cd_gs_user={$r['cd_gs_user']}", $p);
+$u = qArray($p);
+echo '<td>'.$r['cdi'];
+echo '<td align="right">'.number_format($r['cd_gs_user'], 0, ",", ".");
+echo '<td>'.trim($u['user_surname']).', '.trim($u['user_name']);
+if( file_exists($OriFile) ){
+echo '<td align="right">'.number_format($r['registros'], 0, ",", ".");
+echo '<td align="center">'.$r['tabla'];
+copy($OriFile, $DesFile);
+}else{
+echo '<td colspan=2>No existe';
+}
+echo '<td>'.$Nom.'.zip';
+echo '</tr>';
+}
+}
+echo '</table>';
+?>
+<script>
+top.eLoading(0);
+document.execCommand('selectAll');
+document.execCommand('copy');
+</script>
+<?PHP
+eEnd();

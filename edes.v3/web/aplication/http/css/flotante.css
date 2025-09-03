@@ -1,0 +1,19 @@
+.FloatMenu {
+BACKGROUND: #1a2e47;
+BORDER-BOTTOM: #1a2e47 2px outset;
+BORDER-LEFT: #1a2e47 1px outset;
+BORDER-RIGHT: #1a2e47 2px outset;
+BORDER-TOP: #1a2e47 1px outset;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 1px;
+PADDING-RIGHT: 2px;
+PADDING-TOP: 1px;
+}
+.FloatMenu TD {
+COLOR: #000000;
+FONT-SIZE: 12px;
+}
+.FloatMenu IMG {
+MARGIN-LEFT: 5px;
+MARGIN-RIGHT: 3px;
+}

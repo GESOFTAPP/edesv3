@@ -1,0 +1,558 @@
+//	-o-		 = opera
+//	-moz-	 = firefox/mozilla
+//	-webkit- = safari, chrome
+//	-ms-	 = microsoft so IE & Edge
+
+// PathSuffix: css1, css2, css3, css4, css5
+
+//----------
+// Prefijos
+//----------
+	// f - font
+	// p - papel
+	// c - color
+	// b - borde
+	// i - icono
+	// d - degradado
+	// s -
+	//------------
+	// ventanas			c/pWin
+	// subVentanas		c/pSubWin
+
+
+// $fontFamily: font-family: helvetica;
+// $fontFamily: font-family: 'Montserrat', 'sans-serif';
+// $fontFamily: font-family: 'Roboto_regular';
+$fontFamily: font-family: 'Libre Franklin';
+
+$fBase:    14px					// 12px
+$fBaseBIG: 18px					// 18px
+$fBaseTLF: 50px					// 50px modo teléfono
+$fBaseSmall: 10px
+
+$fIconTabSmall: 8px;
+$fIconTab:     13px;			// 1{%5}px - tamaño iconos {%15}px - old 10
+$fIconTabBIG:  12px;			// 1{%5}px - tamaño iconos {%15}px
+$fIconWin:     13px;			// tamaño iconos subventanas
+
+$iconSelectRight: {%13}px		// icono del select justificado a la derecha 11px "j"
+$iconSelectTop: 0px				// y arriba {%3}px
+
+
+$H1:130%
+$H2:113%
+$H3:110%
+	$H4:100%
+$H5:90%
+$H6:70%							// no hay
+$H7:60%							// solo en I
+
+$zoom90: 0.9					// button
+
+//---------
+// fuentes
+//---------
+	$fcaption {					// sin fondo
+		font-size: {$H1};
+		font-weight: bold;
+	}
+	$fheader {					// con fondo
+		font-size: {$H2};
+		font-weight: bold;
+	}
+	$fMenuHorizontal {			// con fondo
+		font-size: {$H2};
+		font-weight: normal;
+	}
+	$ftext {
+		font-size: {$H4};
+		font-weight: normal;
+	}
+	$fdata {
+		font-size: {$H4};
+		font-weight: normal;
+	}
+	$foption {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fbutton {
+		font-size: {$H1};
+		font-weight: normal;
+	}
+
+	$fSubListHeader {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fSubListData {
+		font-size: {$H5};
+		font-weight: normal;
+	}
+	$fSubListIcon {
+		font-size: {$H6};
+	}
+
+
+//----------
+//[Desktop]
+//----------
+	$pDesktop: #123A53
+	$cDesktop: #FFFFFF
+	$iDesktop: #A9CCE3
+
+	$boxBreadcrumb: #F4F4F4
+	$pBreadcrumb: #F8F9F9
+	$cBreadcrumb: #555555
+	$opBreadcrumb: #2692BA
+
+	$cFavorite: #eaea0d
+
+//----------
+//[Tree]
+//----------
+	$pTree: #123A53
+	$iTree: #A9CCE3
+	$cTree: #A9CCE3
+	$mTree: #A9CCE3
+		$pTree2: #154360
+
+	$pTreeCursor: #123A53
+	$iTreeCursor: #FFFFFF
+	$cTreeCursor: #FFFFFF
+	$mTreeCursor: #FFFFFF
+		$pTreeClick: {$pTreeCursor-10}
+
+	$pTreeFather: #123A53
+	$iTreeFather: #FFFFFF
+	$cTreeFather: #FFFFFF
+
+
+//----------
+//[General]
+//----------
+
+	$pBody: #F4F4F4
+
+	$pWin: #F0F0F0			// ventanas
+	$cWin: #000000
+	$bWin: {$pWin-10}		// #D6D6D6
+
+	$pSubWin: #FFFFFF
+	$cSubWin: #333333		// SubVentana: menu, tree, calendario, paginacion, condiciones, etc
+
+	$pSubWinCaption: #F9F9F9
+	$cSubWinCaption: #000000
+
+	$cLine: #DDDDDD
+
+	//$pButtonAlertIni:#fafafa
+	//$pButtonAlertMid:#f1f1f1
+	//$pButtonAlertEnd:#e8e8e8
+	//$bButtonAlert:{$pButtonAlertEnd-10}
+	//	$pButtonAlertOverIni:{$pButtonAlertIni-7}
+	//	$pButtonAlertOverMid:{$pButtonAlertMid-7}
+	//	$pButtonAlertOverEnd:{$pButtonAlertEnd-7}
+	//	$bButtonAlertOver:{$pButtonAlertOverEnd-10}
+
+//------
+//[Tab]
+//------
+	$pCaption: #F9F9F9
+	$cCaption: #555555
+
+	$pText: #FFFFFF
+	$cText: #555555
+	$cTab: #123A53			// color del titulo de los subTab
+	$cRadioCheck: #555555
+	
+//---------
+//[Button]
+//---------
+
+	$cButton:#FFFFFF
+	$pButtonIni:#2692BA
+	$pButtonMid:#2692BA
+	$pButtonEnd:#2692BA
+	$bButton:{$pButtonEnd-10}
+		$pButtonOverIni:{$pButtonIni-7}
+		$pButtonOverMid:{$pButtonMid-7}
+		$pButtonOverEnd:{$pButtonEnd-7}
+		$bButtonOver:{$pButtonOverEnd-10}
+
+		$pButtonClickIni:{$pButtonIni-14}
+		$pButtonClickMid:{$pButtonMid-14}
+		$pButtonClickEnd:{$pButtonEnd-14}
+		$bButtonClick:{$pButtonClickEnd-20}
+
+	//$cButtonDown:#FFFFFF
+	//$pButtonDownIni:#123A53
+	//$pButtonDownMid:#123A53
+	//$pButtonDownEnd:#123A53
+
+//------
+//[List]
+//------
+	$cTitle: #555555
+
+	$pCursor: #FEF9E7
+	$cCursor: #000000
+
+	$pGreenBar: #F4F6F7
+	$cGreenBar: #000000
+
+	$pListTotals: #FDFDE4
+	$cListTotals: #000000				// fila de totales
+
+//--------------
+// Colores - NO
+//--------------
+	//$color0:#000000		// negro (1)
+	//$color18:#1A2E47		// Negro letra listado (6) - $cListTotal
+	//$color1:#1B6B8D		// azul oscuro (9) - $pSubWinCaption
+	//$color10:#2692BA		// azul medio (6)					pCaption
+	//$color8:#E8F4FF		// azul muy claro ($pEditListGreenBar) (1)
+	//$color15:#4C4B4B		// Gris hacia el negro (4)
+	//$color3:#A4A4A4		// gris oscuro (4)
+	//$color5:#C3C3C3		// gris claro (4)
+	//$color22:#E1E1E1		// Gris fondo totales (2) - $pListTotal
+	//$color14:#FCFCFC		// Blanco grisaceo (6)				$color14 -> $pText
+	//$color7:#FFFFFF		// blanco (11)						$cCaption - $cSubWinCaption
+	//$color25:#EB984E		// Naranja claro para cursores (6)
+	//$color30:#F7F7C7		// color fondo input en edicion (1)
+
+//--------
+//[Input]
+//--------
+	$pEditable: #FFFFFF
+	$cEditable: #555555
+
+	$pEditableFocus: #FDFDE4
+	$cEditableFocus: #000000
+
+	$pReadOnly: #E1E1E1
+	$cReadOnly: #4C4B4B
+
+	$pError: #EB3941
+	$cError: #FFFFFF
+
+	$pErrorFocus: #EB3941
+	$cErrorFocus: #FFFFFF
+
+	$pSelected: #969696			// option seleccionado
+	$cSelected: #FFFFFF			// option seleccionado
+
+	$bInput: #C3C3C3			// borde de los input
+	$bRequired: #993399
+
+	$pItemBox: #E1E1E1
+	$cItemBox: #4C4B4B
+	$bItemBox: #993399
+
+	$pItemBoxRead: #FEF9E7
+	$cItemBoxRead: #C39BD3
+	$bItemBoxRead: #CD6155
+	
+	$cCheckboxTrue: #58A577
+	$cCheckboxFalse: #C70039
+
+//----------
+//[Message]
+//----------
+
+	$pInfo: #FBFCFC						// gris
+	$cInfo: #000000
+	$pInfoIni: {$pInfo+10}
+	$pInfoMid: {$pInfo-5}
+	$pInfoEnd: {$pInfo-10}
+	$bInfo: {$pInfoEnd}
+
+		$pInfoOver: {$pInfo-10}				// gris - boton
+		$cInfoOver: {$cInfo-10}
+		$pInfoOverIni: {$pInfoOver+10}
+		$pInfoOverMid: {$pInfoOver}
+		$pInfoOverEnd: {$pInfoOver-10}
+		$bInfoOver: {$pInfoOverEnd}
+
+		$pInfoClick: {$pInfo-20}				// gris - boton
+		$cInfoClick: {$cInfo-20}
+		$pInfoClickIni: {$pInfoClick+20}
+		$pInfoClickMid: {$pInfoClick}
+		$pInfoClickEnd: {$pInfoClick-20}
+		$bInfoClick: {$pInfoClickEnd}
+
+	$pInfoOk: #10681B					// verde
+	$cInfoOk: #FFFFFF
+	$pInfoOkIni: {$pInfoOk+30}
+	$pInfoOkEnd: {$pInfoOk-30}
+	$bInfoOk: {$pInfoOkEnd}
+
+	$pInfoWarning: #F4BD0E				// naranja
+	$cInfoWarning: #FFFFFF
+	$pInfoWarningIni: {$pInfoWarning+30}
+	$pInfoWarningEnd: {$pInfoWarning-30}
+	$bInfoWarning: {$pInfoWarningEnd}
+
+	$pInfoError: #FF0000				// rojo
+	$cInfoError: #FFFFFF
+	$pInfoErrorIni: {$pInfoError+30}
+	$pInfoErrorEnd: {$pInfoError-30}
+	$bInfoError: {$pInfoErrorEnd}
+
+//--------
+//[Icons]
+//--------
+	$cIcon: #555555				//azul de iconos #228AA8
+	$cIconClose: #555555		//brown;
+	$cIconCount: #555555		//purple;
+	$cIconDelete: #555555		//red;
+	$cIconDevelopment: #E648E0	//
+	$cIconHeader: #555555		//blanco de iconos, dentro del TH
+	$cIconInsert: #555555		//blue;
+	$bIconLoading: #C3C3C3		//borde el loading
+	$cIconLoading: #1A667B		//#af7ac5;
+	$cIconOption: #1A667B		//color del menu de la etiqueta [Option]
+	$cIconSeek: #555555			//purple;
+	$cIconUpdate: #555555		//green;
+	$cIconHelp: #555555			// greys
+	$cIconView: #555555			//orange;
+	$cIconTitle: #1B6B8D		// icono asociado a los títulos
+	$cIconWin: #1B6B8D
+
+//-----
+// Tab
+//-----
+	$bTab: {$cLine}					//{$pText-20}					// $bTab: {$tab-25}
+		$bTab50: {$pText-50}
+	$cTabHeader: {$cCaption}
+	$pTabHeader: {$pCaption}
+	$pTab: {$pText}
+	$cTabText: {$cText}
+
+//--------------------------
+// Grupo de Ficha - TABMenu
+//--------------------------
+	$cTabMenuOn: {$cTab}
+	$bTabMenuOn: {$cLine}			//{$pText-20}
+
+	$cTabMenuOff: {$cText-10} 
+	$pTabMenuOff: {$pText-10}
+	$bTabMenuOff: {$cLine}			//{$pText-20}	
+
+	$cTabMenuOver: {$cCursor}
+	$pTabMenuOver: {$pCursor}
+
+//---------
+// SubMenu
+//---------
+	$cSubMenuHeader: {$cSubWinCaption}
+	$pSubMenuHeader: {$pSubWinCaption}
+	$iSubMenu: {$cIcon}
+
+	$cSubMenu: {$cSubWin}
+	$pSubMenu: {$pSubWin}
+
+	$bSubMenu: {$pSubWin-10}
+		$cSubMenuCursor: {$cCursor}
+		$pSubMenuCursor: {$pCursor}
+
+//---------
+// Listado
+//---------
+	$cTitleMain: {$cTitle}				// Titulo
+	$cTitleSecondary: {$cTitle}			// Titulo2
+	$cListCondition: {$cTitle}
+
+	$cTitleBegin: {$cText}				// SubTitle
+	$cTitleEnd: {$cText}				// en el pie
+	$cPagination: {$cText}				// del texto
+
+	$cListHeader: {$cCaption}			// con fondo
+	$pListHeader: {$pCaption}
+	$cListData: {$cText}
+	$pListData: {$pText}
+
+	$cListTotal: {$cListTotals}			// fila de totales
+	$pListTotal: {$pListTotals}
+
+	$cListGrid: {$cLine}
+
+		$cListCursor: {$cCursor}
+		$pListCursor: {$pCursor}
+
+	$cListGreenbar: {$cGreenBar}
+	$pListGreenbar: {$pGreenBar}
+
+	$cListDataFound: {$cCursor}			// al buscar texto en el listado
+	$pListDataFound: {$pCursor}
+
+	$cEditList: {$cGreenBar}
+	$pEditList: {$pGreenBar}
+	$cEditListGreenBar: {$cGreenBar}
+	$pEditListGreenBar: {$pGreenBar}
+
+//------------
+// SubListado
+//------------
+	$cSubListTitle: {$cTitle}
+	$bSubList: {$cTitle}
+	$cSubListHeader: {$cCaption}			// con fondo
+	$pSubListHeader: {$pCaption}
+	$cSubListData: {$cText}
+	$pSubListData: {$pText}
+	$cSubListTotal: {$cListTotal}			// fila de totales
+	$pSubListTotal: {$pListTotal}
+	$cSubListGrid: {$bTab}
+
+//-------------
+//[ListGroups]
+//-------------
+		$xGCDegradado: 20,40,60				// degradado de la cabecera de los grupos
+		$pGC1: #2692BA
+		$pGC2: #51A8C8
+		$pGC3: #7DBED6
+		$pGC4: #A8D4E4
+
+		$cGC1: #06006F
+		$cGC2: #06006F
+		$cGC3: #06006F
+		$cGC4: #06006F
+
+		$xGRDegradado: 20,40,60				// degradado de los subtotales de los grupos
+		$pGR1: #B3B6B7
+		$pGR2: #C2C4C5
+		$pGR3: #D1D3D4
+		$pGR4: #E1E2E2
+
+		$cGR1: #06006F
+		$cGR2: #06006F
+		$cGR3: #06006F
+		$cGR4: #06006F
+		
+//------------------
+//[NumericalValues]
+//------------------
+		$inputPaddingV:5
+		$inputPaddingH:5
+		$inputRadius:5
+		
+//------
+//[Fin]
+//------
+
+$shadowWinDef: {%5}px {%5}px {%5}px rgba(0,0,0,0.2)
+$shadowWin{
+	box-shadow: {$shadowWinDef};
+	-moz-box-shadow: {$shadowWinDef};
+	-webkit-box-shadow: {$shadowWinDef};
+}
+
+$shadowObjDef: {%3}px {%3}px {%5}px rgba(0,0,0,0.2)
+$shadowObj{
+	box-shadow: {$shadowObjDef};
+	-moz-box-shadow: {$shadowObjDef};
+	-webkit-box-shadow: {$shadowObjDef};
+}
+
+$shadowButtonDef: {%2}px {%2}px {%3}px rgba(0,0,0,0.2)
+$shadowButton{
+	box-shadow: {$shadowButtonDef};
+	-moz-box-shadow: {$shadowButtonDef};
+	-webkit-box-shadow: {$shadowButtonDef};
+}
+
+$shadowTabDef: 0px 0px 5px 2px rgba(0,0,0,0.2)				//  -webkit-box-shadow: 0px 0px 10px 2px rgba(170,170,170,1); - https://www.cssmatic.com/box-shadow
+$shadowTab{
+	box-shadow: {$shadowTabDef};
+	-moz-box-shadow: {$shadowTabDef};
+	-webkit-box-shadow: {$shadowTabDef};
+}
+$shadowListDef: 0px 0px 5px 2px rgba(0,0,0,0.2)				//  -webkit-box-shadow: 0px 0px 10px 2px rgba(170,170,170,1);
+$shadowList{
+	box-shadow: {$shadowListDef};
+	-moz-box-shadow: {$shadowListDef};
+	-webkit-box-shadow: {$shadowListDef};
+}
+
+
+
+$roundedBig {
+	-moz-border-radius: {%4}px;
+	-webkit-border-radius: {%4}px;
+	border-radius: {%4}px;
+}
+$roundedSmall {
+	-moz-border-radius: {%5}px;
+	-webkit-border-radius: {%5}px;
+	border-radius: {%5}px;
+}
+$roundedBigTop {
+	-moz-border-radius: {%4}px {%4}px 0px 0px;
+	-webkit-border-radius: {%4}px {%4}px 0px 0px;
+	border-radius: {%4}px {%4}px 0px 0px;
+}
+
+
+[ $FUENTES-NO
+	@font-face {
+	  font-family: 'Roboto_regular';															/* Roboto_regular */
+	  font-style:  normal;
+	  font-weight: 400;
+	  font-display:fallback;
+	  src: local('Roboto'), local('Roboto-Regular'),
+		   url('../fonts/roboto-v15-latin-regular.woff2') format('woff2'),						/* Super Modern Browsers */
+		   url('../fonts/roboto-v15-latin-regular.woff') format('woff'),						/* Modern Browsers */
+		   url('../fonts/roboto-v15-latin-regular.ttf') format('truetype'),						/* Safari, Android, iOS */
+		   url('../fonts/roboto-v15-latin-regular.svg#Roboto') format('svg'),					/* Legacy iOS */
+	       url('../fonts/roboto-v15-latin-regular.eot'),										/* IE9 Compat Modes */
+		   url('../fonts/roboto-v15-latin-regular.eot?#iefix') format('embedded-opentype');		/* IE6-IE8 */
+	}
+
+	@font-face {
+	  font-family: 'Roboto_700';																/* Roboto_700 */
+	  font-style:  normal;
+	  font-weight: 700;
+	  font-display:fallback;
+	  src: local('Roboto Bold'), local('Roboto-Bold'),
+		   url('../fonts/roboto-v15-latin-700.woff2') format('woff2'),							/* Super Modern Browsers */
+		   url('../fonts/roboto-v15-latin-700.woff') format('woff'),							/* Modern Browsers */
+		   url('../fonts/roboto-v15-latin-700.ttf') format('truetype'),							/* Safari, Android, iOS */
+		   url('../fonts/roboto-v15-latin-700.svg#Roboto') format('svg'),						/* Legacy iOS */
+	       url('../fonts/roboto-v15-latin-700.eot'),											/* IE9 Compat Modes */
+		   url('../fonts/roboto-v15-latin-700.eot?#iefix') format('embedded-opentype');			/* IE6-IE8 */
+	}
+]
+
+[ $FUENTES
+	/* libre-franklin-regular - latin */
+	@font-face {
+	  font-family: 'Libre Franklin';
+	  font-style:  normal;
+	  font-weight: 400;
+	  font-display:fallback;
+	  src: local('Libre Franklin'), local('LibreFranklin-Regular'),
+		   url('../fonts/libre-franklin-v4-latin-regular.woff2') format('woff2'),					/* Super Modern Browsers */
+		   url('../fonts/libre-franklin-v4-latin-regular.woff') format('woff'),						/* Modern Browsers */
+		   url('../fonts/libre-franklin-v4-latin-regular.ttf') format('truetype'),					/* Safari, Android, iOS */
+		   url('../fonts/libre-franklin-v4-latin-regular.svg#LibreFranklin') format('svg'),			/* Legacy iOS */
+		   url('../fonts/libre-franklin-v4-latin-regular.eot'),										/* IE9 Compat Modes */
+		   url('../fonts/libre-franklin-v4-latin-regular.eot?#iefix') format('embedded-opentype');	/* IE6-IE8 */
+	}
+	/* libre-franklin-700 - latin */
+	@font-face {
+	  font-family: 'Libre Franklin';
+	  font-style:  normal;
+	  font-weight: 700;
+	  font-display:fallback;
+	  src: local('Libre Franklin Bold'), local('LibreFranklin-Bold'),
+		   url('../fonts/libre-franklin-v4-latin-700.woff2') format('woff2'),						/* Super Modern Browsers */
+		   url('../fonts/libre-franklin-v4-latin-700.woff') format('woff'),							/* Modern Browsers */
+		   url('../fonts/libre-franklin-v4-latin-700.ttf') format('truetype'),						/* Safari, Android, iOS */
+		   url('../fonts/libre-franklin-v4-latin-700.svg#LibreFranklin') format('svg'),				/* Legacy iOS */
+	 	   url('../fonts/libre-franklin-v4-latin-700.eot'),											/* IE9 Compat Modes */
+		   url('../fonts/libre-franklin-v4-latin-700.eot?#iefix') format('embedded-opentype');		/* IE6-IE8 */
+	}
+]
+
+[ $CSSADD
+]

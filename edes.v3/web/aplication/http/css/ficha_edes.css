@@ -1,0 +1,972 @@
+#O {
+DISPLAY: none;
+}
+#C {
+TEXT-ALIGN: center;
+}
+#D {
+TEXT-ALIGN: right;
+}
+#V {
+PADDING-LEFT: 5px;
+}
+#S {
+PADDING-LEFT: 10px;
+WIDTH: 10px;
+}
+#LD {
+BORDER-BOTTOM: transparent 1px solid;
+TEXT-ALIGN: right;
+BORDER-LEFT: transparent 1px solid;
+MARGIN-BOTTOM: 1px;
+HEIGHT: 19px;
+MARGIN-LEFT: 10px;
+VERTICAL-ALIGN: middle;
+BORDER-TOP: transparent 1px solid;
+BORDER-RIGHT: transparent 1px solid;
+}
+#LC {
+BORDER-BOTTOM: transparent 1px solid;
+TEXT-ALIGN: right;
+BORDER-LEFT: transparent 1px solid;
+MARGIN-BOTTOM: 2px;
+HEIGHT: 19px;
+MARGIN-LEFT: 10px;
+VERTICAL-ALIGN: middle;
+BORDER-TOP: transparent 1px solid;
+BORDER-RIGHT: transparent 1px solid;
+}
+FIELDSET #LC {
+MARGIN-BOTTOM: 3px;
+}
+#LS {
+BORDER-BOTTOM: transparent 1px solid;
+TEXT-ALIGN: right;
+BORDER-LEFT: transparent 1px solid;
+MARGIN-BOTTOM: 1px;
+HEIGHT: 19px;
+MARGIN-LEFT: 10px;
+VERTICAL-ALIGN: middle;
+BORDER-TOP: transparent 1px solid;
+BORDER-RIGHT: transparent 1px solid;
+}
+#LE {
+BORDER-BOTTOM: transparent 1px solid;
+TEXT-ALIGN: right;
+BORDER-LEFT: transparent 1px solid;
+MARGIN-BOTTOM: 2px;
+HEIGHT: 19px;
+MARGIN-LEFT: 10px;
+VERTICAL-ALIGN: middle;
+BORDER-TOP: transparent 1px solid;
+BORDER-RIGHT: transparent 1px solid;
+}
+#TABContainer {
+MARGIN: 10px;
+}
+#TABBorder {
+BORDER-BOTTOM: #efefe0 2px outset;
+BORDER-LEFT: #efefe0 2px outset;
+BORDER-TOP: #efefe0 2px outset;
+BORDER-RIGHT: #efefe0 2px outset;
+BACKGROUND-COLOR: #efefe0;
+}
+#TABHeader {
+HEIGHT: 1px;
+PADDING-TOP: 5px;
+}
+.TABHeaderTitle {
+TEXT-ALIGN: center;
+FONT-WEIGHT: bold;
+}
+.TABHeaderIcons {
+PADDING-RIGHT: 10px;
+VERTICAL-ALIGN: middle;
+}
+.TABBody {
+MARGIN: 10px;
+}
+.TABBodyForm {
+BORDER-BOTTOM: #d1d1c4 1px solid;
+BORDER-LEFT: #d1d1c4 1px solid;
+BORDER-TOP: #d1d1c4 1px solid;
+BORDER-RIGHT: #d1d1c4 1px solid;
+PADDING-BOTTOM: 10px;
+BACKGROUND-COLOR: #ffffef;
+MARGIN: 5px 10px 3px;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+PADDING-TOP: 10px;
+}
+.TABFoot {
+}
+.TABFootIcons {
+PADDING-LEFT: 10px;
+}
+.TABFootButton {
+TEXT-ALIGN: right;
+PADDING-RIGHT: 10px;
+VERTICAL-ALIGN: middle;
+}
+.TABSubmitOut {
+BORDER-BOTTOM: #9999cc 1px solid;
+BORDER-LEFT: #9999cc 1px outset;
+BORDER-TOP: #9999cc 1px outset;
+BORDER-RIGHT: #9999cc 1px solid;
+BACKGROUND-COLOR: #cccccc;
+MARGIN-BOTTOM: 2px;
+MARGIN-LEFT: 10px;
+FONT-SIZE: 110%;
+FONT-WEIGHT: bold;
+}
+.TABSubmitOut TD {
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+}
+.TABSubmitOver {
+BORDER-BOTTOM: #9999cc 1px solid;
+BORDER-LEFT: #9999cc 1px outset;
+BORDER-TOP: #9999cc 1px outset;
+BORDER-RIGHT: #9999cc 1px solid;
+BACKGROUND-COLOR: #ffed9f;
+MARGIN-BOTTOM: 2px;
+MARGIN-LEFT: 10px;
+FONT-SIZE: 110%;
+FONT-WEIGHT: bold;
+}
+.TABSubmitOver TD {
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+CURSOR: hand;
+}
+.TABGroupOuter {
+}
+#TABGroupEmpty {
+}
+#TABMenuIcons {
+TEXT-ALIGN: center;
+VERTICAL-ALIGN: middle;
+}
+#TABGroupInner {
+PADDING-LEFT: 5px;
+}
+#TABMenu {
+BACKGROUND-COLOR: #dfb500;
+COLOR: #614f00;
+}
+.TABMenuOnOut {
+BACKGROUND-COLOR: #efe5a4;
+CURSOR: default;
+}
+.TABMenuOnOver {
+BACKGROUND-COLOR: #b6ad7c;
+COLOR: #ffffff;
+CURSOR: default;
+}
+.TABMenuOffOut {
+BACKGROUND-COLOR: #fff5af;
+CURSOR: hand;
+}
+.TABMenuOffOver {
+BACKGROUND-COLOR: #dfd699;
+COLOR: #ffffff;
+CURSOR: hand;
+}
+.AddButton {
+BORDER-BOTTOM: #777777 1px solid;
+BORDER-LEFT: #777777 1px solid;
+BORDER-TOP: #777777 1px solid;
+BORDER-RIGHT: #777777 1px solid;
+BACKGROUND-COLOR: #dddddd;
+MARGIN-BOTTOM: 2px;
+COLOR: #7c7c7c;
+MARGIN-LEFT: 10px;
+FONT-SIZE: 110%;
+FONT-WEIGHT: bold;
+}
+.AddButton TD {
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+}
+.AddButtonOver {
+BORDER-BOTTOM: #777777 1px solid;
+BORDER-LEFT: #777777 1px solid;
+BORDER-TOP: #777777 1px solid;
+BORDER-RIGHT: #777777 1px solid;
+BACKGROUND-COLOR: #ffed9f;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+MARGIN-BOTTOM: 2px;
+COLOR: #0d00df;
+MARGIN-LEFT: 10px;
+FONT-SIZE: 110%;
+FONT-WEIGHT: bold;
+}
+.AddButtonOver TD {
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+CURSOR: hand;
+}
+.okGRABADO {
+FONT-FAMILY: ARIAL;
+COLOR: #2f3ea9;
+FONT-SIZE: 160%;
+FONT-WEIGHT: bold;
+}
+.errGRABADO {
+FONT-FAMILY: ARIAL;
+COLOR: #fff3ef;
+FONT-SIZE: 160%;
+FONT-WEIGHT: bold;
+}
+BODY {
+SCROLLBAR-ARROW-COLOR: #ffffff;
+SCROLLBAR-FACE-COLOR: #a2b0b7;
+MARGIN: 0px;
+SCROLLBAR-DARKSHADOW-COLOR: #777d80;
+SCROLLBAR-BASE-COLOR: #a2b0b7;
+FONT-FAMILY: ARIAL;
+BACKGROUND: #e5ebef;
+SCROLLBAR-HIGHLIGHT-COLOR: #a2b0b7;
+SCROLLBAR-SHADOW-COLOR: #a2b0b7;
+FONT-SIZE: 11px;
+SCROLLBAR-TRACK-COLOR: #dce1e3;
+SCROLLBAR-3DLIGHT-COLOR: #777d80;
+}
+TABLE {
+SCROLLBAR-ARROW-COLOR: #ffffff;
+SCROLLBAR-BASE-COLOR: #dd8800;
+COLOR: #0a00af;
+FONT-SIZE: 100%;
+}
+.noButton {
+HEIGHT: 10px;
+.CheckBox {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+MARGIN-BOTTOM: 1px;
+MARGIN-LEFT: 3px;
+BORDER-TOP: 0px;
+BORDER-RIGHT: 0px;
+}
+.CheckBoxL {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+MARGIN-TOP: 3px;		ORDER-TOP: 0px;
+BORDER-RIGHT: 0px;
+}
+.RadioF DIV {
+PADDING-RIGHT: 15px;
+MARGIN-BOTTOM: 1px;
+}
+.RadioF IMG {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-TOP: 0px;
+BORDER-RIGHT: 0px;
+}
+.RadioL {
+PADDING-LEFT: 5px;
+}
+.RadioL IMG {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-TOP: 0px;
+MARGIN-RIGHT: 15px;
+BORDER-RIGHT: 0px;
+}
+#zTitulo {
+PADDING-BOTTOM: 6px;
+TEXT-TRANSFORM: uppercase;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+COLOR: #0009a5;
+PADDING-TOP: 0px;
+}
+TH {
+TEXT-TRANSFORM: uppercase;
+FONT-SIZE: 120%;
+}
+TD {
+WHITE-SPACE: nowrap;
+VERTICAL-ALIGN: middle;
+CURSOR: default;
+}
+HR {
+HEIGHT: 1px;
+COLOR: #0025c3;
+}
+.HR_txt {
+COLOR: #5f65c6;
+}
+.if_HR {
+COLOR: #999999;
+}
+.if_HR_txt {
+COLOR: #0066c3;
+}
+CENTER {
+FONT-WEIGHT: bold;
+}
+IMG {
+VERTICAL-ALIGN: top;
+CURSOR: hand;
+}
+.UBICACION {
+TEXT-ALIGN: left;
+WHITE-SPACE: nowrap;
+BACKGROUND: #ff0000;
+COLOR: #ffffff;
+FONT-SIZE: 100%;
+}
+#OpF {
+FONT-SIZE: 120%;
+}
+#OpFOn {
+BORDER-BOTTOM: #0008a5 0px solid;
+BORDER-LEFT: #0008a5 1px solid;
+BORDER-TOP: #0008a5 1px solid;
+BORDER-RIGHT: #0008a5 1px solid;
+PADDING-BOTTOM: 5px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+BACKGROUND: #c0cedf;
+COLOR: #0025c3;
+PADDING-TOP: 0px;
+}
+#OpFOff {
+BORDER-BOTTOM: #000000 0px solid;
+BORDER-LEFT: #000000 1px solid;
+BORDER-TOP: #000000 1px solid;
+BORDER-RIGHT: #000000 1px solid;
+PADDING-BOTTOM: 5px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+BACKGROUND: #a8b4c3;
+COLOR: #000000;
+PADDING-TOP: 0px;
+}
+#OpFOn_1 {
+BORDER-BOTTOM: #0008a5 0px solid;
+BORDER-LEFT: #0008a5 1px solid;
+BORDER-TOP: #0008a5 1px solid;
+BORDER-RIGHT: #0008a5 1px solid;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+BACKGROUND: #c0cedf;
+COLOR: #ffffff;
+CURSOR: hand;
+PADDING-TOP: 0px;
+}
+#OpFOff_1 {
+BORDER-BOTTOM: #000000 0px solid;
+BORDER-LEFT: #000000 1px solid;
+BORDER-TOP: #000000 1px solid;
+BORDER-RIGHT: #000000 1px solid;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+BACKGROUND: #a8b4c3;
+COLOR: #ffffff;
+CURSOR: hand;
+PADDING-TOP: 0px;
+}
+#SolapaOn {
+COLOR: #ffffff;
+}
+#SolapaOff {
+COLOR: #000000;
+}
+.FcOn {
+BACKGROUND: #ffffe7;
+COLOR: #000f78;
+}
+.FcOnText {
+SCROLLBAR-ARROW-COLOR: #838376;
+SCROLLBAR-FACE-COLOR: #dfdfca;
+SCROLLBAR-DARKSHADOW-COLOR: #afaf9e;
+SCROLLBAR-BASE-COLOR: #6c7b82;
+BACKGROUND: #ffffe7;
+SCROLLBAR-HIGHLIGHT-COLOR: #dfdfca;
+COLOR: #000f78;
+SCROLLBAR-SHADOW-COLOR: #dfdfca;
+SCROLLBAR-TRACK-COLOR: #efefd8;
+SCROLLBAR-3DLIGHT-COLOR: #afaf9e;
+}
+.FcOff {
+BACKGROUND: #dfffff;
+COLOR: #001f78;
+}
+.FcRequired {
+COLOR: #ad00ad;
+}
+.ReadOnly {
+BACKGROUND: #d5e9e9;		OLOR: #001f78;
+}
+TD.SbMenuOn {
+BACKGROUND: #c4ce9a;
+COLOR: #7a5334;
+CURSOR: hand;
+}
+TD.SbMenuOff {
+BACKGROUND: #c4ce9a;
+COLOR: #7a5334;
+CURSOR: hand;
+}
+SELECT {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+FONT-FAMILY: ARIAL;
+MARGIN-LEFT: 5px;
+FONT-SIZE: 100%;
+}
+TEXTAREA {
+SCROLLBAR-ARROW-COLOR: #ffffff;
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+PADDING-LEFT: 2px;
+SCROLLBAR-BASE-COLOR: #90a4ae;
+FONT-FAMILY: ARIAL;
+MARGIN-LEFT: 5px;
+FONT-SIZE: 100%;
+SCROLLBAR-TRACK-COLOR: #cfe2f0;
+}
+INPUT {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+FONT-FAMILY: ARIAL;
+MARGIN-BOTTOM: 1px;
+MARGIN-LEFT: 5px;
+FONT-SIZE: 100%;
+MARGIN-RIGHT: 0px;
+}
+#Select {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+POSITION: absolute;
+MARGIN: 0px;
+DISPLAY: none;
+BACKGROUND: #ffffe7;
+COLOR: #000f78;
+OVERFLOW: auto;
+CURSOR: hand;
+}
+.SelectOVER {
+SCROLLBAR-ARROW-COLOR: #838376;
+SCROLLBAR-FACE-COLOR: #dfdfca;
+SCROLLBAR-DARKSHADOW-COLOR: #afaf9e;
+SCROLLBAR-BASE-COLOR: #6c7b82;
+SCROLLBAR-HIGHLIGHT-COLOR: #dfdfca;
+SCROLLBAR-SHADOW-COLOR: #dfdfca;
+SCROLLBAR-TRACK-COLOR: #efefd8;
+SCROLLBAR-3DLIGHT-COLOR: #afaf9e;
+}
+.SelectOUT {
+SCROLLBAR-ARROW-COLOR: #ffffff;
+SCROLLBAR-FACE-COLOR: #a2b0b7;
+SCROLLBAR-DARKSHADOW-COLOR: #687074;
+SCROLLBAR-BASE-COLOR: #a2b0b7;
+BACKGROUND: #dfffff;
+SCROLLBAR-HIGHLIGHT-COLOR: #a2b0b7;
+COLOR: #001f78;
+SCROLLBAR-SHADOW-COLOR: #a2b0b7;
+SCROLLBAR-TRACK-COLOR: #d4dfe4;
+SCROLLBAR-3DLIGHT-COLOR: #687074;
+}
+#Select TD {
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 6px;
+WHITE-SPACE: nowrap;
+}
+#Select #SelectOn {
+BACKGROUND: #001c96;
+COLOR: #ffffff;
+}
+#Select #Selected {
+BACKGROUND: #001c96;
+COLOR: #ffffff;
+}
+#SelBROWSER {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+POSITION: absolute;
+MARGIN: 0px;
+DISPLAY: none;
+BACKGROUND: #ffffe7;
+FLOAT: left;
+COLOR: #000f78;
+OVERFLOW: auto;
+CURSOR: hand;
+}
+#SelBROWSER TD {
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 6px;
+WHITE-SPACE: nowrap;
+}
+#SelBROWSER #Over {
+BACKGROUND: #001c96;
+COLOR: #ffffff;
+}
+#SelBROWSER #Selected {
+BACKGROUND: #005eb4;
+COLOR: #ffffff;
+}
+.error {
+BACKGROUND: #ff0000;
+}
+.FbOn {
+BACKGROUND: #ffffcc;
+COLOR: #000000;
+}
+.FbOff {
+BACKGROUND: #ffffcc;
+COLOR: #000000;
+}
+.LstFieldBrowser {
+BACKGROUND: #cccccc;
+}
+.LstFieldBrowser TD {
+BACKGROUND: #ffffff;
+COLOR: #000000;
+}
+#CngRESPUESTA {
+BORDER-BOTTOM: #789aab 2px outset;
+BORDER-LEFT: #789aab 2px outset;
+BORDER-TOP: #789aab 2px outset;
+BORDER-RIGHT: #789aab 2px outset;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#fffbe7, endColorstr=#dde5ea);
+PADDING-BOTTOM: 7px;
+PADDING-LEFT: 14px;
+PADDING-RIGHT: 14px;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+CURSOR: default;
+PADDING-TOP: 7px;
+}
+#CngRESPUESTA TD {
+COLOR: #5a7380;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+}
+#MensaError {
+BORDER-BOTTOM: #8e242c 2px solid;
+BORDER-LEFT: #fe404f 2px outset;
+BORDER-TOP: #fe404f 2px outset;
+BORDER-RIGHT: #8e242c 2px solid;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#fffbe7, endColorstr=#ffe5ea);
+PADDING-BOTTOM: 7px;
+PADDING-LEFT: 14px;
+PADDING-RIGHT: 14px;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 16px;
+CURSOR: default;
+PADDING-TOP: 7px;
+}
+#MensaError TD {
+COLOR: #cf1900;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+}
+#CngSOMBRA {
+FILTER: alpha(opacity=20);
+BACKGROUND-COLOR: #000000;
+}
+.CAJA {
+BORDER-BOTTOM: #858585 1px solid;
+BORDER-LEFT: #858585 1px solid;
+BORDER-TOP: #858585 1px solid;
+BORDER-RIGHT: #858585 1px solid;
+WIDTH: 100%;
+BACKGROUND: none transparent scroll repeat 0% 0%;
+COLOR: #000786;
+MARGIN-LEFT: 5px;
+}
+LEGEND {
+COLOR: #0009a5;
+}
+FIELDSET {
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 5px;
+CURSOR: default;
+PADDING-TOP: 2px;
+}
+FIELDSET TABLE {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+}
+.ISubList {
+border: 1 solid #cccccc;
+}
+.SubLista {
+BORDER-BOTTOM: #b3b3b3 1px solid;
+BORDER-LEFT: #b3b3b3 1px solid;
+BORDER-TOP: #b3b3b3 1px solid;
+BORDER-RIGHT: #b3b3b3 1px solid;
+MARGIN-LEFT: 3px;
+}
+.SubLista TABLE {
+BACKGROUND: #6f80f6;
+FONT-SIZE: 90%;
+}
+.SubLista TABLE TH {
+WHITE-SPACE: normal;
+BACKGROUND: #9dacb4;
+COLOR: #0a00af;
+FONT-SIZE: 110%;
+FONT-WEIGHT: bold;
+}
+.SubLista TABLE TD {
+WHITE-SPACE: nowrap;
+BACKGROUND: #fffbf0;
+COLOR: #000000;
+}
+#PieLista {
+BACKGROUND: #ede7df;
+COLOR: #662200;
+}
+.SubMenuSL {
+BORDER-BOTTOM: buttonhighlight 2px outset;
+BORDER-LEFT: buttonhighlight 2px outset;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 0px;
+PADDING-RIGHT: 0px;
+FONT-FAMILY: ARIAL;
+BACKGROUND: menu;
+FONT-SIZE: 110%;
+BORDER-TOP: buttonhighlight 2px outset;
+CURSOR: hand;
+BORDER-RIGHT: buttonhighlight 2px outset;
+PADDING-TOP: 0px;
+}
+.SubMenuSL TD {
+PADDING-BOTTOM: 1px;
+PADDING-LEFT: 6px;
+PADDING-RIGHT: 6px;
+WHITE-SPACE: nowrap;
+BACKGROUND: menu;
+CURSOR: hand;
+PADDING-TOP: 1px;
+}
+.SubMenuSL .ON {
+BACKGROUND: #aaaaaa;
+COLOR: #ffffff;
+}
+.BarraMenu {
+BORDER-BOTTOM: buttonhighlight 0px outset;
+BORDER-LEFT: buttonhighlight 0px outset;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 0px;
+WIDTH: 100%;
+PADDING-RIGHT: 0px;
+FONT-FAMILY: ARIAL;
+BACKGROUND: #99b3c0;
+FONT-SIZE: 11px;
+BORDER-TOP: buttonhighlight 0px outset;
+BORDER-RIGHT: buttonhighlight 0px outset;
+PADDING-TOP: 0px;
+}
+.OpFOn {
+BORDER-BOTTOM: #0009a5 0px solid;
+BORDER-LEFT: #0009a5 1px solid;
+BORDER-TOP: #0009a5 1px solid;
+BORDER-RIGHT: #0009a5 1px solid;
+POSITION: relative;
+PADDING-LEFT: 6px;
+PADDING-RIGHT: 6px;
+BACKGROUND: #d8dcdf;
+COLOR: #0066C3;
+TOP: 1px;
+}
+.OpFOff {
+BORDER-BOTTOM: #0009a5 1px solid;
+BORDER-LEFT: #7f7f7f 1px solid;
+BORDER-TOP: #7f7f7f 1px solid;
+BORDER-RIGHT: #7f7f7f 1px solid;
+POSITION: relative;
+PADDING-LEFT: 6px;
+PADDING-RIGHT: 6px;
+BACKGROUND: #bdc0c3;
+COLOR: #000000;
+TOP: 1px;
+}
+.OpFOn_1 {
+BORDER-BOTTOM: #0009a5 0px solid;
+BORDER-LEFT: #0009a5 1px solid;
+BORDER-TOP: #0009a5 1px solid;
+BORDER-RIGHT: #0009a5 1px solid;
+POSITION: relative;
+PADDING-LEFT: 6px;
+PADDING-RIGHT: 6px;
+BACKGROUND: #d8dcdf;
+COLOR: #4f74e0;
+CURSOR: hand;
+TOP: 1px;
+}
+.OpFOff_1 {
+BORDER-BOTTOM: #0009a5 1px solid;
+BORDER-LEFT: #7f7f7f 1px solid;
+BORDER-TOP: #7f7f7f 1px solid;
+BORDER-RIGHT: #7f7f7f 1px solid;
+POSITION: relative;
+PADDING-LEFT: 6px;
+PADDING-RIGHT: 6px;
+BACKGROUND: #bdc0c3;
+COLOR: #0025c3;
+CURSOR: hand;
+TOP: 1px;
+}
+.ExeOutF {
+BORDER-BOTTOM: #c3c3c3 2px outset;
+BORDER-LEFT: #c3c3c3 2px outset;
+BORDER-TOP: #c3c3c3 2px outset;
+BORDER-RIGHT: #c3c3c3 2px outset;
+POSITION: relative;
+PADDING-BOTTOM: 0px;
+MARGIN-TOP: 5px;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+MARGIN-BOTTOM: 5px;
+BACKGROUND: #cccccc;
+COLOR: #000000;
+PADDING-TOP: 0px;
+TOP: -1px;
+LEFT: -7px;
+}
+.ExeOverF {
+BORDER-BOTTOM: #0f4af0 2px outset;
+BORDER-LEFT: #0f4af0 2px outset;
+BORDER-TOP: #0f4af0 2px outset;
+BORDER-RIGHT: #0f4af0 2px outset;
+POSITION: relative;
+PADDING-BOTTOM: 0px;
+MARGIN-TOP: 5px;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+MARGIN-BOTTOM: 5px;
+BACKGROUND: #0f4af0;
+COLOR: #ffffff;
+CURSOR: hand;
+PADDING-TOP: 0px;
+TOP: -1px;
+LEFT: -7px;
+}
+.ExeOutG {
+BORDER-BOTTOM: #c3c3c3 2px outset;
+BORDER-LEFT: #c3c3c3 2px outset;
+BORDER-TOP: #c3c3c3 2px outset;
+BORDER-RIGHT: #c3c3c3 2px outset;
+POSITION: relative;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+BACKGROUND: #cccccc;
+COLOR: #000000;
+FONT-WEIGHT: bold;
+PADDING-TOP: 0px;
+TOP: -1px;
+LEFT: -7px;
+FormType: ;
+}
+.ExeOverG {
+BORDER-BOTTOM: #0f4af0 2px outset;
+BORDER-LEFT: #0f4af0 2px outset;
+BORDER-TOP: #0f4af0 2px outset;
+BORDER-RIGHT: #0f4af0 2px outset;
+POSITION: relative;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 10px;
+PADDING-RIGHT: 10px;
+BACKGROUND: #0f4af0;
+COLOR: #ffffff;
+CURSOR: hand;
+FONT-WEIGHT: bold;
+PADDING-TOP: 0px;
+TOP: -1px;
+LEFT: -7px;
+FormType: ;
+}
+.Cargando {
+TEXT-ALIGN: center;
+BACKGROUND: #e5ebef;
+COLOR: #979da0;
+FONT-SIZE: 12px;
+VERTICAL-ALIGN: middle;
+CURSOR: default;
+}
+#LstPASTE {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+PADDING-LEFT: 1px;
+PADDING-RIGHT: 1px;
+FONT-FAMILY: ARIAL;
+BACKGROUND: #ffffcf;
+COLOR: #000f78;
+FONT-SIZE: 100%;
+}
+SubVentana {
+SubWin: ;
+}
+.SubWin {
+BORDER-BOTTOM: #9ca7b5 2px outset;
+BORDER-LEFT: #9ca7b5 2px outset;
+BORDER-TOP: #9ca7b5 2px outset;
+BORDER-RIGHT: #9ca7b5 2px outset;
+}
+.SubWin TH {
+BACKGROUND: #9ca7b5;
+COLOR: #002778;
+}
+.SubWin TD {
+PADDING-BOTTOM: 3px;
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 3px;
+BACKGROUND: #c0cedf;
+COLOR: #4e535a;
+PADDING-TOP: 3px;
+}
+iWIN {
+BORDER-BOTTOM: #7c7c7c 1px outset;
+BORDER-LEFT: #7c7c7c 1px outset;
+BORDER-TOP: #7c7c7c 1px outset;
+BORDER-RIGHT: #7c7c7c 1px outset;
+PADDING-BOTTOM: 5px;
+BACKGROUND-COLOR: #ffffce;
+PADDING-LEFT: 5px;
+PADDING-RIGHT: 5px;
+PADDING-TOP: 4px;
+}
+.SubMenu {
+BORDER-BOTTOM: #cccccc 2px outset;
+BORDER-LEFT: #cccccc 2px outset;
+BORDER-TOP: #cccccc 2px outset;
+BORDER-RIGHT: #cccccc 2px outset;
+POSITION: absolute;
+BACKGROUND-COLOR: #cccccc;
+}
+.SubMenu TR {
+BACKGROUND-COLOR: #cccccc;
+FONT-FAMILY: Arial;
+COLOR: #000000;
+FONT-SIZE: 12px;
+}
+.SubMenu TD {
+CURSOR: hand;
+}
+.SubMenu .ON {
+BACKGROUND-COLOR: #ffffcc;
+COLOR: #000000;
+}
+.SubMenu .Linea {
+BACKGROUND-COLOR: #bbbbbb;
+FONT-SIZE: 1px;
+CURSOR: default;
+}
+.SubMenu .TITULO {
+TEXT-ALIGN: center;
+BACKGROUND-COLOR: #b6b6b6;
+COLOR: #001987;
+CURSOR: default;
+}
+LineSubModos {
+PADDING-LEFT: 15px;
+HEIGHT: 1px;
+BORDER-TOP: #9dacb4 1px solid;
+}
+.CheckList {
+MARGIN-LEFT: 2px;
+}
+.CheckListImg {
+}
+.CheckListText {
+}
+#edCONTAINER {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+PADDING-BOTTOM: 0px;
+MARGIN-TOP: 1px;
+PADDING-LEFT: 0px;
+PADDING-RIGHT: 0px;
+MARGIN-BOTTOM: 1px;
+MARGIN-LEFT: 5px;
+PADDING-TOP: 0px;
+}
+#edCONTAINER SPAN {
+PADDING-BOTTOM: 3px;
+MARGIN: 0px;
+PADDING-LEFT: 3px;
+PADDING-RIGHT: 3px;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 14px;
+CURSOR: default;
+PADDING-TOP: 3px;
+}
+.edOUT {
+BACKGROUND-COLOR: #dfffff;
+COLOR: #001f78;
+}
+.edOVER {
+BACKGROUND-COLOR: #ffffe7;
+COLOR: #000f78;
+}
+#edMENUS {
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+BACKGROUND-COLOR: #ffffe7;
+}
+#edMENUS IMG {
+PADDING-BOTTOM: 0px;
+BORDER-RIGHT-WIDTH: 0px;
+MARGIN: 0px;
+PADDING-LEFT: 0px;
+PADDING-RIGHT: 0px;
+BORDER-TOP-WIDTH: 0px;
+BORDER-BOTTOM-WIDTH: 0px;
+BORDER-LEFT-WIDTH: 0px;
+PADDING-TOP: 0px;
+}
+#edCOLORES {
+POSITION: absolute;
+PADDING-BOTTOM: 0px;
+PADDING-LEFT: 0px;
+PADDING-RIGHT: 0px;
+DISPLAY: none;
+BORDER-COLLAPSE: collapse;
+CURSOR: default;
+PADDING-TOP: 0px;
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+}
+#edCOLORES TD {
+WIDTH: 10px;
+HEIGHT: 10px;
+}
+.LstFieldBrowser {
+margin-left: 5;
+BORDER-BOTTOM: #6c7b82 1px solid;
+BORDER-LEFT: #6c7b82 1px solid;
+BORDER-TOP: #6c7b82 1px solid;
+BORDER-RIGHT: #6c7b82 1px solid;
+}
+.LstFieldBrowser TD {
+BACKGROUND: #d5e9e9;		OLOR: #001f78;
+}

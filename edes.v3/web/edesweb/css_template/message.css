@@ -1,0 +1,103 @@
+table, th, td {
+border:0px;
+border-spacing:{%1}px;
+}
+th,td {
+padding:{%2}px {%2}px;
+empty-cells: show;
+}
+{$FUENTES}
+body, html {
+height:100%;
+width:100%;
+background-color:{$pBody};
+{$fontFamily}
+}
+TABLE {
+display: table;
+}
+TH, TD {
+{$fontFamily}
+display: table-cell;
+vertical-align: middle;
+}
+NOBR {
+display: inline-table;
+vertical-align: middle;
+}
+* {
+font-size:{$fBase};
+{$fontFamily}
+box-sizing:content-box;
+}
+@font-face {
+font-family:eDes;
+font-weight:normal;
+font-style:normal;
+text-transform:none;
+src:url('../fonts/edes.eot');
+src:url('../fonts/edes.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+url('../fonts/edes.woff?v=4.7.0') format('woff'),
+url('../fonts/edes.ttf?v=4.7.0') format('truetype'),
+url('../fonts/edes.svg?v=4.7.0#fontawesomeregular') format('svg');
+}
+I {
+font-family:eDes;
+font-weight:normal;
+font-style:normal;
+text-transform:none;
+vertical-align: middle;
+}
+.BODYMESSAGE {
+BACKGROUND-COLOR:{$pBody};
+MARGIN:0px;
+font-size:{$fBase};
+}
+#MESSAGE_OK {
+BORDER:{$bInfoOk} {%1}px outset;
+color:{$cInfoOk} !important;
+background: {$pInfoOkIni};
+background: -moz-linear-gradient(top, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);
+background: -webkit-linear-gradient(top, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);
+background: linear-gradient(to bottom, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoOkIni}', endColorstr='{$pInfoOkEnd}', GradientType=0);
+cursor:var(--cPointer);
+PADDING-BOTTOM:{%7}px;
+PADDING-LEFT:{%14}px;
+PADDING-RIGHT:{%14}px;
+PADDING-TOP:{%7}px;
+{$shadowWin}
+{$roundedBig}
+}
+#MESSAGE_OK TD {
+COLOR:{$cInfoOk};
+{$fcaption}
+}
+#MESSAGE_ERROR {
+BORDER:{$bInfoError} {%1}px outset;
+color:{$cInfoError} !important;
+background: {$pInfoErrorIni};
+background: -moz-linear-gradient(top, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);
+background: -webkit-linear-gradient(top, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);
+background: linear-gradient(to bottom, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoErrorIni}', endColorstr='{$pInfoErrorEnd}', GradientType=0);
+CURSOR:var(--cPointer);
+PADDING-BOTTOM:{%7}px;
+PADDING-LEFT:{%14}px;
+PADDING-RIGHT:{%14}px;
+PADDING-TOP:{%7}px;
+{$shadowWin}
+{$roundedBig}
+}
+#MESSAGE_ERROR TD {
+COLOR:{$cInfoError};
+{$fcaption}
+}
+.Cargando {
+BORDER-WIDTH:0px;
+COLOR:#000000;
+CURSOR:var(--cPointer);
+FONT-SIZE:{$fBase};
+PADDING:0px 0px 0px 0px;
+TEXT-ALIGN:center;
+}

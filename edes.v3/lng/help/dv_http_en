@@ -1,0 +1,25 @@
+<strong>Configuration for HTTP update</strong><br />
+<table id="Opciones" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td>HTTP/S </td>
+<td>Connection type: http / https</td>
+</tr>
+<tr>
+<td>IP DESTINO</td>
+<td>Destination server IP</td>
+</tr>
+<tr>
+<td>ORIGEN</td>
+<td>Source directory (main directory including eg: ApplicationDir, ApplicationDir/Tree)</td>
+</tr>
+<tr>
+<td>DESTINO</td>
+<td>Destination directory (home directory included)</td>
+</tr>
+<tr>
+<td>DESCRIPCION </td>
+<td>Text to select when synchronizing</td>
+</tr>
+</tbody>
+</table>

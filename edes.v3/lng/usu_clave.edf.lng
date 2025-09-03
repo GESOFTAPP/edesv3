@@ -1,0 +1,36 @@
+[Language] es,ca,en,fr
+Apellidos|Apellidos|Cognoms|Surnames|Apellidos
+boton|Grabar solo "caracter desencadenante"|Gravar sol " Caràcter desencadenant"|Record only "trigger character"|Grabar solo "Caracter desencadenante"
+caducado|Su clave ha caducado<br>cambiar clave|LA SEVA CLAU HA CADUCAT<br>CANVIAR CLAU|Your password has expired<br>change password|SU CLAVE HA CADUCADO<br>CAMBIAR CLAVE
+CAMBIAR CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS|Cambiar clave por defecto<br>para los nuevos usuarios|CANVIAR CLAU PER DEFECTE<br>PER ALS NOUS USUARIS|Change default password<br>for new users|CAMBIAR CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS
+Caracter desencadenante|Caracter desencadenante|Caràcter desencadenant|Trigger character|Caracter desencadenante
+CARACTER DESENCADENATE MODIFICADO|Caracter desencadenate modificado|CARÀCTER DESENCADENANT MODIFICAT|Modified trigger character|CARACTER DESENCADENATE MODIFICADO
+Clave de Acceso|Clave de Acceso|Clau d´Accés|Password|Clave de Acceso
+ClaveDoc|Clave documento||Document key|
+CLAVE MODIFICADA|Clave modificada|CLAU MODIFICADA|Modified key|CLAVE MODIFICADA
+Clave para documentos|Clave para documentos||Key for documents|
+ClavesDistintasDoc|Las claves de los documentos son distintas|Les claus dels documents són diferents|Key documents are different|Les documents clés sont différents
+ClavesDistintas|Las claves son distintas|Les claus són diferents|The keys are different|Las claves son distintas
+Clave|Clave|Clau|Password|Clave
+Complejidad|Complejidad|Complexitat|Complexity|Complejidad
+DNI|DNI|DNI|DNI|DNI
+ERROR AL GRABAR|Error al grabar|ERROR AL GRAVAR|Failed to record|ERROR AL GRABAR
+ErrorPass|El "caracter desencadenante" no está permitido en la clave|El "Caràcter desencadenant" no està permès en la clau|The "trigger character" is not allowed in the key|El "Caracter desencadenante" no está permitido en la clave
+Es aconsejable una frase como clave|Se aconseja una frase con mayúsculas, minúsculas<br>y números para la clave.|S'aconsella una frase amb majúscules, iminúscules<br>i números per a la clau.|A phrase with uppercase, lowercase and<br>numbers is recommended for the key.|Se aconseja una frase con mayúsculas, minúsculas<br>y números para la clave.
+Fortaleza|Fortaleza|Fortalesa|Strength|Fortaleza
+LongitudMinima|La longitud mínima de la "clave" es de # caracteres|La longitud mínima de la "CLAU" és de # caràcters|The minimum length of the "key" is # characters|La longitud mínima de la "CLAVE" es de # caracteres
+MODIFICADA CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS|Modificada clave por defecto<br>para los nuevos usuarios|MODIFICADA CLAU PER DEFECTE<br>PER ALS NOUS USUARIS|Changed default password<br>for new users|MODIFICADA CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS
+Modificar|Modificar|Modificar|Modify|Modificar
+Nombre|Nombre|Name|Name|Nombre
+No puede poner la clave actual|No puede poner la clave actual|No pot posar la clau actual|Can't put current password|No puede poner la clave actual
+NO PUEDE PONER LA CLAVE POR DEFECTO|No puede poner la clave por defecto|NO POT POSAR LA CLAU PER DEFECTE|Can't set default password|NO PUEDE PONER LA CLAVE POR DEFECTO
+NO PUEDE PONER LA MISMA CLAVE|No puede poner la misma clave|NO POT POSAR LA MATEIXA CLAU|Can't put the same key|NO PUEDE PONER LA MISMA CLAVE
+Repetir ClaveDoc|Repetir clave documento||Repeat document key|
+Repetir Clave|Repetir clave|Repetir Clau|Repeat password|Repetir Clave
+sTrigger|no permitido dentro de la clave|no permès dins de la clau|not allowed inside key|no permitido dentro de la clave
+titulo|Modificar clave|Modificar Clau|Modify password|Modificar clave
+tTrigger|- Si no se pulsa el caracter la clave será lo introducido\n- Si se pulsa una vez será a partir de haberla pulsado\n- Y si se pulsa mas de una vez la clave estará entre las dos primeras pulsaciones|- Si no es prem el caràcter la clau serà l´introduït\n- Si es prem una vegada serà a partir d´haver-la premut\n-I si es prem mes d´una vegada la clau estarà entre les dues primeres pulsacions|- If the character is not pressed, the password will be what was entered\n- If it is pressed once, it will be after pressing it\n- And if it is pressed more than once, the password will be between the first two presses|- Si no se pulsa el caracter la clave será lo introducido\n- Si se pulsa una vez será a partir de haberla pulsado\n- Y si se pulsa mas de una vez la clave estará entre las dos primeras pulsaciones
+Cambie la clave para continuar|Cambie la clave para continuar|Canvieu la clau per continuar|Change your password to continue
+Ocultar clave|Ocultar clave|Amagar clau|Hide key|
+Ver clave|Ver clave|Veure clau|See key|
+CLAVE NO ACTUALIZADA||PASSWORD NOT UPDATED

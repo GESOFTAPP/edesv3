@@ -1,0 +1,9 @@
+<div style="width: 100%; text-align: center;"><strong>Multiple selection window</strong></div>
+<hr />
+<table class="HELPTABLE" style="border-collapse: collapse; background-color: transparent;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%; background-color: transparent;">List of values, one per line and/or separated by commas.<br />This query can operate in 3 different ways:<br />     1: It shows you all the records it finds in the list.<br />     2: If you put "<>" in the first line, it will show you all the ones that are there except those on the list.<br />     3: If you put "!=" in the first line, it will show you those that are not on the list.</td>
+</tr>
+</tbody>
+</table>

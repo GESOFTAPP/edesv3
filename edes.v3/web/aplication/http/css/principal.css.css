@@ -1,0 +1,140 @@
+v\:* {
+BEHAVIOR: url(#default#VML);
+}
+BODY {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-RIGHT: 0px;
+BORDER-TOP: 0px;
+FONT-FAMILY: ARIAL;
+MARGIN: 0px;
+}
+#ArbolMenu {
+BACKGROUND: #aacc99;
+FONT-SIZE: 12px;
+SCROLLBAR-ARROW-COLOR: #aacc99;
+SCROLLBAR-BASE-COLOR: #cde1b5;
+}
+#Arbol {
+BACKGROUND: #f8f8e3;
+FONT-SIZE: 14px;
+}
+#PAGINA {
+BORDER-BOTTOM: 0px;
+BORDER-LEFT: 0px;
+BORDER-RIGHT: 0px;
+BORDER-TOP: 0px;
+}
+#OpMenu TABLE TD {
+FONT-SIZE: 12px;
+}
+#o {
+DISPLAY: none;
+}
+#v {
+DISPLAY: block;
+}
+#OpMenu IMG {
+MARGIN-LEFT: 0px;
+MARGIN-RIGHT: 2px;
+}
+#2 {
+PADDING-LEFT: 10px;
+}
+.out {
+COLOR: #000000;
+}
+.over {
+COLOR: #ffffff;
+}
+#EXE {
+COLOR: #e81b17;
+FONT-SIZE: 10px;
+}
+#TituloPro {
+COLOR: #993300;
+FONT-SIZE: 20px;
+FONT-WEIGHT: bold;
+}
+#TituloExe {
+COLOR: #994400;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+}
+#TituloUsu {
+COLOR: #e81b17;
+FONT-SIZE: 12px;
+FONT-WEIGHT: bold;
+}
+#RELOG {
+COLOR: #e81b17;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 14px;
+FONT-WEIGHT: bold;
+}
+#NewMenu {
+CURSOR: hand;
+FONT-SIZE: 12px;
+}
+#OpF {
+CURSOR: hand;
+FONT-SIZE: 12px;
+}
+#OpOn_0 {
+BACKGROUND: #aacc99;
+COLOR: #000000;
+}
+#OpOn_1 {
+BACKGROUND: #aacc99;
+COLOR: #ffffff;
+}
+#OpOff_0 {
+BACKGROUND: #cde1b5;
+COLOR: #000000;
+}
+#OpOff_1 {
+BACKGROUND: #cde1b5;
+COLOR: #ffffff;
+}
+.Bt {
+CURSOR: hand;
+}
+#DivMensaje {
+BACKGROUND: #008800;
+BORDER-BOTTOM: #00cc00 3px outset;
+BORDER-LEFT: #00cc00 2px outset;
+BORDER-RIGHT: #00cc00 3px outset;
+BORDER-TOP: #00cc00 2px outset;
+PADDING-BOTTOM: 3px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 3px;
+PADDING-TOP: 0px;
+}
+#DivMensaje DIV CENTER {
+COLOR: #f8f8e3;
+FONT-SIZE: 15px;
+FONT-WEIGHT: bold;
+}
+.AYUDA {
+BACKGROUND: #ffffcc;
+BORDER-BOTTOM: #336600 1px solid;
+BORDER-LEFT: #336600 1px solid;
+BORDER-RIGHT: #336600 1px solid;
+BORDER-TOP: #336600 1px solid;
+FONT-FAMILY: ARIAL;
+FONT-SIZE: 12px;
+MARGIN: 10px;
+}
+.uOver {
+FILTER: '';
+}
+.uOut {
+FILTER: invert(enabled=1);
+}
+.uMenu TD {
+BACKGROUND: none transparent scroll repeat 0% 0%;
+PADDING-BOTTOM: 1px;
+PADDING-LEFT: 2px;
+PADDING-RIGHT: 2px;
+PADDING-TOP: 1px;
+}

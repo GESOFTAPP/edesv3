@@ -1,0 +1,304 @@
+System:
+	ApplicationName = [ApplicationTitle]				// Nombre aplicación
+	TabTitle = [ApplicationTitle]					// Título en la solapa del explorador (favicon "g/logo.ico")
+	CopyRight = [Company]				// Metatag "Author"
+
+	EncryptionKey = [EncryptionKey]		// semilla de encriptación
+	LanguageDefault = 				//  idioma por defecto (vacío=es)
+	DevelopmentBackgroundColor = #555	// color del desktop cuando el servidor es de desarrollo
+
+	DocSecurity = false					// aceptar el documento de seguridad
+	ReportsNews = true					// Informa de novedades al entrar ($_InfoNovedad)
+	UrlStatus =							// url en la barra de direcciones
+	StartURL = 							// url de la página de inicio
+	ScreenShot = true					// imagen de la opción anonimizada 
+	EMailSystem = [MasterEMail]			// EMail remitente para los email del sistema
+	EMailType = SERVER					// Tipo eMail: [,Outlook; SERVER,Servidor; ...,URL]  En SERVER variable del padre "_MailFrom" o en "sql.ini->$_MailFrom"
+	EMailFrom =							// Quién enviá el email, por defecto es el email del usuario
+	EMailCookies = 						// EMail para la politica de cookies
+	TypeUserIdentification = 			// 
+
+	SessionMaxLife = 24					// default = 24 hours
+	SessionReset = 15					// default = 5 minuts
+	MaxLifeTime =						// Refresco de sessiones ???
+	InactivityMaxLife =					// tiempo máximo de inactividad en minutos
+
+	Notification = false				// tiene activas las notificaciones
+	ContextActivate = false				// activa la verificación de seguridad - $_SegurityType
+	
+	ZipDownload = false					// Descargar los ficheros comprimidos
+	UnloadWrapWidth = 400				// Ancho máximo al extraer campos Memo
+	TabListType = 						// [L]ist / Seek - S:boton de buscar arriba / L:icono de buscar abajo ($_TabListType)
+	WinNoTitle = true					// En las SubVentanas se mostrará el titulo en el caption de la ventana
+	TitleIcoNone = true					// En las SubVentanas si hay solo un icono [TitleIcon] le pondrá, sino pondrá el icono de menú ($_TITLEICONONE)
+	CleanTitle = false					// true: dejará el título original / false añadira el prefijo "FICHA DE ..."
+	TitleTransform =					// upper / lower / capitalize / ___
+	SearchWithLike = false				// Las búsquedas se hacen con like ($_SearchWithLike) variable para descartar campos $_SearchNotLike = "field1,field2,...";
+	WaterMarking = 						// Marca de agua dentro de las páginas
+	SelectMaxRecods = 5000				// Máximo nº de registros en un <select>
+		
+	Call3CX = 							// llamar por teléfono via 3CX: */L/T/S
+	Call3CXPrefix = 					// prefijo a añadir a los nº de teléfono
+	Call3CXFeatures = width=320,height=400,resizable,scrollbars,status=0,menubar=0,toolbar=0,location=0,titlebar=0
+	Call3CXUrl =						// solo si no se detecta automaticamente
+		
+	SharedTables = 						//+ tablas compartidas: ddbb, table1, table2, etc ...
+	ShareDictionary = 					//+ diccionario de la tabla "gs_sharedb"
+	Multitenancy = false				//+ Indica si la aplicación es Multi-Tenancy
+	Cache = true						//  está activo el cache de páginas
+	
+	TimeZone = 							// zona horaria por defecto 'Europe/Madrid';
+	CharsetText = 						// "UTF-8" / "UTF-8"
+	CharsetDB = 						// "UTF-8" / "UTF-8"
+		
+	FormatMonth = yyyy-mm
+	FormatDate = dd-mm-yyyy
+	FormatDateTime = yyyy-mm-dd hh:ii:ss
+	FormatNumber = .,					// Caracter de: Miles y Decimal
+	FormatPhone = 999999999
+	FirstWeekDay = 0;					//0:Lunes / 1:Domingo
+
+	CheckboxValues = S,					// valor por defecto de los checkbox 
+	CheckboxShowUnChecked = true		// mostrar el checkbox 
+
+	AutoCompletForm = off
+	AutoComplet = new_password
+	
+	SlowSqlWarning = 3					// (sg) grabar sentencias sql lentas /_tmp/err/slow.sql
+	SlowSqlFreeScripts =				// peticiones separadas por "|" con sql lentas permitidas
+
+	ExportFormats = *					// * / print, pdf, xls, xml, csv, txt	(formatos globales)
+	ExportScope = public				// public / private
+	XMLASXLS = false					// al exportar un xls generará en su lugar un xml 
+	
+Desktop:
+	DesktopBannerMinimized = false		// si el banner del desktop se muestra minimizado
+	DesktopTreeType = O					//+ [,TXT; T,Tabla; A,Array; O,Multiples árboles]
+	DefaultTreeIcon = false				// Se ponen los Iconos por defecto del sistema
+	DefaultTreeNoIcon =					// Solo si no tiene icono
+	DefaultTreeIconChar =				// Cambia los iconos: ©,ª,b (open,close,doc)
+	DefaultTreeFolder = &#364;,&#365;	// Carpeta: M,L cerrada/abierta
+	DefaultTreeOneLevel = true			// solo un nivel abierto a la vez
+	MenuDefaultType = I					// menu por defecto: [N]ormal / [I]conizado
+	MenuIconOverClick = O				// el menú iconizado se visualiza con [C]lick o con [O]ver
+	MenuAutoHidden = true				// el menú se oculta al hacer click en una opción
+	MenuAutoHiddenOptional = true		// el automenú funciona al ser invocado
+	NumberLevels = 1					// nº de niveles abiertos al entrar
+	SVGWidth  = 25						// ancho de los svg
+	SVGHeight = 25						// alto de los svg
+	IMGWidth  = 25						// maximo ancho de los svg
+	IMGHeight = 25						// maximo alto de los svg
+	BOXWidth  = 30						// ancho contenedor icono
+	BOXHeight = 30						// alto contenedor icono
+	HeightTitleIcon = 33				// Alto del icono asociado al titulo de fichas y listados
+	HeightTitleIconWin = 16				// Alto del icono asociado en el title de las ventanas
+	ExitToLogin = true					// Al salir de la aplicación ejecutar el login
+	Desktop = 							// el Desktop por defecto en blanco
+	SeeLastAccess = true				// mostrar último acceso a la aplicación
+	JsdWidget = false					// Jira service
+
+	JSEnd = 							// Fichero JavaScript al final del body
+	PHPEnd = 							//+ Fichero PHP al final del body
+	OnLoad = 							// Fichero Javascript a ejecutar en el OnLoad
+		
+	RecentOptions = 20					// Opciones recientes (sin uso actual)
+	
+List:
+	AlignTitle =  L				// Alineación del título del listado
+	AlignTextTH = L				// Alineación contenidos logitud variable
+	AlignTextTD = L				// Alineación contenidos logitud variable
+	AlignFillTH = C				// Alineación contenidos logitud fija o 0
+	AlignFillTD = C				// Alineación contenidos logitud fija o 0
+	AlignNumericTH = R			// Alineación contenidos numéricos
+	AlignNumericTD = R			// Alineación contenidos numéricos
+	
+	TypeFormat = S				// tipo de formato [G/""]rid / [S]tripe
+	ToolsMenuType = B			// []Icono(SuperiorDerecha) / [H]idden / [B]arra superior			$_LToolsMenuType = H	// []Icono(SuperiorDerecha) / [H]idden
+	TypePaging = b				// Tipo de paginación [I]nterna / [E]nd expandida abajo / [e]nd corta abajo / [S]tart expandida arriba / [s]tart corta arriba / [b]ar (barra inferior) ($_LToolsType)
+	NoZeroAll = true			// mostrar en blanco los ceros en los listados
+	TitleIconView = true		// mostrar el icono de ayuda en la barra superior 
+	TCPDF = true				// librería de pdf TCPDF, si false será PdfLib
+
+	WideListing = 80			// % del ancho del listado, para desactivarlo - "[JSIni] l	_WideListing = 0;"
+	ColsTrim = true				// hace trim en todas las columnas, lo desactiva "WideListing"
+	OptionsInListMenuRow = true	// Menú en la fila de los listados visible al estar encima
+	OptionsInListHidden = true	// pone en un title el cdi y la acción en los últimos registros
+	OptionsInListLimit = 100	// máximo nº de registros a gestionar sin pedir filtro
+	OptionsInListDefault = 		// define el modo de la opción por defecto en [OptionsInList] = cm
+	SubWindowInIWork = true		// si "OptionsInListMenuRow=true" define la gestión de registros en IWORK, valor por defecto false en subventana
+	
+	MaxVisibleRows = 50			// Numero de filas que se mandan en los listados paginados ($_MaxVisibleRows = 30)
+	MaxRec = 1000				// Máximas filas por pagina ($_TopMaxRec = 1000)
+	ShowTotalRecords = false	//+Muestra al final del listado el total de registros ($_ShowTotalRecords)
+
+	Cursor = true				// Listados por defecto con cursor ($_CURSOR)
+	Greenbar = false			// Listados por defecto con papel pijama ($_GREENBAR)
+		
+	CardSwitch = true			// activa en los listados la posibilidad de verlo en modo tarjetas - [PHPStart] l	$_CARD_OFF = true;
+	LastRecords = 30			// máximo nº de registros gestionados en los listados "últimos registros gestionados"
+	FixList = true				// fija el listado ($_FixList)
+	
+	DBLimit  =  5000			//+ Limite de registros en listados HTM ($_DBLIMIT)
+	PDFLimit =  5000			//+ Limite de registros en listados PDF ($_PDFLIMIT)
+	XLSLimit = 15000			//+ Limite de registros en listados XLS ($_XLSLIMIT)
+
+CSSDynamic:
+	cListGrid = #DDDDDD			// color de las filas de los listados (se genera automaticamente)
+	FontNumbers = numbers		// fuente para los tipos de datos numéricos
+
+Tab:
+	HRTypeTab = true			// Los HR se muestran como SubTab
+	ShowZero = 0				// [1] Se ve el valor cero, [0] No se ve y [-1] sólo cuando se mete en la edición. ($_ShowZero)
+	SelectFocusOpen = false		// mostrar los select aviertos al obtener el foco
+	NextMarginLeft = -2			// Distancia de un control sin label ($_CntMarginLeft)
+	EnterForSubmit = false		// Al pulsar al Enter hará un submit ($_EnterForSubmit)
+	MarkFieldRequired = false	// Marcar el borde de los campos obligatorios en un formulario ($_MarkFieldRequired);
+	MarkLabelRequired = false	// Marcar la etiqueta de los campos obligatorios ($_MarkLabelRequired)
+	CardDefault = 2,10,30		// valores de separación de los card
+
+LogHistory:
+	LogTrace = GA,GB,GM,FA,FB,FM,D*	// operaciones a logear "[Objeto][Mode]" / "[D][extension]" DPRN,DSRC
+	LogFullType =					// 1:Los modos: A,mR,M,bR,B / 2:Se graba la respuesta / 3:Se graba todo
+	LogPathFileVersion = \\log_doc	// directorio del log de versiones de documentos
+	LogGsAccessFile =				// en lugar de grabar em "gs_acceso" graba en fichero plano ($_LOG_GS_ACCESO = '../_tmp/log/acceso.log')
+	LogGsAccessDays =				// borra en "gs_acceso" los accesos superiores a los dias definidos ($_LOG_GS_ACCESO_DAYS = 365)
+	LogGsErrorDays =				// borra en "gs_error" los errores superiores a los dias definidos ($_LOG_GS_ERROR_DAYS = 365)
+	LogGsConnectionsDays =			// borra en "gs_conexion" los registros superiores a los dias definidos - Mínimo 2 ($_LOG_GS_CONEXION_DAYS = 365)
+	ViewFolder = false				// en el log de movimientos las carpetas se muestran abiertas o cerradas
+	
+Permission:
+	EmptyTree = false
+	EmptySpecial = false
+	
+EMail:
+	Log = NO								// NO / TXT / DDBB
+	ReadOnly = false
+	MaxFileSize = 500000					// Máximo tamaño por fichero
+	fileEMailFrom = 						// fichero para la generación de email para el from
+
+	include =								// ../../[dir-motor]/itm/enviaemail.php
+	function =								// enviaEmail
+	host =
+	user =
+	password =
+	from =									// eMail Enviado por
+	nm_from =								// Nombre Enviado por
+	reply =									// eMail de Respuesta
+	nm_reply =								// Nombre de Respuesta
+
+	documents_pass = false					// Documentos por email con Password
+	documents_certify = false				// Documentos por email Certificados
+	
+Robinson:
+	Status = false				// se mira en la lista Robinson
+	Script = 					// /_datos/config/robinson_check.php"
+	Check = 					// robinsonCheck
+	Management = 				// ...edf
+	Assign = 
+		
+Background:
+	php = php					// Comando para ejecutar php en segundo plano "C:\xampp\php\php.exe" - en window añade la extensión ".exe"
+	syntax = -l					// -e (window) / -l (linux)
+
+LogDownload:
+	LogFileStartDate =			// Fecha de inicio del logeo de descargas
+	SaveInfo = true				// grabar la información de la extracción en el propio fichero
+	LogFileDownload = 			// "../_tmp/pdf" ($_LOG_FILE_DOWNLOAD)
+	LogFileDays = 				// dias que se guardan los ficheros ($_LOG_FILE_DAYS)
+	
+New:
+	PageSize = 32500			// Tamaño máximo Novedades
+	
+Login:
+	min_login = 5
+	max_login = 65
+	min_password = 6
+	max_password = 250
+	key_case = 2						// 0·Upper / 1·Lower / 2·Upper and Lower */
+	Type = dni							// 0:dni, 1:email, 2:login (variable old "LoginType")
+	HostGet = false						// Guardar el Host por donde se entra
+	TriggerCharOff = false				// Desactivar el caracter desencadenante
+	CookieName = 						// nombre politica de cookie
+	CookieDaysExpire = 365				// dias en expirar la politica de privacidad (default = 365)
+	ClaveReset = [DefPassword]			// Clave por defecto - strtoupper(md5('cambiarya'));
+	LoginTextarea = true				// el login lo pide un INPUT o un TEXTAREA
+	RememberLogin = true				// recordar login al entrar
+		
+	WorkingHours = false				// horario de trabajo definido en /_datos/config/workinghours.ini
+
+	PassDaysToChange = -1				// Dias para obligar a cambiar la clave
+	PassDaysToExpire = -1				// Dias sin entrar para que caduque el acceso
+	UserPasswordByEmail = true			// Enviar las claves por email
+	password_tmp_time = 5				// minutos de validad de la password temporal
+	InitWeb = 							// Clave para entrar con la web parada
+
+	VerificationType = 					// sms,email (se ejecuta el primero que tenga exito)
+	VerificationSMS = 
+	VerificationExpire = 365			// si se autentifica el dispositivo tiempo en renovar la verificación 
+	VerificationKey = 					// clave para encriptar la petición en el modo emal (11#)
+	VerificationWait = 5				// minutos esperando entrar mediante verificación EMail 
+	AuthenticationRequired = yes
+	
+	AccessErrors = 3					// intentos de acceso
+	AccessMinutesDelay = 10				// minutos sin poder entrar cuando agotas los errores de entrada 
+
+RGPD:
+	Entites = 				// Entidades
+	Source	= 				// Origen
+	Type	= 				// Tipo
+	CopyName	 = 
+	CopySurname1 =
+	CopySurname2 =
+	CopyZip		 = 
+	CopyLocality = 
+	CopyEMail	 = 
+
+ImgEdit:											// marca de agua en imagenes, variable para activarlo ($WATERMARK=1)
+	ImgClipSize = 300,300, 100,100, 60,60			// 
+	ImgWatermark = /_datos/config/watermark.png		//
+	ImgMarginRight = 10								//
+	ImgMarginBottom = 10							//
+
+UploadFile:
+	CheckWebShell = true	// chequea los ficheros para saber si tiene una webshell incrustada
+	MaxSize = limit			// Si el tamaño de la definición [UploadFile] excede el del sistema tomará este
+	BoxSize = 10			// nº de Gigas máximo por tenant
+	BoxDir  = 				// directorio a controlar el tamaño
+	DeleteTemporary = cch:1, exc:7, pdf:32, php:1, zip:7, lcl:2, err:90, log:1		// pdf: datos visibles en "Download center"
+
+LogFile:
+	Password = 
+	LifeDays = 195							// 3 años
+	Path = //download_list					// directorio de trabajo
+	SavePaths = privado
+	SaveTables = 							// tablas que se logean sus ficheros
+	MinRecords = 5							// nº copias del log por fichero
+	TypeFile = *
+
+SSOUpdate:					// actualizar desarrollo/procesos cuando hay un "sso"
+	sso_user =
+	sso_password =
+	sso_url =
+	sso_dir =
+
+Channel:								// NodeJS:
+	Status = false						// Chant de usuarios
+	Notification = true
+	URL = 
+	ServicePHP =
+
+	jwtKey = 
+	phpNodeKey = 
+	phpNodeService = 
+	filter = 
+
+ChannelDevelopment:						// NodeJSCompany:
+	Status = false						// Chant de desarrolladores
+	Notification = true
+	URL = 
+	ServicePHP =
+
+	jwtKey = 
+	phpNodeKey = 
+	phpNodeService = 
+	filter =

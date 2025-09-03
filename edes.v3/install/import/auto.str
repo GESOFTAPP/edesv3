@@ -1,0 +1,6 @@
+create table auto (
+cd_auto char(2) NOT NULL,
+nm_auto char(40) NOT NULL,
+PRIMARY KEY (cd_auto),
+KEY auto_2 (nm_auto)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

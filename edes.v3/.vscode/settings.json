@@ -1,0 +1,7 @@
+{
+    "files.encoding": "iso88591",
+    "files.exclude": {
+        "**/*.bak": true
+    },
+    "npm.exclude": ""
+}

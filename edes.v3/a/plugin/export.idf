@@ -1,0 +1,45 @@
+<?PHP
+$view = " style='visibility:hidden'";
+$dim = ["print"=>$view, "pdf"=>$view, "xls"=>$view, "xml"=>$view, "csv"=>$view, "txt"=>$view];
+if( !isset(SETUP::$System["ExportFormats"]) || SETUP::$System["ExportFormats"]=="*" ){
+$format = "print, pdf, xls, xml, csv, txt";
+}else{
+$format = strtolower(SETUP::$System["ExportFormats"]);
+}
+$format = explode(",", eNsp($format));
+for($i=0; $i<count($format); $i++){
+$dim[$format[$i]] = "";
+}
+?>
+<table id="TableExport">
+<tr>
+<th style="FONT-WEIGHT:bold; padding-left:5px; padding-right:5px;" rowspan=2>@Exportar datos@
+<th style="text-align:center">@Tab@
+<th style="text-align:center" colspan=6>@Listado@
+<tr>
+<th>@Print@
+<th>@Print@
+<th>PDF
+<th>XLS
+<th>XML
+<th>TXT
+<th>CSV
+<tr>
+<td style="padding-left:5px;" <?=(($_Mode=="mR" || $_Mode=="a")? " onclick='conmutaCheckTr()'":"")?> >@Public@
+<td<?=$dim["print"]?> id=CC><?=eAddField("| print_tab_public  | X | C | 1 || M |||")?>
+<td<?=$dim["print"]?> id=CC><?=eAddField("| print_public      | X | C | 1 || M |||")?>
+<td<?=$dim["pdf"]?>><?=eAddField("| pdf_public  | X | C | 1 || M |||")?>
+<td<?=$dim["xls"]?>><?=eAddField("| xls_public  | X | C | 1 || M |||")?>
+<td<?=$dim["xml"]?>><?=eAddField("| xml_public  | X | C | 1 || M |||")?>
+<td<?=$dim["txt"]?>><?=eAddField("| txt_public  | X | C | 1 || M |||")?>
+<td<?=$dim["csv"]?>><?=eAddField("| csv_public  | X | C | 1 || M |||")?>
+<tr>
+<td style="padding-left:5px;" <?=(($_Mode=="mR" || $_Mode=="a")? " onclick='conmutaCheckTr()'":"")?> >@Private@
+<td<?=$dim["print"]?> id=CC><?=eAddField("| print_tab_private | X | C | 1 || M |||")?>
+<td<?=$dim["print"]?> id=CC><?=eAddField("| print_private     | X | C | 1 || M |||")?>
+<td<?=$dim["pdf"]?>><?=eAddField("| pdf_private | X | C | 1 || M |||")?>
+<td<?=$dim["xls"]?>><?=eAddField("| xls_private | X | C | 1 || M |||")?>
+<td<?=$dim["xml"]?>><?=eAddField("| xml_private | X | C | 1 || M |||")?>
+<td<?=$dim["txt"]?>><?=eAddField("| txt_private | X | C | 1 || M |||")?>
+<td<?=$dim["csv"]?>><?=eAddField("| csv_private | X | C | 1 || M |||")?>
+</table>

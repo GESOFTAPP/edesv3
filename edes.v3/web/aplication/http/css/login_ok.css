@@ -1,0 +1,45 @@
+#Cancelado {
+background:#FF0000;
+color:#FFFFCC;
+border: 3 solid #996699;
+}
+T_D {
+FONT-FAMILY: ARIAL;
+FONT-WEIGHT: bold;
+}
+#CargaINI {
+font-family: ARIAL;
+font-weight: bold;
+font-size: 50px;
+color: #001296;
+filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorstr=#99CC00, endColorstr=#009900);
+}
+BODY {
+FONT-FAMILY: ARIAL;
+margin-left: 15px;
+background: menu;
+filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorstr=#dde5ea, endColorstr=#789aab);
+}
+TD { padding-left: 15; }
+FIELDSET {
+border: solid 1 #6C7B82;
+}
+FIELDSET INPUT {
+BORDER: #6C7B82 1px solid;
+PADDING-LEFT: 2px;
+BACKGROUND: #dfffff;
+}
+LEGEND {
+FONT-WEIGHT: bold;
+color: #001296;
+}
+#out {
+border: solid 1 #7c7c7c;
+BACKGROUND: #ced7db;
+color: #000000;
+}
+#over {
+border: solid 1 #416c81;
+BACKGROUND: #dfffff;
+color: #001296;
+}

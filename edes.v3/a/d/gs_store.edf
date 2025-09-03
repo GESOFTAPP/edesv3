@@ -1,0 +1,24 @@
+[Title]Documento
+[DBTable]{$_ENV['eDesDictionary']}gs_store
+[DBIndex]cd_gs_store
+[DBOrder]nm_gs_store
+[DBSerial]cd_gs_store
+[UploadFile]fichero|/_doc_/str|cd_gs_store|5.000.000.000|Seleccionar...|gif,jpg,png,bmp,avi,wav,mp3,mp4,txt,doc,docx,xls,xlsx,xml,pdf,htm,html,pps,ppt,js,css,zip|pre_
+[FileLog]{$_ENV['eDesDictionary']}gs_store, fichero, cdi, cd_gs_user, 3
+[Assign]mR|cdi, cd_gs_user
+[Fields]
+|cd_gs_store|+|T|3||*Q*|||
+Descripción|nm_gs_store|#|T|80||MQ||#|
+Fichero|fichero|f|F|60||MDU|||
+#(l) Tipo2|fichero tipo|X|I|||-|||
+Caption|caption|#|T|60||-L|||
+Tamaño|tamayo|+|T|10||-L|||
+Extensión|extension|#|T|4||-L|||
+Fecha|fecha|F4|T|10||-L|||
+Hora|hora|H8|T|8||-L|||
+CDI|cdi|CDI|T|19||-L|#y2s#||
+Usuario|cd_gs_user|+|T|5||-L|_User||
+[PHPIni]*
+$_DefaultPathType = 'G';
+[JSIni]a,mR
+var _FileTrimName = true;

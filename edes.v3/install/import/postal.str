@@ -1,0 +1,8 @@
+create table postal (
+cd_postal char(5) DEFAULT '0' NOT NULL,
+nm_postal char(30) NOT NULL,
+numero int(11) NOT NULL,
+PRIMARY KEY (numero),
+UNIQUE postal_2 (numero),
+KEY post_3 (cd_postal, nm_postal)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

@@ -1,0 +1,40 @@
+#CONTENEDOR {
+BORDER-BOTTOM: #8399b3 1px solid;
+BORDER-LEFT: #8399b3 1px solid;
+BORDER-RIGHT: #8399b3 1px solid;
+BORDER-TOP: #8399b3 1px solid;
+cursor:default;
+}
+TABLE {
+BACKGROUND: #8399b3;
+}
+TH {
+BACKGROUND: #ced7e1;
+}
+TD {
+CURSOR: hand;
+COLOR: #444444;
+FONT-FAMILY: arial;
+FONT-SIZE: 12px;
+TEXT-ALIGN: center;
+}
+#SelPERIODO_AYO TD {
+BACKGROUND: #ffffff;
+}
+#SelPERIODO_AYO .SelAyoMes {
+BACKGROUND-COLOR: #3f4665;
+COLOR: #ffffff;
+}
+#SelPERIODO_DIA TD {
+BACKGROUND: #ffffff;
+}
+#SelPERIODO_DIA .SelAyoMes {
+BACKGROUND-COLOR: #3f4665;
+COLOR: #ffffff;
+}
+#SelPERIODO_DIA .OFF {
+BACKGROUND: #dddddd;
+}
+IMG {
+CURSOR: hand;
+}

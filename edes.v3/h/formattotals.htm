@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">FormatTotals</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[FormatTotals] FormatCol1 [, FormatCol2] ..... [, FormatColN]  [[ | ColSpan ]     [ iSubList ] [ | AlineaciónColPrimera]</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Formatea las columnas de la línea de totales de un listado. <br />Si no deseamos que formatee una columna determinada, dejaremos el parámetro (su hueco) vacío. <br />Esta etiqueta es complementaria de TotalsRows, si TotalsRows no estuviese, esta etiqueta será ignorada. <br />Esta etiqueta también es multilinea de código PHP ( igual que [Format] ) donde se puede escribir código para modificar la fila a imprimir, se está escribiendo dentro de una función que recibe una matriz por referencencia llamada "$_vF" para modificar el cursor en curso, facilitando el realizar cálculos entre columnas.</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro">Opciones de formateo<br />
+<table id="Opciones" style="width: 1228px;" border="0" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr>
+<td style="width: 170.938px;"><strong>FormatCol</strong></td>
+<td style="width: 1046.38px;">- Código HTML libre, precedido de una comilla simple o doble (si introducimos el símbolo "#" se sustituirá por el valor de su celda). <br />- Si ponemos una "M" pondrá separador de miles. <br />- Si ponemos un número del uno al nueve será el número de decimales que deseemos mostrar.<br />- Si ponemos una "B" los valores numéricos a cero no se verán.<br />- Se permite mezclar las opciones BD y CD, por ejemplo M2 o m2.<br />- Si ponemos una "N" no pondrá el separador de miles.<br />- Si se pone una función se le pasarán dos parámetros, el nº de columna y una matriz con el valor de las operaciones que se hayan hecho en la fila, para que esta función se ejecute se tiene que definir alguna operación en la etiqueta [ColsOp].<br />- Una constante encerrada entre comillas dobles o sencillas.<br />- Una función de usuario.</td>
+</tr>
+<tr>
+<td style="width: 170.938px;"><strong>ColSpan</strong></td>
+<td style="width: 1046.38px;">Indica en la linea de totales el número de colspan de la primera columna</td>
+</tr>
+<tr>
+<td style="width: 170.938px;"><strong>AlineaciónColPrimera</strong></td>
+<td style="width: 1046.38px;">En caso de poner una constante en la primera columna, esta se puede alinear (L,C,R)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">[ColsOp] ,+<br />[FormatTotals] &#39;SUMA TOTAL&#39;</td>
+</tr>
+<tr>
+<td id="txt">La etiqueta [ColsOp] indica que en su columna dos se sume el contenido y la etiqueta [FormatTotals] indica que en la primera columna ponga la constante &#39;SUMA TOTAL&#39;.</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">[ColsOp] S,,+,,+,,+,,+,,+,,+,,+,, | Total<br />[FormatTotals]&nbsp;,&#39;Total&#39;</td>
+</tr>
+<tr>
+<td id="txt">El "Total" de la etiqueta [ColsOp] es para ponerlo en los subgrupos y el " &#39;Total&#39; " de [FormatTotals] es para ponerlo en el total de totales y se pone en la segunda posición porque la primera columna es para hacer los subtotales "S".</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

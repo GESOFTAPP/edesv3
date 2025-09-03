@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">slFormatExe<br /><br /></td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">{slFormatExe} NameFunction</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion"> Por cada fila de la sublista te pasa un array hash con la siguiente información:<br />[_vF]<br />     [0] =><br />     [1] =><br />     [2] =><br />     ...<br />[_CellsStyle]<br />     [0] =><br />     [1] =><br />     [2] => color:red<br />     ...<br />[_CellsClass]<br />     [0] =><br />     [1] =><br />     [2] =><br />     ...<br />[nFila] => 0<br />[_RowStyle] =><br />[_RowClass] =><br />[_RowDisabled] =><span style="color: #0000a0;"><br /><br />Si quieres poder modificar los datos tiene que preceder al parámetro con el símbolo "&"</span></td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">
+&lt;div&gt;<code>{slFormatExe} uFunctionSubList</code>&lt;/div&gt;
+&lt;div&gt;&nbsp;&lt;/div&gt;
+&lt;div&gt;<code>[PHPIni] a,?R</code>&lt;/div&gt;
+&lt;div&gt;<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function uFunctionSubList(&amp;$data){</code>&lt;/div&gt;
+&lt;div&gt;<code>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data["_CellsStyle"][2] = "color:red";</code>&lt;/div&gt;
+&lt;div&gt;<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code>&lt;/div&gt;
+</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

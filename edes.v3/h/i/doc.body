@@ -1,0 +1,4 @@
+<TABLE id=TABLA cellSpacing=1px cellPadding=2px width=100%>
+<TR><TD id="Etiqueta">Título
+<TR><TD id="tDescripcion">Descripción
+</TABLE>

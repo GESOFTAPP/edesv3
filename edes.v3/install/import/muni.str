@@ -1,0 +1,10 @@
+create table muni (
+cd_prov varchar(2) NOT NULL,
+cd_muni varchar(3) NOT NULL,
+nm_muni varchar(255) NOT NULL,
+cd_auto char(2) NOT NULL,
+cd_coma char(2) NOT NULL,
+id smallint(6) NOT NULL auto_increment,
+UNIQUE muni_1 (cd_auto, cd_prov, cd_muni, cd_coma),
+KEY muni_2 (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

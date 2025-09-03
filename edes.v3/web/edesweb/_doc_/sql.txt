@@ -1,0 +1,100 @@
+- En el apartado "Definir SQL" se pondrán las tablas en orden en que se quieran las opciones y los campos dentro de la tabla en el orden que quieras que aparezca en las fichas aunque posteriormente se podrán mover.
+
+- En la definición del SQL hay que tener en cuenta que cualquier campo por el que se quiera buscar de forma transparente ha de estar creado como no NULL, usar los tipos de datos mas adecuados ( TEXT, TINYTEXT, MEDIUMTEXT, BLOB, TINYBLOB, MEDIUMBLOB ), y los campos de búsqueda mas frecuentes con índice.
+		
+- Nombre de campos "cd_" / "nm_".  Esto permite facilidad de relación en tablas auxiliares que con el nombre el motor E-DES sabe encontrarlas.
+
+- Si antes del label ponemos una "," el campo se situará a la derecha del anterior.
+	
+		#Tab: Expedientes
+		#Folder:
+		CREATE TABLE prov (               # Nombre carpeta: Descripción
+			campo01 char(2),          # Label campo: Descripción si hace falta
+			campo02 char(2),          #,Label campo: Descripción si hace falta
+			...
+			PRIMARY KEY (campo01),
+			...
+		);
+
+- El "Nombre carpeta" se utiliza además para el título de la ficha/listado pudiendo poner "/" para indicar el plural
+
+EJEMPLO DE FICHERO SQL PARA GENERAR UNA MINI INTRANET DEMO
+
+#Master: usuario,password
+
+#Tab: Empresas
+#Folder:
+
+CREATE TABLE emp (                                          # Empresas:Empresas
+  cd_emp int unsigned NOT NULL auto_increment,              # Código:cd_emp
+  tipo char(1) NOT NULL default '',                         # Tipo: tipo de empresa (cliente, proveedor, ambos)
+  cif char(15) default '',                                  # C.I.F.: cif
+  alias char(30) NOT NULL default '',                       # Alias:abreviatura o acrónimo
+  dt_alta date default '0000-00-00',                        # F.Alta: Fecha de alta
+  actividad text default '',                                # Actividad:Actividad a la que se dedica
+  web char(255) default '',                                 # WEB: web
+  como_contacto char(255) default '',                       # Cómo se produjo el primer contacto: Cómo se produjo el primer contacto
+  cd_gs_user smallint unsigned default '0',                 # Comercial asignado: Código de usuario del comercial asignado
+  obs text default '',                                      # Observaciones: Observaciones
+  UNIQUE KEY alias (alias),
+  PRIMARY KEY (cd_emp)
+);
+
+CREATE TABLE empdir (                                       # Direcciones:Direcciones de empresas
+  cd_empdir int unsigned NOT NULL auto_increment,           # cd_empdir:cd_empdir
+  cd_emp int unsigned NOT NULL default '0',                 # Código:cd_emp
+  descr char(60) NOT NULL default '',                       # Descripción:Descripción
+  dir char(200) default '',                                 # Dirección:Dirección
+  cp smallint default '0',                                  # CP: Código Postal
+  localidad char(60) default '',                            # Localidad: Localidad
+  pais char(20) default '',                                 # País: País
+  tel1 char(15) default '',                                 # Teléfono 1:Teléfono primario
+  tel2 char(15) default '',                                 # Teléfono 2:Teléfono secundario
+  Fax char(15) default '',                                  # Fax: Fax
+  obs text default '',                                      # Observaciones:Observaciones
+  PRIMARY KEY (cd_empdir),
+  KEY descr (descr)
+);
+
+CREATE TABLE empcon (                                       # Contactos:Personas de contacto en las empresas
+  cd_empcon int unsigned NOT NULL auto_increment,           # cd_empcon:Código del contacto
+  cd_emp int unsigned NOT NULL default '0',                 # Código Empresa: Código de la empresa
+  cd_dir int unsigned default '0',                          # Dirección:Dirección donde se ubica el contacto
+  nombre char(60) NOT NULL default '',                      # Persona de contacto: Nombre de la persona de contacto
+  email char(80) default '',                                # email: email
+  tel1 char(15) default '',                                 # Teléfono 1:Teléfono
+  tel2 char(15) default '',                                 # Teléfono 2:Teléfono
+  dt_nacim date default '0000-00-00',                       # F.Nacimiento:Fecha de nacimiento
+  sexo char(1) default '',                                  # Sexo: Sexo
+  PRIMARY KEY (cd_empcon),
+  KEY nombre (nombre)
+);
+
+#Tab: Acc.Comerc.
+#Folder:
+
+CREATE TABLE acciones (                                     # Acciones comerciales: Acciones comerciales / reportes comerciales
+  cd_acciones int unsigned NOT NULL auto_increment,         # cd_acciones:cd_acciones
+  cd_emp int unsigned NOT NULL default '0',                 # Código Empresa: cd_emp
+  cd_empcon int unsigned default '0',                       # Código del contacto: Código del contacto
+  cd_gs_user smallint unsigned default '0',                 # Comercial:Código de usuario
+  dt_accion date default '0000-00-00',                      # Fecha: Fecha de alta de la anotación
+  descr char(255) NOT NULL default '',                      # Descripción:Descripción de la acción comercial
+  anota text default '',                                    # Anotaciones:Anotaciones
+  PRIMARY KEY (cd_acciones)
+);
+
+CREATE TABLE plan (                                         # Planning:Planning
+  cd_plan int unsigned NOT NULL auto_increment,             # cd_plan:cd_plan
+  cd_gs_user smallint unsigned default '0',                 # Usuario:Usuario
+  dt_plan date NOT NULL default '0000-00-00',               # Fecha: Fecha
+  ho_plan time default '0',                                 # Hora: Hora
+  cd_emp int default '0',                                   # Código:cd_emp
+  cd_empdir int default '0',                                # cd_empdir:cd_empdir
+  cd_empcon int default '0',                                # cd_empcon:Código del contacto
+  descr char(255) NOT NULL default '',                      # Descripción:Descripción
+  anota text default '',                                    # Anotaciones:Anotaciones
+  PRIMARY KEY (cd_plan),
+  KEY cd_gs_user (cd_gs_user,descr),
+  UNIQUE KEY dt_plan (cd_gs_user,dt_plan,ho_plan)
+);

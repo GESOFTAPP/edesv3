@@ -1,0 +1,309 @@
+.[Fields]
+ .   Label                                              | Field             | TE | TC | Lng | Px | Mod | Default | Cnd | Msg Error
+
+#(l)¿
+                                                        | cd_gs_rol_exp     | +  | T  | 3   |    | *   |         |     |
+     @Nivel exportación@                                | export_level      | +  | SV | 12  |    | -1  |         |     |
+
+     ¿ SESS::$_SystemUser==$_ENV['ON'] ?  @System·User@ | system_user       | D  | C  | 1   |    | -1  |         |     |
+     @WebMaster@\@WM@                                   | webmaster         | D  | C  | 1   |    | -1  |         |     |
+
+     @Imprimir@\<i>&#56;</i>\\PRI                       | print_tab_public  | X  | C  | 1   |    | -1  |         |     |
+
+     @Print@\<i>&#56;</i>\\PRI                          | print_public      | D  | C  | 1   |    | -1  |         |     |
+     @Exportar PDF@\<i>&#202;</i>\\PDF                  | pdf_public        | X  | C  | 1   |    | -1  |         |     |
+     @Exportar Excel@\<i>&#203;</i>\\XLS                | xls_public        | X  | C  | 1   |    | -1  |         |     |
+     @Exportar XML@\<i>&#410;</i>\\XML                  | xml_public        | X  | C  | 1   |    | -1  |         |     |
+     @Exportar TXT@\<i>&#411;</i>\\TXT                  | txt_public        | X  | C  | 1   |    | -1  |         |     |
+     @Exportar CSV@\<i>&#412;</i>\\CSV                  | csv_public        | X  | C  | 1   |    | -1  |         |     |
+
+     @Imprimir@\<i>&#56;</i>\\PRI                       | print_tab_private | X  | C  | 1   |    | -1  |         |     |
+
+     @Print@\<i>&#56;</i>\\PRI                          | print_private     | D  | C  | 1   |    | -1  |         |     |
+     @Exportar PDF@\<i>&#202;</i>\\PDF                  | pdf_private       | X  | C  | 1   |    | -1  |         |     |
+     @Exportar Excel@\<i>&#203;</i>\\XLS                | xls_private       | X  | C  | 1   |    | -1  |         |     |
+     @Exportar XML@\<i>&#410;</i>\\XML                  | xml_private       | X  | C  | 1   |    | -1  |         |     |
+     @Exportar TXT@\<i>&#411;</i>\\TXT                  | txt_private       | X  | C  | 1   |    | -1  |         |     |
+     @Exportar CSV@\<i>&#412;</i>\\CSV                  | csv_private       | X  | C  | 1   |    | -1  |         |     |
+?
+
+#(a,?R){P} PermisionExport
+
+
+#(a,?R) {P} UserPermission
+
+
+[P] PermisionExport
+?>
+<table>
+    <tr>
+        <td>@Perfil@<td colspan=8><?=eAddField("| cd_gs_rol_exp | + | S | 50 || M |||")?>
+        <td rowspan=4>
+
+		 	#include(*) $a/plugin/export.idf
+
+	<tr>
+        <td					  >@Nivel exportación@<td><?=eAddField("| export_level | + | SV | 12 || M | 0 |   |")?>
+        <td style="width:100%">&nbsp;
+        <td					  >@WebMaster@		  <td><?=eAddField("| webmaster    | D | C  | 1  || M |   | % |")?>
+        <td					  >@System User@ 	  <td><?=eAddField("| system_user  | D | C  | 1  || M |   | % |")?>
+    <tr>
+        <td colspan=7>&nbsp;&nbsp;
+    <tr>
+        <td colspan=7>&nbsp;&nbsp;
+</table>
+ 
+<!--
+    <tr><td style="padding-left:5px;">@Ficha@	<td id=CC><?=eAddField("| print_tab    | X | C | 1 || M |||")?><th><th><th><th><th>
+    <td>@Tipo Perfil@	 <td		  ><?=eAddField("| cd_type_tree | N | SV | 15 || M | P ||")?>
+    <td>@Como el Usuario@<td colspan=3><?=eAddField("| _cd_gs_user  | N | T  | 50 || M |   ||")?>
+-->
+
+<?PHP
+
+
+[CSSAdd] a,?R
+	#TableExport {
+		background-color: #dddddd;
+		border:1px solid #555555;
+		margin-left: 10px;
+	}
+	#TableExport TH {
+		background-color: #F9F9F9;
+		FONT-WEIGHT: normal;
+		cursor: var(--cAuto);
+	}
+	#TableExport TD {
+		background-color: #ffffff;
+		color: #555555;
+	}
+	#CC {
+		text-align: center;
+	}
+	
+[CSSAdd] l
+	TD.OFFCOLUMN {
+		background-color: #f8f8f8;
+	}
+[PHPIni] l
+	$formatAll = explode(",", "print,pdf,xls,xml,csv,txt");
+
+	if( !isset(SETUP::$System["ExportFormats"]) || SETUP::$System["ExportFormats"]=="*" ){		// formatos globales
+		$format = "print, pdf, xls, xml, csv, txt";
+	}else{
+		$format = strtolower(SETUP::$System["ExportFormats"]);
+	}
+	$format = explode(",", eNsp($format));
+			
+	for($i=0; $i<count($formatAll); $i++){
+		if( !in_array($formatAll[$i], $format) ){
+			$_COLSCOLORCALC[] = "{$formatAll[$i]}_public=OFFCOLUMN";
+			$_COLSCOLORCALC[] = "{$formatAll[$i]}_private=OFFCOLUMN";
+			if( $formatAll[$i]=="print" ){
+				$_COLSCOLORCALC[] = "{$formatAll[$i]}_tab_public=OFFCOLUMN";
+				$_COLSCOLORCALC[] = "{$formatAll[$i]}_tab_private=OFFCOLUMN";
+			}
+		}
+	}
+
+
+[THColSpan] print_tab_public, print_tab_public, @Ficha Pública@ | print_tab_private, print_tab_private, @Ficha Privada@ | print_public, csv_public, @Listado Público@ | print_private, csv_private, @Listado Privado@ | ip, ip_to, IPS
+[View] @Datos generales@ | @Permisos@ | Ips | type=button
+[PHPIni] l
+	$_VIEWCOL[1][] = $_pF["cd_gs_user"];
+	$_VIEWCOL[1][] = $_pF["user_name"];
+	$_VIEWCOL[1][] = $_pF["user_surname"];
+	$_VIEWCOL[1][] = $_pF["cd_gs_node"];
+	$_VIEWCOL[1][] = $_pF["permission"];
+	$_VIEWCOL[1][] = $_pF["system_user"];
+
+
+	$_VIEWCOL[2][] = $_pF["cd_gs_user"];
+	$_VIEWCOL[2][] = $_pF["user_name"];
+	$_VIEWCOL[2][] = $_pF["user_surname"];
+	$_VIEWCOL[2][] = $_pF["cd_gs_node"];
+	$_VIEWCOL[2][] = $_pF["permission"];
+	$_VIEWCOL[2][] = $_pF["ip"];
+	$_VIEWCOL[2][] = $_pF["ip2"];
+	$_VIEWCOL[2][] = $_pF["ip_from"];
+	$_VIEWCOL[2][] = $_pF["ip_to"];
+
+
+[PHPIni] l
+	$_Form[$_pF["ip"]][6] .= "2";
+	$_Form[$_pF["ip2"]][6] .= "2";
+	$_Form[$_pF["ip_from"]][6] .= "2";
+	$_Form[$_pF["ip_to"]][6] .= "2";
+[PHPEnd] l
+	$ocultar = [
+		 $_pF["ip"]
+		,$_pF["ip2"]
+		,$_pF["ip_from"]
+		,$_pF["ip_to"]
+	];
+	$typo = "lcr";
+
+	for($n=0; $n<count($ocultar); $n++){
+		for($i=0; $i<3; $i++){
+			$_VIEWCSS[0] = str_replace("col_{$ocultar[$n]}{$typo[$i]}", "col_{$ocultar[$n]}n", $_VIEWCSS[0]);
+		}
+	}
+
+
+[JSRecalc] a,?R
+	// S.loading(window,0);debugger;
+	S(S("label[for=cd_gs_language]").obj.parentNode).css("width:100%");
+
+
+[JSEnd] a,?R
+	/*
+	setTimeout(function(){
+		for(let i=0; i<9; i++){
+			_AnchoHasta("cd_gs_rol_exp","export_level");
+		}
+	}, 1);
+	*/
+
+	.let obj = S(":cd_gs_language").obj;
+	.if( obj!=null ){
+	.	S(obj).css("width", obj.parentNode.parentNode.offsetWidth);
+	.}
+
+	.S("TD").css("border:1px solid red");
+
+
+.[WhereSelect] a,mR
+
+[AddOption]* | cd_type_tree | R,@Definido@; P,@Propio@			// ; U,@De Usuario@ / Personal=Propio
+.[AddOption] * | cd_type_tree | ,; P,@Personal@
+
+.[AddOption] * | export_level | ,; 1,@Básico@; 2,@Medio@; 3,@Total@; 9,@INFORMATICA@ | ;;;; #ffffff,#ff0000
+
+.[WhereSelect] * | cd_gs_rol_exp | cd_gs_node={$_Node}
+[OnChange] a,mR | cd_gs_rol_exp | uChangeRol(this)
+.[AddOption] * | cd_gs_rol_exp | 2,XXXXX
+[JSIni] a,mR
+	function uChangeRol(obj){
+		if( $cd_gs_rol_exp=="" ){
+			S("#IconoVerPermisos").hidden();
+		}else{
+			S("#IconoVerPermisos").visibility();
+		}
+		
+		S("input", "#TableExport").each(function(k,o){
+			if( obj.value != "" ){							// S.setup.checkOn / S.setup.checkOff;
+				ePF(o.name, S.setup.checkOff);
+				eEF(o.name, false);
+				ePF("export_level", "");
+				ePF("webmaster,system_user", S.setup.checkOff);
+				eEF("export_level,webmaster,system_user", false);
+			}else{
+				eEF(o.name, true);
+				eEF("export_level,webmaster,system_user", true);
+			}				
+		});
+	}
+
+.[AddCode] a,?R | cd_type_tree  | A | <img src=g/t_op_menu.gif onclick=uMenu() title='@Menú de opciones@' id="uMenuIMG">
+.[AddCode] a,?R | cd_type_tree  | A | <i onclick=uMenu() title='@Menú de opciones@' id="uMenuIMG">&#39;</i>
+.[AddCode] a,?R | cd_type_tree  | A | <i onclick=uMenu() title='@Menú de opciones@' id="uMenuIMG" style="margin-left:3px">&#125;</i>
+[AddCode] cR,bR | cd_type_tree  | A | <i onclick=uMenu() title='@Menú de opciones@' id="uMenuIMG" style="margin-left:3px">&#125;</i>
+.[AddCode]  a,?R | cd_gs_rol_exp | A | <i onclick=uMenu() title='@Copiar perfil de otro usuario@' id="uCopyPerfil" style="margin-left:3px">&#113;</i>
+.[AddCode]  a,?R | cd_gs_rol_exp | A | <i onclick=uViewExpPerfil() title='@Copiar perfil de otro usuario@' id="uCopyPerfil" style="margin-left:3px">&#113;</i>
+.[Icon]  a,?R | cd_gs_rol_exp | V | onclick=uViewExpPerfil() title='@Copiar perfil de otro usuario@' id="uCopyPerfil" style="margin-left:3px"
+.[Icon] a,mR | field | help | onclick="..."
+[AddCode]  a,?R | cd_gs_rol_exp | A | <i onclick=uViewExpPerfil() title='@Ver los permisos de exportación@' style="margin-left:3px" id="IconoVerPermisos">V</i>
+
+[AddButton] a,mR | [&#113;] Copiar permisos || selCopyUser() | id="_SelCopyUser"
+[AddButton] cR   | [&#67;] Copiar permisos  || copyUser()    | id="_CopyUser"
+
+[JSIni] a,?R
+	function uViewExpPerfil(){
+		if( $cd_gs_rol_exp=="" ){
+			S.info("No hay perfila a mostrar");
+			return;
+		}
+		let cd_gs_rol_exp = $cd_gs_rol_exp;
+		S.window(`edes.php?FcR:$a/d/usu_rol.edf&_SEEK=c&cd_gs_rol_exp=${cd_gs_rol_exp}&_CLOSE_=1`);
+	}
+[JSIni] a,mR
+	function conmutaCheckTr(){
+		if( _Source!="$a/d/usu_rol.edf" && $cd_gs_rol_exp!="" ){
+			return;
+		}
+		var oTR = S.toTag(S.event(window.event), "TR"),
+			dim = S("input", oTR).dim,
+			set = (S(dim[0]).val()==S.setup.checkOn) ? S.setup.checkOff : S.setup.checkOn;
+
+		S.each(dim, function(k,o){
+			S(o).val(set);
+		});
+	}
+
+	var _SelCopyUser = false;
+	function selCopyUser(){
+		_SelCopyUser = true;
+		S.window("edes.php?Fc:$a/d/usu_ficha.edf");			//&_SEEK=c&_
+	}
+
+[JSEnd] cR
+	var _SelCopyUser = false;
+	function selCopyUser(){}
+
+	if( _SelCopyUser==false ){
+		S("#_SelCopyUser").none();
+		if( _WOPENER._SelCopyUser==true ){
+			S("#OpExe").none();
+		}
+	}
+
+	function copyUser(){
+		S(":cd_gs_rol_exp", _WOPENER).val( S(":cd_gs_rol_exp").val() );
+     	S(":export_level", _WOPENER).val( S(":export_level").val() );
+     	S(":system_user", _WOPENER).val( S(":system_user").val() );
+     	S(":webmaster", _WOPENER).val( S(":webmaster").val() );
+		 
+		S("#TableExport", _WOPENER).HTML( S("#TableExport").HTML() );
+		S("#_TreeList", _WOPENER).HTML( S("#_TreeList").HTML() );
+		S("#_PermissionList", _WOPENER).HTML( S("#_PermissionList").HTML() );
+		
+		S.windowClose(window);
+	}
+[JSEnd] a,?R
+	if( $cd_gs_rol_exp=="" ){
+		S("#IconoVerPermisos").hidden();
+	}else{
+		S("#IconoVerPermisos").visibility();
+	}
+
+
+.[CC] #MySQL | eSqlType('mysql,mysqli')		// $GLOBALS['_Sql']=='mysql'
+.#MySQL ¿ 
+.	[FieldBrowser] _cd_gs_user | like_user | select concat(user_name," ",user_surname),cd_gs_user from {$_ENV['eDesDictionary']}gs_user where concat(user_name," ",user_surname) like # and cd_gs_node={$_Node} order by 1 | 7
+.?¿
+.	[FieldBrowser] _cd_gs_user | like_user | select user_name&#124;&#124;' '&#124;&#124;user_surname,cd_gs_user from {$_ENV['eDesDictionary']}gs_user where (user_name&#124;&#124;' '&#124;&#124;user_surname) like # and cd_gs_node={$_Node} order by 1 | 7
+.?
+
+
+.[ShowFields] ?R | _cd_gs_user | like_user{ gs_user, cd_gs_user, user_name,' ',user_surname }
+
+.[OnChange] a,mR | cd_type_tree | uTypeTree()
+.[OnChange] a,mR | cd_type_tree,cd_gs_rol,_cd_gs_user | uMenu(1)
+.[OnChange] a,mR | cd_type_tree,cd_gs_rol,_cd_gs_user | uMenu(1)
+
+[Format]
+	if( !empty($_vF["cd_gs_rol_exp"]) ){
+		qQuery("select 
+					webmaster, system_user, export_level,
+					print_tab_public, print_tab_private, print_public, print_private, 
+					pdf_public, xls_public, xml_public, txt_public, csv_public, pdf_private, xls_private, xml_private, txt_private, csv_private
+				from {$_ENV['eDesDictionary']}gs_rol_exp
+				where cd_gs_rol_exp='{$_vF['cd_gs_rol_exp']}'", $p1);
+		$rowExp = qArray($p1);
+		foreach($rowExp as $key=>$value){
+			$_vF[$key] = $value;
+		}
+	}
+
+
+[]

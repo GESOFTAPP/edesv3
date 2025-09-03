@@ -1,0 +1,233 @@
+Setup:
+ApplicationName = MiBMS
+TabTitle = MiBMS
+CopyRight = GESOFT,SL
+EncryptionKey = zUw2-oP
+DevelopmentBackgroundColor = #555
+DocSecurity = false
+ReportsNews = true
+UrlStatus =
+StartURL =
+ScreenShot = true
+EMailSystem = soporte@gesoft.es
+EMailType = SERVER
+EMailFrom =
+EMailCookies = cookies@gesoft.es
+TypeUserIdentification = DNI
+SessionMaxLife = 24;
+SessionReset = 15;
+MaxLifeTime =
+InactivityMaxLife =
+Notification = false
+ContextActivate = false
+ZipDownload = false
+UnloadWrapWidth = 400
+TabListType =
+WinNoTitle = true
+TitleIcoNone = true
+CleanTitle = false
+SearchWithLike = true
+WaterMarking =
+Call3CX =
+Call3CXPrefix =
+Call3CXFeatures = width=320,height=400,resizable,scrollbars,status=0,menubar=0,toolbar=0,location=0,titlebar=0
+Call3CXUrl =
+SharedTables =
+.ShareDictionary = mibms_share
+Multitenancy = true
+Cache = true
+TimeZone =
+CharsetText =
+CharsetDB =
+FormatMonth = yyyy-mm
+FormatDate = dd-mm-yyyy
+FormatDateTime = yyyy-mm-dd hh:ii:ss
+FormatNumber = .,
+FormatPhone = 999999999
+FirstWeekDay = 0;
+.FormatMonth = mm/yyyy
+.FormatDate = dd/mm/yyyy
+.FormatDateTime = dd/mm/yyyy hh-ii-ss
+.FormatNumber = ,.
+.FormatPhone = 999.999.999
+.AlertsInterval = 0
+.NoticesEvery = 0
+AutoCompletForm = off
+AutoComplet = new_password
+SlowSqlWarning = 3
+SlowSqlFreeScripts =
+Desktop:
+DesktopBannerMinimized = true
+DesktopTreeType = O
+DefaultTreeIcon = false
+DefaultTreeNoIcon =
+DefaultTreeIconChar =
+DefaultTreeFolder = &#364;,&#365;
+DefaultTreeOneLevel = true
+MenuDefaultType = I
+MenuIconOverClick = O
+MenuAutoHidden = true
+MenuAutoHiddenOptional = true
+NumberLevels = 1
+SVGWidth  = 25
+SVGHeight = 25
+IMGWidth  = 25
+IMGHeight = 25
+BOXWidth  = 30
+BOXHeight = 30
+HeightTitleIcon = 33
+HeightTitleIconWin = 16
+ExitToLogin = true
+Desktop = wepe
+SeeLastAccess = true
+JsdWidget = false
+JSEnd =
+PHPEnd =
+OnLoad =
+RecentOptions = 20
+List:
+AlignTitle =  L
+AlignTextTH = L
+AlignTextTD = L
+AlignFillTH = C
+AlignFillTD = C
+AlignNumericTH = R
+AlignNumericTD = R
+TypeFormat = S
+ToolsMenuType = B
+TypePaging = b
+NoZeroAll = true
+TitleIconView = true// mostrar el icono de ayuda en la barra superior
+TCPDF = true
+WideListing = 80
+ColsTrim = true
+OptionsInListMenuRow = true
+OptionsInListHidden = true
+OptionsInListLimit = 100
+OptionsInListDefault =
+SubWindowInIWork = true
+MaxVisibleRows = 50
+MaxRec = 1000
+ShowTotalRecords = false
+Cursor = true
+Greenbar = false
+CardSwitch = true
+LastRecords = 30
+FixList = true
+DBLimit  =  5000
+PDFLimit =  5000
+XLSLimit = 15000
+CSSDynamic:
+cListGrid = #DDDDDD
+FontNumbers = numbers
+Tab:
+HRTypeTab = true
+ShowZero = 0
+NextMarginLeft = -2
+EnterForSubmit = false
+MarkFieldRequired = false
+MarkLabelRequired = false
+CardDefault = 2,10,30
+LogHistory:
+LogTrace = GA,GB,GM,FA,FB,FM,D*
+LogFullType =
+LogPathFileVersion = \\log_doc
+LogGsAccessFile =
+LogGsAccessDays =
+LogGsErrorDays =
+LogGsConnectionsDays =
+ViewFolder = false
+Permission:
+EmptyTree = false
+EmptySpecial = false
+EMail:
+Log = DDBB
+ReadOnly = false
+MaxFileSize = 500000
+fileEMailFrom = mail_load_from.php
+Robinson:
+Status = false
+Script =
+Check =
+Management =
+Assign = note:nombre,apel1,apel2,xxx
+Background:
+-php = php
+-syntax = -l
+LogDownload:
+LogFileStartDate =
+SaveInfo = true
+LogFileDownload =
+LogFileDays =
+DeleteTemporary = cch:1, exc:7, pdf:1, php:1, zip:7, lcl:2, err:90, log:1
+New:
+PageSize = 32500
+Login:
+min_login = 5
+max_login = 65
+min_password = 6
+max_password = 250
+key_case = 2
+Type = dni
+HostGet = false
+TriggerCharOff = false
+CookieName = MiBMS
+CookieDaysExpire = 365
+ClaveReset = 8497D028B4F4D4FA034DBABD1E45E21C
+LoginTextarea = true
+RememberLogin = true
+WorkingHours = true
+PassDaysToChange = -1
+PassDaysToExpire = -1
+UserPasswordByEmail = true
+InitWeb =
+VerificationType = sms,email
+VerificationSMS = http://conector.moviljet.com/conector/conector_[company].php?a=33&b=[email]&c=[password]&d=34#phone#&e=#message#
+VerificationExpire = 365
+VerificationKey = e1a31f39d48
+VerificationWait = 5
+AuthenticationRequired = yes
+AccessErrors = 3
+AccessMinutesDelay = 10
+RGPD:
+Entites = ,; cli.cif,Cliente
+Source	= ,; A,AAA; B,BBB
+Type	= ,; C,CCC; D,DDD
+CopyName	 = nm_cli
+CopySurname1 =
+CopySurname2 =
+CopyZip		 = cd_postal
+CopyLocality = localidad
+CopyEMail	 = email
+ImgEdit:
+ImgClipSize = 300,300, 100,100, 60,60
+ImgWatermark = /_datos/config/watermark.png
+ImgMarginRight = 10
+ImgMarginBottom = 10
+UploadFile:
+MaxSize = limit
+BoxSize = 20
+BoxDir = =i_clientescloud.datos/{SESS::$_RCli_}
+SSOUpdate:
+sso_user =
+sso_password =
+sso_url =
+sso_dir =
+Channel:
+Status = false
+Notification = true
+URL =
+ServicePHP =
+jwtKey =
+phpNodeKey =
+phpNodeService =
+filter =
+ChannelDevelopment:
+Status = false
+Notification = true
+URL = http://localhost:3000/
+ServicePHP =
+jwtKey =
+phpNodeKey =
+phpNodeService =
+filter =

@@ -1,0 +1,382 @@
+[Language]es,en
+update eDes framework | Actualizar eDes framework | Update eDes framework
+update eDes | Actualizar eDes | Update eDes
+version en formato zip | Versión en formato zip | Version in zip format
+reinstalar | Reinstalar | Reinstall
+Seleccionar | Select | Select
+Ya se ha actualizado | Ya se ha actualizado | Has already been updated
+version actual | Versión actual | Current version
+marque para poder reinstalar la misma versión | Marque para poder reinstalar la misma versión | Check to be able to reinstall the same version
+[Title]=@update eDes framework@
+[Button]a|[&#230;] @update eDes@
+[UploadFile]fichero_edes|/_doc_|cd_gs_store|25.000.000|@Seleccionar@...|zip
+[UploadFile]fichero_app|/_doc_|fichero_app|10.000.000|@Seleccionar@...|zip
+#(A) [Expire] 0
+[TipForm]*|L|_reactualizar|@marque para poder reinstalar la misma versión@
+[Fields]
+@version en formato zip@|fichero_edes|f|F|60||MD||#|
+Zip App|fichero_app|f|F|60||*|||
+@reinstalar@|_reactualizar|N|C|1||M|||
+-
+{P} InfoZip
+[P]InfoZip
+echo '<span style="font-family:monospace;color:green">';
+echo "@version actual@: ".file_get_contents(DIREDES."web/aplication/_datos/config/version_edes.cdi").'<br>';
+echo '</span>';
+echo "<script>var UltimoEDes='{$cdi0}', UltimoApp='{$cdi1}';</script>";
+[JSCheck]a
+if( $fichero_edes!="" ){
+if( S.is(".app.",$fichero_edes) ) ePE("fichero_edes", "El contenido no es el motor");
+if( S(":fichero_edes").attr("eFileUpdate")==UltimoEDes && _reactualizar=="" ) ePE("fichero_edes", "@Ya se ha actualizado@");
+}
+if( $fichero_app!="" ){
+if( !S.is(".app.",$fichero_app) ) ePE("fichero_app", "El contenido no es la App");
+if( S(":fichero_app").attr("eFileUpdate")==UltimoApp && $_reactualizar=="" ) ePE("fichero_edes", "La App ya se ha actualizado");
+}
+[DBIni]A
+eTron("Actualización [DBIni] A");
+uDelFile(DIREDES."temp/", '/js$/u');
+function _ChmodDir($DirBase){
+chmod($DirBase, 0777);
+$di = opendir($DirBase);
+while( $file=readdir($di) ){
+if( $file!='.' && $file!='..' ){
+if( is_dir("{$DirBase}/{$file}") ){
+chmod("{$DirBase}/{$file}", 0777);
+_ChmodDir("{$DirBase}/{$file}");
+}else{
+chmod("{$DirBase}/{$file}", 0666);
+}
+}
+}
+closedir($di);
+}
+function uDelFile($path, $patron){
+$uDir = opendir($path);
+while( $uFile=readdir($uDir) ){
+if( $uFile=='.' || $uFile=='..' || is_dir($uFile) ) continue;
+if( preg_match($patron, $uFile) ){
+if( is_writable($path.$uFile) ){
+unlink($path.$uFile);
+}
+}
+}
+closedir($uDir);
+}
+if( $_POST["fichero_edes"]!="" && !preg_match('/^localhost/u',$_SERVER['HTTP_HOST']) ){
+if( !file_exists(DIREDES."data/version.last") ){
+file_put_contents(DIREDES."data/version.last", "210318");
+}
+$ver  = file_get_contents(DIREDES."data/version");
+$last = file_get_contents(DIREDES."data/version.last");
+if( $ver!=$last ){
+copy(DIREDES."data/version", DIREDES."data/version.last");
+}
+}
+$aDir = eGetCWD();
+$y2s = date('Y-m-d H:i:s');
+$dim = array(
+file_get_contents(DIREDES."web/aplication/_datos/config/version_edes.cdi"),
+file_get_contents("../_datos/config/version_app.cdi")
+);
+$crearCss = "";
+$msg = "Motor actualizado";
+$fechas = explode("|", $_POST["_FILESUPDATE"]);
+$tmp = explode("|", $_POST["_FIELDSWITHFILES"]);
+for($n=0; $n<count($tmp); $n++){
+$tmp[$n] = trim($tmp[$n]);
+if( $_POST[$tmp[$n]]<>"" ){
+$t = explode(",", $fechas[$n]);
+$FechaHora = mktime($t[0],$t[1],$t[2], $t[3],$t[4],$t[5]);
+$origen = '../_tmp/zip/'.S::$_User."_".$n;
+if( $tmp[$n]=="fichero_edes" ){
+$if = 0;
+$destino = '../../ok_'.$_POST[$tmp[$n]];
+uDelFile("../../", '/^ok_edesweb_[0-9]{6}_z.zip$/u');
+}else{
+$if = 1;
+$destino = '../ok_'.$_POST[$tmp[$n]];
+$crearCss = "top.gsCssReload(1);";
+$msg = "Motor actualizado.<br>Se recalculará el CSS.";
+uDelFile("../", '/^ok_edesweb.app.zip$/u');
+file_put_contents("../_datos/config/version_app.cdi", date('Y-m-d H:i:s', $FechaHora));
+}
+$dim[$if] = date("Y-m-d H:i:s", $FechaHora);
+rename($origen, $destino);
+chmod($destino, 0755);
+}
+}
+chmod("edes.php", 0666);
+if( file_exists("edesapp.php") ) chmod("edesapp.php", 0666);
+chdir("..");
+if( $_POST["fichero_app"]!="" && $_SERVER['HTTP_HOST']!="localhost" ){
+$ExeZip = "unzip -o ok_".$_POST["fichero_app"];
+$pathAppZip = eGetCWD()."/ok_".$_POST["fichero_app"];
+exec($ExeZip, $DimOut, $valRet);
+_ChmodDir("_datos");
+chdir("http");
+_ChmodDir("css");
+_ChmodDir("g");
+_ChmodDir("fonts");
+_ChmodDir("lib");
+chdir("..");
+}
+chdir("..");
+if( $_POST["fichero_edes"]!="" && $_SERVER['HTTP_HOST']!="localhost" ){
+$ExeZip = "gzip -df ok_".$_POST["fichero_edes"];
+eTron("Dir: ".eGetCWD());
+eTron($ExeZip);
+$pathEDesZip = eGetCWD()."/ok_".$_POST["fichero_edes"];
+chmod("ok_".$_POST["fichero_edes"], 0777);
+$file = "ok_".$_POST["fichero_edes"];
+$path = "./";
+$zip = new ZipArchive;
+if( $zip->open($path.$file)===true ){
+$zip->extractTo($path);
+$zip->close();
+eTron('ok UNZIP');
+} else {
+eTron('failed UNZIP');
+}
+_ChmodDir("edes.v3");
+_ChmodDir("lib");
+}
+chdir($aDir);
+if( !file_exists("g/edes_d.ico") ){
+copy(DIREDES."t/g/edes_d.ico", "g/edes_d.ico");
+}
+if( !file_exists("g/edes_p.ico") ){
+copy(DIREDES."t/g/edes_p.ico", "g/edes_p.ico");
+}
+_FontsEDesToApp();
+_ImportarGsStorage();
+_ImportarGsIcon();
+if( $_POST["fichero_edes"]!="" && !preg_match('/^localhost/u',$_SERVER['HTTP_HOST']) && file_exists(DIREDES."data/version.sql") ){
+$sentencia = file(DIREDES."data/version.sql");
+$last = trim(file_get_contents(DIREDES."data/version.last"));
+$sqlInit = false;
+for($n=0; $n<count($sentencia); $n++){
+$sql = trim($sentencia[$n]);
+if( $sql=="" ) continue;
+if( mb_substr($sql,0,6)>=$last ){
+if( !$sqlInit ){
+$sqlInit = true;
+eTron("Run sql for version change: START ({$last}-{$ver})");
+}
+eTron("   {$sql}");
+$sql = mb_substr($sql,7);
+qQuery($sql);
+}
+}
+if( $sqlInit ){
+eTron("   Run sql for version change: END");
+}
+}
+if( $_POST["fichero_edes"]!="" && !preg_match('/^localhost/u',$_SERVER['HTTP_HOST']) && file_exists(DIREDES."data/version.fnc") ){
+eTron("Run Function for version change: INI");
+$sentencia = file(DIREDES."data/version.fnc");
+$last = trim(file_get_contents(DIREDES."data/version.last"));
+$funcInit = false;
+for($n=0; $n<count($sentencia); $n++){
+$linea = trim($sentencia[$n]);
+if( $linea=="" ) continue;
+list($ver, $func) = explode("|", $linea);
+if( $ver>=$last ){
+if( !$funcInit ){
+$funcInit = true;
+eTron("Run Function for version change: START ({$last}-{$ver})");
+}
+eTron("   {$func}");
+include(DIREDES."data/{$func}");
+}
+}
+if( $funcInit ){
+eTron("   Run Function for version change: END");
+}
+}
+ReplaceInScript();
+eTron("Recalculando CSS");
+$crearCss = "localStorage.setItem('e-cdi', '1959-05-18 00:00:00');".$crearCss;
+eTron($msg);
+eTron($crearCss);
+chdir("http");
+if( isset($pathEDesZip) ){
+@unlink($pathEDesZip);
+}
+if( isset($pathAppZip) ){
+@unlink($pathAppZip);
+}
+eMessage($msg, "HS", 3, $crearCss);
+function _ImportarGsStorage(){
+eTron("gs_storage: Actualizar");
+eTron("   Obtener structura");
+$structure = _getStructureTable("{$_ENV['eDesDictionary']}gs_storage");
+eTron("   Borra tabla");
+qQuery("drop table {$_ENV['eDesDictionary']}gs_storage");
+eTron("   Crear tabla");
+qQuery($structure);
+eTron("   Importando");
+$TReg = 0;
+$fd = fopen(DIREDES."web/edesweb/gs_storage.unl", 'r');
+while( ($txt=fgets($fd, 90000)) ){
+$txt = addslashes($txt);
+$txt =	   str_replace('|'		 , "','"  , chop($txt));
+$txt =	   str_replace('{&#124;}', '|'    , $txt);
+$txt =	   str_replace('{&#13;}' , CHR13, $txt);
+$txt = "'".str_replace('{&#10;}' , CHR10, $txt)."'";
+$txt =	   str_replace("'0000-00-00'", "NULL", $txt);
+$txt =	   str_replace("''", 'NULL', $txt);
+$TReg++;
+eTron("   {$TReg}");
+qQuery("insert into {$_ENV['eDesDictionary']}gs_storage values ({$txt})");
+}
+fclose($fd);
+$cdi = date('Y-m-d H:i:59');
+eTron("   Resetea cdi {$cdi}");
+qQuery("update {$_ENV['eDesDictionary']}gs_storage set cdi='{$cdi}'");
+return $TReg;
+}
+function _ImportarGsIcon(){
+eTron("gs_icon: Actualizar");
+eTron("   Obtener structura");
+$structure = _getStructureTable("{$_ENV['eDesDictionary']}gs_icon");
+eTron("   Borra tabla");
+qQuery("drop table {$_ENV['eDesDictionary']}gs_icon");
+eTron("   Crear tabla");
+qQuery($structure);
+eTron("   Importando");
+$TReg = 0;
+$fd = fopen(DIREDES."web/edesweb/gs_icon.unl", 'r');
+while( ($txt=fgets($fd, 90000)) ){
+$txt = addslashes($txt);
+$txt =	   str_replace('|'		 , "','"  , chop($txt));
+$txt =	   str_replace('{&#124;}', '|'    , $txt);
+$txt =	   str_replace('{&#13;}' , CHR13, $txt);
+$txt = "'".str_replace('{&#10;}' , CHR10, $txt)."'";
+$txt =	   str_replace("'0000-00-00'", "NULL", $txt);
+$txt =	   str_replace("''", 'NULL', $txt);
+$TReg++;
+eTron("   {$TReg}");
+qQuery("insert into {$_ENV['eDesDictionary']}gs_icon values ({$txt})");
+}
+fclose($fd);
+return $TReg;
+}
+function _getStructureTable($tabla){
+list($ddbb, $tabla) = explode(".", $tabla);
+if( empty($tabla) ){
+$tabla = $ddbb;
+$ddbb = "";
+}else{
+$ddbb .= ".";
+}
+$file = DIREDES."web/edesweb/_doc_/tbl/_edes_";
+if( eSqlType('mysql,mysqli', 'pdo.mysql') ){
+$file .= "mysql";
+}else if( eSqlType('informix') ){
+$file .= "informix";
+}else if( eSqlType('oracle') ){
+$file .= "oracle";
+}else{
+die("Controlador no soportado");
+}
+$file .= ".sql";
+$txt = file_get_contents($file);
+$pi = mb_stripos($txt, "create table {$tabla}");
+$pf = mb_stripos($txt, "create table ", $pi+1);
+$txt = trim(mb_substr($txt, $pi, $pf-$pi));
+if( !empty($ddbb) ){
+$txt = str_ireplace("create table {$tabla}", "create table {$ddbb}{$tabla}", $txt);
+}
+return $txt;
+}
+function _FontsEDesToApp(){
+eTron("Fonts: Actualizando...");
+$dir = DIREDES."web/aplication/http/fonts/";
+if( !is_dir($dir) ){
+eTron("Error: No es dir");
+return false;
+}
+if( !($dh = opendir($dir)) ){
+eTron("Error: No Opendir");
+return false;
+}
+$ActualizarFontEDes = !file_exists("fonts/edes.off");
+while( ($file = readdir($dh))!==false ){
+if( is_dir($dir.$file) ) continue;
+if( $file[0]=="_" || eFileType($file)=="fcp" || eFileType($file)=="gfs" ) continue;
+if( mb_substr($file,0,5)=="edes." && !$ActualizarFontEDes ){
+continue;
+}
+eTron("   {$dir}{$file} -> fonts/{$file}");
+copy($dir.$file , "fonts/{$file}");
+}
+closedir($dh);
+return true;
+}
+function ReplaceInScript(){
+$dirCurrent = getcwd();
+$Rastro = false;
+$_TReg = 0;
+$Copy   = array('gs', 'inc', 'php', 'ini', 'sel',  'edf','gdf','ldf','fdf','zdf' );
+$NoCopy = array('bak', 'alb', 'hta', 'htc', 'xar', 'old', 'OLD', 'no', 'NO','txt',    'gif','jpg','png', 'htm', 'html', 'css', 'js' );
+$NoDir  = array('./http','./_tmp','./_bak_','_bak_.file', './_doc_','./_d_','./_version_','./tree','./lib','./help'
+,'./r'
+,'./edesapp'
+,'./d/gescomu/http_gesco/tinymce'
+,'./d/gescomu/http_gesco/tinymce_html5'
+,'./d/gescomu/http_gesco/tinymce_4.7.1'
+,'./d/gescomu/http_gesco/gescomu/tinymce_html5'
+,'./d/gescomu/http_gesco/gescomu/tinymce'
+,'./d/gescomu/http_gesco/gescomu/tinymce_4.7.1'
+,'./d/ssoserver'
+,'./d/ssoclient'
+,'./d/re/bak_raul'
+);
+$last = trim(file_get_contents(DIREDES."version.last"));
+if( $_POST["fichero_edes"]!="" && !preg_match('/^localhost/u',$_SERVER['HTTP_HOST']) && file_exists(DIREDES."data/version.rpl") ){
+$dim = file(DIREDES."data/version.rpl");
+for($n=0; $n<count($dim); $n++){
+$txt = trim($dim[$n]);
+if( $txt=="" ) continue;
+list($ver, $oldText, $newText) = explode("|", $txt);
+if( $Rastro ) echo 'Modificando scripts |'.eSanitizeVar($oldText).'| a |'.eSanitizeVar($newText).'|<br>';
+if( $ver>=$last ){
+chdir($dirCurrent);
+chdir("../");
+_ReplaceInScript(".", $Copy, $NoCopy, $NoDir, $oldText, $newText, $_TReg, $Rastro);
+}
+}
+if( $Rastro ) echo '<br>Total ficheros cambiados: '.$_TReg;
+}
+}
+function _ReplaceInScript($dorg, $ext, $NoExt, $NoDir, $txtOLD, $txtNEW, $_TReg, $Rastro){
+global $Rastro, $_Nivel, $_NuevoValor, $_ValorActual, $_TReg;
+$_Nivel++;
+if( in_array($dorg, $NoDir) ){
+$_Nivel--;
+return;
+}
+$di = opendir( $dorg );
+while( $file = readdir( $di ) ){
+if( $file!='.' && $file!='..' ){
+if( is_dir("{$dorg}/{$file}") ){
+if( $file[0]!='_' && mb_substr($file,-1)!='_' ){
+_ReplaceInScript("{$dorg}/{$file}", $ext, $NoExt, $NoDir, $txtOLD, $txtNEW, $_TReg, $Rastro);
+}
+}else{
+if( in_array( mb_substr($file, mb_strrpos($file,'.')+1), $ext) ){
+$txt = file_get_contents("{$dorg}/{$file}");
+if( eSubstrCount($txt, $txtOLD)>0 ){
+$_TReg++;
+if( $Rastro ) echo "&nbsp;&nbsp;&nbsp;{$dorg}/{$file}<br>";
+$txt = str_replace($txtOLD, $txtNEW, $txt);
+file_put_contents("{$dorg}/{$file}", $txt);
+}
+}
+}
+}
+}
+closedir($di);
+$_Nivel--;
+}

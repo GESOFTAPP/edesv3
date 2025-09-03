@@ -1,0 +1,112 @@
+BODY, #scrollBGR {
+SCROLLBAR-FACE-COLOR: #a2b0b7;
+FONT-SIZE: 9px;
+BACKGROUND: #e5ebef;
+MARGIN: 0px;
+SCROLLBAR-HIGHLIGHT-COLOR: #a2b0b7;
+SCROLLBAR-SHADOW-COLOR: #a2b0b7;
+SCROLLBAR-3DLIGHT-COLOR: #777d80;
+SCROLLBAR-ARROW-COLOR: #ffffff;
+SCROLLBAR-TRACK-COLOR: #cfe2f0;
+FONT-FAMILY: ARIAL;
+cursor:default;
+SCROLLBAR-DARKSHADOW-COLOR: #777d80;
+SCROLLBAR-BASE-COLOR: #a2b0b7;
+}
+.ZonaSuperior {
+BACKGROUND: #e5ebef;
+}
+TABLE {
+FONT-SIZE: 100%;
+BACKGROUND: #cccccc;
+}
+TH {
+FONT-WEIGHT: bold;
+FONT-SIZE: 110%;
+BACKGROUND: #9dacb4;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#dde5ea, endColorstr=#789aab);
+TEXT-TRANSFORM: uppercase;
+CURSOR: hand;
+COLOR: #001087;
+WHITE-SPACE: nowrap;
+}
+.Cabe {
+FONT-WEIGHT: bold;
+FONT-SIZE: 110%;
+BACKGROUND: #789aab;
+TEXT-TRANSFORM: uppercase;
+CURSOR: hand;
+COLOR: #001087;
+WHITE-SPACE: nowrap;
+}
+TABLE TD {
+WHITE-SPACE: nowrap;
+FONT-SIZE: 100%;
+BACKGROUND: #e5ebef;
+}
+INPUT {
+FONT-SIZE: 100%;
+}
+SELECT {
+FONT-SIZE: 100%;
+}
+#o { display: none; }
+#c { text-align: center; }
+#d { text-align: right; }
+.gsTMenu {
+font-family: ARIAL;
+font-size: 11px;
+width: 100%;
+font: menutext;
+background-color: menu;
+border: 2px outset buttonhighlight;
+padding: 0;
+cursor: hand;
+}
+.Over {
+background: #aaaaaa;
+color: #FFFFFF;
+border-left: 1 solid buttonhighlight;
+border-right: 1 solid buttonshadow;
+border-top: 1 solid buttonhighlight;
+border-bottom: 1 solid buttonshadow;
+padding: 0 4 0 4;
+WHITE-SPACE: nowrap;
+}
+.Out {
+background: solid buttonface;
+border: 1 solid buttonface;
+padding: 0 4 0 4;
+WHITE-SPACE: nowrap;
+}
+.Out2 {
+background: solid buttonface;
+border: 1 solid buttonface;
+padding: 0 4 0 4;
+}
+TABLE.EditDoc {
+border: 2px outset #000000;
+}
+.EditDoc TH {
+FONT-WEIGHT: bold;
+FONT-SIZE: 130%;
+BACKGROUND: #9dacb4;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#dde5ea, endColorstr=#789aab);
+TEXT-TRANSFORM: uppercase;
+CURSOR: hand;
+COLOR: #001087;
+WHITE-SPACE: nowrap;
+}
+.EditDoc TD {
+FONT-WEIGHT: bold;
+FONT-SIZE: 120%;
+}
+.tBorder{
+border-color: #336600;
+border-style: solid;
+border-width: 1px;
+border-top: none;
+border-bottom: none;
+border-right: none;
+text-align: center;
+}

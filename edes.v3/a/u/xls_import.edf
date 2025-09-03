@@ -1,0 +1,902 @@
+#!(l) [CSSAdd] * | fch_{$_GRUPOMENU}
+#(l)  [CSSAdd] * | lst_{$_GRUPOMENU}
+[Title]=Control CSV
+[NoTools]*
+[FormButtons]-
+[AddButton]a|Create table||
+[AddButton]a|Import||
+[UploadFile]file|/_tmp/php|file|20.000.000|Seleccionar fichero en csv|csv
+[Button]a|AÃ±adir fichero
+[AddOption]*|_actionCSV|,Analizar; T,Test; I,Importar
+[Fields]a
+Fichero|file|f|F|150|350|MDUL|||
+Filas del test|_rows_test|+|T|6||M|||
+,Separator|_separator|D|T|1||M|||
+,Acción|_actionCSV|N|SV|10|<file|M|||
+-|Ficheros temporales
+{P} ListaFicheros
+[P]ListaFicheros
+$dir  = "../d/_prueba/csv/";
+$user = S::$_User;
+$prefijo = "from_{$user}_";
+$prefijoLeng = mb_strlen($prefijo);
+$dimFile = array();
+if( $dh = opendir($dir) ){
+while( ($file = readdir($dh))!==false ){
+$fileInfo = pathinfo($dir.$file);
+if( mb_substr($file, 0, $prefijoLeng)==$prefijo && $fileInfo["extension"]=="csv" ){
+$nLineas = -1;
+$archivo = fopen($dir.$file, "rb");
+while( feof($archivo)==false ){
+$nLineas++;
+fgets($archivo);
+}
+fclose($archivo);
+array_push($dimFile, mb_substr($fileInfo["filename"], $prefijoLeng+2)."|".number_format($nLineas, 0, ',', '.')."|".mb_substr($fileInfo["filename"], $prefijoLeng, 1));
+}
+}
+closedir($dh);
+}
+sort($dimFile);
+echo "<span style='font-size:18px; padding-left:20px; display:block; border:0px solid red'>";
+for($n=0; $n<count($dimFile); $n++){
+list($file, $nLineas, $header) = explode("|", $dimFile[$n]);
+echo "<div style='display:block; padding:0; margin:0; border:1px solid transparent' onclick='uDeleteFile(this)' head='{$header}'>";
+echo "<img src='g/t_exe.gif' style='float:left' onclick='FileCSV(this)'>";
+echo "<img src='g/t_op_delete_0.gif' style='float:left'>";
+echo "<span style='width:68px; margin-right:10px; display:block; text-align:right; float:left'>{$nLineas} </span> ";
+echo "<span style='display:block; float:left'>".$file."</span>";
+echo "</div>";
+}
+echo "</span>";
+[JSIni]a,mR
+function uDeleteFile(o){
+var file = eTrim(o.innerText);
+file = file.split(" ")[1];
+top.eAlert( 'MENSAJE', 'Confirmar borrar el fichero "<b>'+file+'</b>"', "A,C", 'I', function(op){
+if( op!=2 ) return;
+top.eCallSrv(window, "edes.php?E:CallSrv="+_Source
++"&DeleteFile="+o.head
++"_"+file
+);
+o.style.display = "none";
+});
+}
+function FileCSV(o){
+var file = eTrim(o.parentNode.innerText).split(" ")[1];
+top.eSWOpen(window, "edes.php?E:CallSrv="+_Source
++"&FileCSV="+o.parentNode.head+"_"+file
++"&_rows_test="+eGF("_rows_test")
++"&_actionCSV="+eGF("_actionCSV")
++"&_separator="+eGF("_separator")
+, "Check: "+file);
+return eClearEvent();
+}
+[CallSrv]DeleteFile
+$dir  = "../d/_prueba/csv/";
+$user = S::$_User;
+$DeleteFile = "{$dir}from_{$user}_{$DeleteFile}.csv";
+@unlink($DeleteFile);
+eInclude("message");
+eMessage('Fichero "'.$DeleteFile.'" borrado', "HS");
+[PHPIni]A
+$user = S::$_User;
+$fileInfo = pathinfo($_POST["file"]);
+$fileTmp = $_FILES["file"]["tmp_name"];
+$fileNew = "../d/_prueba/csv/from_{$user}_{$fileInfo['filename']}.csv";
+rename($fileTmp, $fileNew);
+eMessage("Fichero grabado", "HS", 3, "location.href=location.href.replace('?FA:','?Fa:')+'';");
+[CallSrv]FileCSV
+set_exception_handler('eDesException');
+$user = S::$_User;
+$file = "../d/_prueba/csv/from_{$user}_{$FileCSV}.csv";
+$linesHeader = $FileCSV[0];
+$negativeNumbers = array(
+array(				   -128,				 127, "TINYINT"	 , "")
+,array(				 -32768, 			   32767, "SMALLINT" , "")
+,array(			   -8388608,  			 8388607, "MEDIUMINT", "")
+,array(		    -2147483648,		  2147483647, "INT"		 , "")
+,array(-9223372036854775808, 9223372036854775807, "BIGINT"	 , "")
+);
+$positiveNumbers = array(
+array(0,				   255, "TINYINT"	, "unsigned")
+,array(0, 			     65535, "SMALLINT"	, "unsigned")
+,array(0,  			  16777215, "MEDIUMINT"	, "unsigned")
+,array(0,		    4294967295, "INT"		, "unsigned")
+,array(0, 18446744073709551615, "BIGINT"	, "unsigned")
+);
+$align = array(
+"field"		 =>""
+,"type_data"	 =>""
+,"unsigned"		 =>"center"
+,"null"			 =>"center"
+,"auto_increment"=>"center"
+,"fill"			 =>"right"
+,"fill_tpc"		 =>"right"
+,"different"	 =>"right"
+,"different_tpc" =>"right"
+,"type_edit"	 =>"center"
+,"max_length"	 =>"right"
+,"min_value"	 =>"right"
+,"max_value"	 =>"right"
+,"contents"		 =>"center"
+);
+$_ENV["file_sql"] = "../d/_prueba/csv/sql.txt";
+if( !empty($_ENV["file_sql"]) ){
+@unlink($_ENV["file_sql"]);
+}
+$_ENV["lengthBuffer"] = 5000;
+if( empty($_POST["_separator"]) && empty($_GET["_separator"]) ){
+$_ENV["separator"] = ";";
+}
+if( !empty($_POST["_separator"]) ) $_ENV["separator"] = $_POST["_separator"];
+if( !empty( $_GET["_separator"]) ) $_ENV["separator"] =  $_GET["_separator"];
+$_ENV["action"] = $_GET["_actionCSV"];
+if( !empty($_POST["TEST"]) && $_POST["TEST"]=="on" ){
+$_ENV["action"] = "T";
+}
+if( !empty($_POST["IMPORTAR"]) && $_POST["IMPORTAR"]=="on" ){
+$_ENV["action"] = "I";
+}
+if( empty($_ENV["action"]) ){
+$_ENV["action"] = "A";
+}
+$_ShowRec = $_ENV["action"]!="I";
+$_NameTable = (empty($_POST["TABLE_NAME"]) ? mb_substr($FileCSV,2) : $_POST["TABLE_NAME"]);
+$_recordsToShow = 10;
+if( !empty( $_GET["_rows_test"]) ) $_recordsToShow =  $_GET["_rows_test"];
+if( !empty($_POST["_rows_test"]) ) $_recordsToShow = $_POST["_rows_test"];
+$noImportCol = array();
+$newField = array();
+function sqlToFile($sql){
+if( $_ENV["action"]=="I" ){
+throw new eDesException("No se deberÃ­a ejecutar esta opciÃ³n");
+$sql = str_replace("<br>", "", $sql);
+qQuery($sql);
+}
+}
+if( in_array($_ENV["action"], array("I", "T")) ){
+pintaHeader("MASTER AND AUXILIARY");
+$_AssingSelect = array();
+$_DimSelect = array();
+function createTable($dim, $name){
+$field = $dim["field"];
+$typeData = TypeNumber::getTypeSql(0, $dim["different"]*1);
+$create = "CREATE TABLE {$name} (<br>cd_{$name} {$dim['type_serial']} unsigned NOT NULL auto_increment
+<br>, nm_{$name} {$dim['type_data']} not null
+<br>, PRIMARY KEY (cd_{$name})
+<br>)";
+if( $_ENV["action"]=="T" ){
+echo "<br><b><u>[{$name}] CREATE TABLE AUXILIARY</u></b><br>";
+echo $create."<hr>";
+}
+sqlToFile($create);
+}
+foreach($_POST as $name=>$structure){
+if( $name==mb_strtoupper($name) ){
+continue;
+}
+if( !(mb_substr($name,0,7)=="SELECT_" && $structure=="on") ){
+continue;
+}
+$name = mb_substr($name, 7);
+$p = mb_strrpos($name, "_");
+$position = mb_substr($name, $p+1);
+$name = mb_substr($name, 0, $p);
+$p = $position;
+$index = $p-1;
+$_AssingSelect[$p-1] = $_POST["field_{$p}"];
+$p = "_".$p;
+$name = $_POST["field{$p}"];
+$dim = array(
+"field"	 => $_POST["field{$p}"]
+,"type_data"	 => $_POST["type_data{$p}"]
+,"unsigned"	 => $_POST["unsigned{$p}"]
+,"null"		 => $_POST["null{$p}"]
+,"auto_increment"=> $_POST["auto_increment{$p}"]
+,"leng_string"	 => preg_replace('/[^0-9]+/', '', $_POST["type_data{$p}"])
+,"different"	 => str_replace(".", "", $_POST["different{$p}"])
+,"field_bak"	 => $_POST["field{$p}_bak"]
+);
+$structure = "INSERT INTO {$name} (cd_{$name}, nm_{$name}) VALUES <br>";
+$_DimSelect[$index] = array();
+$dimInsert = explode("\n", $_POST["DATA_{$dim['field_bak']}"]);
+$pk = 0;
+for($n=0; $n<count($dimInsert); $n++){
+if( empty($dimInsert[$n]) ) continue;
+list($repeticiones, $label) = explode("|", $dimInsert[$n]);
+++$pk;
+$label = trim(eUnEscape($label));
+$_DimSelect[$index][$label] = $pk;
+if( $pk>1 ) $structure .= "<br>, ";
+$structure .= "('{$pk}', '{$label}')";
+}
+$typeData = TypeNumber::getTypeSql(0, $pk*1);
+$_POST["type_data_".($index+1)] = $typeData["type"];
+$dim["type_serial"] = $typeData["type"];
+createTable($dim, $name);
+if( $_ENV["action"]=="T" ){
+echo "<br><b><u>[{$name}] INSERT AUXILIARY</u></b><br>";
+echo $structure."<hr>";
+}
+sqlToFile($structure);
+}
+$dimIndex = array();
+$tmpIndex = explode("\n", $_POST["CREATE_INDEX"]);
+for($i=0; $i<count($tmpIndex); $i++){
+$txt = trim($tmpIndex[$i]);
+if( empty($txt) ) continue;
+array_push($dimIndex, $txt);
+}
+$dimFields = array();
+$p = 1;
+while( isset($_POST["field_{$p}"]) ){
+if( empty($_POST["field_{$p}"]) ){
+$noImportCol[$p-1] = true;
+$p++;
+continue;
+}
+$noImportCol[$p-1] = false;
+$tmp = array(
+"field"	 => $_POST["field_{$p}"]
+,"type_data"	 => $_POST["type_data_{$p}"]
+,"unsigned"	 => $_POST["unsigned_{$p}"]
+,"null"		 => trim($_POST["null_{$p}"])
+,"auto_increment"=> $_POST["auto_increment_{$p}"]
+);
+if( empty($_POST["field_{$p}_bak"]) ){
+$newField = $tmp;
+}
+if( empty($_POST["field_{$p}_bak"]) ){
+$tmp["auto_increment"] = "";
+}
+array_push($dimFields, str_replace("  ", " ", implode(" ", $tmp)));
+$p++;
+}
+$dimFields = array_merge($dimFields, $dimIndex);
+$createMaster = "CREATE TABLE {$_NameTable} (<br>".implode("<br>,", $dimFields)."<br>)";
+if( $_ENV["action"]=="T" ){
+echo "<br><b><u>[{$_NameTable}] CREATE TABLE MASTER</u></b><br>";
+echo $createMaster."<hr>";
+}
+sqlToFile($createMaster);
+echo "</div>";
+}
+class eDesException extends Exception{
+public function __construct($messageUser, $moreInformation=""){
+$textoGetPrevious = "no hay errores anterriores";
+if( method_exists($this, 'getPrevious') ){
+$textoGetPrevious = $this->getPrevious();
+}
+ePrintR(
+'<b>$messageUser:</b>', $messageUser
+, "<hr>"
+, "<b>getLine().........:</b>", $this->getLine()           // source line
+, "<b>getFile().........:</b>", $this->getFile()           // source filename
+, "<b>getMessage()......:</b>", $this->getMessage()        // message of exception
+, "<b>getCode().........:</b>", $this->getCode()           // code of exception
+, "<b>getTrace()........:</b>", $this->getTrace()          // an array of the backtrace()
+, "<b>getTraceAsString():</b>", $this->getTraceAsString()  // formatted string of trace
+, '<script>try{ top.eSWView(window); top.eSWResize(window); }catch(e){}</script>'
+, $moreInformation
+);
+}
+}
+?>
+<style>
+* { font-family: monospace; }
+TD { empty-cells:show; }
+</style>
+<script>
+var _FileCSV = '<?=$FileCSV?>';
+var _Separator = '<?=$_ENV["separator"]?>';
+top.eSWView(window);
+top.eSWResize(window);
+if (!String.prototype.trim) {
+(function() {
+var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+String.prototype.trim = function() {
+return this.replace(rtrim, '');
+};
+})();
+}
+function verDataDiferent(o){
+var oTR = o.parentNode.parentNode;
+var numField = (oTR.cells[0].innerText).replace(" ", "");
+var totalColumnas = oTR.parentNode.parentNode.rows.length, n;
+for(n=1; n<totalColumnas; n++){
+document.all["contenido_"+n].style.display = "none";
+}
+document.all["contenido_"+numField].style.display = "block";
+}
+function ImportarCSV(){
+var r, typedata;
+for(r=1; r<200; r++){
+if( !document.all["type_data_"+r] ){
+break;
+}
+if( document.all["field_"+r].value=="" ){
+continue;
+}
+typeData = document.all["type_data_"+r].value.toUpperCase();
+if( typeData.indexOf("ERROR")>-1 || /^(VARCHAR|CHAR|VARCHAR\(\s*\)|CHAR\(\s*\)|)$/gi.test(typeData) ){
+alert('ERROR:\nFalta la longitud del campo "'+document.all["field_"+r].value+'"');
+return;
+}
+}
+for(r=1; r<200; r++){
+if( !document.all["type_data_"+r] ){
+r--;
+if( document.all["field_"+r].value!="" && (document.all["type_data_"+r].value=="" || document.all["auto_increment_"+r].value=="") ){
+alert('ERROR:\nFalta la definiciÃ³n/asignaciÃ³n del campo "'+document.all["field_"+r].value+'"');
+return;
+}
+break;
+}
+}
+document.getElementById("FRM1").action = "edes.php?E:CallSrv="+window.frameElement.WOPENER._Source
++"&FileCSV="+_FileCSV
++"&_actionCSV=I"
++"&_separator="+_Separator
+;
+document.getElementById("FRM1").submit();
+}
+</script>
+<?PHP
+if( !file_exists($file) ){
+throw new eDesException("{$view}Error not found", array(eGetCWD(), $file));
+}
+if( ($handle = fopen($file, "r"))===false ){
+throw new eDesException("{$view}Error open", $file);
+}
+if( ($header = fgetcsv($handle, $_ENV["lengthBuffer"], $_ENV["separator"]))===false ){
+throw new eDesException("{$view}Error read", $file);
+}
+for($f=1; $f<$linesHeader; $f++){
+$tmp = fgetcsv($handle, $_ENV["lengthBuffer"], $_ENV["separator"]);
+for($c=0; $c<count($tmp); $c++){
+if( empty($tmp[$c]) ){
+continue;
+}
+$header[$c] = $tmp[$c];
+}
+}
+$totalFilas= 0;
+$numCols   = count($header);
+$contenido = array();
+$typeData  = array();
+$lengData  = array();
+$minMax	   = array();
+$headerDistinct = array();
+for($c=$numCols-1; $c>=0; $c--){
+if( empty($header[$c]) ){
+$numCols--;
+continue;
+}
+$header[$c] = trim(eClearAccent(eStrLower($header[$c])));
+$header[$c] = str_replace(
+array("(", ")", ".", " ", chr(10), chr(13), "ç", "ñ", ":", "/", ",", "º", "ª", "__")
+,array("_", "_", "_", "_",     "_",     "_", "c", "y", "_", "_", "_", "" , "" , "_" )
+,$header[$c]
+);
+if( mb_substr($header[$c], -1)==")" ){
+$header[$c] = mb_substr($header[$c], 0, -1);
+}
+if( mb_substr($header[$c], -1)=="_" ){
+$header[$c] = mb_substr($header[$c], 0, -1);
+}
+if( $header[$c][0]=="_" ){
+$header[$c] = mb_substr($header[$c], 0, -1);
+}
+$p = $c+1;
+if( !empty($_POST["field_{$p}"]) ){
+$header[$c] = $_POST["field_{$p}"];
+}
+if( empty($header[$c]) ){
+$numCols--;
+continue;
+}
+if( !isset($headerDistinct[$header[$c]]) ){
+$headerDistinct[$header[$c]] = 1;
+}else{
+$headerDistinct[$header[$c]]++;
+}
+}
+$n = 0;
+foreach($headerDistinct as $k=>$v){
+$n++;
+}
+if( $numCols!=$n ){
+throw new eDesException("{$view}Hay header repetidas", $headerDistinct);
+}
+$maxFieldLeng = 0;
+for($c=0; $c<$numCols; $c++){
+if( empty($header[$c]) ){
+throw new eDesException("{$view}Hay header vacias");
+}
+$header[$c] = $header[$c];
+$maxFieldLeng = max($maxFieldLeng, mb_strlen($header[$c]));
+}
+$xHeader = array();
+for($c=$numCols-1; $c>=0; $c--){
+if( isset($_AssingSelect) && !empty($_AssingSelect[$c]) ){
+$header[$c] = $_AssingSelect[$c];
+}
+$contenido[$c] = array();
+$typeData[$c]  = "";
+$lengData[$c]  = 0;
+$minMax[$c]    = array();
+$xHeader[$c]   = str_replace(" ", "&nbsp;", str_pad($header[$c], $maxFieldLeng, " ", STR_PAD_LEFT));
+if( $noImportCol[$c] ){
+$header[$c]  = "";
+$xHeader[$c] = "";
+}
+}
+if( $_ENV["action"]!="I" ){
+pintaHeader("[{$_NameTable}] INSERT MASTER");
+}
+$dataList = array();
+$dataTab = array();
+while( ($data = fgetcsv($handle, $_ENV["lengthBuffer"], $_ENV["separator"]))!==false ){
+$txt = implode("", $data);
+if( empty($txt) ){
+continue;
+}
+$totalFilas++;
+$dataRec = array();
+if( $_ShowRec && $_recordsToShow >= $totalFilas ){
+array_push($dataTab, "<br>({$totalFilas})");
+}
+for($c=0; $c<$numCols; $c++){
+if( $noImportCol[$c] ){
+continue;
+}
+$data[$c] = trim($data[$c]."");
+$nPosition = str_pad($c, 2, "0", STR_PAD_LEFT);
+if( $_ShowRec && $_recordsToShow >= $totalFilas ){
+array_push($dataTab, "&nbsp;&nbsp;&nbsp;&nbsp;".$nPosition.': '.$xHeader[$c].' = '.$data[$c]);
+}
+if( !isset($contenido[$c][$data[$c]]) ){
+$contenido[$c][$data[$c]] = 0;
+}
+$contenido[$c][$data[$c]]++;
+if( empty($data[$c]) ){
+array_push($dataRec, "");
+continue;
+}
+$data[$c] = eUnEscape($data[$c]);
+$leng = mb_strlen($data[$c]);
+$lengData[$c] = max($lengData[$c], $leng);
+if( preg_match('/^([0-9]{2})(\/|\-)([0-9]{2})(\/|\-)([0-9]{4})$/u', $data[$c]) ){
+if( empty($typeData[$c]) ){
+$typeData[$c] = "F4";
+}else if( $typeData[$c]!="F4" ){
+$typeData[$c] = "#";
+$minMax[$c] = array();
+}
+}else if( preg_match('/^([0-9]{4})(\/|\-)([0-9]{2})$/u', $data[$c]) ){
+if( empty($typeData[$c]) ){
+$typeData[$c] = "P4";
+}else if( $typeData[$c]!="P4" ){
+$typeData[$c] = "#";
+$minMax[$c] = array();
+}
+}else if( preg_match('/^((\-)?([0-9])+(\,)?([0-9])+|(\-)?([0-9])+)$/u', $data[$c]) ){
+$data[$c] = str_replace(",", ".", $data[$c]);
+if( empty($typeData[$c]) ){
+$typeData[$c] = "+";
+$minMax[$c] = array($data[$c], $data[$c]);
+if( $data[$c][0]=="-" && $typeData[$c][0]!="-" ){
+$typeData[$c] = str_replace("+", "-", $typeData[$c]);
+}
+if( mb_strlen($typeData[$c])==1 && is_float($data[$c]*1) ){
+$typeData[$c] .= ",";
+}
+}else if( $typeData[$c]=="+" || $typeData[$c]=="-" || $typeData[$c]=="+," || $typeData[$c]=="-," ){
+$minMax[$c] = array(
+min($data[$c], $minMax[$c][0])
+,max($data[$c], $minMax[$c][1])
+);
+if( $data[$c][0]=="-" && $typeData[$c][0]!="-" ){
+$typeData[$c] = str_replace("+", "-", $typeData[$c]);
+}
+if( mb_strlen($typeData[$c])==1 && is_float($data[$c]*1) ){
+$typeData[$c] .= ",";
+}
+}else{
+$typeData[$c] = "#";
+$minMax[$c] = array();
+}
+}else{
+if( $typeData[$c]=="#" ){
+continue;
+}
+$upper = mb_strtoupper($data[$c]);
+$lower = mb_strtolower($data[$c]);
+if( $upper==$lower ){
+$typeData[$c] = "#";
+}else if( $upper==$data[$c] ){
+$typeData[$c] = "U";
+}else if( $lower==$data[$c] ){
+$typeData[$c] = "L";
+}
+}
+if( isset($_AssingSelect[$c]) && !empty($data[$c]) ){
+$data[$c] = $_DimSelect[$c][$data[$c]];
+}
+array_push($dataRec, $data[$c]);
+}
+if( !empty($newField) ){
+array_push($dataRec, $newField["auto_increment"]);
+}
+if( $_ShowRec && $_recordsToShow >= $totalFilas ){
+array_push($dataList, $data);
+}
+$data = "'".implode("','", $dataRec)."'";
+$insert = "insert into {$_NameTable} values ({$data})";
+if( $_ENV["action"]!="I" ){
+echo "{$insert}<br>";
+}
+sqlToFile($insert);
+}
+fclose($handle);
+echo "</div>";
+if( $_ShowRec ){
+pintaHeader("Record Tab the first {$_recordsToShow}");
+echo implode("<br>", $dataTab);
+echo "</div>";
+pintaHeader("Record listing the first {$_recordsToShow}");
+echo "<table border=1>";
+echo "<tr>";
+echo "<th>NÂº</th>";
+for($col=0; $col<$numCols; $col++){
+if( $noImportCol[$col] ){
+continue;
+}
+echo "<th>".$header[$col]."</th>";
+}
+echo "</tr>";
+for($row=0; $row<$_recordsToShow; $row++){
+echo "<tr>";
+echo "<td style='text-align:right'>".($row+1)."</td>";
+for($col=0; $col<$numCols; $col++){
+if( $noImportCol[$col] ){
+continue;
+}
+$xAlign = "";
+if( $typeData[$col][0]=="+" || $typeData[$col][0]=="-" ){
+$xAlign = " style='text-align:right'";
+}
+echo "<td{$xAlign}>".$dataList[$row][$col]."&nbsp;</td>";
+}
+echo "</tr>";
+}
+echo "</table>";
+echo "</div>";
+}
+if( $_ENV["action"]=="I" ) eEnd();
+$coma = "";
+$createTable = "create table ".mb_substr($FileCSV, 2)." (<br> ";
+$recordAnalysis = array();
+for($c=0; $c<$numCols; $c++){
+if( $noImportCol[$c] ){
+continue;
+}
+$distintos = 0;
+$celdasRellenas   = 0;
+foreach($contenido[$c] as $valorContenido=>$totalRepeticiones){
+if( empty($valorContenido) ){
+continue;
+}
+$distintos++;
+$celdasRellenas += $totalRepeticiones;
+}
+uksort($contenido[$c], 'cmpKey');
+$recordAnalysis[$c] = array(
+"field"	 =>$header[$c]
+,"type_data"	 =>$typeData[$c]
+,"unsigned"	 =>""
+,"null"		 =>($celdasRellenas==$totalFilas)? " not null":""
+,"auto_increment"=>""
+,"fill"		 =>$celdasRellenas
+,"fill_tpc"	 =>($celdasRellenas*100)/$totalFilas
+,"different"	 =>$distintos
+,"different_tpc" =>($distintos*100)/$celdasRellenas
+,"type_edit"	 =>$typeData[$c]
+,"max_length"	 =>$lengData[$c]
+,"min_value"	 =>$minMax[$c][0]
+,"max_value"	 =>$minMax[$c][1]
+,"contents"	 =>$contenido[$c]
+);
+if( $typeData[$c]=="+" || $typeData[$c]=="+," ){
+for($n=0; $n<count($positiveNumbers); $n++){
+if( $minMax[$c][0]>=$positiveNumbers[$n][0] && $minMax[$c][1]<=$positiveNumbers[$n][1] ){
+$recordAnalysis[$c]["type_data"] = $positiveNumbers[$n][2];
+$recordAnalysis[$c]["unsigned"]  = $positiveNumbers[$n][3];
+break;
+}
+}
+}else{
+for($n=0; $n<count($negativeNumbers); $n++){
+if( $minMax[$c][0]>=$negativeNumbers[$n][0] && $minMax[$c][1]<=$negativeNumbers[$n][1] ){
+$recordAnalysis[$c]["type_data"] = $negativeNumbers[$n][2];
+$recordAnalysis[$c]["unsigned"]  = $negativeNumbers[$n][3];
+break;
+}
+}
+}
+if( $c>0 ) $coma = ",";
+$createTable .= "   {$coma} {$xHeader[$c]} ";
+$p = $c+1;
+if( !empty($_POST["type_data_{$p}"]) && $_POST["type_data_{$p}"]!=$_POST["type_data_{$p}_bak"] ){
+$createTable .= $_POST["type_data_{$p}"];
+$recordAnalysis[$c]["type_data"] = $_POST["type_data_{$p}"];
+} else if( $typeData[$c]=="F4" ){
+$createTable .= "DATE";
+$recordAnalysis[$c]["type_data"] = "DATE";
+}else if( $typeData[$c]=="P4" ){
+$createTable .= "VARCHAR(7)";
+$recordAnalysis[$c]["type_data"] = "VARCHAR(7)";
+}else if( $typeData[$c]=="+" || $typeData[$c]=="-" || $typeData[$c]=="+," || $typeData[$c]=="-," ){
+$createTable .= $recordAnalysis[$c]["type_data"];
+if( !empty($recordAnalysis[$c]["unsigned"]) ){
+$createTable .= " ".$recordAnalysis[$c]["unsigned"];
+}
+if( $celdasRellenas==$totalFilas && $minMax[$c][0]==1 && $minMax[$c][1]==$totalFilas ){
+$createTable .= " NOT NULL AUTO_INCREMENT";
+$recordAnalysis[$c]["null"] = "not null";
+$recordAnalysis[$c]["auto_increment"] = "AUTO_INCREMENT";
+}
+}else if( empty($lengData[$c]) || $lengData[$c]=="0" ){
+if( $_POST["type_data_{$p}"] ){
+$createTable .= $_POST["type_data_{$p}"];
+$recordAnalysis[$c]["type_data"] = $_POST["type_data_{$p}"];
+}else{
+$createTable .= "VARCHAR( ERROR )";
+$recordAnalysis[$c]["type_data"] = "VARCHAR( ERROR )";
+}
+}else{
+$createTable .= "VARCHAR({$lengData[$c]})";
+$recordAnalysis[$c]["type_data"] = "VARCHAR({$lengData[$c]})";
+}
+$createTable .= $recordAnalysis[$c]["null"];
+$createTable .= "<br>";
+}
+$createTable .= ");";
+$dim = array();
+for($c=0; $c<$numCols; $c++){
+$dim[$recordAnalysis[$c]["field"]] = $typeData[$c];
+}
+$typeData = $dim;
+$recordAnalysis[$numCols] = array(
+"field"	 =>""
+,"type_data"	 =>""
+,"unsigned"	 =>""
+,"null"		 =>""
+,"auto_increment"=>""
+,"fill"		 =>0
+,"fill_tpc"	 =>100.00
+,"different"	 =>0
+,"different_tpc" =>0
+,"type_edit"	 =>""
+,"max_length"	 =>0
+,"min_value"	 =>""
+,"max_value"	 =>""
+,"contents"	 =>""
+);
+if( !empty($newField) ){
+$recordAnalysis[$numCols]["field"]	= $newField["field"];
+$recordAnalysis[$numCols]["type_data"]	= $newField["type_data"];
+$recordAnalysis[$numCols]["unsigned"]	= $newField["unsigned"];
+$recordAnalysis[$numCols]["null"]	= $newField["null"];
+$recordAnalysis[$numCols]["auto_increment"] = $newField["auto_increment"];
+}
+$numCols++;
+echo "<form accept-charset='utf-8' id='FRM1' method='POST' action='edes.php?E:CallSrv=_prueba/xls.edf&FileCSV={$FileCSV}'>";
+echo "Name Table <input name='TABLE_NAME' value='{$_NameTable}'>";
+echo "&nbsp;&nbsp;&nbsp;&nbsp; Test <input type='checkbox' name='TEST' checked='true'>";
+echo "&nbsp;&nbsp;&nbsp;&nbsp; Importar <input type='checkbox' name='IMPORTAR'>";
+echo "&nbsp;&nbsp;&nbsp;&nbsp; Ejecutar <img src='g/tree_restore.gif' onclick='ImportarCSV()' title='Importa todos los datos'>";
+echo "<br>";
+echo "<table border=1>";
+echo "<tr>";
+echo "<th>nÂº</th>";
+foreach($recordAnalysis[0] as $k=>$v){
+if( $k=="contents" ) $k = "[op]";
+echo "<th>{$k}</th>";
+}
+echo "</tr>";
+for($c=0; $c<$numCols; $c++){
+$numberColumn = $c+1;
+$lastName = "";
+echo "<tr>";
+echo "<td style='text-align:right'>{$numberColumn}</td>";
+foreach($recordAnalysis[$c] as $k=>$v){
+$addCode = "";
+if( $k=="contents" ){
+if( $numCols>$numberColumn ){
+$valCheck = ($_POST["SELECT_{$lastName}_{$numberColumn}"]=="on" ? " checked='true'" : "");
+$v  = "<input type='checkbox' name='SELECT_{$lastName}_{$numberColumn}'{$valCheck}>";
+$v .= "<img src='g/extraer_0.gif' onclick='verDataDiferent(this)' title='Ver todos los datos distintos'>";
+}else{
+$v = "&nbsp;";
+}
+}
+$addColor = "";
+if( $v>"0,00" && $v<"40,00" && $k=="different_tpc" ) $addColor = ";color:red;";
+if( $k=="fill" || $k=="different" ){
+$v = number_format($v, 0, ",", ".");
+if( $k=="different" ){
+$addCode = " style='width:85px; text-align:right'";
+}
+}
+if( $k=="null"	   ) $addCode = " style='width:85px'";
+if( $k=="unsigned" ) $addCode = " style='width:85px'";
+if( $k=="fill_tpc" || $k=="different_tpc" ){
+$v = number_format($v, 2, ",", ".");
+}
+if( $k=="min_value" || $k=="max_value" ){
+$v = number_format($v, 0, ",", ".");
+}
+$xAlign = (empty($align[$k]))? "" : " style='text-align:{$align[$k]}{$addColor}'";
+if( $k=="min_value" || $k=="max_value" ){
+if( !($recordAnalysis[$c]["type_edit"][0]=="+" || $recordAnalysis[$c]["type_edit"][0]=="-") ){
+$v = "";
+}
+}
+if( $k=="field" ){
+$lastName = $v;
+}
+if( preg_match('/^(field|type_data|unsigned|null|auto_increment|different)$/u', $k) ){
+$vBak = $v;
+if( $numCols==$numberColumn ){
+$vBak = "";
+}
+$v = "<input name='{$k}_{$numberColumn}_bak' value='{$vBak}' style='display:none'><input name='{$k}_{$numberColumn}' value='{$v}'{$addCode}>";
+}else if( empty($v) ){
+$v .= "&nbsp;";
+}
+echo "<td{$xAlign}>{$v}</td>";
+}
+echo "</tr>";
+}
+echo "</table>";
+echo "<br><b>[{$_NameTable}] MASTER TABLE INDICES:</b><br>";
+echo "<textarea id='CREATE_INDEX' name='CREATE_INDEX' rows='5' style='width:90%'>{$_POST['CREATE_INDEX']}</textarea>";
+foreach($recordAnalysis as $k=>$v){
+$nCol = $k+1;
+echo "<div id='contenido_{$nCol}' style='border-top:1px solid #dddddd; border-bottom:1px solid #dddddd; margin-top:0px; display:none; margin-bottom:20px;'>";
+echo "Field:  nÂº repetiones | ".$recordAnalysis[$k]["field"];
+$name = $recordAnalysis[$k]["field"];
+echo "<textarea name='DATA_{$name}' rows='10' style='width:90%;'>";
+$dim = explode("\n", print_r($recordAnalysis[$k]["contents"], true));
+$totalRec = count($dim);
+for($n=0; $n<$totalRec; $n++){
+$txt = $dim[$n];
+if( $txt=="(" || $txt==")" || $txt=="Array" ){
+continue;
+}
+$pos = mb_strpos($dim[$n], "=>");
+$value = trim(mb_substr($txt, 0, $pos));
+$label = trim(mb_substr($txt, $pos+2));
+if( empty($value) || $value=="[]" ){
+continue;
+}
+$value = mb_substr($value,1,-1);
+echo "{$label}|{$value}\n";
+}
+echo "</textarea>";
+echo "</div>";
+}
+echo "</form>";
+function pintaHeader($title, $seMuestra=false){
+$display = ($seMuestra ? "block" : "none");
+echo "<div style='display:block; border-top:0px solid green; height:35px; vertical-align:baseline;'>";
+echo "<img src='g/sys_delete.gif' style='float:left; display:none'	onclick='this.style.display=\"none\"; 								document.all[this.sourceIndex+1].style.display=\"block\";	document.all[this.sourceIndex+3].style.display=\"none\"; '>";
+echo "<img src='g/sys_view.gif'   style='float:left;'				onclick='document.all[this.sourceIndex-1].style.display=\"block\";	this.style.display=\"none\";								document.all[this.sourceIndex+2].style.display=\"block\";'>";
+echo "<span style='margin-left:5px; margin-bottom:10px; display:block; float:left;'>{$title}</span>";
+echo "</div>";
+echo "<div style='border-top:1px solid #dddddd; border-bottom:1px solid #dddddd; margin-top:0px; display:{$display}; margin-bottom:20px;'>";
+}
+function cmpKey($a, $b){
+if( $a==$b ){
+return 0;
+}
+return ($a<$b) ? -1 : 1;
+}
+class TypeNumber {
+const MINIMUM	= 0;
+const MAXIMUM	= 1;
+const TYPE	= 2;
+const UNSIGNED	= 3;
+const TOTAL_TYPES = 5;
+public static $negativeNumbers = array(
+array(				   -128,				 127, "TINYINT"	 , "")
+,array(				 -32768, 			   32767, "SMALLINT" , "")
+,array(			   -8388608,  			 8388607, "MEDIUMINT", "")
+,array(		    -2147483648,		  2147483647, "INT"		 , "")
+,array(-9223372036854775808, 9223372036854775807, "BIGINT"	 , "")
+);
+public static $positiveNumbers = array(
+array(0,				   255, "TINYINT"	, "unsigned")
+,array(0, 			     65535, "SMALLINT"	, "unsigned")
+,array(0,  			  16777215, "MEDIUMINT"	, "unsigned")
+,array(0,		    4294967295, "INT"		, "unsigned")
+,array(0, 18446744073709551615, "BIGINT"	, "unsigned")
+);
+public static function getTypeSql($valueMinimum, $valueMaximum){
+if( gettype($valueMinimum)=="string" ) $valueMinimum *= 1;
+if( gettype($valueMaximum)=="string" ) $valueMaximum *= 1;
+$rangeValues = ($valueMinimum<0 || $valueMaximum<0) ? self::$negativeNumbers : self::$positiveNumbers;
+for($i=0; $i<self::TOTAL_TYPES; $i++){
+if( !($valueMinimum>=$rangeValues[$i][self::MINIMUM] && $valueMaximum<=$rangeValues[$i][self::MAXIMUM]) ){
+continue;
+}
+return array(
+"type"=>$rangeValues[$i][self::TYPE]
+,"unsigned"=>$rangeValues[$i][self::UNSIGNED]
+);
+}
+return array("type"=>"", "unsigned"=>"");
+}
+public static function getTypeNumber($valueMinimum, $valueMaximum, $decimals=0){
+list($valueMinimum) = explode(".", ((string)$valueMinimum));
+list($valueMaximum) = explode(".", ((string)$valueMaximum));
+$maxLeng  = max(mb_strlen($valueMinimum), mb_strlen($valueMaximum));
+$decimals = ($decimals>0 ? ",".$decimals : "");
+return "{$maxLeng}{$decimals}";
+}
+public static function getTypeDF($value){
+$value = (string)$value;
+if( preg_match('/^([0-9]{2})(\/|\-)([0-9]{2})(\/|\-)([0-9]{4})$/u', $value) ){
+return "F4";
+}else if( preg_match('/^([0-9]{4})(\/|\-)([0-9]{2})$/u', $value) ){
+return "P4";
+}else if( preg_match('/^((\-)?([0-9])+(\,)?([0-9])+|(\-)?([0-9])+)$/u', $value) ){
+$typeData = ($value[0]=="-" ? "-" : "+");
+if( is_float($value*1) ){
+$typeData .= ",";
+}
+return $typeData;
+}else{
+$upper = mb_strtoupper($value);
+$lower = mb_strtolower($value);
+if( $upper==$lower ){
+return (preg_match('/^([0-9])+$/u', $value) ? "0" : "#");
+}else if( $upper==$value ){
+return "U";
+}else if( $lower==$value ){
+return "L";
+}
+}
+}
+public static function getTypePhp($value){
+if( is_null($value) ){
+return "null";
+}
+if( is_int($value) ){
+return "int";
+}
+if( is_float($value) ){
+return "float";
+}
+if( is_bool($value) ){
+return "bool";
+}
+if( is_array($value) ){
+return "array";
+}
+if( is_object($value) ){
+return "object";
+}
+if( is_numeric($value) ){
+return "numeric";
+}
+if( is_resource($value) ){
+return "resource";
+}
+if( is_string($value) ){
+return "string";
+}
+}
+}

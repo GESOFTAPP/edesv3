@@ -1,0 +1,237 @@
+[Title]=DUPLICAR PERMISOS
+[DBTable]{$_ENV['eDesDictionary']}gs_user
+[Button]a|Duplicar Permisos
+[OnChange]a|_tipo_de_copia|uTituloBoton()
+[JSIni]a
+function uTituloBoton(){
+var td = DGI("OpExe").rows[0].cells[1];
+if( eGF("_tipo_de_copia")=="I" ){
+td.innerText = "Duplicar Permisos";
+}else{
+td.innerText = "Añadir Permisos";
+}
+}
+[OnChange]a|dni1|_eCallSrv(window, 'campo=dni&valor='+this.value+'&origen=1')
+[OnChange]a|email1|_eCallSrv(window, 'campo=email&valor='+this.value+'&origen=1')
+[OnChange]a|dni2|_eCallSrv(window, 'campo=dni&valor='+this.value+'&origen=2')
+[OnChange]a|email2|_eCallSrv(window, 'campo=email&valor='+this.value+'&origen=2')
+[CallSrv]campo
+if( $campo!="dni" && $campo!="email" ) eEnd();
+echo '<script>';
+qQuery("select dni,email, user_name,user_surname from {$_ENV['eDesDictionary']}gs_user where {$campo}='{$valor}'");
+$r = qRow();
+echo 'var WO = window.frameElement.WOPENER;';
+echo "WO.ePF('dni{$origen},email{$origen},_nom{$origen},_ape{$origen}','',false);";
+if( $r[0]=="" ){
+echo 'top.eInfoError(WO,"El usuario NO existe");';
+}else{
+echo "WO.ePF('dni{$origen}',  '{$r[0]}', false);";
+echo "WO.ePF('email{$origen}','{$r[1]}', false);";
+echo "WO.ePF('_nom{$origen}', '{$r[2]}');";
+echo "WO.ePF('_ape{$origen}', '{$r[3]}');";
+}
+echo '</script>';
+[AddOption]*|_tipo_de_copia|I,Poner los mismo permisos; S,Añadir permisos que no tiene
+[Fields]
+<Forma de generar los permisos|_tipo_de_copia|N|SV|40|+email1|M|||
+-|Usuario Origen de los permisos
+DNI|dni1|D|T|9||Md|||
+EMail|email1|@|T|57|+_ape1|M|||
+Nombre|_nom1|N|T|20|150|-|||
+,Apellidos|_ape1|N|T|30|250|-|||
+-|Usuario Destino de los permisos
+DNI|dni2|D|T|9||M|||
+EMail|email2|@|T|57|+_ape2|M|||
+Nombre|_nom2|N|T|20|150|-|||
+,Apellidos|_ape2|N|T|30|250|-|||
+{P} uInformar
+[P]uInformar
+if( SESS::$_D_<>"" ){
+?>
+<hr style="background-color:red">
+<center style="color:red"><b>INFORMACIÓN PARA EL DESARROLLADOR</b></center>
+<hr style="background-color:red">
+Para modificar mas datos del usuario hay que crear el fichero "/_datos/config/permission_add.php"<br>
+<u>Condiciones de entrada:</u><br>
+- $userFrom = cd_gs_user del usuario Origen<br>
+- $userTo =  cd_gs_user del usuario Destino<br>
+<u>Condiciones de salida:</u><br>
+- Generar la matriz hash "$fieldsUpdate" (fields=>value) con los datos a actualizar.
+<?PHP
+}
+[OnLoad]a|eFocus("dni1");
+[JSCheck]a
+if( eGF("dni1")=="" && eGF("email1")=="" ) ePE("dni1", "Falta el usuario Origen");
+if( eGF("dni2")=="" && eGF("email2")=="" ) ePE("dni2", "Falta el usuario Destino");
+if( eGF("dni1")!="" && eGF("dni1")==eGF("dni2") ) ePE("dni2", "No pueden ser el mismo usuario");
+if( eGF("email1")!="" && eGF("email1")==eGF("email2") ) ePE("email2", "No pueden ser el mismo usuario");
+[PHPIni]A
+if( $dni1!="" ){
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where dni='{$dni1}'");
+list($ori) = qRow();
+if( $ori==0 ) eMessage("Usuario origen no encontrado", "HSE");
+}elseif( $email1!="" ){
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where email='{$email1}'");
+list($ori) = qRow();
+if( $ori==0 ) eMessage("Usuario origen no encontrado", "HSE");
+}
+if( $dni2!="" ){
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where dni='{$dni2}'");
+list($des) = qRow();
+if( $des==0 ) eMessage("Usuario destino no encontrado", "HSE");
+}elseif( $email2!="" ){
+qQuery("select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where email='{$email2}'");
+list($des) = qRow();
+if( $des==0 ) eMessage("Usuario destino no encontrado", "HSE");
+}
+$DatosParticulares = "";
+if( file_exists("../_datos/config/permission_add.php") ){
+$userFrom = $ori;
+$userTo = $des;
+include("../_datos/config/permission_add.php");
+if( isset($fieldsUpdate) ){
+$dim = [];
+foreach($fieldsUpdate as $k=>$v){
+$dim[] = "{$k}='{$v}'";
+}
+$DatosParticulares = implode(",", $dim);
+if( !empty($DatosParticulares) ){
+$DatosParticulares .= ", ";
+}
+}
+}
+if( $_POST["_tipo_de_copia"]=="I" ){
+qQuery("delete from {$_ENV['eDesDictionary']}gs_user_tree  where cd_gs_user='{$des}'");
+qQuery("delete from {$_ENV['eDesDictionary']}gs_user_op    where cd_gs_user='{$des}'");
+qQuery("delete from {$_ENV['eDesDictionary']}gs_permission where cd_gs_user='{$des}'");
+qQuery("select cd_gs_tree, mode from {$_ENV['eDesDictionary']}gs_user_tree where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+qQuery("insert into {$_ENV['eDesDictionary']}gs_user_tree (cd_gs_user, cd_gs_tree, mode) values ('{$des}', '{$r[0]}', '{$r[1]}')", $ptDes);
+}
+qQuery("select cd_gs_tree, action, cd_gs_op from {$_ENV['eDesDictionary']}gs_user_op where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+qQuery("insert into {$_ENV['eDesDictionary']}gs_user_op (cd_gs_user, cd_gs_tree, action, cd_gs_op) values ('{$des}', '{$r[0]}', '{$r[1]}', '{$r[2]}')", $ptDes);
+}
+qQuery("select cd_gs_tpermission from {$_ENV['eDesDictionary']}gs_permission where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+qQuery("insert into {$_ENV['eDesDictionary']}gs_permission (cd_gs_user, cd_gs_tpermission) values ('{$des}', '{$r[0]}')", $ptDes);
+}
+qQuery("select * from {$_ENV['eDesDictionary']}gs_user where cd_gs_user='{$ori}'");
+$o = qArray();
+$sql = "update {$_ENV['eDesDictionary']}gs_user set
+{$DatosParticulares}
+permission='{$o['permission']}',
+webmaster='{$o['webmaster']}',
+log_user='{$o['log_user']}',
+log_history='{$o['log_history']}',
+export_level='{$o['export_level']}',
+cd_type_tree='{$o['cd_type_tree']}',
+cd_gs_rol_exp='{$o['cd_gs_rol_exp']}',
+like_user='{$o['like_user']}',
+print_tab_public='{$o['print_tab_public']}',
+print_tab_private='{$o['print_tab_private']}',
+print_public='{$o['print_public']}',
+print_private='{$o['print_private']}',
+pdf_public='{$o['pdf_public']}',
+xls_public='{$o['xls_public']}',
+xml_public='{$o['xml_public']}',
+txt_public='{$o['txt_public']}',
+csv_public='{$o['csv_public']}',
+pdf_private='{$o['pdf_private']}',
+xsl_private='{$o['xsl_private']}',
+xml_private='{$o['xml_private']}',
+txt_private='{$o['txt_private']}',
+csv_private='{$o['csv_private']}'
+where cd_gs_user='{$des}'";
+qQuery($sql);
+eMessage("Permisos Duplicados", "HS");
+}else{
+include("../_datos/config/manager_op.ini");
+qQuery("select cd_gs_tree, mode from {$_ENV['eDesDictionary']}gs_user_tree where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+qQuery("select cd_gs_tree, mode from {$_ENV['eDesDictionary']}gs_user_tree where cd_gs_user='{$des}' and cd_gs_tree='{$r[0]}'", $pa);
+$actual=qRow($pa);
+if( $actual[0]>0 ){
+foreach($_ModeOp as $k=>$v) $_ModeOp[$k] = 0;
+$origen = $r[1];
+$destino = $actual[1];
+$dim = explode(",",$origen);
+for($n=0; $n<count($dim); $n++) $_ModeOp[$dim[$n]]++;
+$dim = explode(",",$destino);
+for($n=0; $n<count($dim); $n++) $_ModeOp[$dim[$n]]++;
+$newModo = "";
+foreach($_ModeOp as $k=>$v){
+if( $_ModeOp[$k]!="" ){
+if( $newModo!="" ) $newModo .= ",";
+$newModo .= $k;
+}
+}
+qQuery("update {$_ENV['eDesDictionary']}gs_user_tree set mode='{$newModo}' where cd_gs_user='{$des}' and cd_gs_tree='{$r[0]}'", $ptDes);
+}else{
+qQuery("insert into {$_ENV['eDesDictionary']}gs_user_tree (cd_gs_user, cd_gs_tree, mode) values ('{$des}', '{$r[0]}', '{$r[1]}')", $ptDes);
+}
+}
+qQuery("select cd_gs_tree, action, cd_gs_op from {$_ENV['eDesDictionary']}gs_user_op where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+if( qCount("{$_ENV['eDesDictionary']}gs_user_op", "cd_gs_user='{$des}' and cd_gs_tree='{$r[0]}' and action='{$r[1]}' and cd_gs_op='{$r[2]}'", $ptDes)==0 ){
+qQuery("insert into {$_ENV['eDesDictionary']}gs_user_op (cd_gs_user, cd_gs_tree, action, cd_gs_op) values ('{$des}', '{$r[0]}', '{$r[1]}', '{$r[2]}')", $ptDes);
+}
+}
+qQuery("select cd_gs_tpermission from {$_ENV['eDesDictionary']}gs_permission where cd_gs_user='{$ori}'", $ptOri);
+while( $r=qRow($ptOri) ){
+if( qCount("{$_ENV['eDesDictionary']}gs_permission", "cd_gs_user='{$des}' and cd_gs_tpermission='{$r[0]}'", $ptDes)==0 ){
+qQuery("insert into {$_ENV['eDesDictionary']}gs_permission (cd_gs_user, cd_gs_tpermission) values ('{$des}', '{$r[0]}')", $ptDes);
+}
+}
+qQuery("select * from {$_ENV['eDesDictionary']}gs_user where cd_gs_user='{$ori}'");
+$o = qArray();
+qQuery("select * from {$_ENV['eDesDictionary']}gs_user where cd_gs_user='{$des}'");
+$d = qArray();
+$o['permission'] = (($d['permission']=="S" || $o['permission']=="S") ? "S":$o['permission']);
+$o['webmaster'] = (($d['webmaster']==$_ENV['ON'] || $o['webmaster']==$_ENV['ON']) ? $_ENV['ON']:$_ENV['OFF']);
+$o['log_user'] = (($d['log_user']==$_ENV['ON'] || $o['log_user']==$_ENV['ON']) ? $_ENV['ON']:$_ENV['OFF']);
+$o['log_history'] = (($d['log_history']==$_ENV['ON'] || $o['log_history']==$_ENV['ON']) ? $_ENV['ON']:$_ENV['OFF']);
+$o['print_tab_public']  = $d['print_tab_public'];
+$o['print_tab_private'] = $d['print_tab_private'];
+$o['print_public']  = $d['print_public'];
+$o['print_private'] = $d['print_private'];
+$o['pdf_public'] = $d['pdf_public'];
+$o['xls_public'] = $d['xls_public'];
+$o['xml_public'] = $d['xml_public'];
+$o['txt_public'] = $d['txt_public'];
+$o['csv_public'] = $d['csv_public'];
+$o['pdf_private'] = $d['pdf_private'];
+$o['xls_private'] = $d['xls_private'];
+$o['xml_private'] = $d['xml_private'];
+$o['txt_private'] = $d['txt_private'];
+$o['csv_private'] = $d['csv_private'];
+$o['export_level'] = max($o['export_level'], $d['export_level']);
+$sql = "update {$_ENV['eDesDictionary']}gs_user set
+{$DatosParticulares}
+permission='{$o['permission']}',
+webmaster='{$o['webmaster']}',
+log_user='{$o['log_user']}',
+log_history='{$o['log_history']}',
+export_level='{$o['export_level']}',
+cd_type_tree='{$o['cd_type_tree']}',
+cd_gs_rol_exp='{$o['cd_gs_rol_exp']}',
+like_user='{$o['like_user']}',
+print_tab_public='{$o['print_tab_public']}',
+print_tab_private='{$o['print_tab_private']}',
+print_public='{$o['print_public']}',
+print_private='{$o['print_private']}',
+pdf_public='{$o['pdf_public']}',
+xls_public='{$o['xls_public']}',
+xml_public='{$o['xml_public']}',
+txt_public='{$o['txt_public']}',
+csv_public='{$o['csv_public']}',
+pdf_private='{$o['pdf_private']}',
+xsl_private='{$o['xsl_private']}',
+xml_private='{$o['xml_private']}',
+txt_private='{$o['txt_private']}',
+csv_private='{$o['csv_private']}'
+where cd_gs_user='{$des}'";
+qQuery($sql);
+eMessage("Permisos Añadidos", "HS");
+}
+eEnd();

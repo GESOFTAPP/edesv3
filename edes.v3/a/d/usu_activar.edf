@@ -1,0 +1,25 @@
+#include(*) lng
+[Title]=@ACTIVAR ACCESO DE USUARIO@
+[DBTable]{$_ENV['eDesDictionary']}gs_user
+[DBIndex]cd_gs_user
+[DBOrder]user_surname, user_name
+[DBSerial]cd_gs_user
+[Cursor]
+[Button]mR|@Confirmar@
+[MsgAnswer]M|@Acceso activado@
+[OnChange]?|dni|ePadLeft(this,8)
+[Assign]mR|dt_access_last,permission
+[Fields]
+@DNI@|dni|DNI|T|8||AQcp|||
+,  Usuario|cd_gs_user|+|T|5|<user_name|AQ|||
+@Nombre@|user_name|X|T|20|user_surname|AQ|||
+,  @Apellidos@|user_surname|X|T|30||AQ|||
+@EMail@|email|#|T|65|+user_surname|Q-|||
+@Local@|cd_gs_node|X|S|60|+user_surname|AQ|||
+|cd_gs_user|*|T|5||*|||
+|dt_access_last|F4|T|10||*|#today#||
+|permission|X|T|1||*|S||
+[DBIni]M
+$_ClaveReset = eFileGetVar("Login.ClaveReset");
+$_vF['permission'] = "S";
+$_POST['permission'] = "S";

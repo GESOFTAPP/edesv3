@@ -1,0 +1,43 @@
+#DivCALEN {
+BORDER-BOTTOM: #8399b3 1px solid;
+BORDER-LEFT: #8399b3 1px solid;
+BORDER-RIGHT: #8399b3 1px solid;
+BORDER-TOP: #8399b3 1px solid;
+HEIGHT: 1px;
+WIDTH: 1px;
+cursor:default;
+}
+TH {
+BACKGROUND: #8399b3;
+COLOR: #ffffff;
+FONT-SIZE: 10px;
+TEXT-ALIGN: center;
+}
+TD {
+CURSOR: hand;
+COLOR: #303030;
+BACKGROUND: #ffffff;
+FONT-SIZE: 10px;
+TEXT-ALIGN: right;
+}
+INPUT {
+COLOR: #303030;
+FONT-SIZE: 12px;
+}
+BUTTON {
+COLOR: #000099;
+}
+.Weekend {
+BACKGROUND: #ebeef3;
+}
+#CALEN {
+BACKGROUND: #cad3df;
+FONT-FAMILY: arial;
+FONT-SIZE: 10px;
+}
+#CALEN .OFF {
+COLOR: #dddddd;
+}
+IMG {
+CURSOR: hand;
+}

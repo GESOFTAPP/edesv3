@@ -1,0 +1,18 @@
+<DIV id=CONTENIDO class=AYUDA style="WIDTH: 562px">
+<DIV style="text-align:center; font-weight:bold">FILTER ROWS OF THE LIST</DIV>
+<BR>It will show all the rows that meet any condition. If you want a condition to be mandatory, the "Mandatory condition" icon will be marked.
+<BR><BR>Each condition can have the following values:
+<BR>- "Value" The content of the cell will be that value.
+<BR>- "=Value" equals only "Value".
+<BR>- "=" Only equals indicates to show the rows in which the cell is empty.
+<BR>- "&gt" Only the largest indicating that the cell has some content
+<BR>- "&gt;Value" Will display the rows in which the value is greater than "Value"
+<BR>- "&gt;=Value" Will display the rows in which value is greater than or equal to "Value"
+<BR>- "&lt;" Same as "&gt;" Rows where the string is not empty
+<BR>- "&lt;=Value" Will display rows where the value is less than or equal to&nbsp;"Value"
+<BR>- The "*" with a string indicates any number of characters in the position of the "*", this&nbsp;can appear any number of times,&nbsp;for example:
+<BR><SPAN style="WIDTH: 25px"></SPAN>- "*A" That the content of the cell ends in "A".
+<BR><SPAN style="WIDTH: 25px"></SPAN>- "A*" Begins with "A".
+<BR><SPAN style="WIDTH: 25px"></SPAN>- "M*S" that the name starts with "M" and ends with "S"
+<BR><SPAN style="WIDTH: 25px"></SPAN>- "*A*I*" That the cell contains an "A" and an "I" in this order but in any position.
+<BR>- To execute the filter you can use the Enter or F10 keys as well as the Filter button.</DIV>

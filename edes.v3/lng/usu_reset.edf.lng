@@ -1,0 +1,15 @@
+[Language] es,ca,en,fr
+Apellidos|Apellidos|Cognoms|Surnames|Apellidos
+CLAVE DE USUARIO RESETEADA|Clave de usuario reseteada|CLAU D´USUARI RESETEADA|User password reset|CLAVE DE USUARIO RESETEADA
+Clave reseteada con valor por defecto|Clave reseteada con valor por defecto|Clau reseteada amb valor per defecte|Password reset with default value|Clave reseteada con valor por defecto
+Clave reseteada enviada por email|Clave reseteada enviada por email|Clau reseteada enviada per email|Reset password sent by email|Clave reseteada enviada por email
+Clave reseteada|Clave reseteada|Clau reseteada|Passorwd reset|Clave reseteada
+Confirmar|Confirmar|Confirmar|Confirm|Confirmar
+DNI|DNI|DNI|DNI|DNI
+Email|EMail||EMail|
+Local|Local|Local|Local|Local
+Nombre|Nombre|Nom|Name|Nombre
+Nueva clave|Nueva clave|Nova clau|New password|Nueva clave
+Poner clave por defecto y no enviar email|Poner clave por defecto y no enviar email||Set default password and do not send email|
+RESETEAR CLAVE DE USUARIO|Resetear clave de usuario|RESETEAR CLAU D´USUARI|Reset user password|RESETEAR CLAVE DE USUARIO
+Usuario|Usuario|Usuari|User|Usuario

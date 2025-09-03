@@ -1,0 +1,210 @@
+.o {
+display:none;
+}
+#c {
+text-align:center;
+width:1px;
+}
+TABLE {
+display: table;
+}
+TH, TD {
+display: table-cell;
+vertical-align: middle;
+empty-cells: show;
+}
+TH {
+background-color: #d7d7d7;
+}
+TD {
+vertical-align: middle;
+}
+.CONTENEDOR {
+border:0px !important;
+border-spacing:0px !important;
+background-color:#ffffff;
+border-collapse:collapse;
+}
+.CONTENEDOR TH, .CONTENEDOR TD {
+padding:0px !important;
+}
+#LstICON TD {
+BORDER-BOTTOM: 0px;
+}
+#TreeGroup td:nth-child(1){
+font-family:eDes;
+zoom: 0.5;
+text-align: center;
+}
+#TreeGroup td:nth-child(3){
+font-family:eDes;
+zoom: 0.5;
+text-align: center;
+}
+#opInTreeGroup td:nth-child(1){
+font-family:eDes;
+zoom: 0.5;
+text-align: center;
+}
+#opInTreeGroup td:nth-child(3){
+font-family:eDes;
+zoom: 0.5;
+text-align: center;
+}
+#BROWSETH {
+border:0px !important;
+border-spacing:0px !important;
+border-collapse:collapse;
+}
+#BROWSETH TH, #BROWSETH TD {
+padding:12px;
+height: 40px;
+}
+#BROWSETH IMG {
+margin-left:3px;
+}
+#BROWSE {
+background-color: #dddddd;
+}
+#BROWSE TD {
+background-color: #ffffff;
+}
+#BROWSE th {
+height: 30px;
+}
+#BROWSE th:nth-child(1), #BROWSE td:nth-child(1){
+width:27px;text-align:center;cursor:pointer;
+}
+#BROWSE th:nth-child(2), #BROWSE td:nth-child(2){
+width:27px;text-align:center;cursor:pointer;
+}
+#BROWSE th:nth-child(3), #BROWSE td:nth-child(3){
+width:27px;text-align:center;
+}
+#BROWSE th:nth-child(4){
+width:27px;text-align:center;cursor:pointer;display:none;
+}
+#BROWSE td:nth-child(4){
+width:27px;text-align:center;cursor:pointer;display:none;font-family:eDes;zoom:0.5;
+}
+#BROWSE th:nth-child(5) {
+PADDING-RIGHT: 20px;
+FONT-SIZE: 14px;
+-FONT-FAMILY: Helvetica;
+WHITE-SPACE: nowrap;
+CURSOR: default;
+width:100%;
+}
+#BROWSE td:nth-child(5){
+PADDING-RIGHT: 20px;
+FONT-SIZE: 14px;
+background-color: #faf8f8;			COLOR: #555555;
+-FONT-FAMILY: Helvetica;
+WHITE-SPACE: nowrap;
+CURSOR: default;
+w-idth:100%;
+white-space: pre;
+white-space: pre-wrap;
+white-space: pre-line;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+white-space: -moz-pre-wrap;
+white-space: -hp-pre-wrap;
+word-wrap: break-word;
+}
+#BROWSE th:nth-child(6), #BROWSE td:nth-child(6){
+width:100px;
+}
+#BROWSE th:nth-child(7), #BROWSE td:nth-child(7){
+width:27px;
+}
+#BROWSE th:nth-child(8), #BROWSE td:nth-child(8){
+width:75px;font-size:10px;
+}
+#BROWSE th:nth-child(9), #BROWSE td:nth-child(9){
+width:50px;font-size:10px;
+}
+#BROWSE th:nth-child(10), #BROWSE td:nth-child(10){
+width:120px;
+}
+#BROWSE th:nth-child(11), #BROWSE td:nth-child(11){
+width:27px;
+}
+#TreeContainer {
+z-index:9;
+}
+#mcI { background-color: #00cc00 !important; }
+#mcD { background-color: #ff0000 !important; }
+#mcV { background-color: #ffff99 !important; }
+#mcU { background-color: #0099ff !important; }
+#mcS { background-color: #ff00ff !important; font-weight:bold; }
+#st  { }
+#st* { }
+#stD { background-color: #0099ff !important; }
+#stT { background-color: #00cc00 !important; }
+#stO { background-color: #ffcc00 !important; }
+#stH { background-color: #ff0000 !important; }
+#stU { background-color: #000000 !important; color:#ffffff; }
+.Boton {
+cursor:pointer;
+}
+.DivContainer {
+border: 1px solid #555555;
+}
+TD #opInTreeGroup {
+background-color: #ffffff;
+}
+#opInTreeGroup TD {
+background-color: #ffffff;
+}
+#TreeGroup, #RestoreTable {
+background-color: #dddddd;
+}
+#TreeGroup TH, #RestoreTable TH {
+color: #555555;
+border-bottom: 0px;
+}
+#TreeGroup TD, #RestoreTable TD {
+background-color: #ffffff;
+color: #0d006f;
+}
+.vICONS {
+border: 1px solid #a4a4a4;
+background-color: #dddddd;
+}
+.vICONS TH {
+color: #a4a4a4;
+border-bottom: 0px;
+}
+.vICONS TD {
+background-color: #ffffff;
+color: #0d006f;
+}
+#SMenuIcons {
+border: 1px solid #a4a4a4;
+background-color: #dddddd;
+}
+#SMenuIcons TH {
+color: #555555;
+border-bottom: 0px;
+}
+#RestoreTable TD {
+white-space: pre;
+white-space: pre-wrap;
+white-space: pre-line;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+white-space: -moz-pre-wrap;
+white-space: -hp-pre-wrap;
+word-wrap: break-word;
+}
+.THOption {
+padding-top: 5px !important;
+padding-bottom: 5px !important;
+}
+.THOption I {
+margin-right:5px;
+}
+input {
+border-color: #a0a0a0 !important;
+}

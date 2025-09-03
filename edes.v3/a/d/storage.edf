@@ -1,0 +1,75 @@
+[Title]=localStorage
+[DBTable]{$_ENV['eDesDictionary']}gs_storage
+[DBIndex]type_storage,key_storage||true
+[DBOrder]type_storage,key_storage
+[AddOption]*|type_storage|,; x,Texto; c,CSS; r,Recurso; s,Sonido
+[Assign]a,mR|cdi
+[AddCode]a,?R|text_es|I|eCode eFitHeight
+[Icon]cR|text_es|&#228;|onclick="uSound()" id="uSound"
+[Icon]cR|text_es|&#123;|onclick="uHTML()"  id="uHTML"
+[Fields]||trim
+Type storage|type_storage|n|SV|7||AQd||#|
+,  Key storage|key_storage|#|T|30|200|AQcp||#|
+,  Cdi|cdi|CDI|T|19|<note|-|#y2s#|#|
+Text es|text_es|#|A|9000,90,3||MQ|||
+Text en|text_en|#|A|2000,90,5||MLQ|||
+Text ca|text_ca|#|A|2000,90,5||ML|||
+Text fr|text_fr|#|A|2000,90,5||ML|||
+Note|note|#|A|100,90,2||M|||
+[JSEnd]?R
+if( $type_storage=="r" ){
+S("TEXTAREA").each(function(k,o){
+if( o.name!="text_es" && S.left(o.name,5)=="text_" ) eHide(o.name, "TR");
+});
+}
+[JSEnd]a,?R
+var lng = "<?=SESS::$_LanguageDefault?>";
+if( S(":text_"+lng).length ){
+eGL("text_"+lng).style.fontWeight = "bold";
+}
+[JSEnd]?R
+if( $type_storage!="x" ){
+eHide('text_en,text_ca,text_fr', 'TR');
+}
+[JSIni]cR
+function uSound(){
+var audio = S("#SOUNDNOTIFICATION").obj;
+try{
+audio.src = $text_es;
+audio.play();
+}catch(e){}
+}
+function uHTML(){
+var win = S.window("");
+var txt = $text_es, n;
+txt = S.replace(txt, "{#}","{#1}", '&quot;','"', '&#39;',"'", '&#92;',"\\", '&#43;','+', "&#60;","<", "&#62;",">", "&#0A;",S.char(10), "&#0D;",S.char(13));
+txt = txt.replace(/\@\d*\@/g, function(txt){
+return S.lng(S.mid(txt, 1, -1));
+});
+txt = S.replace(txt
+,"display:none"		, "display:block"
+,"position:absolute", "position:initial"
+,"visibility:hidden", "visibility:visible"
+);
+$text_es = txt;
+S(win).windowWrite($text_es);
+}
+[JSEnd]cR
+if( $type_storage!="s" ){
+S("#uSound").none();
+}
+if( $type_storage!="r" ){
+S("#uHTML").none();
+}
+[HTMEnd]cR
+<audio id='SOUNDNOTIFICATION' src='' style='display:none'></audio>
+[PHPEnd]a
+$keyMax = 0;
+qQuery("select key_storage from {$_ENV['eDesDictionary']}gs_storage where type_storage='x'");
+while($r=qRow()){
+if( is_numeric($r[0]) && $r[0]>$keyMax ) $keyMax = $r[0];
+}
+$keyMax++;
+echo "<script>";
+echo "S(':key_storage').attr('placeholder', '{$keyMax}');";
+echo "</script>";

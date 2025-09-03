@@ -1,0 +1,11 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=M:\edes.help\tmp\edes.chm
+Contents file=M:\edes.help\tmp\edes_toc.hhc
+Index file=M:\edes.help\tmp\edes_index.hhk
+Default topic=M:\edes.help\tmp\h\__portada__.htm
+Display compile progress=No
+Full-text search=Yes
+Language=0xc0a Español (alfabetización internacional)
+Title=e-Des Help
+[INFOTYPES]

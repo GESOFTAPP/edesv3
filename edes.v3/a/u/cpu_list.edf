@@ -1,0 +1,17 @@
+[Title]CPU Status
+[DBTable]{$_ENV['eDesDictionary']}gs_download
+[DBIndex]cd_download
+[DBOrder]cd_gs_user,cdi
+[DBSerial]cd_download
+[AddOption]*|status|P,Petición; G,Generando; E,Error; T,Terminado; D,Download
+[Fields]
+Cd download|cd_download|+|T|9||*||#|
+Nm download|nm_download|#|T|100||Q-|||
+Cd gs user|cd_gs_user|0|T|4||Q-|||
+Cdi|cdi|CDI|T|19||Q-|||
+Type file|type_file|n|T|4||-|||
+Status|status|D|SV|1||-|||
+Total sleep|total_sleep|+|T|9||-|||
+Total seconds|total_seconds|+|T|9||-|||
+Total download|total_download|+|T|3||-|||
+Records|records|+|T|9||-|||

@@ -1,0 +1,12 @@
+create table gs_storage (
+type_storage char(1),
+key_storage varchar(30),
+cdi timestamp,
+note varchar(100),
+text_es mediumtext,
+text_en varchar(2000),
+text_ca varchar(2000),
+text_fr varchar(2000),
+UNIQUE gs_storage_1 (type_storage, key_storage),
+KEY gs_storage_2 (cdi)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

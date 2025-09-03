@@ -1,0 +1,17 @@
+<strong>Type of Use of the Formats</strong><br />
+<table id="Opciones" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td>Private</td>
+<td>Visible and Editable only by the user</td>
+</tr>
+<tr>
+<td>Shared</td>
+<td>Visible by all and Editable only by the user</td>
+</tr>
+<tr>
+<td>Public</td>
+<td>Visible and Editable by everyone</td>
+</tr>
+</tbody>
+</table>

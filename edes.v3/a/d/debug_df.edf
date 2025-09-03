@@ -1,0 +1,127 @@
+[Title]=FUENTES CON COMANDOS DE DEBUG
+[Expire]-1
+[Fields]
+Script|script|#|T|70||-|||
+Comandos|comandos|#|T|70||-|||
+[JSOnClickRow]l
+var Script = eTrim(_oTR.cells[0].innerHTML);
+top.gsEdit(window, Script );
+_oTR.style.fontStyle = 'italic';
+[Sanitize]_EDES = 1
+[DBSql]*
+$usuCursor = array();
+if( $_GET['_EDES']==1 ){
+uFicheros(DIREDES.'a');
+}else{
+uFicheros('..');
+}
+function uFicheros( $DirBase ){
+global $usuCursor;
+$di = opendir( $DirBase );
+while( $file = readdir( $di ) ){
+if( $file != '.' && $file != '..' ){
+if( is_dir( "{$DirBase}/{$file}" ) ){
+if( !($file[0]=='_' && mb_substr($file,-1)=='_') && $file!='_tmp' && mb_substr_count($file,'.')==0 ) uFicheros( "{$DirBase}/{$file}" );
+}else{
+$Ext = mb_substr( $file, mb_strrpos($file,'.')+1 );
+$NomFile = $DirBase.'/'.$file;
+if( $Ext=='sdf' ){
+$txt = mb_strtoupper(mb_substr(file_get_contents($NomFile),0,5));
+if( mb_substr($txt,0,4)=='TRON' || mb_substr($txt,0,5)=='TRACE' || mb_substr($txt,0,5)=='DEBUG' ){
+list( $Comandos ) = explode(CHR10,$txt);
+if( $_GET['_EDES']==1 ){
+$NomFile = '$'.mb_substr($NomFile,11);
+}else{
+$NomFile = mb_substr($NomFile,2);
+}
+$usuCursor[] = array($NomFile,$Comandos);
+}
+}else if( mb_substr($Ext,-2)=='df' || in_array( $Ext, array('lng','php') ) ){
+$oNomFile = $NomFile;
+if( $_GET['_EDES']==1 ){
+$NomFile = '$'.mb_substr($NomFile,11);
+}else{
+$NomFile = mb_substr($NomFile,2);
+}
+if( TieneComandosDebug($oNomFile,$Comandos) ){
+$Comandos = str_replace( 'ETRON', 'eTron', $Comandos );
+$Comandos = str_replace( 'ETRACE', 'eTrace', $Comandos );
+$Comandos = str_replace( 'EPARSEERROR', 'eParseError', $Comandos );
+$Comandos = str_replace( 'TOP', 'top', $Comandos );
+$Comandos = str_replace( ',', ', ', $Comandos );
+$usuCursor[] = array($NomFile,$Comandos);
+}
+}
+}
+}
+}
+closedir( $di );
+}
+function TieneComandosDebug( $NomFile, &$NoComando ){
+global $Test;
+$NoComando = '';
+if( $NomFile[0]=='[' ) return false;
+if( mb_substr_count( $NomFile, '.' )==0 ) return false;
+$Ext = mb_substr( $NomFile, mb_strrpos($NomFile,'.')+1 );
+if( $Ext<>'js' && mb_substr($Ext,-2)<>'df' && $Ext<>'lng' && $Ext<>'php' && mb_substr($Ext,0,3)<>'htm' ) return false;
+$Long2 = array(6,6);
+$LabelExit = array( '[NOTE]', '[EXIT]' );
+$Long = array();
+$Reservado = array( '[LANGUAGE]', '[DEBUG]', '[GPFIELDS]', '[SAVEFORM]' );
+for( $n=0; $n<count($Reservado); $n++ ) $Long[] = mb_strlen($Reservado[$n]);
+$PHPReservado = array(	'TOP.ETRACE(' , 'TOP.ETRON(' , 'ETRACE(' , 'ETRON(' , 'EPARSEERROR(' , "console.log(" , "console.table(" ,
+'TOP.ETRACE (', 'TOP.ETRON (', 'ETRACE (', 'ETRON (', 'EPARSEERROR (', "console.log (", "console.table (",
+'$_DEBUG', '$'."GLOBALS['_DEBUG']", '$GLOBALS["_DEBUG"]', 'debugger;' );
+$fd = fopen( $NomFile, 'r' );
+while( !feof($fd) ){
+$oBuffer = trim(fgets($fd,4096));
+$buffer = mb_strtoupper(mb_substr(str_replace(' ','',$oBuffer),0,20));
+if( $buffer!='' ){
+if( mb_substr_count( $oBuffer, '_PERMISSIONDEBUG_' ) > 0 ){
+fclose( $fd );
+return false;
+}
+list($oBuffer) = explode( REM, $oBuffer );
+list($buffer)  = explode( REM, $buffer );
+for( $n=0; $n<count($LabelExit); $n++ ){
+if( mb_substr($buffer,0,$Long2[$n])==$LabelExit[$n] ){
+if( $Test ) eTrace( $LabelExit[$n].' == '.$buffer );
+fclose( $fd );
+if( $NoComando[0]==',' ) $NoComando = mb_substr($NoComando,1);
+return($NoComando!='');
+}
+}
+if( $buffer[0]=='[' && mb_substr($buffer,0,$Long[0])==$Reservado[0] ){
+if( $Test ) eTrace( $Reservado[$n].' == '.$buffer );
+list(,,$buffer) = explode('|',$oBuffer);
+$buffer = trim($buffer);
+if( mb_strtoupper($buffer)=='TRUE' || $buffer=='1' ){
+if( mb_substr_count(",{$NoComando},",",{$Reservado[0]},")==0 ) $NoComando .= ','.$Reservado[0];
+}
+}
+for( $n=1; $n<count($Reservado); $n++ ){
+if( $buffer[0]=='[' && mb_substr($buffer,0,$Long[$n])==$Reservado[$n] ){
+if( $Test ) eTrace( $Reservado[$n].' == '.$buffer );
+if( mb_substr_count(",{$NoComando},",",{$Reservado[$n]},")==0 ) $NoComando .= ','.$Reservado[$n];
+}
+}
+$bufferPHP = mb_strtoupper($oBuffer);
+for( $n=0; $n<count($PHPReservado); $n++ ){
+if( mb_substr_count( $bufferPHP, $PHPReservado[$n] ) > 0 ){
+$i = mb_strpos($bufferPHP,$PHPReservado[$n])-1;
+if( mb_substr($bufferPHP,i,7)<>'.ETRACE' && mb_substr($bufferPHP,i,6)<>'.ETRON' ){
+$i = mb_strpos($bufferPHP,$PHPReservado[$n])-2;
+if( mb_substr( $bufferPHP, $i, 2 )<>REM ){
+if( $Test ) eTrace( $PHPReservado[$n].' == '.$bufferPHP );
+if( mb_substr_count( $PHPReservado[$n],'(' ) > 0 ) $PHPReservado[$n] .= ')';
+if( mb_substr_count(",{$NoComando},",",{$PHPReservado[$n]},")==0 ) $NoComando .= ','.$PHPReservado[$n];
+}
+}
+}
+}
+}
+}
+fclose( $fd );
+if( $NoComando[0]==',' ) $NoComando = mb_substr($NoComando,1);
+return($NoComando!='');
+}

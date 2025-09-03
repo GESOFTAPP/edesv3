@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1" cellpadding="2">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">ColsWidth</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">[ColsWidth] ColWidth1 [,ColWidth2] ...... [,ColWidth1N]  [ | ListaColumnasAnchoDesfavorable  | ] word-break ] ]<br /> <span style="font-weight: normal;">Sintaxis alternativa</span><br />[ColsWidth] NomCampo=Width, ...</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Separados por comas, se indica el ancho en pixels de cada columna del listado. <br />Los parámetros se pueden dejar en blanco, en ese caso tomará el ancho por defecto para que la visualización sea correcta.<br />En las columnas de texto si se fija un ancho y el contenido lo desborda se mostrarán "..." (text-overflow: ellipsis).</td>
+</tr>
+<tr style="display: none;">
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro">ListaColumnasAnchoDesfavorable: Listas de campos a poner el mismo ancho, el de la columna mas desfavorable<br />word-break: Parámetro del css para la columna. <br />Si el valor es cero dejará el ancho mas desfavorable, solo en html.</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">&nbsp;[ColsWidth] 55,250,,,,,,,,150,200</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,300 @@
+[Language]es,en
+Download Center|Centro de descargas|Download Center
+Petición|Petición|Petition
+Generando|Generando|Generating
+Error|Error|Error
+Terminado|Terminado|Finished
+Download|Descarga|Download
+Menu|Menú|Menu
+List to Menu|Listado a Menú|List to Menu
+Menu to List|Menú a Listado|Menu to List
+Proceso no terminado|Proceso no terminado|process not finished
+Name|Documento|Document
+User|Usuario|User
+Instant|Instante|Instant
+Type·file|Tipo·fichero|Type·file
+Status|Estado|Status
+Total·sleep|Total·espera|Total·sleep
+Total·seconds|Total·segundos|Total·seconds
+Total·download|Total·descargas|Total·download
+Records|Registros|Records
+[Title]=@Download Center@
+[DBTable]{$_ENV['eDesDictionary']}gs_download
+[DBIndex]cd_download
+[DBOrder]cd_gs_user, cdi desc
+[DBSerial]cd_download
+[FormAction]*|Ll:
+[AddOption]*|status|P,@Petición@; G,@Generando@; E,@Error@; T,@Terminado@; D,@Download@
+[MaxRec]FULL|-1
+[PDFCol]cd_download=0, nm_download=30
+[PDFWrap]3
+[NoTools]W
+[EditList]nm_download|SincroniceBoxMenu()
+[EditListClick]
+[JSIni]l
+function SincroniceBoxMenu(NomField, oRow, OldValue, NewValue, oTD, NCol, pkOld, pkNew){
+var o = S("#BOXMENU .BROWSE").obj;
+if( o!=null ){
+o.rows[oRow.rowIndex].cells[0].innerText = NewValue
+}
+return "";
+}
+[Fields]||trim
+pk|cd_download|+|T|9||*||#|
+@Name@|nm_download|#|T|100||Q-|||
+@User@|cd_gs_user|0|T|4||Q-L|||
+@Instant@|cdi|CDI|T|19||Q-|||
+@Type·file@|type_file|n|T|4||-||%|
+@Status@|status|D|SV|1||-|||
+@Total·sleep@|total_sleep|H8|T|8||-|||
+@Total·seconds@|total_seconds|H8|T|8||-|||
+@Total·download@|total_download|+|T|3||-|||
+@Records@|records|+|T|9||-|||
+#(l)|type_file as type|n|T|4||*|||
+#(l)|status as status_down|#|T|1||*|||
+[RowColor]total_download==0|class='tick'
+[CSSAdd]l
+.BROWSE .tick * {
+background-color: #fffdf6 !important;
+}
+[Format]
+if( eIsHTML() ) $_vF[3] = eIconShow($_vF[3]);
+$_vF[5] = SegundosToHoras($_vF[5], true);
+$_vF[6] = SegundosToHoras($_vF[6], true);
+if( $_vF[10]=='P' ) $_CellsStyle[1] = 'color:red';
+[PHPIni]l
+function SegundosToHoras($sg, $clear=false){
+$horas 	  = floor($sg / 3600);
+$minutos  = floor(($sg - ($horas * 3600)) / 60);
+$segundos = $sg - ($horas * 3600) - ($minutos * 60);
+$time = str_pad($horas, 2, "0", STR_PAD_LEFT) .':'. str_pad($minutos, 2, "0", STR_PAD_LEFT) .":". str_pad($segundos, 2, "0", STR_PAD_LEFT);
+if( $clear && $time=="00:00:00" ){
+$time = "";
+}
+return $time;
+}
+[CSSAdd]l
+#BOXMAIN {
+display: -ms-flex;
+display: -webkit-flex;
+display: none;
+flex-direction: row;
+justify-content: flex-start;
+align-items: flex-start;
+grid-template-columns: min-content auto;
+height: 100%;
+}
+#BOXMENU {
+display: inline-block;
+width: min-content;
+height: 100%;
+padding-right: 18px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+#BOXIFRAME {
+display: inline-block;
+width: 100%;
+height: 100%;
+overflow: auto;
+}
+#BOXMENU .BROWSE TD {
+padding-left: 10px;
+padding-right: 10px;
+}
+[HTMIni]l
+<div id="BOXMAIN">
+<span id="BOXMENU"  ></span>
+<span id="BOXIFRAME"></span>
+</div>
+[SubTitle]echo "<span onclick='listToMenu()' style='cursor:var(--cPointer)'>@List to Menu@ <i>&#39;</i></span>";
+[JSEnd]l
+function StartMenu(){
+var  oTarget  = S("#BOXMAIN").obj
+,oBOXMENU = S("#BOXMENU").obj
+,oIFrame  = S("#BOXIFRAME").obj
+,oOrigin  = S("#BROWSE").obj.rows
+,total=oOrigin.length, dim=Array(), i
+,xClass, pk, label, title
+,heightBody = document.body.clientHeight+"px";
+document.body.appendChild(oTarget);
+dim.push("<tr><th style='text-align:center'>@Menu@</th></tr>");
+for(i=1+_pkBrowse; i<total; i++){
+xClass = oOrigin[i].className;
+pk    = oOrigin[i].cells[0].innerText;
+label = oOrigin[i].cells[1].innerText;
+title = oOrigin[i].cells[2].innerText;
+if( xClass!="" ) xClass = ` class='${xClass}'`;
+dim.push(`<tr${xClass}><td pk='${pk}' title='${title}'>${label}</td></tr>`);
+}
+oBOXMENU.innerHTML = "<span onclick='menuToList()' style='padding-top:5px; padding-bottom:5px; margin-left:15px; margin-right: 20px; display:block; cursor:var(--cPointer); white-space:nowrap;'>@Menu to List@ <i>&#361;</i></span>"
++"<table class='BROWSE col_0l' onclick='selectDown()'>"+dim.join("")+"</table>";
+}
+function calcularHeight(){
+if( _seCalculoHeight ){
+return;
+}
+var  oTarget  = S("#BOXMAIN").obj
+,oBOXMENU = S("#BOXMENU").obj
+,heightBody = document.body.clientHeight+"px";
+setTimeout(function(){
+if( oBOXMENU.scrollHeight <= oBOXMENU.clientHeight ){
+S(oBOXMENU).css({borderRight:"1px solid #dddddd", paddingRight:"7px"});
+}
+var  offsetTop = S("#BOXMENU").obj.children[1].offsetTop
+,oTR = S("#BOXMENU TH").obj.parentNode;
+oTR.style.position = "relative";
+S(oBOXMENU).on("scroll", function(ev){
+oTR.style.top = (ev.target.scrollTop>offsetTop) ? (ev.target.scrollTop-offsetTop-1)+"px" : 0;
+});
+oBOXMENU.style.width = (oBOXMENU.scrollWidth+18+7)+"px";
+oTarget.style.height = heightBody;
+}, 500);
+_seCalculoHeight = true;
+}
+function listToMenu(){
+S(".ToolsBar").attr("e-Width", S(".ToolsBar").width());
+S("#PAGINA").none();
+calcularHeight();
+S("#BOXMAIN").block("flex");
+if( _ConIFrame==null ){
+StartMenu();
+}
+_ConIFrame = true;
+}
+function menuToList(){
+_ConIFrame = false;
+S("#BOXMAIN").none();
+S("#PAGINA").block();
+S(".ToolsBar").css({width: S(".ToolsBar").attr("e-Width")});
+}
+[JSOnClickRow]l
+if( $status_down!="T" && $status_down!="D" ){
+S.warning("@Proceso no terminado@", 5);
+S(_oTR).class("-Visited");
+return;
+}
+selectDown();
+[JSIni]l
+var  _ConIFrame = null
+,_pkBrowse = 0
+,_seCalculoHeight = false;
+function selectDown(){
+var o = S.event(window);
+if( o.tagName=="I" ) o = o.parentNode;
+if( o.tagName!="TD" ){
+return;
+}
+var  pk = o.parentNode.rowIndex
+,nameIFrame = frames["uIFRAME"+pk]
+,dim = S("#BOXIFRAME").obj.children
+,oTRBrowse, listToMenuON=false, i, href;
+if( S(o).toTag("TABLE").parentNode.id=='BOXMENU' ){
+oTRBrowse = S("#CONTENEDOR .BROWSE TR").dim[pk+_pkBrowse];
+}else{
+if( _ConIFrame==null ){
+StartMenu();
+_ConIFrame = false;
+}
+oTRBrowse = o.parentNode;
+o = S("#BOXMENU").obj.children[1].rows[pk-_pkBrowse].cells[0];
+listToMenuON = true;
+}
+S([oTRBrowse, o]).class("-tick");
+S(oTRBrowse.cells).css({fontStyle:"italic", color:"#bbbbbb"});
+S(o).css({fontStyle:"italic", color:"#bbbbbb"});
+oTRBrowse.cells[7].innerText = S.thousands(S.thousandsClear(oTRBrowse.cells[7].innerText)+1);
+var  $cd_download = S.thousandsClear(oTRBrowse.cells[0].innerText)
+,$type = S.trim(oTRBrowse.cells[9].innerText)
+,$action = S.trim(oTRBrowse.cells[10].innerText);
+S.info();
+if( $action=="D" ){
+var opDirect = ((window.event.altKey || window.event.ctrlKey) ? "&_DOWN=1" : "");
+if( opDirect!="" ){
+S.info("Downloading file...", 3);
+S.callSrv("edes.php?D:"+$cd_download+opDirect);
+return;
+}
+}
+if( listToMenuON ){
+listToMenu();
+}
+for(i=0; i<dim.length; i++){
+dim[i].style.display = "none";
+}
+if( frames["uIFRAME"+pk] ){
+frames["uIFRAME"+pk].frameElement.style.display = "block";
+if( frames["uIFRAME"+pk].frameElement.getAttribute("eLoaded")=="1" ){
+if( !_ConIFrame ){
+listToMenu();
+}
+if( /^(xls|xml|csv|txt)$/.test($type) ){
+let doc = S.trim(oTRBrowse.cells[1].innerText)
+,type = $type;
+S.info(`The document has already been downloaded<br><b>${doc}</b>.${type}`, 5);
+}
+return;
+}
+}else{
+top.eNewIframe(window, "BOXIFRAME", "uIFRAME"+pk, "");
+}
+frames["uIFRAME"+pk].frameElement.setAttribute("eLoaded", 1);
+if( $type=="html" ){
+href = "edes.php?R:/_tmp/pdf/"+$cd_download+".html&_LOGDOWN="+$cd_download+"&_FILEDIRECT=1";
+}else{
+href = "edes.php?D:"+$cd_download+opDirect+"&_FILEDIRECT=1";
+if( $type!="pdf" ){
+S.info("Downloading file...", 3);
+}
+}
+frames["uIFRAME"+pk].location.href = S.urlAdd(href);
+}
+[PHPEnd]l
+function getMyProcess(){
+$totalProcesos = 0;
+$myScript = "edes.php id-".S::$_User;
+$myLeng   = mb_strlen($myScript);
+$xSalida = shell_exec("ps -F");
+if( !isset($_PHPEXE) ) $_PHPEXE = 'php';
+$_PHPEXE = str_replace('\\', '/', $_PHPEXE);
+$_PHPEXE = '/'.$_PHPEXE;
+$xPhpExe = explode('/', $_PHPEXE);
+$xPhpExe = $xPhpExe[count($xPhpExe)-1];
+$DimPS = explode("\n", $xSalida);
+for($n=0; $n<count($DimPS); $n++){
+$txt = trim($DimPS[$n]);
+if( empty($txt) ) continue;
+while( mb_substr_count($txt,'  ') > 0 ) $txt = str_replace('  ', ' ', $txt);
+if( trim($txt)=='' ) continue;
+$Dim = explode(' ', $txt);
+if( count($Dim)<11 ) continue;
+$xPID = $Dim[1];
+if( $xPID=='PID' ) continue;
+$xEXE = $Dim[11];
+if( $xEXE!="edes.php" ) continue;
+$xParametros = '';
+for($i=11;$i<count($Dim); $i++){
+if( $xParametros!='' ) $xParametros .= ' ';
+$xParametros .= $Dim[$i];
+}
+$xEXE = $xParametros;
+if( mb_substr($xEXE, 0, $myLeng)!=$myScript ) continue;
+$totalProcesos++;
+}
+return $totalProcesos;
+}
+$total = getMyProcess();
+?>
+<script>
+var o = S(".notification .badge", top), current;
+if( o.length ){
+var current = <?=$total?>;
+o.text(current);
+if( current>0 ){
+o.block();
+}else{
+o.none();
+}
+}
+</script>
+<?PHP

@@ -1,0 +1,85 @@
+#include(*) lng
+[Title]=@RESPONSABLE DE SEGURIDAD@
+[DBTable]{$_ENV['eDesDictionary']}gs_user
+[DBIndex]cd_gs_user
+[DBOrder]user_surname,user_surname
+[DBSerial]cd_gs_user
+¿ !eSqlType('informix') ? [DBAddFilter] cd_gs_user>1 and (dt_del>now() or dt_del is null or dt_del="0000-00-00") and permission='S'
+¿  eSqlType('informix') ? [DBAddFilter] cd_gs_user>1 and (dt_del>current or dt_del is null) and permission='S'
+[OnChange]*|dni|ePadLeft(this,8)
+[AddButton]m,mR|[&#202;]@Ver documento actual@|@Muestra el documento actual de seguridad@|VerDoc()
+[Button]mR|[&#113;]@Asignar Responsable@
+[ListCheckBox]H|<img src='g/tf_1.gif'>
+[UploadFile]_rubrica|/_datos/config|cd_gs_user|100.000|@Ver Firma@|gif,jpg,png
+[Fields]2
+<  @Activar Documento de Seguridad@|_con_doc_|N|C|1||M|||
+,  @Ver documento al grabar@|_ver_doc|N|C|1||M|||
+-|||||||||
+@DNI@|dni|DNI|T|8||Q-cp|||
+,2 @Usuario@|cd_gs_user|+|T|5||Q-|||
+@Nombre@|user_name|X|T|20||Q-|||
+,2 @Apellidos@|user_surname|X|T|35||Q-|||
+@Local@|cd_gs_node|+|S|60|+user_surname|Q-|||
+@Cargo@|cd_gs_position|+|S|30||Q-|||
+,2 @Arbol@|cd_gs_tree|+|S|35|+user_surname|Q-|||
+#(l) @Responsable·seguridad@|tf_confidential|N|C|1||-|||
+@Firma@|_rubrica|f|F|60||MDL|||
+[JSIni]m,mR
+function VerDoc(){
+top.eSWOpen(window, 'edes.php?E:$docsecurity.gs&TEST=1', '@DOCUMENTO DE SEGURIDAD@', true, 0,0);
+}
+[PHPIni]mR
+if( isset(SETUP::$System['DocSecurity']) && SETUP::$System['DocSecurity'] ){
+$_ASSIGNFIELD['_con_doc_'] = true;
+$_Form[0][7] = $_ENV['ON'];
+}
+[PHPForm]mR
+global $_ADDCODE;
+$NUser = 'signature_'.$_vF['cd_gs_user'];
+if( file_exists("../_datos/config/{$NUser}.gif") ){
+$Ext = '.gif';
+}else if( file_exists("../_datos/config/{$NUser}.png") ){
+$Ext = '.png';
+}else if( file_exists("../_datos/config/{$NUser}.jpg") ){
+$Ext = '.jpg';
+}else{
+$Ext = '';
+}
+if( $Ext!='' ) {
+$_ADDCODE['_rubrica']['E'] = "<img src='g/t_op_view.gif' onclick='top.eCallSrv(window,\"edes.php?D:/_datos/config/{$NUser}{$Ext}&FILE=signature{$Ext}\")' title='@Ver Firma@'>";
+}
+[PHPEnd]M
+eInit();
+$NUser = $_POST['cd_gs_user'];
+if( file_exists("../_datos/config/{$NUser}.gif") ){
+$Ext = '.gif';
+}else if( file_exists("../_datos/config/{$NUser}.png") ){
+$Ext = '.png';
+}else if( file_exists("../_datos/config/{$NUser}.jpg") ){
+$Ext = '.jpg';
+}else{
+eMessage('@ERROR: FALTA LA RUBRICA DEL USUARIO@', 'EHS');
+}
+copy("../_datos/config/{$NUser}{$Ext}", "../_datos/config/signature_{$NUser}{$Ext}");
+if( isset(SETUP::$System['DocSecurity']) && SETUP::$System['DocSecurity'] && $_POST['_con_doc_']==$_ENV['ON'] ){
+}else if( isset(SETUP::$System['DocSecurity']) && !SETUP::$System['DocSecurity'] && $_POST['_con_doc_']!=$_ENV['ON'] ){
+}else{
+eFilePutVar("group.var", array(array("DocSecurity", (($_POST['_con_doc_']==$_ENV['ON'])?'true':'false'))));
+}
+qQuery("update {$_ENV['eDesDictionary']}gs_user set tf_confidential='{$_ENV['OFF']}' where tf_confidential='{$_ENV['ON']}'");
+if( $_POST['_con_doc_']==$_ENV['ON'] ){
+qQuery("update {$_ENV['eDesDictionary']}gs_user set tf_confidential='{$_ENV['ON']}' where cd_gs_user={$_POST['cd_gs_user']}");
+}else{
+eMessage('@INTRANET SIN DOCUMENTO DE SEGURIDAD@', 'S');
+}
+if( $_POST['_ver_doc']==$_ENV['ON'] ){
+?>
+<SCRIPT type="text/javascript">
+location.href = S.urlAdd('edes.php?E:$docsecurity.gs&TEST=1');
+top.eLoading(0, window);
+</SCRIPT>
+<?PHP
+eEnd();
+}else{
+eMessage('@RESPONSABLE DE SEGURIDAD ASIGNADO@', 'S');
+}

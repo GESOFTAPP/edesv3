@@ -1,0 +1,37 @@
+[MyData] cd_gs_user=_User
+
+#include(*) $a/d/usu_clave.edf          // en el que ya está asignada la variable "_User"
+
+[LoadIni] $a/d/usu_clave.edf
+   |||Surnames---
+   |||Grabar solo
+   |||SU CLAVE HA CADUCADO<br>CAMBIAR CLAVE
+   |||CAMBIAR CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS
+   |||Caracter desencadenante
+   |||CARACTER DESENCADENATE MODIFICADO
+   |||Password
+   |||Repeat Key
+   |||
+   |||
+   |||
+   |||Password
+   |||CLAVE MODIFICADA
+   |||Las claves son distintas
+   |||Key documents are different
+   |||Complexity
+   |||DNI
+   |||ERROR AL GRABAR
+   |||El
+   |||A phrase with uppercase, lowercase and<br>numbers is recommended for the key.
+   |||Strength
+   |||La longitud mínima de la
+   |||MODIFICADA CLAVE POR DEFECTO<br>PARA LOS NUEVOS USUARIOS
+   |||Modificar
+   |||No puede poner la clave actual
+   |||NO PUEDE PONER LA CLAVE POR DEFECTO
+   |||NO PUEDE PONER LA MISMA CLAVE
+   |||Name
+   |||no permitido dentro de la clave
+   |||Modify Password
+   |||- Si no se pulsa el caracter la clave será lo introducido&#92;n- Si se pulsa una vez será a partir de haberla pulsado&#92;n- Y si se pulsa mas de una vez la clave estará entre las dos primeras pulsaciones
+   =@titulo@|=@titulo@

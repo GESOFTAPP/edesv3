@@ -1,0 +1,1839 @@
+/*************/
+/* reset.css */
+/*************/
+
+	/* border:collapse | separate; */
+	/* border-spacing: distanciaVertical  distanciaHorizontal; */
+	/* caption-side: top | bottom; */
+	/* empty-cells: show | hide; */
+
+	table, th, td {
+		border:0px;
+		border-spacing:{%1}px;
+	}
+	td,th {
+		padding:{%2}px {%2}px;
+		empty-cells: show;
+	}
+
+
+/***********************/
+/* fuentes adicionales */
+/***********************/
+{$FUENTES}
+
+
+/***********/
+/* General */
+/***********/
+
+	body, html {
+		height:100%;
+		width:100%;										/* line-height: 1.2; */
+		background-color:{$pBody};
+		{$fontFamily}
+	}
+	TABLE {
+		display: table;
+	}
+	TH, TD {
+		{$fontFamily}
+		display: table-cell;
+	    vertical-align: middle;
+	}
+	NOBR {
+		display: inline-table;
+	    vertical-align: middle;
+	}
+
+	* {
+		font-size:{$fBase};
+		{$fontFamily}
+		box-sizing:content-box;		/* border-box; */
+	}
+
+	@font-face {
+		font-family:eDes;
+		font-weight:normal;
+		font-style:normal;
+		text-transform:none;
+		src:url('../fonts/edes.eot?#iefix&v=4.7.0') format('embedded-opentype'), 
+			url('../fonts/edes.woff?v=4.7.0') format('woff'), 
+			url('../fonts/edes.ttf?v=4.7.0') format('truetype'), 
+			url('../fonts/edes.svg?v=4.7.0#fontawesomeregular') format('svg');
+			/* url('../fonts/edes.woff2?v=4.7.0') format('woff2'),  */
+	}
+	I {
+		font-family:eDes;
+		font-weight:normal;
+		font-style:normal;
+		text-transform:none;
+	    vertical-align: middle;
+		/* vertical-align: text-bottom !important; */
+		/* text-shadow: 2px 2px rgba(219,219,219,1); */
+	}
+
+
+	
+	I.ICONDESKTOP, I.ICONINPUT {
+		cursor:pointer;
+	}
+	*[onclick] {
+		cursor:pointer;
+	}
+	*[oncontextmenu] {
+		cursor:pointer;
+	}
+
+	*[edetail] {
+		cursor:default;
+	}
+	*[id='GC1'], *[id='GC2'], *[id='GC3'], *[id='GC4'] {
+		cursor:pointer;
+	}
+	THEAD.report * {			/* cadecera informes */
+		cursor:default;
+	}
+	.BROWSE TFOOT {
+		cursor:default;
+	}
+		
+	TH[oncontextmenu], TD[oncontextmenu] {
+		animation:blinkingText 1.5s infinite;
+		-webkit-animation: blinkingText 1.5s infinite;	
+	}
+	@keyframes blinkingText {
+		0%{cursor:pointer;}		/* url("g/contextmenu.png"), pointer; */
+		1%{cursor:none;}
+		20%{cursor:pointer;}
+	}
+
+
+
+	IMG {
+		zoom:{$imgZoom};		/* zoom para la imagenes */
+	    vertical-align: middle;
+		cursor:pointer;
+	}
+
+	.noHover{					/* desactiva el css:hover */
+		pointer-events: none;
+	}
+
+	#edCONTAINER I {
+		font-style:italic;
+		{$fontFamily}
+	}
+
+	.ICONWINDOW {
+		font-size:70%;
+		color:{$cIcon};
+		cursor:pointer;
+	}
+	TH .ICONWINDOW {
+		color:{$cIconHeader};
+	}
+	.ICONRESIZE {
+		font-size:30%;
+		color:{$cIcon};
+		cursor:nw-resize;
+	}
+	.ICONCAPTION {
+		font-size:120%;
+		color:{$cIcon};
+		cursor:pointer;
+	}
+
+	.ICONHEADER {
+		color:{$cIconHeader};
+		cursor:pointer;
+		{$fheader}
+	}
+
+	.ICONTITLE {
+		color:{$cIconHeader};
+		cursor:pointer;
+	}
+
+	.ICONINPUT {
+		font-size:{$fIconTab};
+		color:{$cIcon};
+		cursor:pointer;
+		vertical-align:middle;
+		margin-left:{%2}px;
+	}
+
+
+	.ICONMENU {
+		font-size:{$fIconTab};
+		color:{$cIcon};
+		cursor:pointer;
+		vertical-align:text-top;
+		margin-left:{%1}px;
+	}
+	.ICONDESKTOP {
+		font-size:120%;
+		color:{$cIcon};
+		cursor:pointer;
+	}
+	.ICONBUTTON {
+		font-size:{$H5};
+	}
+
+
+	.ICONINSERT {
+		color:{$cIconInsert};
+	}
+	.ICONDELETE {
+		color:{$cIconDelete};
+	}
+	.ICONHELP {
+		color:{$cIconHelp};
+	}	
+	.ICONVIEW {
+		color:{$cIconView};
+	}
+	.ICONUPDATE {
+		color:{$cIconUpdate};
+	}
+	.ICONSEEK {
+		color:{$cIconSeek};
+	}
+	.ICONCOUNT {
+		color:{$cIconCount};
+	}
+	.ICONCLOSE {
+		color:{$cIconClose};
+	}
+
+	.ICONMOVE {
+		color:{$pListHeader};
+		opacity:0.2;
+		filter:alpha(opacity:20);
+		cursor:move;
+	}
+
+	
+	.ICONSUBMIT {
+		padding-top:{%4}px;
+		/* vertical-align:middle !important;			text-top */
+	}
+	.ICONSUBMIT I {
+		/* vertical-align:middle !important; */
+	}
+
+	.ICONOPTION {
+		color:{$cIconOption};
+	}
+
+	.ICONDEVELOPMENT {
+		color:{$cIconDevelopment};
+	}
+
+	.ICONOFF {
+		opacity:0.3;
+		filter:alpha(opacity:30);
+	}
+
+	INPUT[type='radio'], INPUT[type='checkbox'] {
+		accent-color:{$cRadioCheck};
+	}
+
+	.ROTATE90 {
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg);		/* IE 9 */
+		-webkit-transform:rotate(90deg);	/* Chrome, Safari, Opera */
+		display:block;						/* color:#AAAAAA; */
+		margin-right:{%2}px;
+	}
+
+	.NO_SHADOW {
+		box-shadow:0px 0px 0px rgba(0,0,0,0) !important;
+		-moz-box-shadow:0px 0px 0px rgba(0,0,0,0) !important;
+		-webkit-box-shadow:0px 0px 0px rgba(0,0,0,0) !important;
+	}
+
+	.NOBREAK {
+		white-space:pre;
+		white-space:pre-wrap;
+		white-space:pre-line;
+		white-space:-pre-wrap;
+		white-space:-o-pre-wrap;
+		white-space:-moz-pre-wrap;
+		white-space:-hp-pre-wrap;
+		word-wrap:break-word;
+	}
+
+	.DEFAULT {
+		cursor:default;
+	}
+
+/***********************/
+/* colores del sistema */
+/***********************/
+
+	/* :root { */
+	/*	--color-body:#ffffff; */
+	/*	--color-tip-bg:; */
+	/*	--color-tip:; */
+	/* } */
+
+/***********************/
+/* clases de controles */
+/***********************/
+
+	BODY {
+		background-color:{$pBody};
+	}
+
+	.TEST TD {
+		background-color:{$cText};
+	}
+
+	INPUT, TEXTAREA {
+		border:{%1}px solid {$bInput};
+		{$fontFamily}
+		padding-left: {%2}px !important;
+		padding-right: {%2}px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		box-sizing:content-box;		/* border-box; */
+	}
+	INPUT, TEXTAREA, LABEL {
+		/* vertical-align:top !important; */
+	}
+
+	TEXTAREA {
+		resize:none;
+	}
+
+	.IMGBOX {
+		border:{%1}px solid {$bInput};
+		margin-left:5px;
+		overflow:hidden;
+		display: block;
+		background-color:transparent;
+	}
+	.IMGBOX IMG {
+		display:none;
+		cursor:move;
+	}
+
+	.EDITABLE {
+		BACKGROUND-COLOR:{$pEditable};
+		COLOR:{$cEditable};
+	}
+	.EDITABLE:focus {
+		BACKGROUND-COLOR:{$pEditableFocus};
+		COLOR:{$cEditableFocus};
+	}
+	.EDITABLE_focus {
+		BACKGROUND-COLOR:{$pEditableFocus};
+		COLOR:{$cEditableFocus};
+	}
+	.READONLY {
+		BACKGROUND-COLOR:{$pReadOnly};
+		COLOR:{$cReadOnly};
+		cursor:default;
+	}
+	.ERROR { 
+		BACKGROUND-COLOR:{$pError};
+		COLOR:{$cError};
+	}
+	.ERROR:focus { 
+		BACKGROUND-COLOR:{$pErrorFocus};
+		COLOR:{$cErrorFocus};
+	}
+	.ERROR_focus { 
+		BACKGROUND-COLOR:{$pErrorFocus};
+		COLOR:{$cErrorFocus};
+	}
+
+	.REQUIRED {							/* control obligatorio */
+		border-color:{$bRequired};
+	}
+	.REQUIREDLABEL:after {				/* label de control obligatorio */
+		content:'*';
+		font-weight:bold;
+		color:#666666;
+		padding-left:4px;
+	}
+
+	.DISABLED {}
+
+	input[type=checkbox] {
+	    margin-top:0px;
+	    margin-bottom:0px;
+		vertical-align:text-bottom;
+	}
+	input[type=radio] {
+	    margin-top:{%3}px;
+		vertical-align:text-bottom;
+	}
+
+	.EDITABLE input[type=checkbox] {
+		cursor:pointer;
+	}
+	.EDITABLE input[type=radio] {
+		cursor:pointer;
+	}
+
+	.READONLY input[type=checkbox] {
+		cursor:default;
+		opacity:0.5;
+		filter:alpha(opacity:50);
+	}
+	.READONLY input[type=radio] {
+		cursor:default;
+		opacity:0.5;
+		filter:alpha(opacity:50);
+	}
+
+
+	.FILEGROUP input[type=file] {
+		display:none;
+	}
+	.FILEGROUP SPAN {
+		cursor:pointer;
+		font-family:eDes;
+		color:{$cIcon};
+		font-size:{%9}px;
+	}
+
+	.SELECT {
+		border:{%1}px solid {$bInput};
+		COLOR:{$cEditableFocus};
+		BACKGROUND-COLOR:{$pEditableFocus};
+		cursor:pointer;
+		display:none;
+		position:absolute;
+	}
+	.SELECT TABLE {
+		width:100%;
+	}
+	.SELECT .SELECTED {
+		BACKGROUND-COLOR:{$pSelected};			/* #969696; */
+		COLOR:{$cSelected};						/* #ffffff;*/
+	}
+	.SELECT .NoSelected {
+		font-weight:bold;
+	}
+	.SELECT .Line TD {
+		background-color:{$bInput};
+		cursor:default;
+		height:{%1}px;
+		padding:0px;
+	}
+	.SELECT TR>*:hover {
+		BACKGROUND-COLOR:{$pCursor};		/* {$cEditableFocus}; */
+		COLOR:{$cCursor};					/* {$pEditableFocus}; */
+	}
+
+	.SELECT td:nth-child(1){ display:none; white-space:nowrap; }
+	.SELECT td:nth-child(3){ display:none; }
+	.SELECT td:nth-child(4){ display:none; }
+	.SELECT td:nth-child(5){ display:none; }
+	.SELECT td:nth-child(6){ display:none; }
+
+	.SELECT.SCROLLBAR TD:nth-child(2) {
+		display:block;
+	}
+
+	.NUMBERS TD {							/* tabla de select con valores numércios (monospace) */ 
+		font-family: {$numbers};
+	}
+
+	.col_0b th:nth-child(1), .col_0b td:nth-child(1){display:block;}
+	.col_1b th:nth-child(2), .col_1b td:nth-child(2){display:block;}
+	.col_2b th:nth-child(3), .col_2b td:nth-child(3){display:block;}
+	.col_3b th:nth-child(4), .col_3b td:nth-child(4){display:block;}
+	.col_4b th:nth-child(5), .col_4b td:nth-child(5){display:block;}
+
+	#SelBROWSER td:nth-child(1){
+		display:block !important;
+		white-space:nowrap !important;
+	}
+	#SelBROWSER td:nth-child(2){
+		display:none !important;
+	}
+
+	/*
+	.SELECTINPUT::after {
+		font-family:eDes;
+		font-size:{%3}px;
+		content:"Q";
+		right:{$iconSelectRight};
+		top:{$iconSelectTop};
+		position:relative;
+		color:#dddddd;
+	}
+	*/
+
+	.SELECTINPUT INPUT {
+		position:relative;
+		background-image:url({$iconSelectPNG});
+		background-position-x:100%;
+		background-position-y:100%;
+		background-repeat:no-repeat;
+	}
+
+	/* ::-ms-check2 {	*/
+	/* 	color:red;	*/
+	/* 	BACKGROUND-COLOR:{$cText};	*/
+	/* 	border:{%1}px solid #aa0022;	*/
+	/* 	width:{%30}px;	*/
+	/* 	height:{%30}px;	*/
+	/*   margin-top:{%5}px;	*/
+	/* }	*/
+
+	FIELDSET {
+		padding-left:{%5}px;		/* Ajusta dentro del FieldSet */
+	    padding-bottom:0px;
+		padding-right:0px;
+		margin-left:0px;
+		margin-right:0px;
+	}
+
+	.SLIDERBUTTON {
+		border:{%1}px solid {$bInput};
+		background-color:{$pEditable};
+		cursor:pointer;
+	}
+	.SLIDERBUTTON I {
+		color:{$cEditable};
+		font-size:{%8}px;
+		top:-{%8}px;
+		position:relative;
+	}
+
+	/* SelectMultiple BOX */
+
+		.SELECTMULTIPLEBOX {
+			border:{%1}px solid {$bInput};
+			{$fontFamily}
+			padding-left: {%2}px !important;
+			padding-right: {%2}px !important;
+			padding-top: 0px !important;
+			padding-bottom: 0px !important;
+
+			box-sizing:content-box;
+			margin-left: 5px;
+			border-radius:5px;
+			display:block;
+		}
+
+		.SELECTMULTIPLEBOX > SPAN {
+			position:relative;
+			background-image:url({$iconSelectPNG});
+			background-position-x:100%;
+			background-position-y:100%;
+			background-repeat:no-repeat;
+			width:100%;
+			height:100%;
+			display: table;
+		}
+
+		.SELECTMULTIPLEBOX .ITEM {
+			border:{%1}px solid {$bInput};	/* #c5c3c3 */
+			font-size: 100%;
+			border-radius: 3px;
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-left: 2px;
+			margin-top: 2px;
+			float: left;
+			BACKGROUND-COLOR:{$pReadOnly};
+			COLOR:{$cReadOnly};
+			cursor:default;
+		}
+		.SELECTMULTIPLEBOX .ITEM I {
+			zoom: 0.5;
+		}
+
+	/* clases genericas */
+
+	.BODY {}	/* .PAPEL {} */
+	.FONDO {}
+	.BORDER {}
+	.TITLE {}
+	.HEADER {}
+	.OPTION {}
+	.SEPARATOR {
+		height:{%1}px;
+		background-color:{$bTabMenuOff};
+	}
+	.HIDDEN {}
+	.SHADOW {
+		{$shadowObj}
+	}
+
+
+	.AddButton {
+		display:table;
+		cursor:pointer;
+		border-collapse: separate;
+		padding-top: 0px;
+		padding-right: {%8}px;
+		padding-bottom: 0px;
+		padding-left: {%7}px;
+		color:{$cText};
+		{$fbutton}
+		{$roundedSmall}
+		{$shadowButton}
+		border:{$bButton} {%1}px outset;																								/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pButtonIni};																										/* Old browsers */
+		background: -moz-linear-gradient(top, {$pButtonIni} 0%, {$pButtonMid} 47%, {$pButtonEnd} 100%);									/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pButtonIni} 0%, {$pButtonMid} 47%, {$pButtonEnd} 100%);								/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pButtonIni} 0%, {$pButtonMid} 47%, {$pButtonEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pButtonIni}', endColorstr='{$pButtonEnd}', GradientType=0); /* IE6-9 */
+	}
+	.AddButton:hover {
+		border:{$bButtonOver} {%1}px outset;																										/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pButtonOverIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pButtonOverIni} 0%, {$pButtonOverMid} 47%, {$pButtonOverEnd} 100%);									/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pButtonOverIni} 0%, {$pButtonOverMid} 47%, {$pButtonOverEnd} 100%);								/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pButtonOverIni} 0%, {$pButtonOverMid} 47%, {$pButtonOverEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pButtonOverIni}', endColorstr='{$pButtonOverEnd}', GradientType=0);		/* IE6-9 */
+	}
+	.AddButton I {
+		margin-right: {%3}px;
+	}
+
+
+	/* .AddButton I { box-shadow: 0px 0px 0px 0px;	} */
+
+	.Click:hover {
+		border:{$bButtonOver} {%1}px outset;																										/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pButtonDownIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pButtonDownIni} 0%, {$pButtonDownMid} 47%, {$pButtonDownEnd} 100%);									/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pButtonDownIni} 0%, {$pButtonDownMid} 47%, {$pButtonDownEnd} 100%);								/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pButtonDownIni} 0%, {$pButtonDownMid} 47%, {$pButtonDownEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pButtonDownIni}', endColorstr='{$pButtonDownEnd}', GradientType=0);		/* IE6-9 */
+	}
+
+	.ZOOM90, .ZOOM90 * {
+		zoom:{$zoom90};
+	}
+
+	.ROUNDED {
+		-moz-border-radius:{%5}px;
+		-webkit-border-radius:{%5}px;
+		border-radius:{%5}px;
+		padding:{%5}px {%10}px {%5}px {%10}px;
+	}
+	.MODAL {						/* .TAPA {} */
+		position:absolute;
+		left:0px;
+		top:0px;
+		margin:0px;
+		padding:0px;
+		background-color:rgba(0, 0, 0, 0.1);
+	}
+
+	.ANIMATION {
+	  -webkit-animation:BLINK 3s infinite;	/* Safari 4+ */
+	  -moz-animation:   BLINK 3s infinite;	/* Fx 5+ */
+	  -o-animation:     BLINK 3s infinite;	/* Opera 12+ */
+	  animation:        BLINK 3s infinite;	/* IE 10+, Fx 29+ */
+	}
+
+	@-webkit-keyframes BLINK {	/* Safari 4.0 - 8.0 */
+		from{opacity:0;}
+		to{opacity:1;}
+	}
+
+	@keyframes BLINK {		/* General */
+		from{opacity:0;}
+		to{opacity:1;}
+	}
+
+/*********************/
+/* barra de progreso */
+/*********************/
+
+	.RangeLabel {
+		display:table;
+	}
+	.RangeLabel SPAN {
+		position:relative;
+		background-color: {$cIcon};
+		color: {$cTabHeader};
+	    contain: layout;
+		display: block;	
+		text-align: center;
+		z-index: 9;
+		font-size: 12px;
+		height: 22px;
+		width: fit-content;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-bottom: 5px;
+		padding-bottom: 0px;
+		padding-top: 5px;
+		margin-top: 0px;
+		margin-left: 1px;
+	}
+	.RangeLabel SPAN:after {
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		background-color: {$cIcon};
+		content: '';
+		display: block;
+		height: 10px;
+		position: relative;
+		transform: rotate(45deg);
+		width: 10px;
+		z-index: 8;
+	    top: 3px;					/* -8 */
+		left: 2px;					/* 3, 10 flecha */
+	}
+
+	.RangeLabel INPUT {
+		text-align:right;
+	}
+
+	input[type=range]{
+		-webkit-appearance: none;
+		background: transparent;
+		border-width: 0px;
+		margin-top: 6px;
+		margin-left: 2px;
+	}
+	input[type=range]::-webkit-slider-runnable-track {
+		width: 300px;
+		height: 6px;						/* ancho barra */
+		background-color: {$pEditable};		/* #dddddd */
+		border: none;
+		border-radius: 3px;
+		border:1px solid {$bInput};			/* #cccccc */
+	}
+	input[type=range]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		border: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background-color: {$cIcon};			/* marcador */
+		margin-top: -6px;
+	}
+	input[type=range]:focus {
+		outline: none;
+	}
+	input[type=range]:focus::-webkit-slider-runnable-track {
+		background-color: {$pEditableFocus};	/* #cccccc barra con foco */
+		border:1px solid {$bInput};				/* #dddddd */
+	}
+
+/***********/
+/* tooltip */
+/***********/
+
+	.TIP {
+		visibility:hidden;
+		--white-space:nowrap;
+		padding:{%10}px {%15}px {%10}px {%15}px;
+		cursor:default;
+		position:absolute;
+		border:{%1}px solid {$bInfo};
+
+		color:{$cInfo} !important;
+		background: {$pInfoIni};																					/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoIni} 0%, {$pInfoEnd} 100%);								/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoIni} 0%, {$pInfoEnd} 100%);							/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoIni} 0%, {$pInfoEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoIni}', endColorstr='{$pInfoEnd}', GradientType=0);	/* IE6-9 */
+
+		{$roundedBig}
+		{$shadowObj}
+	}
+
+	.TIPFOCUS {											/* foco en el campo de donde es el tip */
+		box-shadow:0px 0px {%15}px {$bInfo};
+		-moz-box-shadow:0px 0px {%15}px {$bInfo}; 
+		-webkit-box-shadow:0px 0px {%15}px {$bInfo}; 
+		border:{%1}px solid {$bInfo};
+		padding:{%2}px {%1}px {%2}px {%1}px;
+		cursor:pointer;
+	}
+
+
+	/* ERROR */
+
+	.TIPERROR {
+		color:{$cInfoError} !important;
+		background: {$pInfoErrorIni};																					/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);								/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);							/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoErrorIni} 0%, {$pInfoErrorEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoErrorIni}', endColorstr='{$pInfoErrorEnd}', GradientType=0);	/* IE6-9 */
+	}
+
+	/* tooltip - hacia arriba */
+	.TIPERRORUP::after {					/* tooltip-flecha */
+		border-color:transparent transparent {$pInfoErrorIni} transparent;		/* flecha hacia arriba */
+	}
+	.TIPERRORUP::before {				/* el borde */
+		border-color:transparent transparent {$pInfoErrorEnd} transparent;	/* flecha hacia arriba */
+	}
+
+	/*  tooltip - hacia abajo */
+	.TIPERRORDOWN::after {
+		border-color:{$pInfoErrorIni} transparent transparent transparent;		/* flecha hacia abajo */
+	}
+	.TIPERRORDOWN::before {				/* el borde */
+		border-color:{$pInfoErrorEnd} transparent transparent transparent;	/* flecha hacia abajo */
+	}
+
+	/* tooltip - hacia la izquierda */
+	.TIPERRORLEFT::after {				/* tooltip-flecha */
+		border-color:transparent {$pInfoErrorIni} transparent transparent;		/* flecha hacia la izquierda */
+	}
+	.TIPERRORLEFT::before {				/* el borde */
+		border-color:transparent {$pInfoErrorEnd} transparent transparent;	/* flecha hacia la izquierda */
+	}
+
+	/* tooltip - hacia la derecha */
+	.TIPERRORRIGHT::after {						/* dentro */
+		border-color:transparent transparent transparent {$pInfoErrorIni};		/* flecha hacia la derecha */
+	}
+	.TIPERRORRIGHT::before {				/* el borde */
+		border-color:transparent transparent transparent {$pInfoErrorEnd};	/* flecha hacia la derecha */
+	}
+
+	/* WARNING */
+
+	.TIPWARNING {
+		color:{$cInfoWarning} !important;
+		background: {$pInfoWarningIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoWarningIni} 0%, {$pInfoWarningEnd} 100%);														/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoWarningIni} 0%, {$pInfoWarningEnd} 100%);													/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoWarningIni} 0%, {$pInfoWarningEnd} 100%);														/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoWarningIni}', endColorstr='{$pInfoWarningEnd}', GradientType=0);	/* IE6-9 */
+	}
+
+	/* tooltip - hacia arriba */
+	.TIPWARNINGUP::after {					/* tooltip-flecha */
+		border-color:transparent transparent {$pInfoWarningIni} transparent;	/* flecha hacia arriba */
+	}
+	.TIPWARNINGUP::before {				/* el borde */
+		border-color:transparent transparent {$pInfoWarningEnd} transparent;	/* flecha hacia arriba */
+	}
+
+	/*  tooltip - hacia abajo */
+	.TIPWARNINGDOWN::after {
+		border-color:{$pInfoWarningIni} transparent transparent transparent;	/* flecha hacia abajo */
+	}
+	.TIPWARNINGDOWN::before {				/* el borde */
+		border-color:{$pInfoWarningEnd} transparent transparent transparent;	/* flecha hacia abajo */
+	}
+
+	/* tooltip - hacia la izquierda */
+	.TIPWARNINGLEFT::after {				/* tooltip-flecha */
+		border-color: transparent {$pInfoWarningIni} transparent transparent;	/* flecha hacia la izquierda */
+	}
+	.TIPWARNINGLEFT::before {				/* el borde */
+		border-color: transparent {$pInfoWarningEnd} transparent transparent;	/* flecha hacia la izquierda */
+	}
+
+	/* tooltip - hacia la derecha */
+	.TIPWARNINGRIGHT::after {						/* dentro */
+		border-color:transparent transparent transparent {$pInfoWarningIni};	/* flecha hacia la derecha */
+	}
+	.TIPWARNINGRIGHT::before {				/* el borde */
+		border-color:transparent transparent transparent {$pInfoWarningEnd};	/* flecha hacia la derecha */
+	}
+
+	/* OK */
+
+	.TIPOK {
+		color:{$cInfoOk} !important;
+		background: {$pInfoOkIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);														/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);													/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoOkIni} 0%, {$pInfoOkEnd} 100%);														/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoOkIni}', endColorstr='{$pInfoOkEnd}', GradientType=0);	/* IE6-9 */
+	}
+
+	/* tooltip - hacia arriba */
+	.TIPOKUP::after {					/* tooltip-flecha */
+		border-color:transparent transparent {$pInfoOkIni} transparent;	/* flecha hacia arriba */
+	}
+	.TIPOKUP::before {				/* el borde */
+		border-color:transparent transparent {$pInfoOkEnd} transparent;	/* flecha hacia arriba */
+	}
+
+	/*  tooltip - hacia abajo */
+	.TIPOKDOWN::after {
+		border-color:{$pInfoOkIni} transparent transparent transparent;	/* flecha hacia abajo */
+	}
+	.TIPOKDOWN::before {				/* el borde */
+		border-color:{$pInfoOkEnd} transparent transparent transparent;	/* flecha hacia abajo */
+	}
+
+	/* tooltip - hacia la izquierda */
+	.TIPOKLEFT::after {				/* tooltip-flecha */
+		border-color: transparent {$pInfoOkIni} transparent transparent;	/* flecha hacia la izquierda */
+	}
+	.TIPOKLEFT::before {				/* el borde */
+		border-color: transparent {$pInfoOkEnd} transparent transparent;	/* flecha hacia la izquierda */
+	}
+
+	/* tooltip - hacia la derecha */
+	.TIPOKRIGHT::after {						/* dentro */
+		border-color:transparent transparent transparent {$pInfoOkIni};	/* flecha hacia la derecha */
+	}
+	.TIPOKRIGHT::before {				/* el borde */
+		border-color:transparent transparent transparent {$pInfoOkEnd};	/* flecha hacia la derecha */
+	}
+
+	/* tablas dentro del TIP */
+
+	.TIP .INFOTABLE {
+		background-color:#7f7f7f;
+	}
+	.TIP .INFOTABLE th {
+		background-color:#e4e4e4;
+		padding:{%1}px {%3}px {%1}px {%3}px;
+	}
+	.TIP .INFOTABLE td {
+		background-color:#ffffff;
+		padding:{%1}px {%3}px {%1}px {%3}px;
+	}
+
+/****************/
+/* SUBMENU - OK */
+/****************/
+
+	.SUBMENU {
+		BACKGROUND-COLOR:{$pSubMenu};
+		BORDER:{$bSubMenu} {%1}px solid;
+		border-spacing:0px;
+		POSITION:absolute;
+		CURSOR:default;
+		{$shadowObj}
+	}
+
+	.SUBMENU TR {
+		BACKGROUND-COLOR:{$pSubMenu};
+		COLOR:{$cSubMenu};
+		{$foption}
+		CURSOR:pointer;
+	}
+	.SUBMENU TD {
+		white-space:nowrap;
+	}
+
+	.SUBMENU TR:hover TD {
+		BACKGROUND-COLOR:{$pSubMenuCursor};
+		COLOR:{$cSubMenuCursor};
+		CURSOR:pointer;
+	}
+
+	.SUBMENU .ON {
+		BACKGROUND-COLOR:{$pSubMenuCursor};
+		COLOR:{$cSubMenuCursor};
+	}
+
+	.SUBMENU .LINEA {
+		BACKGROUND-COLOR:{$bSubMenu};
+		CURSOR:default;
+		height:{%1}px;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
+	}
+
+	.SUBMENU .TITULO {
+		BACKGROUND-COLOR:{$pSubMenuHeader};
+		COLOR:{$cSubMenuHeader};
+		CURSOR:default;
+		TEXT-ALIGN:center;
+		PADDING-LEFT:{%5}px;
+		PADDING-RIGHT:{%5}px;
+	}
+
+	.SUBMENU .SELECTED {
+	}
+
+	.SUBMENU td:nth-child(1){ text-align:center; }
+	.SUBMENU td:nth-child(2){ text-align:left; }
+	.SUBMENU td:nth-child(3){ text-align:center; }
+
+	.SUBMENU span {
+		width:100%;
+		display:flex;
+		padding-right: 15px;
+	}
+	.SUBMENU span>span {
+		width:100%;
+		padding-right: 0px;
+	}
+
+
+/*********/
+/* alert */
+/*********/
+
+	#ALERT {
+		/* visibility:hidden; */
+		CURSOR:default;
+	}
+
+	#ALERT .CAJA {
+		display:table;
+		border-collapse:separate;
+	    border-spacing:{%1}px;
+		position:absolute;
+		margin-bottom:{%5}px;
+		FONT-SIZE:{%16}px;
+		PADDING:{%5}px;
+		{$roundedBig}
+		{$shadowObj}
+		border:{$bInfo} {%1}px outset;																										/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pInfoIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoIni} 0%, {$pInfoEnd} 100%);														/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoIni} 0%, {$pInfoEnd} 100%);													/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoIni} 0%, {$pInfoEnd} 100%);														/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoIni}', endColorstr='{$pInfoEnd}', GradientType=0);	/* IE6-9 */
+	}
+
+	#ALERT TH {
+		COLOR:#5a7380;		/* Titulo */
+		FONT-SIZE:{%16}px;
+		WHITE-SPACE:nowrap;
+	    text-align:center;
+	}
+
+	#ALERT TD {
+		COLOR:#000000;		/* Descripcion */
+		FONT-SIZE:{%16}px;
+	}
+
+	#ALERT TD TD {
+		COLOR:#5a7380;		/* Label */
+	}
+	#ALERT DIV {
+		margin-right:{%7}px;
+		text-align:left;
+		white-space:nowrap;
+	}
+
+	#ALERT .BOTON SPAN {
+		COLOR:#000000;		/* Botones */
+		FONT-SIZE:{$fBase};
+		padding:{%5}px {%15}px {%5}px {%15}px;
+		margin-right:{%10}px;
+		border-collapse: separate;
+		{$roundedSmall}
+		{$shadowButton}
+		border:{$bInfo} {%1}px outset;																										/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pInfoIni};																												/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoIni} 0%, {$pInfoMid} 47%, {$pInfoEnd} 100%);								/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoIni} 0%, {$pInfoMid} 47%, {$pInfoEnd} 100%);							/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoIni} 0%, {$pInfoMid} 47%, {$pInfoEnd} 100%);								/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoIni}', endColorstr='{$pInfoEnd}', GradientType=0);	/* IE6-9 */
+	}
+	#ALERT .BOTON SPAN:hover {
+		cursor:pointer;
+		border:{$bInfoOver} {%1}px outset;																											/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fafafa+0,f1f1f1+50,e8e8e8+100 */
+		background: {$pInfoOverIni};																													/* Old browsers */
+		background: -moz-linear-gradient(top, {$pInfoOverIni} 0%, {$pInfoOverMid} 47%, {$pInfoOverEnd} 100%);							/* FF3.6-15 */
+		background: -webkit-linear-gradient(top, {$pInfoOverIni} 0%, {$pInfoOverMid} 47%, {$pInfoOverEnd} 100%);						/* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, {$pInfoOverIni} 0%, {$pInfoOverMid} 47%, {$pInfoOverEnd} 100%);							/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='{$pInfoOverIni}', endColorstr='{$pInfoOverEnd}', GradientType=0);	/* IE6-9 */
+	}
+
+	#ALERT .BOTON SPAN I {
+		COLOR:{$cIcon};		/* icono en los botones #5a7380 */
+	}
+
+	#ALERT .BOTON INPUT {
+		BACKGROUND-COLOR:#b4c7d0;
+		COLOR:#000000;		/* Botones */
+		CURSOR:hand;
+		FONT-SIZE:{%12}px;
+	}
+
+	#ALERT IMG {
+		MARGIN:{%10}px;
+	}
+
+	#ALERT .CAJA .GRID {
+	}
+	#ALERT .CAJA .GRID TH, #ALERT .CAJA .GRID TD {
+		font-size:{%12}px;
+		padding:{%1}px {%2}px {%1}px {%2}px;
+	}
+	#ALERT .CAJA .GRID THEAD {
+		background-color:#e4e4e4;
+	}
+	#ALERT .CAJA .GRID TBODY {
+		background-color:#ffffff;
+	}
+	#ALERT .CAJA .GRID TFOOT {
+		background-color:#e4e4e4;
+	}
+
+	#ALERT .CAJA .INFO {
+		border-collapse:collapse;
+	}
+	#ALERT .CAJA .INFO TH, #ALERT .CAJA .INFO TD {
+		font-size:{%12}px;
+		padding:{%1}px {%2}px {%1}px {%2}px;
+	}
+	#ALERT .CAJA .INFO THEAD {
+	}
+	#ALERT .CAJA .INFO TBODY {
+	}
+	#ALERT .CAJA .INFO TFOOT {
+	}
+	#ALERT input[type=checkbox] {
+		display:block;
+	}
+
+/**********/
+/* WINDOW */
+/**********/
+
+	.WINDOWS {
+		cursor:pointer;
+	}
+	.OFF {
+		opacity:0.5;
+		filter:alpha(opacity:50);
+		cursor:default;
+	}
+	.NOCLICK {
+		pointer-events:none;
+	}
+	.TRANSPARENT {
+		opacity:0.1;
+		filter:alpha(opacity:10);
+		cursor:default;
+	}
+
+	.WINDOWLOADING {
+		visibility:hidden;
+		border:{%1}px solid {$bWin};
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:100%;
+		height:100%;
+		cursor:default;
+		BACKGROUND-COLOR:{$pWin};
+		{$roundedSmall}
+	}
+
+	.WINDOW {
+		BACKGROUND-COLOR:{$pWin};
+		position:absolute;
+		left:0px;
+		top:0px;
+		z-index:100;
+		border:{%1}px solid {$bWin};
+		padding:0px {%5}px {%2}px {%2}px;
+		{$shadowWin}
+		{$roundedSmall}
+	}
+	.WINDOW TABLE {
+		border-collapse:collapse;
+	}
+	.WINDOW .CAPTION {
+		BACKGROUND-COLOR:{$pWin};
+		color:{$cWin};
+		white-space:nowrap;
+		cursor:default;
+		border-bottom:{%1}px solid {$bWin};
+	}
+	.WINDOW .CAPTION I {
+		margin-left:2px;
+		color: {$cIconWin};
+	}
+
+	.WINDOW .CAPTION DIV {
+		font-size:120%;
+		width:100%;
+		overflow:hidden;
+		float:left;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		text-align:center;
+	}
+
+	.WINDOW IMG {
+		cursor:pointer;
+	}
+	.WINDOW .CONTAINER {
+		border:{%1}px solid {$bWin};
+	}
+
+/****************/
+/* Loading - OK */
+/****************/
+
+	.loader {
+		border:{%5}px solid {$bIconLoading};		/* papel - gris */
+		border-top:{%5}px solid {$cIconLoading};	/* color - azul */
+		border-radius:50%;
+		width:{%30}px;
+		height:{%30}px;
+		animation:spin 2s linear infinite;
+	}
+	@keyframes spin {
+		0% { transform:rotate(0deg); }
+		100% { transform:rotate(360deg); }
+	}
+	.ICONLOADING {
+		animation:spin 2s linear infinite;
+		animation-direction: reverse;
+		font-family:eDes;
+		display:none;
+		position:absolute;
+		left:0px;
+		top:0px;
+		z-index:55;
+		color:{$cIconLoading};
+	}
+
+/*********/
+/* TREE2 */
+/*********/
+
+	.TREE2 {
+		border:{$bSubMenu} {%1}px solid;
+		display:inline-block;					/* float:left; */
+		color:{$cSubWin};
+		BACKGROUND-COLOR:{$pSubWin};
+	}
+
+	.TREE2 ul { 
+		list-style-type:none;
+		padding-right:{%10}px;					/* distancia subopciones a las opciones nivel _ */
+	}
+
+	.TREE2 input[type=checkbox] {
+		display:none;
+	}
+
+	.TREE2 input[type=checkbox] ~ ul { 
+		max-height:0px;
+		max-width:0px;
+		/* opacity:0; */
+		overflow:hidden;
+		white-space:nowrap;
+		-webkit-transition:all .2s ease;  
+		-moz-transition:all .2s ease;  
+		-o-transition:all .2s ease;  
+		transition:all .2s ease;  
+		padding-left:{%20}px;					/* distancia subopciones a las opciones nivel _ */
+	}
+	.TREE2 input[type=checkbox]:checked ~ ul { 
+		max-height:100%;
+		max-width:100%;
+		margin-left:-{%33}px;					/* distancia subopciones a las opciones */
+		/* opacity:1; */
+	}
+	.TREE2_LI {
+		padding-left:{%32}px;					/* distancia subopciones a las opciones nivel 2 */
+	}
+	.TREE2 input[type=checkbox] + label:before{
+		transform-origin:25% 50%;
+		-ms-transform-origin:25% 50%;		/* IE 9 */
+		-webkit-transform-origin:25% 50%;	/* Chrome, Safari, Opera */
+		border:{%8}px solid transparent;		/* �? */
+		border-width:{%6}px {%9}px;				/* ancho x alto */
+		border-left-color:{$bSubWin};	/* color flecha */
+		margin-left:-{%50}px;					/* distancia exterior a la flecha */
+		width:0px;
+		height:0px;
+		display:inline-block;
+		text-align:center;
+		content:'';						/* color:#AAAFAB; */
+		-webkit-transition:all .1s ease;  
+		-moz-transition:all .1s ease;  
+		-o-transition:all .1s ease;  
+		transition:all .1s ease; 
+		-position:absolute;
+		margin-top:0px;						/* {%4}px */
+		padding-left:0px;					/* distancia de la flecha al label */
+	}
+	.TREE2 input[type=checkbox]:checked + label:before {
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg);		/* IE 9 */
+		-webkit-transform:rotate(90deg);	/* Chrome, Safari, Opera */
+	}
+	.TREE2 li, .TREE2 li label {
+		cursor:pointer;
+	}
+	.TREE2 li[op]:hover {
+		BACKGROUND-COLOR:{$pCursor};
+		COLOR:{$cCursor};
+		/* opacity:0.7; */
+	}
+	.TREE2 > UL > LI + label {
+	}
+	.TREE2 .MAS {
+		/* margin-left:{%4}px; */
+	}
+	.TREE2 HR {
+		background-color:{$pSubWin};
+		height:{%1}px;
+		font-size:{%1}px;
+		border:0px;
+	}
+	.TREE2 .TITLE, .TREE2:hover .TITLE:hover {
+		BACKGROUND-COLOR:{$pSubMenuHeader};
+		COLOR:{$cSubMenuHeader};
+		cursor:default;
+	}
+
+/********/
+/* TREE */
+/********/
+
+	.TREE {
+		color:{$cSubWin};
+		BACKGROUND-COLOR:{$pSubWin};
+		border:{$bSubMenu} {%1}px solid;
+		POSITION:absolute;
+		CURSOR:default;
+		font-size:{%12}px;
+		white-space:nowrap;
+		{$shadowObj}
+	}
+	.TREE TABLE {
+		width:100%;
+		border-spacing:0px;
+	}
+	.TREE TR {
+		BACKGROUND-COLOR:{$pSubWin};
+		COLOR:{$cSubWin};
+		font-weight:normal;
+		CURSOR:pointer;
+	}
+
+	.TREE TR:hover {
+		BACKGROUND-COLOR:{$pCursor};
+		COLOR:{$cCursor};
+	}
+
+	.TREE .ON {
+		BACKGROUND-COLOR:{$pSelected};
+		COLOR:{$cSelected};
+	}
+
+	.TREE .LINEA {
+		BACKGROUND-COLOR:{$bSubMenu};
+		CURSOR:default;
+		height:{%1}px;
+		margin:0px 0px 0px 0px;
+		padding:0px 0px 0px 0px;
+	}
+
+	.TREE .TITULO {
+		BACKGROUND-COLOR:{$pSubMenuHeader};
+		COLOR:{$cSubMenuHeader};
+		FONT-WEIGHT:normal;
+		CURSOR:default;
+		TEXT-ALIGN:center;
+		PADDING-LEFT:{%5}px;
+		PADDING-RIGHT:{%5}px;
+	}
+	.TREE .TAB {
+		padding:0px 0px 0px {%15}px;
+		BACKGROUND-COLOR:{$pSubWin};
+		CURSOR:default;
+	}
+	.TREE .TAB_ICON {
+		padding:0px 0px 0px {%30}px;
+		BACKGROUND-COLOR:{$pSubWin};
+		CURSOR:default;
+	}
+	.TREE > TABLE TABLE {
+		width:100%;
+	}
+	.TREE .UnPX {
+		width:{%1}px;
+	}
+
+/**************/
+/* Calendario - schedule - calendar */
+/**************/
+
+	.CALENDAR {
+		border-width: 0px;
+		position:absolute;
+		top:0px;
+		left:0px;
+		{$shadowObj}
+	}
+
+	.CALENDAR TABLE {
+		BACKGROUND-COLOR:{$bTab};
+	}
+
+	.CALENDAR TH {
+		{$fSubListHeader}
+		background-color:{$pListHeader};
+		color:{$cListHeader};
+		TEXT-ALIGN:center;
+		cursor:default;
+	}
+	.CALENDAR TD {
+		{$fSubListData}
+		TEXT-ALIGN:right;
+	}
+	.CALENDAR .OFF {
+		opacity:0.3;
+		filter:alpha(opacity:30);
+	}
+	.CALENDAR .TODAY {
+		color:red;
+	}
+	.CALENDAR .INPUTDAY {
+		text-decoration:underline;
+	}
+	.CALENDAR .WEEKEND {
+		BACKGROUND-COLOR:{$pGreenBar};
+		COLOR:{$cGreenBar};
+	}
+	
+	.CALENDAR INPUT {
+	    border-style: none;
+	    padding-left:{%2}px;
+	    margin-bottom:{%3}px;
+		margin-top: {%3}px;
+	}
+	.CALENDAR TD, .CALENDAR INPUT, .CALENDAR button {
+		color:{$cListData};
+	}
+	.CALENDAR TR {
+		BACKGROUND-COLOR:{$pText};
+	}
+	.CALENDAR TABLE TFOOT TABLE TD {
+		BACKGROUND-COLOR:{$pText};
+	}
+
+	#DivCALENMONTH TFOOT TABLE TD {					/* calendario de meses, centrar botones */
+		text-align:center;
+	}
+
+/**********/
+/* ICONOS */
+/**********/
+
+	.ICON {						/* ICONINPUT  */
+		font-family:eDes;
+		font-style:normal;
+		font-size:{%18}px;
+		color:{$cIcon};
+		cursor:pointer;
+		vertical-align:middle;
+		margin-left:{%2}px;
+	}
+
+	.ICON .CALEND:before {
+		content:",";
+	}
+	.ICON .CALEND::before {
+		content:",";
+	}
+	.SLIDER:before {
+		font-family:eDes;
+		font-style:normal;
+		font-size:{%18}px;
+		content:"s";
+		color:{$cIcon};
+		cursor:pointer;
+		vertical-align:middle;
+		margin-left:{%2}px;
+	}
+
+/*****************/
+/* Listados - OK */
+/*****************/
+
+	.BROWSE {
+		BACKGROUND-COLOR:{$cListGrid};		/* Linea entre celdas */
+		{$fdata}
+	}
+
+	.BROWSE TR {
+		BACKGROUND-COLOR:{$pListData};
+		COLOR:{$cListData};
+	}
+
+	.BROWSE TH {
+		BACKGROUND-COLOR:{$pListHeader};
+		COLOR:{$cListHeader};
+		CURSOR:pointer;
+		{$fheader}
+	}
+
+	.BROWSE TH I {
+		BACKGROUND-COLOR:{$pListHeader};
+		COLOR:{$cListHeader};
+		CURSOR:pointer;
+		margin-left:0px;
+	}
+
+	.BROWSE TH, .BROWSE TD {
+		WHITE-SPACE:nowrap;
+	}
+
+	.BROWSE>TBODY>TR>TD {
+		VERTICAL-ALIGN:top;
+	}
+
+	.BROWSE .PieLista TD {
+		BACKGROUND-COLOR:{$pListTotal} !important;		/* fila de totales */
+		COLOR:{$cListTotal} !important;
+	}
+
+	.BROWSE #p {
+		BACKGROUND-COLOR:{$pListTotal} !important;		/* fila de totales */
+		COLOR:{$cListTotal} !important;
+	}
+
+	.GrupoPieLista .PieLista TD {				/* si hay grupos en un informe */
+		font-weight:bold !important;
+	}
+
+	.Pie {
+		COLOR:{$cPagination};
+		{$fdata}
+		display:block;
+		CURSOR:default;
+		MARGIN-TOP:{%7}px;
+	}
+
+	.BROWSE .SEEK {
+		BACKGROUND-COLOR:{$pListDataFound};		/* al buscar texto en el listado */
+		COLOR:{$cListDataFound};
+	}
+
+	.GREENBAR TBODY TR:nth-child(even) {
+		BACKGROUND-COLOR:{$pListGreenbar};
+		COLOR:{$cListGreenbar};
+	}
+
+	.BROWSE TBODY TR[eMark]>TD {
+		BACKGROUND-COLOR:{$pListGreenbar};
+		COLOR:{$cListGreenbar};
+	}
+
+	.BROWSE TBODY TR:hover>TD {
+		BACKGROUND-COLOR:{$pListCursor} !important;
+		COLOR:{$cListCursor} !important;
+	}
+
+	.ISubListBODY .BROWSE TD {
+		{$fSubListData}
+		padding:{%1}px {%1}px;
+	}
+	.ISubListBODY .BROWSE TH {
+		{$fSubListHeader}
+		padding:{%1}px {%1}px;
+	}
+	.ISubListBODY #PieLista {
+		BACKGROUND-COLOR:{$pSubListTotal};
+		COLOR:{$cSubListTotal};
+	}
+	.ISubListBODY #p {
+		BACKGROUND-COLOR:{$pSubListTotal};
+		COLOR:{$cSubListTotal};
+	}
+	.ISubListBODY .BROWSE I {
+		{$fSubListIcon}
+		font-size:70%;
+		margin-left:{%3}px;
+	}
+
+	#SubListSort .BROWSE > I {		/* para {slSort} en SubVentana */
+		{$fSubListIcon}
+	}
+
+	.HTML_IN_TD I {					/* mostrar html enriquecido */
+		{$fontFamily}
+		font-style: italic;
+	}
+	.HTML_IN_TD #CNT {	
+		white-space: inherit !important;
+	}
+
+/****************/
+/* TOOLBAR - OK */
+/****************/
+
+	.TOOLBAR {
+		BACKGROUND-COLOR:{$pSubMenu};
+		BORDER:{$bSubMenu} {%1}px solid;
+		DISPLAY:none;
+		BORDER-SPACING:0px;
+		POSITION:absolute;
+		CURSOR:default;
+		{$shadowObj}
+		{$roundedSmall}
+	}
+	
+	.TOOLBAR TABLE {
+		display:table;
+		border-collapse:collapse;
+	}
+
+	.TOOLBAR TR {
+		BACKGROUND-COLOR:{$pSubMenu};
+		COLOR:{$cSubMenu};
+		CURSOR:pointer;
+		{$ftext}
+	}
+	.TOOLBAR .TITULO {
+		BACKGROUND-COLOR:{$pSubMenuHeader};
+		COLOR:{$cSubMenuHeader};
+		CURSOR:default;
+		TEXT-ALIGN:center;
+		PADDING-LEFT:{%5}px;
+		PADDING-RIGHT:{%5}px;
+		PADDING-TOP:0px;
+		{$ftext}
+	}
+	.TOOLBAR .TITULO TD I {
+		color:{$iSubMenu};
+	}
+	.TOOLBAR .ICONTAB .ICONWINDOW {
+		color:{$cIcon};
+	}
+
+	.TOOLBAR INPUT {
+		border:{%1}px solid {$bInput};
+	}
+
+	.TOOLBAR .BROWSE {
+		background-color:{$bSubMenu};
+	}
+
+	.TOOLBAR .BROWSE TR:hover {
+		BACKGROUND-COLOR:{$pSubMenu};
+		COLOR:{$cSubMenu};
+	}
+
+/******************/
+/* PROGRESSUPLOAD */
+/******************/
+
+	.PROGRESSUPLOAD {
+		border-radius:{%5}px;
+		width:{%200}px;
+		height:14px;
+		border:{%1}px solid #aaaaaa;
+		background-color:#dbdbdb;
+		position:fixed;
+		left:{%25}px;
+		bottom:{%25}px;
+		z-index:90000;
+		display:none;
+		cursor:default;
+	}
+	#PROGRESSVALUE {
+		height:14px;
+		width:{%120}px;
+		background-color:#009900;
+		text-align:center;
+		border-radius:{%3}px;
+		display:block;
+	}
+	#PROGRESSNUMBER {
+		font-size:14px;
+		width:100%;
+		height:14px;
+		border:none;
+		text-align:center;
+		color:#ffffff;
+		position:relative;
+		top:-14px;
+		display:block;
+	}
+	#PROGRESFILE {
+		position:relative;
+		top:-29px;
+		left:{%205}px;
+		font-size:14px;
+		display:block;
+		white-space: nowrap;
+	}
+
+/******************/
+/* PROGRESSCIRCLE */
+/******************/
+
+	#PROGRESSCIRCLE {
+		border-radius:{%20}px;
+		width:{%40}px;
+		height:{%40}px;
+		border:{%1}px solid #cccccc;
+		background-color:#009900;
+		position:fixed;
+		left:{%25}px;
+		bottom:{%25}px;
+		z-index:10000;
+		text-align:center;
+		display:none;
+		cursor:default;
+	}
+	#PROGRESSCIRCLEVALUE {
+		border:none;
+		text-align:center;
+		color:#ffffff;
+		width:100%;
+		position:relative;
+		top:{%14}px;
+	}
+
+/*********************/
+/* Barra de Progreso */
+/*********************/
+
+	#PROGRESS {
+		BORDER-BOTTOM: #789aab {%1}px outset;
+		BORDER-LEFT: #789aab {%1}px outset;
+		BORDER-RIGHT: #789aab {%1}px outset;
+		BORDER-TOP: #789aab {%1}px outset;
+		position: absolute;
+		CURSOR: default;
+		PADDING-BOTTOM: {%5}px;
+		PADDING-LEFT: {%5}px;
+		PADDING-RIGHT: {%5}px;
+		PADDING-TOP: {%5}px;
+		WIDTH: {%300}px;		/* Ancho del contenedor */
+		BACKGROUND-COLOR: rgba(221,229,234,1);
+		background: -moz-linear-gradient(left, rgba(221,229,234,1) 0%, rgba(255,251,231,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(221,229,234,1)), color-stop(100%, rgba(255,251,231,1)));
+		background: -webkit-linear-gradient(left, rgba(221,229,234,1) 0%, rgba(255,251,231,1) 100%);
+		background: -o-linear-gradient(left, rgba(221,229,234,1) 0%, rgba(255,251,231,1) 100%);
+		background: -ms-linear-gradient(left, rgba(221,229,234,1) 0%, rgba(255,251,231,1) 100%);
+		background: linear-gradient(to right, rgba(221,229,234,1) 0%, rgba(255,251,231,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dde5ea', endColorstr='#fffbe7', GradientType=1);
+	}
+
+	#PROGRESS .progress-title {
+		COLOR: #5a7380;
+		FONT-SIZE: {%16}px;
+		FONT-WEIGHT: bold;
+		PADDING-BOTTOM: {%5}px;
+		TEXT-ALIGN: left;
+	}
+
+	#PROGRESS .progress-wrap {
+		BACKGROUND-COLOR: #bdbdbd;		/* Color fondo barra */
+		BORDER-BOTTOM: #cccccc {%1}px solid;
+		BORDER-LEFT: #cccccc {%1}px solid;
+		BORDER-RIGHT: #cccccc {%1}px solid;
+		BORDER-TOP: #cccccc {%1}px solid;
+		HEIGHT: {%20}px;
+		MARGIN: 0px auto;
+		POSITION: relative;
+		TEXT-ALIGN: left;
+		WIDTH: {%300}px;		/* Ancho de la barra */
+	}
+
+	#PROGRESS .progress-value {
+		BACKGROUND-COLOR: #172125;		/* Color progresion */
+		HEIGHT: {%20}px;
+		WIDTH: 100%;
+	}
+
+	#PROGRESS .progress-text {
+		COLOR: #5f8497;		/* Color del valor porcentual */
+		FONT-SIZE: {%14}px;
+		FONT-WEIGHT: bold;
+		HEIGHT: {%20}px;
+		LEFT: 0px;
+		PADDING-TOP: {%1}px;
+		POSITION: absolute;
+		TEXT-ALIGN: center;
+		TOP: 0px;
+		WIDTH: 100%;
+	}
+
+	#PROGRESS .Detail {
+		COLOR: #777777;
+		FONT-SIZE: {%12}px;
+		PADDING-TOP: {%5}px;
+	}
+
+/**********/
+/* CSSAdd */
+/**********/
+{$CSSADD}
+
+/********/
+/* HELP */
+/********/
+	.HELP * {
+	}
+	.HELP > i {
+		font-family:inherit;
+		font-style:italic;
+	}
+	.HELP H1 {
+		font-size: 2.25em;
+		line-height: 1.2;
+	}
+	.HELP H2 {
+		font-size: 1.75em;
+		line-height: 1.225;
+	}
+	.HELP H3 {
+		font-size: 1.5em;
+		line-height: 1.43;
+	}
+	.HELP H4 {
+		font-size: 1.25em;
+	}
+	.HELP H5 {
+		font-size: 1em;
+	}
+	.HELP H6 {
+		font-size: 1em;
+		color: #777777;
+	}
+	.HELP A {
+		background: 0px 0px;
+		color: #4183c4;
+		text-decoration: none;
+	}
+	.HELP CODE {
+		margin-left: 5px;
+		margin-right: 4px;
+		box-sizing: border-box;
+		color: #999999;
+		background: #eeeeee;
+	}
+	.HELP TABLE {
+		display: table;
+		color:#333333;
+		background-color:#dddddd;
+		border-collapse: separate;
+		border-spacing: 1px;
+		width: 100%;
+		overflow: auto;
+		word-break: keep-all;
+	}
+	.HELP TH {
+		box-sizing: border-box;
+		display: table-cell;
+		color:#333333;
+		background-color:#f8f8f8;
+		padding: 6px 13px 6px, 13px;
+	}
+	.HELP TD {
+		box-sizing: border-box;
+		display: table-cell;
+		color:#333333;
+		background-color: #ffffff;
+		padding: 6px 13px 6px, 13px;
+	}
+	.HELP TBODY TR:nth-child(even) {
+		background-color:#f8f8f8;
+	}

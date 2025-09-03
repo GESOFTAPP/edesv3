@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">9. Condición del campo</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">Marca una condición sobre el campo.<br /><br />- Si ponemos sólo un<span style="color: #ff0080;"> "#"</span> se obliga a meter el campo.  <br />- Si ponemos sólo un<span style="color: #ff0080;"> "="</span> se obliga a rellenarlo completamente.<br />- Si ponemos sólo un <span style="color: #ff0080;">"%"</span> el campo tendrá que estar vacío o completamente relleno.<br />- Si ponemos una condición, donde encuentre el <span style="color: #ff0080;">"#"</span> lo sustituirá por el valor actual del campo. Ejemplo: <span style="color: #ff0080;">"# > 100"</span> ( si queremos poner 'or' no podremos utilizar la forma "<span style="color: #ff0080;">||</span>" ) .<br />- Por defecto las condiciones actuan sobre los modos "a" y "mR" pero si se quiere que actue sobre los modos "c", "m" o "b" se separaría las condiciones con el carácter "\" quedando la condición normal a la izquierda y a la derecha la condición para los modos  "c", "m", "b" o "?". Si la etiqueta [Field] su modo solo es de consulta si tendrá encuenta la condición sin necesidad del separador "\".<br /><br />El tipo de condición <span style="color: #ff0080;">"="</span> o <span style="color: #ff0080;">"%"</span> por defecto en los listados centrarán los datos en sus columnas.<br /> <br />Existen otras formas de marcar condiciones, como son las etiquetas <span style="color: #ff0080;">[JSCheck], [FormCkeck].<br /><br /></span>El campo tipo "<strong>Periodo</strong>" se puede condicionar de la siguiente forma:<br />Con "#" indicamos que es obligatorio pero si a la vez queremos definir un rango de periodos le pondremos el carácter "/" y a continuación el rango de periodos, este se puede definir de la siguiente forma:<br />[Desde] [,[Hasta] [, [MesesSeleccionables] ] ]<br />Tanto "Desde" como "Hasta" puede ser:<br />- "": Cadena vacía para indicar sin límite en este parámetro<br />- "AAAA": Indica el año<br />- "AAAA-MM": identifica el periodo<br />- FunctionUser(): hace la llamada a una función de usuario que deverá devolver uno de los valores anteriores obteniendo el valor en la posición que se encuentra excepto que si solo hay una unción si devuelve una cadena será del parámetro "Desde" y si devuelve un array se obtendrán los tres parámetros.<br />- El año se puede sustituir por "YEAR" y el mes por "MONTH".<br />- A la vez podremos sumar o restar numeros de años o meses poniendolo entre parentesis ej: "(YEAR-5)-01", "(YEAR-5)-(MONTH+2)", etc.<br />- También se puede pasar dos periodos separados por una "/" tomando el valor mayor en caso de "Desde" y el menor en caso de "Hasta" como: "(YEAR-5)/2007".<br />- El dato "MesesSeleccionables" es una lista de nº de meses seleccionables separados por "," por defecto son todos, ej: "01,04,07,10"<br /><br /><span style="font-family: Courier;">[Fields]<br />   Peiodo | periodo | P4 | T | 7  || MP || #/2010-03, PeriodoHasta(), Meses()              | <br />   Peiodo | periodo | P4 | T | 7  || MP || #/(YEAR-10)-01, PeriodoHasta(), Meses()         | <br />   Peiodo | periodo | P4 | T | 7  || MP || #/Todo()                                        | <br />   Peiodo | periodo | P4 | T | 7  || MP || #                                               | <br />   Fecha  | fecha2  | F4 | T | 10 || MF || #/YEAR-MONTH-DAY, (YEAR+3)-MONTH-DAY, 0,1,2,3,4 | <br />   Fecha  | fecha2  | F4 | T | 10 || MF || YEAR-01                                         | </span><br /><br /><span style="font-family: Courier;">[PHPIni] ?,a,mR || unique<br />function PeriodoHasta(){<br />   return '2014-02';<br />}<br />function Meses(){<br />   return '1,4,7,10';<br />}<br />function Todo(){<br />   return array( 2003, '2015-12', '2,4,6,8,10' );<br />}<br /></span><br />En campo tipo "<strong>Fecha</strong>" se define igual que el tipo "Periodo" pero se añade la constante "DAY" y el tercer parámetro es una lista de nº de día de la semana seleccionable, por defecto son todos, del 0 al 6 siendo el 0 el lunes. En el campo fecha hay que definir las fechas completas.<br /><br /></td>
+</tr>
+<tr style="display: none;">
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> </td>
+</tr>
+<tr style="display: none;">
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">&nbsp;</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,285 @@
+[PHPIni]A
+$_POST['pass'] = eFileGetVar("Login.ClaveReset");
+[DBIni]A
+$_EMailSystem = SETUP::$System['EMailSystem'];
+eFileGetVar("Login", true);
+$cmp = $Type;
+if($cmp=="") $cmp= "email";
+if( $cmp!="login" ){
+$_JSCHECK .= "S(':login').val(S(':{$cmp}').val());";
+$_pField["login"][_MODE] = '*';
+}
+$_pField[$cmp][_CONDITION] = '#';
+if( $UserPasswordByEmail && $_vF['email']!='' && $_EMailSystem!='' ){
+$str = "ABCDEFGHJKLMNPQRSTUVWXYZ123456789";
+$LonClave = 6;
+$MinNum = 2;
+$MinChr = 2;
+$nMinNum = 0;
+$nMinChr = 0;
+if( $min_password > $LonClave ) $LonClave = $min_password;
+switch( $key_case ){
+case '0':
+break;
+case '1':
+$str = mb_strtolower($str);
+break;
+case '2':
+$str .= "abcdefghijklmnpqrstuvwxyz";
+break;
+}
+while( $nMinNum<$MinNum || $nMinChr<$MinChr ){
+$nMinNum = 0;
+$nMinChr = 0;
+$Pass = "";
+for( $i=0; $i<$LonClave; $i++ ){
+$c = mb_substr($str,rand(0,mb_strlen($str)-1),1);
+$Pass .= $c;
+if( is_numeric($c) ){
+$nMinNum++;
+}else{
+$nMinChr++;
+}
+}
+}
+$txt = '@Nueva clave@: '.$Pass;
+if( file_exists(eScript('/_datos/config/user_new@LNGFILE@.html')) ){
+$txt = file_get_contents( eScript('/_datos/config/user_new@LNGFILE@.html') );
+}else if( file_exists( eScript('/_datos/config/user_new.html')) ){
+$txt = file_get_contents(eScript('/_datos/config/user_new.html'));
+}
+$txt = str_replace('{COMPANY}' , eFileGetVar("System.ApplicationName"), $txt);
+$txt = str_replace('{LOGIN}'   , $_vF['login'], $txt);
+$txt = str_replace('{PASSWORD}', $Pass, $txt);
+if( mb_substr_count($txt, "<!"."-- changeData --".">")>0 ){
+$txt = str_replace("{background}", eFileGetVar('/_datos/config/core.css->$pDesktop'), $txt);
+$txt = str_replace("{color}", eFileGetVar('/_datos/config/core.css->$cDesktop'), $txt);
+}
+if( eMail($_vF['email'], '@CLAVE DE USUARIO@', $txt, $_EMailSystem) ){
+$_vF['pass'] = mb_strtoupper(md5($Pass));
+$uNewText = '@Clave enviada por email@';
+}else{
+$uNewText = '@Clave con valor por defecto@';
+}
+}
+[DBEnd]A
+if( $uNewText!='' ) $_MSGANSWER[0] = $uNewText;
+#include(*) lng
+[PDFCol]cd_gs_node=30, cd_gs_position=0, cd_gs_office=0, email=30, cd_gs_language=0, verify_pass=0, nm_gs_node=30
+[Format]
+$index = $_pF["permission"];
+if( isset($index) ){
+if( 	  $_vF[$index]=="S" ){
+$_CellsStyle[$index] = 'green';
+}else if( $_vF[$index]=="N" ){
+$_CellsStyle[$index] = 'red';
+}else if( $_vF[$index]=="C" ){
+$_CellsStyle[$index] = 'orange';
+}
+}
+$index = $_pF["dt_del"];
+if( isset($index) ){
+if( !empty($_vF[$index]) && $_vF[$index]<date("Y-m-d") ){
+$_CellsStyle[$index] = 'color:red';
+}
+}
+[]
+[AddOption]*|desktop_type|-1,@Por defecto@; 0,@Solapas@; 1,@Vertical@; 2,@Horizontal@
+[AddOption]*|permission|,; S,@Si@; N,@No@; C,@Caducado@
+[AddOption]a|permission|S,@Si@; N,@No@
+[AddOption]?|permission|,; S,@Si@; N,@No@; C,@Caducado@; )'S'(,@Sin permiso@
+[AddOption]*|export_level|,; 1,@Básico@; 2,@Medio@; 3,@Total@; 9,@INFORMATICA@|;;;; #ffffff,#ff0000
+[AddOption]?|cd_gs_rol_exp|>0,(Perfil relleno); <,(Perfil vacío)
+¿ SETUP::$Desktop['DesktopTreeType']=='O' ? #include(*) $a/d/usu_ficha2.edf
+[Title]@USUARIO/S@|l
+[CC]#FormaSS|($_TaskStatus>0  && $_ViewDesktop==$_ENV['ON'])||SESS::$_D_!=''
+[CC]#FormaSN|!$_Variable['#FormaSS'] && (($_TaskStatus>0  && $_ViewDesktop!=$_ENV['ON'])||SESS::$_D_!='')
+[CC]#FormaNS|!$_Variable['#FormaSS'] && (($_TaskStatus==0 && $_ViewDesktop==$_ENV['ON'])||SESS::$_D_!='')
+[PHPStart]*||unique
+function uTree(){
+global $_Mode, $_Tree, $_NoContentTree;
+$Dim[] = array('','');
+if( $_NoContentTree==false && ( $_Mode=='a' || $_Mode=='mR' ) ){
+qQuery( "select cd_gs_tree,nm_gs_tree from {$_ENV['eDesDictionary']}gs_tree where permission='{$_ENV['ON']}' and
+(select count(*) from {$_ENV['eDesDictionary']}gs_op where mb_substr(subtree_opt,{$_ENV['eDesDictionary']}gs_tree.cd_gs_tree,1)='1' ) > 0 and
+(select count(*) from {$_ENV['eDesDictionary']}gs_op where mb_substr(subtree_opt,{$_Tree},1)='0' and mb_substr(subtree_opt,{$_ENV['eDesDictionary']}gs_tree.cd_gs_tree,1)='1' ) = 0
+order by nm_gs_tree" );
+}else{
+qQuery( "select cd_gs_tree,nm_gs_tree from {$_ENV['eDesDictionary']}gs_tree order by nm_gs_tree" );
+}
+while( $r=qRow() ) $Dim[] = array( $r[0], rtrim($r[1]) );
+return $Dim;
+}
+include_once($Dir_.$_Sql.'.inc');
+qQuery( "select task_status,view_desktop from {$_ENV['eDesDictionary']}gs_user where cd_gs_user={$_User}" );
+list( $_TaskStatus, $_ViewDesktop ) = qRow();
+$_TaskStatus = (int)$_TaskStatus;
+[DBTable]{$_ENV['eDesDictionary']}gs_user
+[DBIndex]cd_gs_user; login||true|user_name,user_surname|@USUARIO YA EXISTE@|BorraOrigen
+[DBOrder]user_name,user_surname
+[DBSerial]cd_gs_user
+¿ SESS::$_SystemUser!=$_ENV['ON'] ? [DBAddFilter] (system_user<>'{$_ENV['ON']}' or system_user is null or system_user='{$_ENV['OFF']}')
+[DBLimit]5000,750,750
+[DBLog]cd_gs_user
+[NoAbort]
+[Cursor]
+[TipForm]*|phone2|@Segundo Teléfono@
+[TipForm]*|ip|@Primera IP@
+[TipForm]*|ip2|@Segunda IP@
+[TipForm]*|ip_from|@IP-Inicial@
+[TipForm]*|ip_to|@IP-Final@
+[AddCode]cR|cd_gs_node|A|<span><i title='@Consultar Local@' onclick='top.eSWOpen(window,"edes.php?FcR:$a/d/nodo.edf&_SEEK&cd_gs_node="+eGF("cd_gs_node")+"&_NOBUTTON","LOCAL",false)'>&#209;</i><span style='margin-left:20px' id='_VerExplorer'>@Información@ <i title='@Datos del explorador@' onclick='VerExplorer()'>&#251;</i></span>
+#!(t1) [WhereSelect] a,mR | cd_gs_tree | cd_gs_tree!=1
+[SlideCol]3
+[OnChange]*|dni|ePadLeft(this,8)
+[ListCheckBox]H|<img src=g/tf_1.gif>
+[GroupLabels]Format|TipTH
+pc_total	| b
+new_pass	| b
+permission	|   | @Permiso@
+log_user	|   | @Log Usuario@
+log_history	|   | @Log Histórico@
+webmaster	|   | @WebMaster@
+[Fields]?|2
+@DNI@|dni|DNI|T|8||Qcpq|||
+,2 @Usuario@|cd_gs_user|+|T|5||Qq|||
+@Nombre@|user_name|X|T|20||Qd|||
+,2 @Apellidos@|user_surname|X|T|30||Q|||
+@Local@|cd_gs_node|+|S|60|+user_surname|Q|||
+@Departamento@|cd_gs_office|+|S|40|+user_surname|Q|||
+@Cargo@|cd_gs_position|+|S|30|+user_surname|Q|||
+@E-Mail@|email|@|T|65|+user_surname|Q|||
+-|@PERMISOS@|||||Q|||
+@Arbol@|cd_gs_tree|+|S|35||Q|||
+@Permiso@|permission|X|SV|11||Q|||
+,  @Nivel exportación@|export_level|+|SV|12||Q|||
+¿ SESS::$_SystemUser==$_ENV['ON'] ? ,@System·User@|system_user|D|c|1||Q|||
+¿ SESS::$_SystemUser==$_ENV['ON'] ? ,@WebMaster@|webmaster|D|c|1||Q|||
+@Perfil@|cd_gs_rol_exp|+|S|50|+user_surname|Q|||
+[CC]#ConIdioma|qCount("{$_ENV['eDesDictionary']}gs_language")>0
+[AddOptionValue]cd_gs_language|img_sel|lng_
+[Width]L|log_user|143
+[AddOption]*|verify_pass|,; E,EMail; S,SMS
+[Fields]3||trim
+#!(l)  @DNI@|dni|DNI|T|8||MLcp||#|
+,  @Usuario@|cd_gs_user|+|T|5|>user_surname|a=*; *=-|||
+#!(l) ,3 @Fecha·Alta@|dt_add|F4|T|10||-|#today#||
+@Nombre@|user_name|X|T|20||M||#|
+,  @Apellidos@|user_surname|X|T|30|+cd_gs_tree|M||#|
+,|dt_access_last|F4|T|10||*|#today#||
+#(l) @Fecha·Alta@|dt_add|F4|T|10||-|#today#||
+,3 @Fecha·Baja@|dt_del|F4|T|10||MF|||
+@Local@|cd_gs_node|+|S|60|/+cd_gs_tree|M||#|
+,3 @LOPD@|dt_confidential|F4|T|10||-L|||
+@Teléfonos@|phone|T|T|9||ML|||
+,|phone2|T|T|9||ML|||
+,  @Cargo@|cd_gs_position|+|S|30|+cd_gs_tree|M|||
+@Departamento@|cd_gs_office|+|S|40|+cd_gs_tree|M|||
+@E-Mail@|email|@|T|65|+cd_gs_tree|MLE|||
+-|@PERMISOS@
+@Login@|login|#|T|65|+cd_gs_tree|ML|||
+,  @Verificación en 2 pasos@\@2 Pasos@|verify_pass|N|SV|1|42|M|||
+@Permiso@|permission|N|SV|8||M|S|#|
+,  @Arbol@|cd_gs_tree|+|S|43||M||#|
+&#49;ª IP - 2ª IP\1ª IP|ip|X|T|15|87|M|||
+,  \2ª IP|ip2|X|T|15|87|M|||
+@IP Rango@\@IP·INI@|ip_from|X|T|15|87|M|||
+,  \@IP·FIN@|ip_to|X|T|15|87|M|||
+#!(l)  ,3 @Cambiar·clave@|new_pass|+|T|1||MS|1||
+#ConIdioma ¿
+@Idioma@|cd_gs_language|n|S|20|>user_surname/user_surname|M|@LNG@||
+?¿
+@Idioma@|cd_gs_language|n|T|20||*|@LNG@||
+?
+,2 @Nivel·Extracción@|export_level|+|SV|12||ML|0||
+,3 @WebMaster@\@WM@|webmaster|D|c|1||-||%|
+#FormaSS ¿
+?
+¿ #FormaNS ? 3 @Visor Escritorio Remoto@|view_desktop|D|C|1||ML|||
+-
+{Columns}{ 3
+@Imprimir@\<i title='@Imprimir@'>&#56;</i>|print|X|C|1||M|||
+,2 @Log Usuario@\@LU@|log_user|X|C|1||-||%|
+,3 @Log Histórico@\@LH@|log_history|X|C|1||-||%|
+@Exportar PDF@\<i title='@Exportar PDF@'>&#202;</i>|pdf|X|C|1||M|||
+,2 @Exportar Excel@\<i title='@Exportar Excel@'>&#203;</i>|excel|X|C|1||M|||
+,3 @Exportar XML@\<i title='@Exportar XML@'>&#410;</i>|xml|X|C|1||M|||
+@Exportar TXT@\<i title='@Exportar TXT@'>&#411;</i>|txt|X|C|1||M|||
+,2 @Exportar CSV@\<i title='@Exportar CSV@'>&#412;</i>|csv|X|C|1||M|||
+}
+-|@OBSERVACIONES@
+<|notes|#|A|250,90,3|+dt_del|ML|||
+|ys_news|CDI|T|19||*|#y2s#||
+#(a)|pass|D|T|32||*|||
+|system_user|||||h|||
+#(l) @Teléfonos@|phone|T|T|9||M|||
+[AddOption]*|task_status|,; 1,@Iniciar@; 2,@Enviar@; 3,@Asignar@; 4,@Desarrollo@
+[TipForm]*|task_status|@Desde que estado se crean incidencias@
+[JSCheck]a,mR
+[PHPForm]a,mR
+if( SESS::$_WebMaster==$_ENV['ON'] ) $_Form['webmaster'][6] = 'M';
+[JSIni]a,mR
+function BorraOrigen(){
+ePF("dni,email",'',false);
+}
+[PHPForm]a,mR
+global $_JSCHECK;
+eFileGetVar("Login", true);
+$cmp = $Type;
+if($cmp=="") $cmp= "email";
+if( $cmp!="login" ){
+$_JSCHECK .= "S(':login').val(S(':{$cmp}').val());";
+$_Form[array_search("login", array_column($_Form, 1))][_MODE] = '*';
+}
+$_Form[array_search($cmp, array_column($_Form, 1))][_CONDITION] = '#';
+[PHPEnd]cR
+echo '<script type="text/javascript">';
+echo 'function VerExplorer(){';
+sql_Busca("{$_ENV['eDesDictionary']}gs_conexion", '*', "cd_gs_user={$_Fila['cd_gs_user']}", 'cdi desc');
+$row = sql_Array();
+if( $row['cd_gs_navegador']!='' ){
+sql_Busca("{$_ENV['eDesDictionary']}gs_navegador", '*', "cd_gs_navegador={$row['cd_gs_navegador']}");
+$row2 = sql_Array();
+if( $row2["cd_gs_navegador"]>0 ){
+echo 'top.eSWOpen(window,"edes.php?FcR:$a/d/e_nave.edf&_SEEK&'.'cd_gs_navegador='. $row['cd_gs_navegador'].'","@WTEXPLORADOR@",false );';
+}
+}
+echo '}';
+if( $row2["cd_gs_navegador"]=="" ) echo 'S("#_VerExplorer").none();';
+echo '</script>';
+[PHPEnd]mR--
+if( $_NoContentTree==false ){
+qQuery( "select count(*) from {$_ENV['eDesDictionary']}gs_tree where permission='{$_ENV['ON']}' and cd_gs_tree='{$_vF['cd_gs_tree']}' and
+(select count(*) from {$_ENV['eDesDictionary']}gs_op where mb_substr(subtree_opt,{$_ENV['eDesDictionary']}gs_tree.cd_gs_tree,1)='1' ) > 0 and
+(select count(*) from {$_ENV['eDesDictionary']}gs_op where mb_substr(subtree_opt,{$_Tree},1)='0' and mb_substr(subtree_opt,{$_ENV['eDesDictionary']}gs_tree.cd_gs_tree,1)='1' ) = 0" );
+list( $TReg ) = qRow();
+if( $TReg==0 ){
+?>
+<script type="text/javascript">
+document.body.onload = function anonymous(){ eOp("cR"); }
+</script>
+<?PHP
+}
+}
+[PHPIni]M -NO-
+qQuery( "select cd_gs_language from {$_ENV['eDesDictionary']}gs_user where cd_gs_user={$cd_gs_user}" );
+list($cd_gs_languageBAK) = qRow();
+[DBEnd]M -NO-
+if( $cd_gs_languageBAK!=$_vF['cd_gs_language'] ){
+SESS::$_LANGUAGE_ = $_vF['cd_gs_language'];
+$_JSINCLUDEFILE = "/_tmp/php/language_set.".SESS::$_User;
+include("../../edes.v3/language_set.php");
+}
+[DBIni]M
+$_uActivarPermiso = false;
+if( $_POST["permission"]=="S" ){
+qQuery("select permission from {$_ENV['eDesDictionary']}gs_user where cd_gs_user=".$_POST["cd_gs_user"]);
+$row=qArray();
+if( $row["permission"]=="C" ) $_uActivarPermiso = true;
+}
+[DBEnd]M
+if( $_uActivarPermiso ){
+qQuery("update {$_ENV['eDesDictionary']}gs_user set dt_access_last='' where cd_gs_user=".$_POST["cd_gs_user"]);
+}
+[DBEnd]A
+S::userInsert($_vF, "@Usuario no insertado@");

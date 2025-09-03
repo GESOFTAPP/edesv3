@@ -1,0 +1,201 @@
+[Language] es,ca,en,fr
+2|Insertar|Inserir|Insert|Insertar
+3|Borrar|Esborrar|Delete|Borrar
+4|Recuperar de papelera|Recuperar de paperera|Recover from trash|Recuperar de papelera
+5|Enviar a papelera|Enviar a paperera|Send to trash|Enviar a papelera
+6|Nueva Consulta|Nova Consulta|New search|Nueva Consulta
+7|Modificar|Modificar|Modify|Modificar
+8|Buscar|Buscar|Search|Buscar
+10|Click Izq: Resultado de la búsqueda\nClick Izq [ctrl]: Resultado de la búsqueda en una subventana\nClick Dch: Ficha de búsqueda   listado de resultados|Clic ESQ: Resultat de la cerca\nClic ESQ [ctrl]: Resultat de la cerca en una subfinestra\nClic DRET: Fitxa de cerca   llistat de resultats|Click Left: Search result\nClick Left [ctrl]: Search result in a subwindow\nClick Right: Search tab   list of results|Click Izq: Resultado de la búsqueda\nClick Dcha: Ficha de búsqueda lista de resultados
+12|Limpiar datos|Netejar dades|Clear data|Limpiar datos
+13|Click Izq: Consultar|Clic ESQ: Consultar|Click Left: Consult|Click Izq: Consultar
+14|Click Dch: Buscar para Consultar|Clic DRET: Buscar per Consultar|Click Right: Search to Consult|Click Dcha: Buscar para Consultar
+15|Click Izq: Modificar|Clic ESQ: Modificar|Click Left: Modify|Click Izq: Modificar
+16|Click Dch: Buscar para Modificar|Click DRET: Buscar per Modificar|Click Right: Search to Modify|Click Dcha: Buscar para Modificar
+17|Click Izq: Borrar|Clic ESQ: Esborrar|Click Left: Delete|Click Izq: Borrar
+18|Click Dch: Buscar para Borrar|Clic DRET: Buscar per Esborrar|Click Right: Search to Delete|Click Dcha: Buscar para Borrar
+19|Insertar|Inserir|Insert|Insertar
+20|Log de Usuarios|Log d´Usuaris|Users Log|Log de Usuarios
+21|Otros datos|Altres dades|Other data|Otros datos
+22|Histórico de Movimientos|Històric de Moviments|History of Movements|Histórico de Movimientos
+24|Menú de acceso rápido||Quick access menu|
+25|Cerrar ventana|Tancar finestra|Close window|Cerrar ventana
+26|Ver fichero|Veure fitxer|View file|Ver fichero
+27|Calendario|Calendari|Calendar|Calendario
+28|Correo electrónico|Correu electrònic|Email|Correo electrónico
+29|Web|Web|Web|Web
+30|Corrector ortográfico|Corrector ortogràfic|Speller|Corrector ortográfico
+31|Imprimir documento\n(del servidor)|Imprimir document\n(del servidor)|Print document\n(from server)|Imprimir documento\n(del servidor)
+32|Examinar...|Examinar...|Examine...|Examinar...
+33|Seleccionar fichero|Seleccionar fitxer|Select file|Seleccionar fichero
+34|Ver documento\n(del PC)|Veure document\n(del PC)|View document\n(from PC)|Ver documento\n(del PC)
+35|(del PC)|(del PC)|(PC's)|(del PC)
+36|Ver documento\n(del servidor)|Veure document\n(del servidor)|View document\n(from server)|Ver documento\n(del servidor)
+37|(del servidor)|(del servidor)|(server's)|(del servidor)
+38|Borrar documento\n(del servidor)|Esborrar document\n(del servidor)|Delete document\n(from server)|Borrar documento\n(del servidor)
+39|Modificar documento\n(del servidor)|Modificar document\n(del servidor)|Modify document\n(from server)|Modificar documento\n(del servidor)
+40|Imprimir documento\n(del servidor)|Imprimir document\n(del servidor)|Print document\n(from server)|Imprimir documento\n(del servidor)
+41|Escanear documento|Escanejar document|Scan document|Escanear documento
+42|Borrar entrada|Esborrar entrada|Delete entry|Borrar entrada
+43|Añadir Entrada|Afegir Entrada|Add entry|Añadir Entrada
+44|Desactiva el select|Desactiva el select|Disable select|Desactiva el select
+45|Calendario|Calendari|Calendar|Calendario
+46|Buscar|Buscar|Search|Buscar
+47|Seleccionar palabras clave|Seleccionar paraules clau|Select key words|Seleccionar palabras clave
+48|Copiar|Copiar|Copy|Copiar
+49|Pegar|Pegar|Paste|Pegar
+50|Fijar valor por defecto|Fixar valor per defecte|Set value by default|Fijar valor por defecto
+51|Memorizar|Memoritzar|Memorize|Memorizar
+52|Copiar del exterior|Copiar de l´exterior|Copy from the exterior|Copiar del exterior
+53|Error en el modo "#"|ERROR en la Manera "#"|Error in the "#" mode|ERROR en el Modo "#"
+54|Error:<br>Objeto "#" no encontrado|ERROR:<br>Objecte "#" no oposat|Error:<br>Item "#" not found|ERROR:<br>Objeto "#" no encontrado
+55|El tamaño máximo por fichero excede la configuración: # Bytes|La grandària màxima per fitxer excedeix la configuració: # Bytes|The maximum size for the data file surpass the configuration: # Bytes|El tamaño máximo por fichero excede la configuración: # Bytes
+56|Ver fichero|Veure Fitxer|View file|Ver Fichero
+57|Error:<br>El parámetro "#" solo puede usarse con indices de un solo campo|ERROR:<BR>El paràmetre "#" solament pot usar-se amb índexs d´un sol camp|Error:<br>The parameter "#" can only be used with just one field indexes|ERROR:<BR>El parámetro "#" solo puede usarse con indices de un solo campo
+58|Error:<br>Tipo de control "#1" no soportado<br>tipo de edición "#2"<br>en el campo "#3"|ERROR:<br>Tipus de Control "#1" no suportat<br>Tipus d\'Edició \"#2\"<BR>En el camp \"#3\"|Error:<br>Control type "#1" not supported<br>edition type "#2"<br>in the field "#3"|ERROR:<br>Tipo de Control "#1" no soportado<br>Tipo de Edición "#2"<BR>En el campo "#3"
+59|Error:<br>El fichero "#" no está devolviendo una matriz|ERROR:<br>El fitxer "#" no està retornant una matriu|Error:<br>The data file "#" is not giving back a matrix|ERROR:<br>El fichero "#" no está devolviendo una matriz
+60|Registros encontrados: #1<br>Nº máximo de registros a visualizar: #2<br>Active más condiciones|Registres oposats: #1<br>Nº màxim de registres a visualitzar: #2<br>Activi més condicions|Records found: #1<br>Maximum Nº of records to extract: #2<br>Activate more conditions|Registros encontrados: #1<br>Nº máximo de registros a extraer: #2<br>Active más condiciones
+61|Demasiados registros a extraer.<br>Nº máximo de registros a visualizar: #.<br>Active más condiciones|Massa registres a extreure.<br>Nº màxim de registres a visualitzar: #.<br>Activi més condicions|Too many records to extract.<br>Maximum Records Nº to extract: #.<br>Activate more conditions|Demasiados registros a extraer.<br>Nº máximo de registros a extraer: #.<br>Active más condiciones
+62|Registros encontrados fuera de tu ambito: #1<br>nº máximo de registros a visualizar: #2<br>active más condiciones|Registres oposats FORA DEL TEU ÀMBIT: #1<br>Nº màxim de registres a visualitzar: #2<br>Activi més condicions|Records found outside your field: #1<br>maximum nº of records to extract: #2<br>activate more conditions|Registros encontrados FUERA DE TU AMBITO: #1<br>Nº máximo de registros a extraer: #2<br>Active más condiciones
+63|Demasiados registros a extraer.<br>Nº máximo de registros a visualizar: #<br>Active más condiciones|Massa registres a extreure.<br>Nº màxim de registres a visualitzar: #<br>Activi més condicions|Too many records to extract.<br>Maximum Records Nº to extract: #.<br>Activate more conditions|Demasiados registros a extraer.<br>Nº máximo de registros a extraer: #<br>Active más condiciones
+64|Objeto no soportado "#"|Objecte no suportat "#"|Non supported Item "#"|Objeto no soportado "#"
+65|Ya hay un registro igual|Ja hi ha un registre igual|This record is alredy in use|Ya hay un registro igual
+66|No hay registros|No hi ha registres|There are no records|No hay registros
+67|No hay registros que cumplan la condición|No hi ha registres que compleixin la condició|No data matching the condition|No hay registros que cumplan la condición
+68|Insertado|INSERIT|Added|INSERTADO
+69|Modificado|MODIFICAT|Modified|MODIFICADO
+70|Borrado|ESBORRAT|Deleted|BORRADO
+71|Recuperado|RECUPERAT|Recovered|RECUPERADO
+72|Cargando PDF|Carregant PDF|Loading PDF|Cargando PDF
+73|Cargando XLS|Carregant XLS|Loading XLS|Cargando XLS
+74|Cargando MDB|Carregant MDB|Loading MDB|Cargando Acceso
+75|Error: Fichero excede el máximo tamaño permitido|ERROR: Fitxer excedeix la màxima grandària permesa|Error: The data file surpass the maximum size allowed|ERROR: Fichero excede el máximo tamaño permitido
+76|Error: Fichero demasiado grande|ERROR: Fitxer massa gran|Error: The data file is too big|ERROR: Fichero demasiado grande
+77|Error: Fichero incompleto|ERROR: Fitxer incomplet|Error: Incomplete data file|ERROR: Fichero incompleto
+78|Error: Fichero no cargado|ERROR: Fitxer no carregat|Error: Data file not loaded|ERROR: Fichero no cargado
+79|Enviado a papelera|ENVIAT A PAPERERA|Sent to trash|ENVIADO A PAPELERA
+80|Ficha #|FITXA #|File of #|FICHA #
+81|Recuperar #|RECUPERAR #|Recover #|RECUPERAR #
+82|Consultar #|CONSULTAR #|View #|CONSULTAR #
+83|Modificar #|MODIFICAR #|Modify #|MODIFICAR #
+84|Insertar #|INSERIR #|Insert #|INSERTAR #
+85|Borrar #|ESBORRAR #|Delete #|BORRAR #
+86|Variables modificadas|VARIABLES MODIFICADES|Variables modified|VARIABLES MODIFICADAS
+87|Acción no soportada|Acció no suportada|Non supported action|Acción no soportada
+88|Error: Fichero excede el maximo tamaño permitido|ERROR: FITXER EXCEDEIX LA MÀXIMA GRANDÀRIA PERMESA|Error: The data file surpass the maximum size allowed|ERROR: FICHERO EXCEDE EL MAXIMO TAMAÑO PERMITIDO
+89|Error: Fichero demasiado grande|ERROR: FITXER MASSA GRAN|Error: The data file ir too big|ERROR: FICHERO DEMASIADO GRANDE
+90|Error: Fichero incompleto|ERROR: FITXER INCOMPLET|Error: Incomplete data file|ERROR: FICHERO INCOMPLETO
+91|Error: Fichero demasiado grande|ERROR: FITXER MASSA GRAN|Error: The data file ir too big|ERROR: FICHERO DEMASIADO GRANDE
+92|Error: Fichero no copiado "#"|ERROR: FITXER NO COPIAT "#"|Error: "#" data file not copied|ERROR: FICHERO NO COPIADO "#"
+93|Operacion anulada.<br>el registro ha sido modificado por otro<br>usuario desde que visualizó la ficha.<br>vuelva a realizar la operación|OPERACIÓ ANUL·LADA.<br>El registre ha estat modificat per<br>un altre usuari des que va visualitzar la fitxa.<br>Torni a realitzar l\'operació|Operation canceled.<br>the record has been modified by other<br>user since you saw the form.<br>try to do the operation again|OPERACION ANULADA.<br>El registro ha sido modificado por otro<br>usuario desde que visualizó la ficha.<br>Vuelva a realizar la operación
+94|Error:<br>No se ha podido recuperar el registro<br>por estar activo actualmente|ERROR:<br>NO S´HA POGUT RECUPERAR EL REGISTRE<br>PER ESTAR ACTIU ACTUALMENT|Error:<br>The record could not be recovered<br>due to being active at present|ERROR:<br>NO SE HA PODIDO RECUPERAR EL REGISTRO<br>POR ESTAR ACTIVO ACTUALMENTE
+95|Error: No se ha borrado el fichero adjunto|ERROR: NO S´HA ESBORRAT EL FITXER ADJUNT|Error: The attached file data is not deleted|ERROR: NO SE HA BORRADO EL FICHERO ADJUNTO
+96|Error en el campo "#"|ERROR en el Camp "#"|Error in the field "#"|ERROR en el Campo "#"
+97|Click Dcha: Elimina selección|Clic DRET: Elimina selecció|Click RIGHT: Delete selection|Click Dcha: Elimina selección
+98|Negrita|Negreta|Bold|Negrita
+99|Itálica|Itàlica|italic|Itálica
+100|Subrayado|Subratllat|Underlined|Subrayado
+101|Elimina formato|Elimina format|Delete format|Elimina formato
+102|Color texto|Color text|Text color|Color texto
+103|Color fondo|Color fons|Background color|Color fondo
+104|Extra Grande|Extra Gran|Extra big|Extra Grande
+105|Grande|Gran|Big|Grande
+106|Normal|Normal|Normal|Normal
+107|Justificación izquierda|Justificació esquerra|Left justification|Justificación izquierda
+108|Centrado|Centrat|Centered|Centrado
+109|Justificación completa|Justificació completa|Full justification|Justificación completa
+110|Disminuir sangría|Disminuir sagnia|Decrease indent|Disminuir sangría
+111|Aumentar sangría|Augmentar sagnia|Increase indent|Aumentar sangría
+112|Lista ordenada|Llista ordenada|Ordered list|Lista ordenada
+113|Lista con marcas|Llista amb marques|List with marks|Lista con marcas
+114|Insertar imagen|Inserir imatge|Insert image|Insertar imagen
+115|Corrector ortográfico|Corrector ortogràfic|Spelling checker|Corrector ortográfico
+116|Anular cambios|Anul·lar canvis|Cancel changes|Anular cambios
+117|Grabar|Gravar|Save|Grabar
+118|Color por defecto|Color per defecte|default color|Color por defecto
+119|Click Izq: Acción a ejecutar|Click ESQ: Acció a executar|Click Left: Action to execute|Resultado de la búsqueda
+120|Nuevo párrafo|Nou paràgraf|New paragraph|Nuevo párrafo
+121|Checkbox\nClick Dch conmuta "checked"|Checkbox\nClic DRET commuta "checked"|Checkbox\nClick Right toggles "checked"|Checkbox\nClick Dcha conmuta "checked"
+122|Facebook|Facebook|Facebook|Facebook
+123|Twitter|Twitter|Twitter|Twitter
+124|Contar|Explicar|Count|Contar
+125|Click Dch: Últimos resultados|Clic DRET: Últims resultats|Click Right: Latest results|Click Dcha: Ultimos resultados
+126|Procesando...|Processant...|Processing...|Procesando...
+127|Enviando fichero "#"|Enviant fitxer "#"|Sending file "#"|Enviando fichero "#"
+128|Preparando fichero "#"|Preparant fitxer "#"|Preparing file "#"|Preparando fichero "#"
+129|Minimizar|Minimitzar|Minimize|Minimizar
+130|Maximizar|Maximitzar|Maximize|Maximizar
+131|Fichero modificado|Fitxer modificat|Modified file|Fichero modificado
+132|Descargar documento a modificar|Descarregar document a modificar|Download document to modify|Descargar documento a modificar
+133|Click Dch [ctrl]: Cambiar la acción|Clic DRET [ctrl]: Canviar la acció|Click Right [ctrl]: Change action|Click Dcha [ctrl]: Cambiar la acción
+134|Calendario de Periodos|Calendari de Períodes|Periods Calendar|Calendario de Periodos
+135|Espacio en disco|ESPAI EN DISC|Disc space|
+136|Espacio Total|Espai Total|Total space|
+137|Espacio Libre|Espai Llibre|Free space|
+138|Posible suplantación de identidad.<br>La aplicación se cerrará.|Possible suplantació d´identitat.<br>L´aplicació es tancarà.|Possible phishing.<br>The application will be closed.|
+139|Importar #|IMPORTAR #|Import #|
+140|La opción de importar solo se puede ejecutar en la ventana principal|L´opció d´IMPORTAR solament es pot executar en la finestra principal|The import option can only be executed in the main window|
+141|No hay espacio libre en esta opción|No hi ha espai lliure en aquesta opció|There is no free space in this option|
+142|Activa el select|Activa el select|Activate select|Activa el select
+143|Insertado|INSERIT|Added|INSERTADO~Se inserta en la auxiliar y en el select
+144|Click Izq: Examinar...\nClick Dch: Establece un directorio por defecto|Click Izq: Examinar...\nClick Dcha: Establece un directorio por defecto|Click Left: Browse...\nClick Right: Set a default directory|Click Izq: Examinar...\nClick Dcha: Establece un directorio por defecto
+145|Buscar para ...||Search for ...|~MENU
+146|Borrar||Delete|
+147|Consultar||Consult|
+148|Modificar||Modify|
+149|Insertar||Insert|
+150|Opciones||Options|~MENU
+151|Borrar||Delete|
+152|Modificar||Modify|
+153|Consultar||Consult|
+154|Limpiar datos||Clean data|
+155|Convertir en consulta||Convert to query|
+156|Resultado en SubVentana||Result in SubWindow|
+157|Búsqueda con SubListado||Search with SubList|
+158|Histórico de Movimientos||History of Movements|
+159|Log de Usuarios||User Log|
+160|Otros datos||Other data|
+161|Convertir en contar||Convert to count|
+162|(Sin datos)||(No data)|
+163|(Con datos)||(with data)|
+164|Cambiar a ...||Switch to ...|~MENU
+165|Seleccionar||Select|
+166|Borrar||Delete|
+167|Lista de selección||Selection list|
+168|Eliminar valor por defecto||Delete default value|
+169|Click Izq: Enviar EMail\nClick Dch: Insertar EMail en Lista Róbinson||Click Left: Send EMail\nClick Right: Insert EMail in Robinson List|
+170|Resultado en ventana actual||Result in current window|
+171|- Para mover la imagen haga click sobre ella y desplace el ratón.<br>- Para cambiar el tamaño pulse la tecla control rueda del ratón,<br>si a la vez pulsa la tecla shift el zoom será 10 veces mayor.<br>- Para ajustar la imagen pulse dobleclick.<br>- Para dejar la imagen original pulse el botón derecho del ratón.||- To move the image, click on it and move the mouse.<br>- To change the size, press the mouse wheel control key,<br>if you press the shift key at the same time, the zoom will be 10 times greater.<br>- To adjust double-click the image.<br>- To leave the original image, press the right mouse button.|
+172|Valor no modificable en "#"||Non-changeable value in "#"|
+173|Campo obligatorio: #||Obligatory field: #|
+174|Error en la longitud del campo||Field length error|
+175|Error en el contenido del campo||Field content error|
+176|Listado||List|
+177|Click Izq: Examinar...\nClick Dch: Previsualizar|Examinar...|Click Left: Browse...\nClick Right: Preview|Examinar...
+178|Previsualizar/Descargar||Preview/Download|
+179|Informe||Report|
+180|Resultado de la búsqueda||Search result|
+181|Insertar||Insert|
+182|Borrar||Delete|
+183|Ver||View|
+184|Modificar||Update|
+185|Descargar||Download|
+186|Establece valores por defecto||Set default values|
+187|Insertar dato en tabla auxiliar||Insert data in auxiliary table|
+188|Posición de la primera etiqueta||First label position|
+189|Seleccionar color||Select color|
+190|Menú||Menu|
+191|Ayuda||Help
+
+192|Exportar||Export|
+193|Pasar a PDF|Canviar a PDF|Go to PDF|Pasar a PDF
+194|Pasar a Excel|Passar a Excel|Go to Excel|Pasar a Excel
+195|Pasar a XML|Passar a XML|Go to XML|Pasar a XML
+196|Pasar a TXT||Go to TXT|Pasar a TXT
+197|Pasar a CSV||Go to CSV|Pasar a CSV
+
+198|Ejecutar en 2º plano||Run in background
+199|Ventana actual||Current window
+200|Ver clave|Veure clau|See key
+201|Fichero potencialmente peligroso||Potentially dangerous file
+202|El campo de selección ha excedido el límite máximo de # registros||The selection field has exceeded the maximum limit of # records

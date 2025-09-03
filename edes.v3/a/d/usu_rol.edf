@@ -1,0 +1,101 @@
+#include(*) lng
+[Title]=@Perfil de Extracciones@
+[DBTable]gs_rol_exp
+[DBIndex]cd_gs_rol_exp
+[DBOrder]nm_gs_rol_exp
+[DBSerial]cd_gs_rol_exp
+[AddOption]*|export_level|,; 1,@Básico@; 2,@Medio@; 3,@Total@; 9,@INFORMATICA@|;;;; #ffffff,#ff0000
+[CSSAdd]l
+TD.OFFCOLUMN {
+background-color: #f8f8f8;
+}
+[PHPIni]l
+$formatAll = explode(",", "print,pdf,xls,xml,csv,txt");
+if( !isset(SETUP::$System["ExportFormats"]) || SETUP::$System["ExportFormats"]=="*" ){
+$format = "print, pdf, xls, xml, csv, txt";
+}else{
+$format = strtolower(SETUP::$System["ExportFormats"]);
+}
+$format = explode(",", eNsp($format));
+for($i=0; $i<count($formatAll); $i++){
+if( !in_array($formatAll[$i], $format) ){
+$_COLSCOLORCALC[] = "{$formatAll[$i]}_public=OFFCOLUMN";
+$_COLSCOLORCALC[] = "{$formatAll[$i]}_private=OFFCOLUMN";
+if( $formatAll[$i]=="print" ){
+$_COLSCOLORCALC[] = "{$formatAll[$i]}_tab_public=OFFCOLUMN";
+$_COLSCOLORCALC[] = "{$formatAll[$i]}_tab_private=OFFCOLUMN";
+}
+}
+}
+[THColSpan]print_tab_public, print_tab_public, @Ficha Pública@|print_tab_private, print_tab_private, @Ficha Privada@|print_public, csv_public, @Listado Público@|print_private, csv_private, @Listado Privado@
+[Fields]
+|cd_gs_rol_exp|*|T|9||*|||
+@Nombre@|nm_gs_rol_exp|D|T|60||AQ||#|
+@Permiso@|permission|D|C|1||M|||
+,  @Nivel exportación@|export_level|D|SV|12||M|||
+,  @WebMaster@\@WM@|webmaster|D|C|1||M|||
+¿ SESS::$_SystemUser==$_ENV['ON'] ?  ,@System·User@|system_user|D|C|1||M|||
+¿ SESS::$_SystemUser!=$_ENV['ON'] ?  ,@System·User@|system_user|D|C|1||*|||
+#(l)¿
+@Imprimir@\<i>&#56;</i>\\PRI|print_tab_public|X|C|1||-|||
+@Print@\<i>&#56;</i>\\PRI|print_public|D|C|1||-|||
+@Exportar PDF@\<i>&#202;</i>\\PDF|pdf_public|X|C|1||-|||
+@Exportar Excel@\<i>&#203;</i>\\XLS|xls_public|X|C|1||-|||
+@Exportar XML@\<i>&#410;</i>\\XML|xml_public|X|C|1||-|||
+@Exportar TXT@\<i>&#411;</i>\\TXT|txt_public|X|C|1||-|||
+@Exportar CSV@\<i>&#412;</i>\\CSV|csv_public|X|C|1||-|||
+@Imprimir@\<i>&#56;</i>\\PRI|print_tab_private|X|C|1||-|||
+@Print@\<i>&#56;</i>\\PRI|print_private|D|C|1||-|||
+@Exportar PDF@\<i>&#202;</i>\\PDF|pdf_private|X|C|1||-|||
+@Exportar Excel@\<i>&#203;</i>\\XLS|xls_private|X|C|1||-|||
+@Exportar XML@\<i>&#410;</i>\\XML|xml_private|X|C|1||-|||
+@Exportar TXT@\<i>&#411;</i>\\TXT|txt_private|X|C|1||-|||
+@Exportar CSV@\<i>&#412;</i>\\CSV|csv_private|X|C|1||-|||
+?
+#(a,?R){P} PermisionExport
+#!(?) {Tab} @Descripción@
+<|description|#|A|255,80,3|+nm_gs_rol_exp|ML|||
+[P]PermisionExport
+?>
+#include(*) $a/plugin/export.idf
+<?PHP
+[CSSAdd]a,?R
+#TableExport {
+background-color: #dddddd;
+border:1px solid #555555;
+margin-left: 10px;
+}
+#TableExport TH {
+background-color: #F9F9F9;
+FONT-WEIGHT: normal;
+cursor: var(--cAuto);
+}
+#TableExport TD {
+background-color: #ffffff;
+color: #555555;
+}
+#CC {
+text-align: center;
+}
+[THColSpan]print_tab, print_tab, @Ficha@|print_list, csv_list, @Listado@|print_report, csv_report, @Informe@
+[JSEnd]a,?R
+eAlign("TableExport", ">", "nm_gs_rol_exp");
+var ml = parseInt(S("#TableExport").css("marginLeft"));
+S("#TableExport").css("marginLeft", ml+11);
+[JSIni]a,mR
+function conmutaCheckTr(){
+if( _Source!="$a/d/usu_rol.edf" && $cd_gs_rol_exp!="" ){
+return;
+}
+var oTR = S.toTag(S.event(window.event), "TR"),
+dim = S("input", oTR).dim,
+set = (S(dim[0]).val()==S.setup.checkOn) ? S.setup.checkOff : S.setup.checkOn;
+S.each(dim, function(k,o){
+S(o).val(set);
+});
+}
+[PHPEnd]A,M
+if( !empty($_POST["system_user"]) || !empty($_POST["webmaster"]) ){
+$txt = date('Y-m-d H:i:s')." user[{$_ENV["user"]}] cd_gs_rol_exp[{$_vF['cd_gs_rol_exp']}] webMaster[{$_POST['webmaster']}] systemUser[{$_POST['system_user']}]\n";
+error_log($txt, 3, "../_datos/system_user.log");
+}

@@ -1,0 +1,6 @@
+create table pais (
+cd_pais char(3) NOT NULL,
+nm_pais char(25),
+PRIMARY KEY (cd_pais),
+KEY pais_2 (nm_pais)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

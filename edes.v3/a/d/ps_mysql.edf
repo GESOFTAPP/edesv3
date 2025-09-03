@@ -1,0 +1,36 @@
+[Title]=LISTA DE PROCESOS MySqli
+[Fields]||TRIM
+ID|id_pk|+|T|6||-|||
+User|user|#|T|20||-|||
+Host|host|#|T|20||-|||
+DB|db|#|T|20||-|||
+Command|command|#|T|20||-|||
+Time|time2|H5|T|5||-|||
+State|state|#|T|20||-|||
+Info|Info|#|T|20||-|||
+Progress|progress|+,|T|5,3||-|||
+[JSOnClickRow]l||id_pk
+S.alert({
+icon	: '<i class="ICONDESKTOP">?</i>',
+button	: "Y,N",
+title	: 210,
+text	: "Matar el proceso "+$id_pk,
+function: function(yn){
+if(yn==1){
+S.callSrv("pk="+$id_pk);
+}
+}
+});
+[CallSrv]pk
+echo "<script>";
+if( mysqli_kill($_HndDB, $pk) ){
+echo "top.S.error(\"El proceso {$pk} no se ha podido eliminar\");";
+}else{
+echo "top.S.info(\"Proceso {$pk} eliminado\");";
+}
+echo "</script>";
+[DBSql]l
+qQuery("SHOW FULL PROCESSLIST");
+while( $r=qRow() ){
+array_push($usuCursor, $r);
+}

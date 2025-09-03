@@ -1,0 +1,65 @@
+[Language]es,ca,en,fr
+Enviar mensaje|||Send Message
+Mensaje recibido|||Message received
+Para|||For
+De|||Of
+Mensaje|||Message
+Enviar|||Send
+Mensaje enviado|||Message sent
+No hay mensajes|||No messages
+#(a)[Title] =@Enviar mensaje@
+#(c)[Title] =@Mensaje recibido@
+#(c) [Stop]
+[NoButton]c
+[Button]a|[&#360;] @Enviar@
+[CC]#MySQL|eSqlType('mysql,mysqli')
+#MySQL ¿
+[FieldBrowser]_cd_gs_user|cd_gs_user|select concat(user_name," ",user_surname),cd_gs_user from {$_ENV['eDesDictionary']}gs_user where concat(user_name," ",user_surname) like # order by 1|7
+?¿
+[FieldBrowser]_cd_gs_user|cd_gs_user|select user_name&#124;&#124;' '&#124;&#124;user_surname,cd_gs_user from {$_ENV['eDesDictionary']}gs_user where (user_name&#124;&#124;' '&#124;&#124;user_surname) like # order by 1|7
+?
+[Fields]a
+#(a) @Para@|_cd_gs_user|D|T|68|texto|M||#|
+#(a)|cd_gs_user|+|T|5||*|||
+@Mensaje@|texto|#|H|1000000,75,20|500,300|M||#|
+[Fields]c
+@De@|cd_gs_user|D|T|68|texto|*Q|||
+@Mensaje@|texto|#|H|1000000,75,20|500,300|-Q|||
+[PHPEnd]c
+$File = eScript('/_tmp/'.S::$_User.'.mss');
+$txt = file_get_contents($File);
+$Dim = explode('~~~', $txt);
+if( empty($txt) ){
+eMessage("@No hay mensajes@", "HS");
+}
+if( count($Dim)>1 ){
+$txt = '';
+for($n=1; $n<count($Dim); $n++){
+if( $n>1 ) $txt .= '~~~';
+$txt .= $Dim[$n];
+}
+file_put_contents($File, $txt);
+}else{
+@unlink($File);
+}
+$Datos = explode('|', $Dim[1]);
+qQuery("select user_name,user_surname from {$_ENV['eDesDictionary']}gs_user where cd_gs_user={$Datos[1]}");
+list($n, $a) = qRow();
+$Valor = str_replace(['&#92;', '&#43;'], [CHR92, '+'], $Datos[2]);
+echo '<script type="text/javascript">';
+echo 'ePF("cd_gs_user","'.trim($n),' ',trim($a).'");';
+?>
+ePF( "texto", "<?= $Valor ?>".replace(/&quot;/g,'"').replace(/&#39;/g,"'") );
+<?PHP
+echo 'edIni("texto");';
+echo 'S.sound("warning");';
+echo '</script>';
+[PHPStart]A
+$File = eScript('/_tmp/'.$_POST['cd_gs_user'].'.mss');
+if( file_exists($File) ){
+$txt = file_get_contents( $File ).'~~~'.date('Y-m-d H:i:s')."|".S::$_User."|".$_POST['texto'];
+file_put_contents( $File, $txt );
+}else{
+file_put_contents( $File, date('Y-m-d H:i:s')."|".S::$_User."|".$_POST['texto'] );
+}
+eMessage('@Mensaje enviado@', 'HS');

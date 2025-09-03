@@ -1,0 +1,35 @@
+#include(*) lng
+[Title]@ACCESO/S@
+#(l)[Title] @LISTADO DE ACCESOS@
+[DBTable]{$_ENV['eDesDictionary']}gs_acceso
+[DBIndex]num_acceso
+[DBOrder]num_acceso desc
+[DBSerial]num_acceso
+[DBLimit]10000,1000
+#Include(l) /_datos/config/history.ayo | true
+¿ SESS::$_SystemUser!=$_ENV['ON'] ? [DBAddFilter] cd_gs_user not in (select cd_gs_user from {$_ENV['eDesDictionary']}gs_user where system_user='{$_ENV['ON']}')
+[Cursor]
+[DefAux]cd_gs_user|{$_ENV['eDesDictionary']}gs_user	  , cd_gs_user		, user_surname,', ',user_name
+[DefAux]cd_gs_toperacion|{$_ENV['eDesDictionary']}gs_toperacion, cd_gs_toperacion, nm_gs_toperacion
+[DefAux]cd_gs_node|{$_ENV['eDesDictionary']}gs_node	  , cd_gs_node		, nm_gs_node
+[TipTH]||Modo||||Objeto
+[AddCode]cR|cd_gs_user|A|&nbsp;<img src='edes.php?R:$a/g/usuario.gif' style='margin-bottom:5px;' title='@Consultar Usuario@' onclick='top.eSWOpen(window, "edes.php?FcR:$a/d/usu_ficha.edf&_SEEK&cd_gs_user="+eGF("cd_gs_user"))'>
+[AddCode]cR|cd_gs_node|A|&nbsp;<img src='edes.php?R:$a/g/local.gif'   style='margin-bottom:5px;' title='@Consultar Local@'   onclick='top.eSWOpen(window, "edes.php?FcR:$a/d/nodo.edf&_SEEK&cd_gs_node="+eGF("cd_gs_node"))'>
+[AddCode]?|_desde_hours,_hasta_hours|I|noConditions
+[DBRange]?|cdi|_desde|_hasta
+[Fields]
+@Instante Desde@|_desde|F4|T|10||QF|#today#||
+,|_desde_hours|H|T|8||Q|||
+,  @Hasta@|_hasta|F4|T|10||QF|||
+,|_hasta_hours|H|T|8||Q|||
+@Instante@|cdi|CDI|T|19||-|||
+@Acción@|cd_gs_toperacion|#X|S|15||Q-|||
+,  @Tabla@|tabla|n|T|15|+_hasta_hours|Q-|||
+@Objeto@\@O@|objeto|N|T|1||Q-||%|
+,  @Modo@\@M@|modo|#N|T|2||Q-||%|
+,  @Script@|edf|#D|T|40|+_hasta_hours|Q-|||
+@Parámetros@|parametros|#X|T|50|+_hasta_hours|Q-|||
+-
+@Usuario@|cd_gs_user|0|S|35|+_hasta_hours|Q-|||
+@Nodo@|cd_gs_node|0|S|35|+_hasta_hours|Q-|||
+@Acceso número@|num_acceso|+|T|7||*|||

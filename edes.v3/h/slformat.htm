@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta">
+slFormat<br /><br />
+</td>
+</tr>
+<tr>
+<td id="tSintaxis">SINTAXIS</td>
+</tr>
+<tr>
+<td id="Sintaxis">{slFormat} FormatCol1 [, FormatCol2] ..... [, FormatColN]<br />...</td>
+</tr>
+<tr>
+<td id="tDescripcion">DESCRIPCION</td>
+</tr>
+<tr>
+<td id="Descripcion">
+ <span style="color: #0000a0;">En los listados de las sublistas, formatea las columnas de datos que se deseen.<br />Como parámetro para cualquier columna se puede poner una función de usuario, si queremos pasar a la función el valor de la columna actual pondremos el símbolo "#", por ejemplo &#39;uPinta("#")&#39;, en el caso de querer pasar mas de un parámetro los separaremos con una coma en su representación decimal "&#44;". Si se quisiera pasar el valor del cursor completo pasaríamos como parámetro la variable "$_vF" y si quisiéramos poder modificar los valores en la función que lo recibe la definiríamos que el valor pase por referencia.<br />Se puede incluir código HTML. </span><span style="color: #0000a0;">También se puede  poner un gráfico en función de la extensión del nombre del fichero<br />  <img </span><a href="mailto:src=&#39;g/t_file_@.gif&#39;"><span style="color: #0000a0;">src=&#39;g/t_file_@.gif&#39;</span></a><span style="color: #0000a0;"> onclick=&#39;NomFuncion()&#39; style=&#39;cursor:hand&#39; </span><a href="mailto:title=&#39;_@_&#39;"><span style="color: #0000a0;">title=&#39;_@_&#39;</span></a><span style="color: #0000a0;">><br />  donde:<br />   </span><a href="mailto:&#39;_@_&#39;"><span style="color: #0000a0;">&#39;_@_&#39;</span></a><span style="color: #0000a0;"> -> Se cambia por el &#39;title&#39; y<br />    </span><a href="mailto:&#39;@&#39;"><span style="color: #0000a0;">&#39;@&#39;</span></a><span style="color: #0000a0;">  -> Se cambia por la extensión del fichero</span><br /><br />
+ - En campos virtuales con calculo se puede utilizar la forma "Calculo() \ M2" la primera parte para php y la segunda para indicar el formato.<br /><br />
+</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"> Los tipos de alineación permitidas son:
+<table id="Opciones" style="height: 136px; width: 384px;" border="0" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr>
+<td>L </td>
+<td> Alineación a la izquierda (o en blanco)</td>
+</tr>
+<tr>
+<td>C</td>
+<td> Alineación centrada.</td>
+</tr>
+<tr>
+<td>R</td>
+<td> Alineación a la derecha.</td>
+</tr>
+<tr>
+<td>H</td>
+<td> Ocultar columna.</td>
+</tr>
+<tr>
+<td>M</td>
+<td> Separa las cifras de los millares del resto mediante un punto</td>
+</tr>
+<tr>
+<td>M2</td>
+<td> Separa las cifras de los millares del resto mediante un punto y <br /> enseña los dos primeros decimales el valor a mostrar</td>
+</tr>
+<tr>
+<td>B</td>
+<td> Si el valor es cero no pintará nada.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">&nbsp;{slFormat} ,,,,,,&lt;img &lt;a href="mailto:src=&#39;g/d_@.gif&#39;"&gt;src=&#39;g/d_@.gif&#39;&lt;/a&gt; onclick=&#39;VerFoto()&#39; &lt;a href="mailto:title=&#39;_@_&#39;"&gt;title=&#39;_@_&#39;&lt;/a&gt;&gt;</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo">
+&lt;div&gt;<code>// $data es una variable hash con los siguientes indices: _vF, _CellsStyle, _CellsClass, nFila, _RowStyle, _RowClass, _RowDisabled&nbsp;</code>&lt;/div&gt;
+&lt;div&gt;<code>// Si la sublist tiene totales "nFila" contiene el valor "-1"<br /><br /></code><code>if( $data["nFila"]==-1 ){</code>&lt;/div&gt;
+&lt;div&gt;<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data["_CellsStyle"][3] = "color:green";</code>&lt;/div&gt;
+&lt;div&gt;<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;</code>&lt;/div&gt;
+&lt;div&gt;<code>}</code>&lt;/div&gt;
+&lt;div&gt;<code>$data["_RowStyle"] = "background-color:red";</code>&lt;/div&gt;
+&lt;div&gt;<code>$data["_CellsStyle"][3] = "color:red";</code>&lt;/div&gt;
+</td>
+</tr>
+<tr>
+<td id="txt"> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

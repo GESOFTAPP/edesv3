@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE> HELP EDESWEB </TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/edesweb.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="TABLA" width="100%" cellspacing="1px" cellpadding="2px">
+<tbody>
+<tr>
+<td id="Etiqueta">streamerClient</td>
+</tr>
+<tr>
+<td>Es un método para enviar al cliente cada "n" segundos o cuando se produzca un evento información, el uso habitual es en un dashborad.<br /><br />Se necesitan dos ficheros:<br />a) Fichero con el código del from-end con la llamada a <span style="font-family: sans-serif;"><code>"$js/streamerClient"</code></span><br />b) Fichero que va a ser llamado para obtener los datos a enviar al cliente<br /><br />En el fichero "b" tiene que contener como mínimo la inicialización de streamerClient y las funciones que van a recoger los datos enviados por el servidor, ejemplo:<br /><hr /><code><code><br /></code></code>
+<div>
+<div><code>     SESS::$var["streamer"] = &#39;..path del fichero "b"...&#39;;     // se define en esta variable el fichero php para obtener los datos</code></div>
+</div>
+<code><code><code>?><br /></code><span style="font-family: sans-serif;"><code><br />top.S.init(window);</code><br /><code><br />var channel = [</code><br /><code>     {</code><br /><code>           channel: "channelWarnnig"</code><br /><code>          ,function: functionWarnnig</code><br /><code>     }</code><br /><code>     ,{</code><br /><code>           channel: "channelError"</code><br /><code>          ,function: functionError</code><br /><code>     }</code><br /><code>];</code><br /><br /><code>S.loadJS(window, "$js/streamerClient", function(){</code><br /><code>     streamerClient(window, functionMessage, channel);</code><br /><code>     S("body").visible();     </code><code>// S.windowView(window); </code><br /><code>});</code><br /><br /><code>function functionMessage(data){</code><br /><code>     // data es el json enviado por el servidor a este canal</code><br /><code>}</code><br /><br /><code>function functionWarnnig(data){</code><br /><code>     // data es el json enviado por el servidor a este canal</code><br /><code>}</code><br /><br /><code>function functionError(data){</code><br /><code>     // data es el json enviado por el servidor a este canal</code><br /><code>}</code><br /><br /></span></code></code><hr /><code><code>El fichero php "b" que es el que va a recopilar los mensajes:<br /></code></code><hr /><code><code><br /><br />
+<div><code>streamerClient::setup(null, "messageSend", null, -1, 60*5);</code></div>
+<br />
+<div><code>function messageSend(){</code></div>
+<div><code>     $message = array(</code></div>
+<div><code>          array(</code></div>
+<div><code>               "message"=>[</code></div>
+<div><code>                     "key1"=>"Linea 1"</code></div>
+<div><code>                    ,"key2"=>"Linea 2"</code></div>
+<div><code>               ]</code></div>
+<div><code>          )</code></div>
+<div><code>          ,array(</code></div>
+<div><code>                "channel"=>"channelWarnnig"</code></div>
+<div><code>               ,"message"=>[</code></div>
+<div><code>                     "key3"=>"Linea 3"</code></div>
+<div><code>                    ,"key4"=>"Linea 4"</code></div>
+<div><code>                    ]</code></div>
+<div><code>          )</code></div>
+<div><code>          ,array(</code></div>
+<div><code>                "channel"=>"channelError"</code></div>
+<div><code>               ,"message"=>[</code></div>
+<div><code>                     "key5"=>"Linea 5"</code></div>
+<div><code>                    ,"key6"=>"Linea 6"</code></div>
+<div><code>               ]</code></div>
+<div><code>          )</code></div>
+<div> </div>
+<div><code>     );</code></div>
+<br />
+<div><code>     // si se retorna "NULL" significa que no hay mensajes para enviar<br />     // si se retorna "close" se cerrará conexión con el cliente<br />     // en otro caso hay que devolver un array de array hash, con los atributos<br />          // "message" único datos obligatorio con los datos a enviar<br />          // "channel" dato opcional para indicar el canal por donde se enviará la información<br />          // "sleep" dato opcional para cambiar el tiempo de espera entre llamadas</code></div>
+<div><code>     return $message;</code></div>
+<div><code>}</code></div>
+</div>
+<code><code><br /></code></code><hr /></td>
+</tr>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( document.getElementById("Ejemplo")!=null ){
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+}
+if( document.getElementById("Parametro")!=null && Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

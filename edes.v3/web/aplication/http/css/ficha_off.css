@@ -1,0 +1,567 @@
+BODY {
+BACKGROUND: url(../g/d5_logo_watermark.png) #d7d7d7 fixed no-repeat left bottom;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+.ClassBackground {
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#CDCDCD, endcolorstr=#F1F1C1);
+}
+.AddButton {
+BACKGROUND-COLOR: #f1f1f1;
+BORDER-BOTTOM: #d1d1d1 1px solid;
+BORDER-LEFT: #d1d1d1 1px solid;
+BORDER-RIGHT: #d1d1d1 1px solid;
+BORDER-TOP: #d5d5d5 1px solid;
+COLOR: #c73e00;
+}
+.AddButtonOver {
+BACKGROUND-COLOR: #d1d1d1;
+BORDER-BOTTOM: #d5d5d5 1px solid;
+BORDER-LEFT: #d5d5d5 1px solid;
+BORDER-RIGHT: #d5d5d5 1px solid;
+BORDER-TOP: #d9d9d9 1px solid;
+COLOR: #787878;
+}
+.okGRABADO {
+COLOR: #c73e00;
+}
+.errGRABADO {
+COLOR: #f5ebe7;
+}
+TABLE {
+COLOR: #111111;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+.FbOn {
+BACKGROUND: #f5f5c4;
+COLOR: #000000;
+}
+.FbOff {
+BACKGROUND: #f5f5c4;
+COLOR: #000000;
+}
+#zTitulo {
+COLOR: #191919;
+}
+HR {
+COLOR: #b5b5b5;
+}
+.HR_txt {
+COLOR: #002647;
+}
+.if_HR {
+COLOR: #939393;
+}
+.if_HR_txt {
+COLOR: #002647;
+}
+.UBICACION {
+BACKGROUND: #f50000;
+COLOR: #f5f5f5;
+}
+#SolapaOn {
+COLOR: #f5f5f5;
+}
+#SolapaOff {
+COLOR: #000000;
+}
+.FcOn {
+BACKGROUND: #f5f5df;
+BORDER-BOTTOM-COLOR: #9bb0c9;
+BORDER-LEFT-COLOR: #9eb3cd;
+BORDER-RIGHT-COLOR: #9bb0c9;
+BORDER-TOP-COLOR: #9eb3cd;
+COLOR: #303030;
+}
+.FcOnText {
+BACKGROUND: #f5f5df;
+BORDER-BOTTOM-COLOR: #9bb0c9;
+BORDER-LEFT-COLOR: #9eb3cd;
+BORDER-RIGHT-COLOR: #9bb0c9;
+BORDER-TOP-COLOR: #9eb3cd;
+COLOR: #303030;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+.FcOff {
+BACKGROUND: #f5f5f5;
+BORDER-BOTTOM-COLOR: #9bb0c9;
+BORDER-LEFT-COLOR: #9eb3cd;
+BORDER-RIGHT-COLOR: #9bb0c9;
+BORDER-TOP-COLOR: #9eb3cd;
+COLOR: #303030;
+}
+.ReadOnly {
+BACKGROUND: #e8ebee;
+BORDER-BOTTOM-COLOR: #9bb0c9;
+BORDER-LEFT-COLOR: #9eb3cd;
+BORDER-RIGHT-COLOR: #9bb0c9;
+BORDER-TOP-COLOR: #9eb3cd;
+COLOR: #303030;
+}
+.error {
+BACKGROUND: #f5f5c4;
+BORDER-BOTTOM-COLOR: #c14840;
+BORDER-LEFT-COLOR: #c44941;
+BORDER-RIGHT-COLOR: #c14840;
+BORDER-TOP-COLOR: #c44941;
+COLOR: #f52f00;
+}
+TD.SbMenuOn {
+BACKGROUND: #bec694;
+COLOR: #765132;
+}
+TD.SbMenuOff {
+BACKGROUND: #bec694;
+COLOR: #765132;
+}
+SELECT {
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+}
+.SelectLine {
+BACKGROUND-COLOR: #66757c;
+}
+TEXTAREA {
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+SCROLLBAR-BASE-COLOR: #dedede;
+}
+INPUT {
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+}
+#TABBorder {
+BORDER-BOTTOM: #a6a09b 1px solid;
+BORDER-LEFT: #a6a09b 1px solid;
+BORDER-RIGHT: #a6a09b 1px solid;
+BORDER-TOP: #a9a39e 1px solid;
+}
+#TABHeader {
+BACKGROUND-COLOR: #7d91aa;
+}
+.TABHeaderTitle {
+COLOR: #f5f5f5;
+}
+.TABBody {
+BACKGROUND-COLOR: #ededed;
+BORDER-LEFT: #c5c5bb 0px solid;
+BORDER-RIGHT: #c5c5bb 0px solid;
+}
+.TABBodyForm {
+BACKGROUND-COLOR: #ededed;
+BORDER-BOTTOM: #303030 0px solid;
+BORDER-TOP: #303030 0px solid;
+}
+.TABFootIcons {
+BACKGROUND-COLOR: #ededed;
+BORDER-LEFT: #444444 0px solid;
+}
+.TABFootButton {
+BACKGROUND-COLOR: #ededed;
+}
+.TABSubmitOut {
+BORDER-BOTTOM: #b2b2b2 1px solid;
+BORDER-LEFT: #b2b2b2 1px solid;
+BORDER-RIGHT: #b2b2b2 1px solid;
+BORDER-TOP: #b5b5b5 1px solid;
+}
+.TABSubmitOut TD {
+BACKGROUND-COLOR: #f1f1f0;
+}
+.TABSubmitOver {
+BACKGROUND-COLOR: #c1c1c1;
+BORDER-BOTTOM: #a1a1a1 1px solid;
+BORDER-LEFT: #a1a1a1 1px solid;
+BORDER-RIGHT: #a1a1a1 1px solid;
+BORDER-TOP: #a4a4a4 1px solid;
+}
+.TABSubmitOver TD {
+BACKGROUND-COLOR: #ededed;
+COLOR: #000000;
+}
+.TABGroupOuter {
+BACKGROUND: #e6e6e6;
+}
+.TABGroupFootIcons {
+BACKGROUND: #7f93ad;
+}
+#TABMenu TD {
+BORDER-LEFT: #a1a1a1 1px solid;
+BORDER-RIGHT: #a1a1a1 1px solid;
+BORDER-TOP: #a4a4a4 1px solid;
+}
+#TABMenu .TABMenuSeparator {
+BORDER-BOTTOM: #a1a1a1 1px solid;
+}
+.TABMenuContainer {
+BORDER-TOP: #f1f1f1 0px solid;
+}
+.TABMenu TD {
+BORDER-LEFT: #a1a1a1 1px solid;
+BORDER-RIGHT: #a1a1a1 1px solid;
+BORDER-TOP: #a4a4a4 1px solid;
+}
+.TABMenu .TABMenuSeparator {
+BORDER-BOTTOM: #a1a1a1 1px solid;
+}
+.TABMenuOnOut {
+BACKGROUND-COLOR: #ededed;
+BORDER-BOTTOM: #ededed 1px solid;
+COLOR: #f55d00;
+}
+.TABMenuOnOver {
+BACKGROUND-COLOR: #f1f1db;
+BORDER-BOTTOM: #ededed 1px solid;
+COLOR: #000000;
+}
+.TABMenuOffOut {
+BACKGROUND-COLOR: #e7e7e7;
+BORDER-BOTTOM: #a1a1a1 1px solid;
+COLOR: #626262;
+}
+.TABOnly {
+COLOR: #e06c18;
+}
+.TABMenuOffOver {
+BACKGROUND-COLOR: #f1f1db;
+BORDER-BOTTOM: #a1a1a1 1px solid;
+COLOR: #b9b9b9;
+}
+#Select {
+BACKGROUND: #f5f5df;
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+COLOR: #000f74;
+SCROLLBAR-ARROW-COLOR: #3f6394;
+SCROLLBAR-FACE-COLOR: #dedede;
+}
+#Select #SelectOn {
+BACKGROUND: #7b89c3;
+COLOR: #f5f5f5;
+}
+#Select #Selected {
+BACKGROUND: #3d4462;
+COLOR: #f5f5f5;
+}
+#SelBROWSER {
+BACKGROUND: #f5f5df;
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+COLOR: #000f74;
+}
+#SelBROWSER #Over {
+BACKGROUND: #001c91;
+COLOR: #f5f5f5;
+}
+#CngRESPUESTA {
+BORDER-BOTTOM: #7292a2 2px solid;
+BORDER-LEFT: #7292a2 2px solid;
+BORDER-RIGHT: #7292a2 2px solid;
+BORDER-TOP: #7494a5 2px solid;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#CDCABB, endColorstr=#D1D9DE);
+}
+#CngRESPUESTA TD {
+COLOR: #586f7c;
+}
+#MensaError {
+BORDER-BOTTOM: #88242c 2px solid;
+BORDER-LEFT: #f13d4c 2px solid;
+BORDER-RIGHT: #88242c 2px solid;
+BORDER-TOP: #f53e4d 2px solid;
+FILTER: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr=#CDCABB, endColorstr=#F1D9DE);
+}
+#MensaError TD {
+COLOR: #c71900;
+}
+#CngSOMBRA {
+BACKGROUND-COLOR: #000000;
+}
+.CAJA {
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+COLOR: #41679a;
+}
+LEGEND {
+COLOR: #2a496e;
+}
+.SubLista {
+BORDER-BOTTOM: #9eb3cd 0px solid;
+BORDER-LEFT: #9eb3cd 0px solid;
+BORDER-RIGHT: #9eb3cd 0px solid;
+BORDER-TOP: #a1b6d1 0px solid;
+}
+.SubLista TABLE {
+BACKGROUND: #737373;
+}
+.SubLista TABLE TH {
+BACKGROUND: #7f93ad;
+COLOR: #f5f5f5;
+}
+.SubLista TABLE TD {
+BACKGROUND: #f5f5f5;
+COLOR: #303030;
+}
+#PieLista {
+BACKGROUND: #e6e9ed;
+COLOR: #303030;
+}
+.SubMenuSL .On {
+BACKGROUND: #a4a4a4;
+COLOR: #f5f5f5;
+}
+.BarraMenu {
+BACKGROUND: #93adba;
+}
+.Hojas3 {
+BACKGROUND: #bac6d7;
+BORDER-BOTTOM: #00099c 1px solid;
+BORDER-LEFT: #00099c 1px solid;
+BORDER-RIGHT: #00099c 1px solid;
+BORDER-TOP: #00099f 1px solid;
+}
+.OpFOn {
+BACKGROUND: #d0d4d7;
+BORDER-BOTTOM: #00099c 0px solid;
+BORDER-LEFT: #00099c 1px solid;
+BORDER-RIGHT: #00099c 1px solid;
+BORDER-TOP: #00099f 1px solid;
+COLOR: #0034ca;
+}
+.OpFOff {
+BACKGROUND: #b7babd;
+BORDER-BOTTOM: #797979 1px solid;
+BORDER-LEFT: #797979 1px solid;
+BORDER-RIGHT: #797979 1px solid;
+BORDER-TOP: #7b7b7b 1px solid;
+COLOR: #000000;
+}
+.OpFOn_1 {
+BACKGROUND: #d0d4d7;
+BORDER-BOTTOM: #00099c 0px solid;
+BORDER-LEFT: #00099c 1px solid;
+BORDER-RIGHT: #00099c 1px solid;
+BORDER-TOP: #00099f 1px solid;
+COLOR: #4d70d8;
+}
+.OpFOff_1 {
+BACKGROUND: #b7babd;
+BORDER-BOTTOM: #797979 1px solid;
+BORDER-LEFT: #797979 1px solid;
+BORDER-RIGHT: #797979 1px solid;
+BORDER-TOP: #7b7b7b 1px solid;
+COLOR: #0025bd;
+}
+.ExeOutF {
+BACKGROUND: #c4c4c4;
+BORDER-BOTTOM: #bababa 2px solid;
+BORDER-LEFT: #bababa 2px solid;
+BORDER-RIGHT: #bababa 2px solid;
+BORDER-TOP: #bdbdbd 2px solid;
+COLOR: #000000;
+}
+.ExeOverF {
+BACKGROUND: #0f48e8;
+BORDER-BOTTOM: #0f47e4 2px solid;
+BORDER-LEFT: #0f47e4 2px solid;
+BORDER-RIGHT: #0f47e4 2px solid;
+BORDER-TOP: #0f48e8 2px solid;
+COLOR: #f5f5f5;
+}
+.ExeOutG {
+BACKGROUND: #c4c4c4;
+BORDER-BOTTOM: #bababa 2px solid;
+BORDER-LEFT: #bababa 2px solid;
+BORDER-RIGHT: #bababa 2px solid;
+BORDER-TOP: #bdbdbd 2px solid;
+COLOR: #000000;
+}
+.ExeOverG {
+BACKGROUND: #0f48e8;
+BORDER-BOTTOM: #0f47e4 2px solid;
+BORDER-LEFT: #0f47e4 2px solid;
+BORDER-RIGHT: #0f47e4 2px solid;
+BORDER-TOP: #0f48e8 2px solid;
+COLOR: #f5f5f5;
+}
+.Cargando {
+COLOR: #000000;
+FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#CDCDCD, endcolorstr=#F1F1C1);
+}
+#LstPASTE {
+BACKGROUND: #f5f5c7;
+BORDER-BOTTOM: #66757c 1px solid;
+BORDER-LEFT: #66757c 1px solid;
+BORDER-RIGHT: #66757c 1px solid;
+BORDER-TOP: #68777e 1px solid;
+COLOR: #000f74;
+}
+.SubWin {
+BORDER-BOTTOM: #939eac 1px solid;
+BORDER-LEFT: #939eac 1px solid;
+BORDER-RIGHT: #939eac 1px solid;
+BORDER-TOP: #96a1af 1px solid;
+}
+.SubWin TH {
+BACKGROUND: #96a1af;
+COLOR: #002774;
+}
+.SubWin TD {
+BACKGROUND: #bac6d7;
+COLOR: #4c5158;
+}
+.SubWin TABLE TABLE {
+BACKGROUND: #c4c4c4;
+}
+.SubWin TABLE TABLE TH {
+BACKGROUND: #d5d5d5;
+COLOR: #002774;
+}
+.SubWin TABLE TABLE TD {
+BACKGROUND: #f5f5f5;
+COLOR: #4c5158;
+}
+.iWIN {
+BACKGROUND-COLOR: #f1f1c3;
+BORDER-BOTTOM: #767676 1px solid;
+BORDER-LEFT: #767676 1px solid;
+BORDER-RIGHT: #767676 1px solid;
+BORDER-TOP: #787878 1px solid;
+}
+.SubMenu {
+BACKGROUND-COLOR: #f1f1f1;
+BORDER-BOTTOM: #c1c1c1 1px solid;
+BORDER-LEFT: #c1c1c1 1px solid;
+BORDER-RIGHT: #c1c1c1 1px solid;
+BORDER-TOP: #c4c4c4 1px solid;
+}
+.SubMenu TR {
+BACKGROUND-COLOR: #e7e7e7;
+COLOR: #222222;
+}
+.SubMenu .On {
+BACKGROUND-COLOR: #c40c00;
+COLOR: #efe7f5;
+}
+.SubMenu .Linea {
+BACKGROUND-COLOR: #7a7a7a;
+}
+.SubMenu .TITULO {
+BACKGROUND-COLOR: #2a486c;
+BORDER-BOTTOM: #bebab7 1px solid;
+COLOR: #f5f5f5;
+}
+.LineSubModos {
+BORDER-TOP: #97a6ae 1px solid;
+}
+#SelBROWSER #Selected {
+BACKGROUND: #005cae;
+COLOR: #f5f5f5;
+}
+.SliderOFF {
+BACKGROUND: #e7f5f5;
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+}
+.SliderOFF DIV {
+BACKGROUND: #d8e7e7;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+COLOR: #001f74;
+}
+.SliderON {
+BACKGROUND: #f5f5df;
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+}
+.SliderON DIV {
+BACKGROUND: #e7e7d0;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+COLOR: #000f74;
+}
+.CheckListContainer {
+BACKGROUND: #c4c4c4;
+}
+#edCONTAINER {
+BORDER-BOTTOM: #9eb3cd 1px solid;
+BORDER-LEFT: #9eb3cd 1px solid;
+BORDER-RIGHT: #9eb3cd 1px solid;
+BORDER-TOP: #a1b6d1 1px solid;
+}
+.edOUT {
+BACKGROUND-COLOR: #d3f1f1;
+COLOR: #001f74;
+}
+.edOVER {
+BACKGROUND-COLOR: #f1f1db;
+COLOR: #000f74;
+}
+#edMENUS {
+BACKGROUND-COLOR: #f1f1db;
+BORDER-BOTTOM: #66757c 1px solid;
+BORDER-LEFT: #66757c 1px solid;
+BORDER-RIGHT: #66757c 1px solid;
+BORDER-TOP: #68777e 1px solid;
+}
+#edCOLORES {
+BORDER-BOTTOM: #66757c 1px solid;
+BORDER-LEFT: #66757c 1px solid;
+BORDER-RIGHT: #66757c 1px solid;
+BORDER-TOP: #68777e 1px solid;
+}
+.ISubList {
+BORDER-BOTTOM: #c1c1c1 0px solid;
+BORDER-LEFT: #c1c1c1 0px solid;
+BORDER-RIGHT: #c1c1c1 0px solid;
+BORDER-TOP: #c4c4c4 0px solid;
+}
+#ETIQUETAS {
+BACKGROUND: #c4c4c4;
+}
+#ETIQUETAS TD {
+BACKGROUND: #f5f5f5;
+}
+#ETIQUETAS .EtiSel {
+BACKGROUND: #b5b5b5;
+}
+.TIP {
+BACKGROUND: #e6e6e6;
+BORDER-BOTTOM: #919191 1px solid;
+BORDER-LEFT: #919191 1px solid;
+BORDER-RIGHT: #919191 1px solid;
+BORDER-TOP: #939393 1px solid;
+COLOR: #000000;
+}
+.TIP TABLE {
+BACKGROUND: #222222;
+}
+.TIP TH {
+BACKGROUND: #c4c4c4;
+}
+.TIP TD {
+BACKGROUND: #f5f5f5;
+}
+.Arrow SPAN {
+BACKGROUND: #939393;
+}
+IMG {
+FILTER: gray(enabled=1);
+}

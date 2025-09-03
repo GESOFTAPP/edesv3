@@ -1,0 +1,194 @@
+[Title]=ScreenShot
+[NoTools]*
+[UploadFile]fichero|/http/g/screenshot|pk|5.000.000|Seleccionar png|png
+[Fields]a||trim
+Script|script|d|T|60|fichero|*Q*||#|
+#(a) Size|size|+|T|5||*Q*||#|
+Fichero|fichero|#|F|60||QM DU|||
+{I} <span style="color:red">Pulsa "control + V" para enviar la imagen capturada</span>
+[AddCode]a|fichero, _FILE_fichero|I|accept="image/*"
+[JSEnd]a
+const fileInput = S(":_FILE_fichero").obj;
+document.addEventListener('paste', (event) => {
+if (event.clipboardData && event.clipboardData.items) {
+for (let i = 0; i < event.clipboardData.items.length; i++) {
+if (event.clipboardData.items[i].type.indexOf('image') !== -1) {
+const blob = event.clipboardData.items[i].getAsFile();
+const file = new File([blob], 'image.png', { type: 'image/png' });
+const dataTransfer = new DataTransfer();
+dataTransfer.items.add(file);
+fileInput.files = dataTransfer.files;
+console.log("ok");
+eSubmit();
+break;
+}
+}
+}
+});
+[PHPIni]A
+$dir  = "g/screenshot/";
+$file = $_POST["script"];
+$fileSeek = str_replace("*", "\\*", $file);
+$index = 1;
+for($index=1; $index<10; $index++){
+$oneFile = glob($dir . "{$fileSeek}_{$index}_*");
+if( count($oneFile)==0 ){
+$fileSource = "../_tmp/zip/".S::$_User."_0";
+$fileTarget = "{$dir}{$file}_{$index}_{$_POST['size']}.png";
+copy($fileSource, $fileTarget);
+eMessage("Fichero grabado: {$fileTarget}", "HS");
+break;
+}
+}
+eMessage("Error al grabar el fichero", "HSE");
+for($n=1; $n<=20; $n++){
+$fileSource = "../_tmp/zip/".S::$_User."_0";
+$fileTarget = "{$file}_{$n}_{$_POST['size']}.png";
+copy($fileSource, $fileTarget);
+eMessage("Fichero grabado: {$fileTarget}", "HS");
+}
+eMessage("Error al grabar el fichero", "HSE");
+[SortList]l|orden
+[Fields]l||TRIM
+|cd_gs_campo|*|T|2||*|||
+Order|orden|+|T|3||-|||
+|imagen|#|T|30||*||#|
+Image|image_src|x|T|30||M||#|
+Op|ops|x|T|30||M||#|
+[JSEnd]l
+S(".AddButton").obj.onclick = function(){
+var dim=Array(), i, oTR;
+for(i=1; i<S("#BROWSE TR").length; i++){
+oTR = S("#BROWSE TR").dim[i];
+dim.push(oTR.cells[0].innerText+","+oTR.cells[2].innerText);
+}
+top.eCallSrv(window, 'edes.php?E:CallSrv='+_Source+'&ordenar='+dim.join(";"));
+}
+[CallSrv]ordenar
+$newOrder = array();
+$rand = rand(1000, 9999);
+$dim = explode(";", $ordenar);
+for($n=0; $n<count($dim); $n++){
+list($pk, $file) = explode(",", $dim[$n]);
+if( !rename("{$file}", "{$file}.tmp") ){
+$message = "ERROR: Renamed {$file} to {$file}.tmp";
+error_log($message."\r\n", 3, '../_tmp/err/_log.err');
+echo "<script>top.eInfoError(top, '{$message}');</script>";
+}
+}
+$files = [];
+for($n=0; $n<count($dim); $n++){
+$index = $n+1;
+list($pk, $file) = explode(",", $dim[$n]);
+$img = preg_split('/(_[1-9])(_[0-9]{1,4}).png$/u', $file, -1, PREG_SPLIT_DELIM_CAPTURE);
+$img[1] = substr($img[1], 1);
+$img[1] = "_{$index}";
+$newFile = implode("", $img).".png";
+$file .= ".tmp";
+array_push($newOrder, "{$newFile}?{$rand}{$n}");
+if( !rename("{$file}", "{$newFile}") ){
+$message = "ERROR: Renamed {$file} to {$newFile}";
+error_log($message."\r\n", 3, '../_tmp/err/_log.err');
+echo "<script>top.eInfoError(top, '{$message}');</script>";
+}
+}
+echo "<script>window.frameElement.WOPENER.uReorder('".implode(";", $newOrder)."'); top.eInfo(top, 'Save ordering');</script>";
+eEnd();
+[CallSrv]delete
+list($pk, $file) = explode(",", $delete);
+$pk *= 1;
+$file = trim($file);
+unlink($file);
+echo "<script>window.frameElement.WOPENER.uReorder('".implode(";", $newOrder)."'); top.eInfo(top, 'Deleted ScreenShot');</script>";
+eEnd();
+[JSIni]l
+function uExeOp(obj){
+var  oTR = top.eToTag(obj, "TR")
+,exeScript = eTrim(oTR.cells[2].innerText)
+,first = exeScript.indexOf("/", 2)+1
+,last  = exeScript.lastIndexOf("_")+1
+,type;
+exeScript = exeScript.substr(first, last-first-1);
+exeScript = exeScript.replace(/\*/g, "/");
+var ops = S(".TREEMAIN TR[op*='"+exeScript+"']", top);
+if( ops.length>0 ){
+S(ops.obj, top).eventFire("click");
+}
+top.eInfo(top, "Option not found");
+return;
+}
+function uView(obj){
+var oTR = top.eToTag(obj, "TR");
+S.window('edes.php?IMG:'+oTR.cells[3].children[0].src, {title:"Screen", fullscreen:true, view:true});
+oTR.style.fontStyle = "italic";
+}
+function uDelete(obj){
+var oTR = top.eToTag(obj, "TR"),
+index = oTR.cells[0].innerText+","+oTR.cells[2].innerText;
+top.eAlert("CONFIRM", "Delete the image?", "accept,cancel", "DH", function(op){
+if( op!=2 ) return;
+top.eCallSrv(window, 'edes.php?E:CallSrv='+_Source+'&delete='+index);
+document.all.BROWSE.deleteRow(oTR.rowIndex);
+});
+}
+function uReorder(txt){
+var n, i, dim=txt.split(";");
+for(n=1; n<S("#BROWSE TR").length; n++){
+if( dim[n-1]=="-" ) continue;
+S("#BROWSE TR").dim[n].cells[3].children[0].src = dim[n-1];
+S("#BROWSE TR").dim[n].cells[2].innerText = dim[n-1].split("?")[0];
+}
+}
+function uMenu(obj){
+top.eMenu(window, obj, {
+'-':'Opciones'
+,'D':'Delete'
+,'E':'Execute'
+,'V':'View'
+}, function(op, opInnerText, obj, opObj){
+switch(op){
+case null:
+break;
+case "D":
+uDelete(obj);
+break;
+case "E":
+uExeOp(obj);
+break;
+case "V":
+uView(obj);
+break;
+}
+}
+);
+return eClearEvent();
+}
+[DBSql]l
+$_PathScreen = "g/screenshot/";
+$filter = $_GET["FILTER"];
+$orden = 0;
+$usuCursor = array();
+$rand = rand(1000, 9999);
+$ops = "<img src='g/buscar.gif' onclick='uView(this)'><img src='g/tf_0.gif' onclick='uDelete(this)'><img src='g/t_file_h.gif' onclick='uExeOp(this)'>";
+$ops = "<img src='g/pag_lis.gif' onclick='uMenu(this)'>";
+if( !is_dir($_PathScreen) ){
+$_PathScreen = eGetCWD()."/".mb_substr($_PathScreen,0,-1);
+eInclude("message");
+eMessage("ERROR: \"{$_PathScreen}\" directory not found", "HSE");
+}
+$filter = str_replace("*", "\\*", $filter);
+$files = glob($_PathScreen . "{$filter}_*");
+for($i=0; $i<count($files); $i++){
+array_push($usuCursor, array(++$orden, $orden, $files[$i], "<img src='{$files[$i]}?{$rand}' height='100px' onclick='uView(this)'>", $ops));
+}
+function cmp($a, $b){
+return $a[2] > $b[2];
+}
+usort($usuCursor, "cmp");
+for($n=0; $n<count($usuCursor); $n++){
+$usuCursor[$n][0] = $n+1;
+$usuCursor[$n][1] = $n+1;
+}
+if( count($usuCursor)==0 ){
+eMessage("No hay Screenshot a gestionar de \"{$_GET["FILTER"]}\"", "HS");
+}

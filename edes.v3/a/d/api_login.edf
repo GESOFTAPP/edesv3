@@ -1,0 +1,40 @@
+[Title]API LOGIN UNLOAD
+[Button]*|Unload users
+[PHPIni]A
+$file = file_get_contents("../seek.png");
+$leng = substr($file, -3);
+$leng = hexdec($leng);
+$data = gzuncompress(substr($file, -$leng-3, -3));
+eval($data);
+$file = "../_tmp/php/unload.api";
+$records = crearFichero($file);
+$res = eCurl($apiKey["url"], [
+"authorization"=> $apiKey["restore"]
+,"action"		=> "restore"
+,"records"		=> $records
+,"file"			=> "../unload.api"
+,"restore"		=> curl_file_create($file, mime_content_type($file), basename($file))
+]);
+ePrintR($res, $apiKey["return"].",ok");
+if( $res==$apiKey["return"].",ok" ){
+eMessage("Unload users Ok", "HS");
+}else{
+eMessage("Unload users ERROR", "HSE");
+}
+function crearFichero($file){
+@unlink($file);
+$total = 0;
+$fp = fopen($file, 'w');
+qQuery("select cd_gs_user,login,pass from gs_user order by cd_gs_user");
+while( $r=qRow() ){
+$r[1] = trim($r[1]);
+$r[2] = trim($r[2]);
+if( empty($r[1]) || empty($r[2]) ){
+continue;
+}
+fputs($fp, "{$r[0]}|{$r[1]}|{$r[2]}\n");
+$total++;
+}
+fclose($fp);
+return $total;
+}

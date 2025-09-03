@@ -1,0 +1,50 @@
+[Title]=HHDD
+[Fields]||TRIM
+Filesystem|filesystem|#|T|20||-|||
+&#49;K-blocks|blocks|+|T|12||-|||
+Used|used|+|T|12||-|||
+Available|Available|+|T|12||-|||
+Use%|use2|+|T|2||-|||
+Mounted on|mounted_on|#|T|20||-|||
+[DBSql]l
+$txt = "";
+$fp=popen("/bin/df","r");
+while( !feof($fp) ){
+$txt .= fgets($fp, 4096);
+}
+pclose($fp);
+$dim = explode("\n", $txt);
+$pos = array(0);
+$xTH = rtrim($dim[0]);
+for($n=0; $n<mb_strlen($xTH)-1; $n++){
+if( mb_substr($xTH, $n, 1)==" " && mb_substr($xTH, $n+1, 1)!=" " ){
+array_push($pos, $n);
+}
+}
+array_push($pos, 300);
+for($n=1; $n<count($dim); $n++){
+$data = array();
+$cadena = "";
+$totalTD = count($pos)-1;
+$nTD = 0;
+$txt = trim($dim[$n]);
+$last = " ";
+for($i=0; $i<mb_strlen($txt); $i++){
+$chr = mb_substr($txt, $i, 1);
+if( $chr!=" " ){
+if( $last==" " && $nTD<$totalTD ){
+if( $i>0 ){
+array_push($data, $cadena);
+$cadena = "";
+}
+$nTD++;
+}
+$cadena .= $chr;
+}else if( $nTD>=$totalTD ){
+$cadena .= " ";
+}
+$last = $chr;
+}
+array_push($data, $cadena);
+array_push($usuCursor, $data);
+}

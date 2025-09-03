@@ -1,0 +1,404 @@
+c|css/all.css|2025-06-01 12:47:57||(storage)|||
+c|css/tab.css|2025-06-01 12:47:57||(storage)|||
+c|css/list.css|2025-06-01 12:47:57||(storage)|||
+c|css/all_big.css|2025-06-01 12:47:57||(storage)|||
+c|css/tab_big.css|2025-06-01 12:47:57||(storage)|||
+c|css/list_big.css|2025-06-01 12:47:57||(storage)|||
+c|css/all_tlf.css|2025-06-01 12:47:58||(storage)|||
+c|css/tab_tlf.css|2025-06-01 12:47:58||(storage)|||
+c|css/list_tlf.css|2025-06-01 12:47:58||(storage)|||
+c|css/all_small.css|2025-06-01 12:47:58||(storage)|||
+c|css/tab_small.css|2025-06-01 12:47:58||(storage)|||
+c|css/list_small.css|2025-06-01 12:47:58||(storage)|||
+x|1|2023-11-30 20:04:59||Copiar|Copy|Copiar|Copiar
+x|10|2023-11-30 20:04:59||No se ha podido copiar el fichero&#13;&#10;&quot;#1&quot; como &quot;#2&quot;|It has not been possible to copy the data file&#13;&#10;&quot;#1&quot; as &quot;#2&quot;|No s&#39;ha pogut copiar el fitxer&#13;&#10;&quot;#1&quot; com &quot;#2&quot;|No se ha podido copiar el fichero&#13;&#10;&quot;#1&quot; como &quot;#2&quot;
+x|100|2023-12-02 10:20:01||No hay registros|There are no records|No hi ha registres|No hay registros
+x|101|2023-11-30 20:04:59||Ocurrencias: #|Ocurrencies: #|Occurrences: #|Ocurrencias: #
+x|102|2023-11-30 20:04:59||Cadena no encontrada|String not found|Cadena no oposada|Cadena no encontrada
+x|103|2023-11-30 20:04:59||Error al buscar|Error searching|Error en buscar|Error al buscar
+x|104|2023-11-30 20:04:59||SelecciÃ³n en una subventana|Selection in a subwindow|SelecciÃ³ en una subventana|SelecciÃ³n en una subventana
+x|105|2023-11-30 20:04:59||SelecciÃ³n en ficha deslizante|Selection in sliding form|SelecciÃ³ en fitxa lliscant|SelecciÃ³n en ficha deslizante
+x|106|2023-11-30 20:04:59||SelecciÃ³n en la ventana actual|Selection in current window|SelecciÃ³ en la finestra actual|SelecciÃ³n en la ventana actual
+x|107|2023-11-30 20:04:59||EstÃ¡ en el principio|You are at the beginning|EstÃ¡Â  en el principio|EstÃ¡ en el principio
+x|108|2023-11-30 20:04:59||EstÃ¡ en el final|You are at the end|EstÃ¡Â  en el final|EstÃ¡ en el final
+x|109|2023-11-30 20:04:59||MÃ¡ximo nÃºmero de registros #|Maximum number of records #|MÃ xim nombre de registres #|MÃ¡ximo nÃºmero de registros #
+x|11|2023-11-30 20:04:59||No se ha podido renombrar el fichero&#13;&#10;&quot;#1&quot; como &quot;#2&quot;|It has not been possible to name data file&#13;&#10;&quot;#1&quot; as &quot;#2&quot;|No s&#39;ha pogut reanomenar el fitxer&#13;&#10;&quot;#1&quot; com &quot;#2&quot;|No se ha podido renombrar el fichero&#13;&#10;&quot;#1&quot; como &quot;#2&quot;
+x|110|2023-11-30 20:04:59||MÃ¡ximo nÃºmero de pÃ¡ginas #|Maximum number of pages #|MÃ xim nombre de pÃ gines #|MÃ¡ximo nÃºmero de pÃ¡ginas #
+x|111|2023-11-30 20:04:59||PÃ¡gina actual|Actual Page|PÃ gina actual|PÃ¡gina actual
+x|112|2023-11-30 20:04:59||Contador de pÃ¡ginas|Page counter|Comptador de pÃ gines|Contador de pÃ¡ginas
+x|113|2023-11-30 20:04:59||Ãšltima pÃ¡gina|Last page|Ãšltima pÃ gina|Ãšltima pÃ¡gina
+x|114|2023-11-30 20:04:59||Registro actual|Actual Record|Registre actual|Registro actual
+x|115|2023-11-30 20:04:59||Contador de registros|Register counter|Comptador de registres|Contador de registros
+x|116|2023-11-30 20:04:59||Ãšltimo registro|Last record|Darrer registre|Ãšltimo registro
+x|117|2023-11-30 20:04:59||Un registro borrado no puede seleccionarse|A deleted record can not be selected|Un registre esborrat no pot seleccionar-se|Un registro borrado no puede seleccionarse
+x|118|2023-11-30 20:04:59||EstÃ¡ en el primer registro|You are at the first record|EstÃ Â  en el primer registre|EstÃ¡ en el primer registro
+x|119|2023-11-30 20:04:59||EstÃ¡ en el Ãºltimo registro|You are in the last record|EstÃ  a l&#39;Ãºltim registre|EstÃ¡ en el Ãºltimo registro
+x|12|2023-11-30 20:04:59||El fichero no es accesible, puede tener&#13;&#10;carÃ¡cteres no validos o espacios en blanco|The data file is not available, it must have &#13;&#10;characters not applied or blank spaces|El fitxer no Ã©s accessible, pot tenir&#13;&#10;carÃ cters no vÃ lids o espais en blanc|El fichero no es accesible, puede tener&#13;&#10;carÃ¡cteres no validos o espacios en blanco
+x|120|2023-11-30 20:04:59||Fichero &quot;#&quot; no encontrado|&quot;#&quot; Data file not found|Fitxer &quot;#&quot; no trobat|Fichero &quot;#&quot; no encontrado
+x|121|2023-11-30 20:04:59||Fichero &quot;#&quot; no se puede leer|&quot;#&quot; Data file can not be read|Fitxer &quot;#&quot; no es pot llegir|Fichero &quot;#&quot; no se puede leer
+x|122|2023-11-30 20:04:59||Error en periodo|Error in period|Error en perÃ­ode|Error en periodo
+x|123|2023-11-30 20:04:59||Mes actual|Current month||Mes actual
+x|124|2023-11-30 20:04:59||AÃ±o anterior|Previous year|Any passat|AÃ±o anterior
+x|125|2023-11-30 20:04:59||Mes anterior|Previous month|Mes anterior|Mes anterior
+x|126|2023-11-30 20:04:59||Siguiente mes|Next month|SegÃ¼ent mes|Siguiente mes
+x|127|2023-11-30 20:04:59||Siguiente aÃ±o|Next year|SegÃ¼ent any|Siguiente aÃ±o
+x|128|2023-11-30 20:04:59||Cerrar Calendario|Close Calendar|Tancar Calendari|Cerrar Calendario
+x|129|2023-11-30 20:04:59||Fecha actual|Actual Date|Data actual|Fecha actual
+x|13|2023-11-30 20:04:59||Microsoft Office Word no instalado|Microsoft Office Word is not instaled|Microsoft Office Word no instalÂ·lat|Microsoft Office Word no instalado
+x|130|2023-11-30 20:04:59||No admite mas lÃ­Â­neas|No more lines are admitted|No admet mes lÃ­nies|No admite mas lÃ­Â­neas
+x|131|2023-11-30 20:04:59||Individual CSS|Individual CSS|Individual CSS|Individual CSS
+x|132|2023-11-30 20:04:59||Error|Error|Error|Error
+x|133|2023-11-30 20:04:59||Cargando|Loading|Carregant|Cargando
+x|134|2023-11-30 20:04:59||Modificando|Modifying|Modificant|Modificando
+x|135|2023-11-30 20:04:59||Editor HTML: Ayuda de Teclado|HTML Editor: Keyboard Help|Editor HTML: Ajuda de Teclat|Editor HTML: Ayuda de Teclado
+x|136|2023-11-30 20:04:59||Insertar|Insert|Inserir|Insertar
+x|137|2023-11-30 20:04:59||Modificar|Modify|Modificar|Modificar
+x|138|2023-11-30 20:04:59||Borrar|Delete|Esborrar|Borrar
+x|139|2023-11-30 20:04:59||SubListado sin datos|Sublist without data|SubLlistat sense dades|SubListado sin datos
+x|14|2023-11-30 20:04:59||Error en el formato del campo|Error in the field's format|Error en el format del camp|Error en el formato del campo
+x|141|2023-11-30 20:04:59||Falta por definir la etiqueta &#60;b&#62;&quot;{slMenu}&quot;&#60;/b&#62;&#60;br&#62;del objeto &#60;b&#62;&quot;#1&quot;&#60;/b&#62;&#60;br&#62;en el modo &#60;b&#62;&quot;#2&quot;&#60;/b&#62;|Tag &#60;b&#62;&quot;{slMenu}&quot;&#60;/b&#62;&#60;br&#62;of object &#60;b&#62;&quot;#1&quot;&#60;/b&#62;&#60;br&#62;in mode &#60;b&#62;&quot;#2&quot;&#60;/b&#62; remains to be defined|Manca per definir l&#39;etiqueta &#60;b&#62;&quot;{slMenu}&quot;&#60;/b&#62;&#60;br&#62;de l&#39;objecte &#60;b&#62;&quot;#1&quot;&#60;/b&#62;&#60;br&#62;en el mode &#60;b&#62;&quot;#2&quot;&#60;/b&#62;|Falta por definir la etiqueta &#60;b&#62;&quot;{slMenu}&quot;&#60;/b&#62;&#60;br&#62;del objeto &#60;b&#62;&quot;#1&quot;&#60;/b&#62;&#60;br&#62;en el modo &#60;b&#62;&quot;#2&quot;&#60;/b&#62;
+x|142|2023-11-30 20:04:59||Enviando fichero...|Sending file...|Enviant fitxer...|Enviando fichero...
+x|143|2023-11-30 20:04:59||Leyendo fichero...|Reading file...|Llegint fitxer...|Leyendo fichero...
+x|144|2023-11-30 20:04:59||El fichero &quot;#&quot; estÃ¡ en uso|File &quot;#&quot; is in use|El fitxer &quot;#&quot; estÃ  en Ãºs|El fichero &quot;#&quot; estÃ¡ en uso
+x|145|2023-11-30 20:04:59||No caben mÃ¡s caracteres|No more characters fit|No more characters fit|No caben mÃ¡s caracteres
+x|146|2023-11-30 20:04:59||Izquierda|Left|Esquerra|Izquierda
+x|147|2023-11-30 20:04:59||Derecha|Right|Dreta|Derecha
+x|148|2023-11-30 20:04:59||Seleccionar imagen|Select image|Seleccionar imatge|Seleccionar imagen
+x|149|2023-11-30 20:04:59||Insertando imagen|Inserting image|Inserint imatge|Insertando imagen
+x|15|2023-11-30 20:04:59||Ver Aviso|View|Veure AvÃ­s|Ver Aviso
+x|150|2023-11-30 20:04:59||Grabando...|Recording...|Gravant...|Grabando...
+x|151|2023-11-30 20:04:59||Mensaje del sistema|System message|Missatge del sistema|Mensaje del sistema
+x|152|2023-11-30 20:04:59||Zona capturada|Captured zone|Zona capturada|Zona capturada
+x|153|2023-11-30 20:04:59||OpciÃ³n ya abiera|Option already open|OpciÃ³ ja oberta|OpciÃ³n ya abiera
+x|154|2023-11-30 20:04:59||No se ha podido grabar la pantalla|Failed to record screen|No s&#39;ha pogut enregistrar la pantalla|No se ha podido grabar la pantalla
+x|155|2023-11-30 20:04:59||Formato de color hexadecimal erroneo|Wrong hexadecimal color format|Format de color hexadecimal erroni|Formato de color hexadecimal erroneo
+x|156|2023-11-30 20:04:59||Captura de pantallas activada con ControlÂ·F12|Screen capture activated with ControlÂ·F12|Captura de pantalles activada amb ControlÂ·F12|Captura de pantallas activada con ControlÂ·F12
+x|157|2023-11-30 20:04:59||Captura de pantallas desactivada&#60;br&#62;ControlÂ·F12 para Capturar Errores|Screenshot disabled&#60;br&#62;ControlÂ·F12 to Trap Errors|Captura de pantalles desactivada&#60;br&#62;ControlÂ·F12 per Capturar Errors|Captura de pantallas desactivada&#60;br&#62;ControlÂ·F12 para Capturar Errores
+x|16|2023-11-30 20:04:59||Cancelar|Cancel|CancelÂ·la|Cancelar
+x|17|2023-11-30 20:04:59||Eliminar Aviso|Delete Warning|Eliminar AvÃ­s|Eliminar Aviso
+x|18|2023-11-30 20:04:59||Posponer # minutos|Postpone # minutes|Posposar # minuts|Posponer # minutos
+x|19|2023-11-30 20:04:59||Posponer 1 hora|Postpone 1 hour|Posposar 1 hora|Posponer 1 hora
+x|2|2023-11-30 20:04:59||Imprimiendo...|Printing...|Imprimint...|Imprimiendo...
+x|20|2023-11-30 20:04:59||Posponer 1 dÃ­a|Postpone 1 day|Posposar 1 dia|Posponer 1 dÃ­a
+x|21|2023-11-30 20:04:59||Demasiados parÃ¡metros|Too many parameters|Massa parÃ metres|Demasiados parÃ¡metros
+x|22|2023-11-30 20:04:59||Editor HTML: Condiciones de Seguridad|HTML Editor: Security Conditions|Editor HTML: Condicions de Seguretat|Editor HTML: Condiciones de Seguridad
+x|23|2023-11-30 20:04:59||Solicitud de incidencia|Incident request||
+x|24|2023-11-30 20:04:59||Visor escritorio remoto|Remote desktop viewer|Visor escriptori remot|
+x|25|2023-11-30 20:04:59||Pantalla enviada|Screen sent|Pantalla enviada|Pantalla enviada
+x|26|2023-11-30 20:04:59||Error al enviar la pantalla|Error sending screen|Error en enviar la pantalla|Error al enviar la pantalla
+x|27|2023-11-30 20:04:59||Grabado|Recorded|Gravat|Grabado
+x|28|2023-11-30 20:04:59||Plantilla no encontrada|Template not found|Plantilla no trobada|Plantilla no encontrada
+x|29|2023-11-30 20:04:59||No se ha realizado la modificaciÃ³n|Modification not realized|No s&#39;ha realitzat la modificaciÃ³|No se ha realizado la modificaciÃ³n
+x|3|2023-11-30 20:04:59||Problemas con la impresora|Problems with the printer|Problemes amb la impressora|Problemas con la impresora
+x|30|2023-11-30 20:04:59||Confirmar salir de la aplicaciÃ³n|Confirm exit from the aplication|Confirmeu sortir de l&#39;aplicaciÃ³|Confirmar salir de la aplicaciÃ³n
+x|31|2023-11-30 20:04:59||Registro no encontrado|Record not found|Registre no oposat|Registro no encontrado
+x|32|2023-11-30 20:04:59||La pÃ¡gina se estÃ¡ cargando|The page is loading|La pÃ gina s&#39;estÃ  carregant|La pÃ¡gina se estÃ¡ cargando
+x|33|2023-11-30 20:04:59||Microsoft Office Excel no instalado|Microsoft Office Excel is not instaled|Microsoft Office Excel no instalÂ·lat|Microsoft Office Excel no instalado
+x|34|2023-11-30 20:04:59||Generando Excel...|Generating Excel...|Generant Excel...|Generando Excel...
+x|35|2023-11-30 20:04:59||No admite mas caracteres|No more typefaces are allowed|No admet mÃ©s carÃ cters|No admite mas caracteres
+x|36|2023-11-30 20:04:59||ERROR:&#13;&#10;Tipo de EdiciÃ³n &quot;#1&quot; no soportado&#13;&#10;en el campo &quot;#2&quot;|ERROR:&#13;&#10;Edition type &quot;#1&quot; not supported &#13;&#10;in the field &quot;#2&quot;|ERROR:&#13;&#10;Tipus d&#39;ediciÃ³ &quot;#1&quot; no suportat&#13;&#10;al camp &quot;#2&quot;|ERROR:&#13;&#10;Tipo de EdiciÃ³n &quot;#1&quot; no soportado&#13;&#10;en el campo &quot;#2&quot;
+x|37|2023-11-30 20:04:59||Valor copiado|Value copied|Valor copiat|Valor copiado
+x|38|2023-11-30 20:04:59||Valor pegado|Value pasted|Valor pegat|Valor pegado
+x|39|2023-11-30 20:04:59||LIBRE|||
+x|168|2023-11-30 20:04:59||El dato &quot;#&quot; no puede estar en modo alta|The data &quot;#&quot; cannot be in high mode|El dato &quot;#&quot; no puede estar en modo alta|El dato &quot;#&quot; no puede estar en modo alta
+x|4|2023-11-30 20:04:59||GestiÃ³n de incidencias|Bug tracker|GestiÃ³ d&#39;incidÃ¨ncies|
+x|40|2023-11-30 20:04:59||Falta rellenar completamente el dato &quot;#&quot;|Missing completely fill in the data &quot;#&quot;|Falta omplir completament la dada &quot;#&quot;|Falta rellenar completamente el dato &quot;#&quot;
+x|41|2023-11-30 20:04:59||Falta introducir el dato &quot;#&quot;|&quot;#&quot; Detail Missing|Falta introduir la dada &quot;#&quot;|Falta introducir el dato &quot;#&quot;
+x|42|2023-11-30 20:04:59||Error en el dato &quot;#&quot;|Error on &quot;#&quot;|Error en la dada &quot;#&quot;|Error en el dato &quot;#&quot;
+x|43|2023-11-30 20:04:59||Errores encontrados|Errors found|Errors oposats|
+x|44|2023-11-30 20:04:59||El dato &quot;#&quot; no tiene acceso de modificaciÃ³n|The data/detail &quot;#&quot; does not have modification access|La dada &quot;#&quot; no tÃ¡ accÃ¡s de modificaciÃ³|El dato &quot;#&quot; no tiene acceso de modificaciÃ³n
+x|45|2023-11-30 20:04:59||CÃ³digo Postal inexistente|Postal Code non-existent|Codi Postal inexistent|CÃ³digo Postal inexistente
+x|46|2023-11-30 20:04:59||&quot;#&quot; con carÃ¡cteres no permitidos|&quot;#&quot; with not allowed characters|&quot;#&quot; amb carÃ cters no permesos|&quot;#&quot; con carÃ¡cteres no permitidos
+x|47|2023-11-30 20:04:59||NIF erroneo|incorrect NIF|NIF erroni|NIF erroneo
+x|48|2023-11-30 20:04:59||Fecha incorrecta en el dato &quot;#&quot;|Incorrect Date in the data/detail &quot;#&quot;|Data incorrecta en la dada &quot;#&quot;|Fecha incorrecta en el dato &quot;#&quot;
+x|49|2023-11-30 20:04:59||Periodo incorrecto en el dato &quot;#&quot;|Incorrect period in the &quot;#&quot; data|PerÃ­ode incorrecte a la dada &quot;#&quot;|Periodo incorrecto en el dato &quot;#&quot;
+x|5|2023-11-30 20:04:59||Formato &quot;#&quot; desconocido|Format &quot;#&quot; unknow|Format &quot;#&quot; desconegut|Formato &quot;#&quot; desconocido
+x|50|2023-11-30 20:04:59||Hora incorrecta en el dato &quot;#&quot;|Incorrect time in the data &quot;#&quot;|Hora incorrecta en la dada &quot;#&quot;|Hora incorrecta en el dato &quot;#&quot;
+x|51|2023-11-30 20:04:59||Error en la longitud del DÃ­gito de Control (DC)|Error in the Control Digit&#39;s (DC) length|Error en la longitud del DÃ­git de Control (DC)|Error en la longitud del DÃ­gito de Control (DC)
+x|52|2023-11-30 20:04:59||DirecciÃ³n de correo erronea en el dato &quot;#&quot;|Mail direction incorrect in the detail &quot;#&quot;|AdreÃ§a de correu erronea a la dada &quot;#&quot;|DirecciÃ³n de correo erronea en el dato &quot;#&quot;
+x|53|2023-11-30 20:04:59||Formato erroneo en el dato &quot;#&quot;|Incorrect data in the &quot;#&quot; data|Format erroni en la dada &quot;#&quot;|Formato erroneo en el dato &quot;#&quot;
+x|54|2023-11-30 20:04:59||Error en la longitud del dato|Error in the data length|Error en la longitud de la dada|Error en la longitud del dato
+x|55|2023-11-30 20:04:59||Error en la longitud del dato &quot;#&quot;|Error in the data length &quot;#&quot;|Error en la longitud de la dada &quot;#&quot;|Error en la longitud del dato &quot;#&quot;
+x|56|2023-11-30 20:04:59||CondiciÃ³n &quot;*&quot; innecesaria|Condition &quot;*&quot; unnecessary|CondiciÃ³ &quot;*&quot; innecessÃ ria|CondiciÃ³n &quot;*&quot; innecesaria
+x|57|2023-11-30 20:04:59||CondiciÃ³n &quot;#&quot; incorrecta|Condition &quot;#&quot; incorrect|CondiciÃ³ &quot;#&quot; incorrecta|CondiciÃ³n &quot;#&quot; incorrecta
+x|58|2023-11-30 20:04:59||Si pone &quot;*&quot; no puede usar el resto de sÃ­mbolos|While using &quot;*&quot; the other symbols are unavailable|Si posa &quot;*&quot; no pot usar la resta de sÃ­mbols|Si pone &quot;*&quot; no puede usar el resto de sÃ­mbolos
+x|59|2023-11-30 20:04:59||Condiciones &quot;#&quot; no permitida|Conditions &quot;#&quot; not allowed|Condicions &quot;#&quot; no permesa|Condiciones &quot;#&quot; no permitida
+x|6|2023-11-30 20:04:59||El fichero no es accesible, puede tener&#13;&#10;carÃ¡cteres no validos o espacios en blanco.|The data file is not available, it must have&#13;&#10;characters not applied or blank spaces|El fitxer no Ã©s accessible, pot tenir&#13;&#10;carÃ cters no vÃ lids o espais en blanc.|El fichero no es accesible, puede tener&#13;&#10;carÃ¡cteres no validos o espacios en blanco.
+x|60|2023-11-30 20:04:59||Demasiadas condiciones del tipo &quot;#&quot;|Too many type &quot;#&quot; conditions|Massa condicions del tipus &quot;#&quot;|Demasiadas condiciones del tipo &quot;#&quot;
+x|61|2023-11-30 20:04:59||Las condiciones &quot;#1&quot; y &quot;#2&quot; no pueden ir juntas|The conditions &quot;#1&quot; and &quot;#2&quot; can not go together|Les condicions &quot;#1&quot; i &quot;#2&quot; no poden anar juntes|Las condiciones &quot;#1&quot; y &quot;#2&quot; no pueden ir juntas
+x|62|2023-11-30 20:04:59||La condiciÃ³n &quot;#&quot; no puede ir al final|The condition &quot;#&quot; can not go at the end|La condiciÃ³ &quot;#&quot; no pot anar al final|La condiciÃ³n &quot;#&quot; no puede ir al final
+x|63|2023-11-30 20:04:59||PosiciÃ³n incorrecta de la condiciÃ³n|Wrong position in the condition|PosiciÃ³ incorrecta de la condiciÃ³|PosiciÃ³n incorrecta de la condiciÃ³n
+x|64|2023-11-30 20:04:59||Fecha|Date|Data|
+x|65|2023-11-30 20:04:59||Periodo|Period|PerÃ­ode|
+x|66|2023-11-30 20:04:59||NÃºmero|Number|Nombre|
+x|67|2023-11-30 20:04:59||CDI|CDI|CDI|CDI
+x|68|2023-11-30 20:04:59||Hora|Hour|Hora|
+x|162|2023-11-30 20:04:59||la longitud del campo|the length of the field|la longitud del camp|la longitud del campo
+x|69|2023-11-30 20:04:59||Error en #|Error in #|Error en #|Error en #
+x|7|2023-11-30 20:04:59||Error indeterminado|Undetermined error|Error indeterminat|Error indeterminado
+x|70|2023-11-30 20:04:59||Fichero demasiado grande, mÃ¡ximo # byts|Data file too big, maximum # bytes|Fitxer massa gran, mÃ xim # bytes|Fichero demasiado grande, mÃ¡ximo # byts
+x|71|2023-11-30 20:04:59||ExtensiÃ³n del fichero no permitida|Data file extention not allowed|ExtensiÃ³ del fitxer no permesa|ExtensiÃ³n del fichero no permitida
+x|72|2023-11-30 20:04:59||Nombre de fichero demasiado largo|File Name too large|Nom de fitxer massa llarg|Nombre de fichero demasiado largo
+x|73|2023-11-30 20:04:59||Borrar el fichero &quot;#&quot;|Delete file &quot;#&quot;|Esborrar el fitxer &quot;#&quot;|Borrar el fichero &quot;#&quot;
+x|74|2023-11-30 20:04:59||Ventana selecciÃ³n|Selection window|Finestra selecciÃ³|Ventana selecciÃ³n
+x|75|2023-11-30 20:04:59||Calculando...|Calculating...|Calculant...|Calculando...
+x|76|2023-11-30 20:04:59||No se puede mostrar todos los datos{&#10;}Introduzca nuevo criterio de bÃºsqueda|Full Data can not be shown{&#10;}Type new search filter|No es pot mostrar totes les dades{&#10;}Introdueixi un nou criteri de cerca|No se puede mostrar todos los datos{&#10;}Introduzca nuevo criterio de bÃºsqueda
+x|269|2023-11-30 20:04:59||Es obligatorio introducir datos de busqueda|It is mandatory to enter search data||Es obligatorio introducir datos de busqueda
+x|77|2023-11-30 20:04:59||Un campo en el formulario FRM# no tiene atributo &quot;name&quot;|There is a formulary field FRM# that does not have the complement &quot;name&quot;|Un camp en el formulari FRM# no tÃ¡ atribut &quot;name&quot;|Un campo en el formulario FRM# no tiene atributo &quot;name&quot;
+x|78|2023-11-30 20:04:59||La selecciÃ³n no cabe en el campo contenedor|The selection does not fit in the container field|La selecciÃ³ no cap en el camp contenidor|La selecciÃ³n no cabe en el campo contenedor
+x|79|2023-11-30 20:04:59||El control &quot;#&quot; no se puede activar|The control &quot;#&quot; can not activate|El control &quot;#&quot; no es pot activar|El control &quot;#&quot; no se puede activar
+x|8|2023-11-30 20:04:59||Mapa de opciones|Options map|Mapa d&#39;opcions|
+x|80|2023-11-30 20:04:59||Campo &quot;#&quot; no definido|Field &quot;#&quot; not definited|Camp &quot;#&quot; no definit|Campo &quot;#&quot; no definido
+x|81|2023-11-30 20:04:59||Campo &quot;#1&quot; no encontrado en #2|Field &quot;#1&quot; not found in #2|Camp &quot;#1&quot; no trobat en #2|Campo &quot;#1&quot; no encontrado en #2
+x|82|2023-11-30 20:04:59||El campo &quot;#1&quot; o su valor &quot;#2&quot; no encontrado en ePF()|The field &quot;#1&quot; or its value &quot;#2&quot; was not found in ePF()|El camp &quot;#1&quot; o el seu valor &quot;#2&quot; no trobat en ePF()|El campo &quot;#1&quot; o su valor &quot;#2&quot; no encontrado en ePF()
+x|83|2023-11-30 20:04:59||HistÃ³rico de movimientos|Movements history|HistÃ³ric de moviments|
+x|84|2023-11-30 20:04:59||A insertar|To insert|A inserir|
+x|85|2023-11-30 20:04:59||A modificar|To modify|A modificar|
+x|86|2023-11-30 20:04:59||A borrar|To delete|A esborrar|
+x|87|2023-11-30 20:04:59||A consultar|To consult|A consultar|
+x|88|2023-11-30 20:04:59||El objeto &quot;#&quot; no existe|Item &quot;#&quot; does not exist|L&#39;objecte &quot;#&quot; no existeix|El objeto &quot;#&quot; no existe
+x|89|2023-11-30 20:04:59||El select superior tiene que tener valor|The superior select must have a value|El select superior ha de tenir valor|El select superior tiene que tener valor
+x|9|2023-11-30 20:04:59||No se ha podido borrar el fichero &quot;#&quot;|It has not been possible to delete the data file&quot;#&quot;|No s&#39;ha pogut esborrar el fitxer &quot;#&quot;|No se ha podido borrar el fichero &quot;#&quot;
+x|90|2023-11-30 20:04:59||Activa el select|Activate select|Activa el select|Activa el select
+x|91|2023-11-30 20:04:59||Desactiva el select|Disable select|Desactiva el select|Desactiva el select
+x|92|2023-11-30 20:04:59||Calculando #1/#2|Calculating #1/#2|Calculant #1/#2|Calculando #1/#2
+x|93|2023-11-30 20:04:59||Entrada repetida|Repeated entry|Entrada repetida|Entrada repetida
+x|94|2023-11-30 20:04:59||Demasiadas entradas|Too many entries|Massa entrades|Demasiadas entradas
+x|95|2023-11-30 20:04:59||Borrar entrada|Delete entry|Esborrar entrada|Borrar entrada
+x|96|2023-11-30 20:04:59||MÃ³dulo de GrÃ¡ficas no encontrado|Graphic component not found|MÃ²dul de GrÃ fiques no trobat|MÃ³dulo de GrÃ¡ficas no encontrado
+x|97|2023-11-30 20:04:59||Falta definir la grÃ¡fica nÃºmero #|Graphic number # must be defined|Manca definir la grÃ fica nÃºmero #|
+x|98|2023-11-30 20:04:59||El tipo de grÃ¡fica &quot;*&quot; no se permite con [ChartGrid]|The graphic type &quot;*&quot; is not allowed with [ChartGrid]|El tipus de grÃ fic &quot;*&quot; no es permet amb [ChartGrid]|
+x|99|2023-11-30 20:04:59||Tipo grÃ¡fica|Chart type|Tipus grÃ fica|Tipo grÃ¡fica
+x|158|2023-11-30 20:04:59||Enviando fichero &quot;#&quot;|Sending file &quot;#&quot;|Enviant fitxer &quot;#&quot;|Enviando fichero &quot;#&quot;
+x|191|2023-11-30 20:04:59||Error enviando fichero &quot;#&quot;|Error sending file &quot;#&quot;|Error enviant fitxer &quot;#&quot;|Error enviando fichero &quot;#&quot;
+x|159|2023-11-30 20:04:59||Preparando fichero &quot;#&quot;|Preparing file &quot;#&quot;|Preparant fitxer &quot;#&quot;|Preparando fichero &quot;#&quot;
+x|160|2023-11-30 20:04:59||Frases demasiado largas en &quot;#1&quot; mÃ¡ximo #2 carÃ¡cteres|Sentences too long in &quot;#1&quot; maximum #2 characters|Frases massa llargues en &quot;#1&quot; mÃ xim #2 carÃ cters|Frases demasiado largas en &quot;#1&quot; mÃ¡ximo #2 carÃ¡cteres
+x|161|2023-11-30 20:04:59||Fichero &quot;#&quot; descargado|File &quot;#&quot; downloaded|Fitxer &quot;#&quot; descarregat|Fichero &quot;#&quot; descargado
+x|163|2023-11-30 20:04:59||Clave de acceso|Password|Clave de acceso|
+x|164|2023-11-30 20:04:59||TamaÃ±o fuente|Font size|TamaÃ±o fuente|TamaÃ±o fuente
+x|165|2023-11-30 20:04:59||Extragrande|Extra large|Extragran|Extragrande
+x|166|2023-11-30 20:04:59||Grande|Large|Gran|Grande
+x|167|2023-11-30 20:04:59||Normal|Normal|Normal|Normal
+x|169|2023-11-30 20:04:59||No hay fichero|No file|No hi ha fitxer|No hay fichero
+x|170|2023-11-30 20:04:59||Seleccione el directorio por defecto para lectura|Select the default directory for reading||Seleccione el directorio por defecto para lectura
+x|171|2023-11-30 20:04:59||Ya estÃ¡ en el mes actual|You are already in the current month||Ya estÃ¡ en el mes actual
+x|172|2023-11-30 20:04:59||Enero|January||Enero
+x|173|2023-11-30 20:04:59||Febrero|February||Febrero
+x|174|2023-11-30 20:04:59||Marzo|March||Marzo
+x|175|2023-11-30 20:04:59||Abril|April||Abril
+x|176|2023-11-30 20:04:59||Mayo|May||Mayo
+x|177|2023-11-30 20:04:59||Junio|June||Junio
+x|178|2023-11-30 20:04:59||Julio|July||Julio
+x|179|2023-11-30 20:04:59||Agosto|August||Agosto
+x|180|2023-11-30 20:04:59||Septiembre|September||Septiembre
+x|181|2023-11-30 20:04:59||Octubre|October||Octubre
+x|182|2023-11-30 20:04:59||Noviembre|November||Noviembre
+x|183|2023-11-30 20:04:59||Diciembre|December||Diciembre
+x|184|2023-11-30 20:04:59||Domingo|Sunday|Diumenge|Domingo
+x|185|2023-11-30 20:04:59||Lunes|Monday|Dilluns|Lunes
+x|186|2023-11-30 20:04:59||Martes|Tuesday|Dimarts|Martes
+x|187|2023-11-30 20:04:59||MiÃ©rcoles|Wednesday|Dimecres|MiÃ©rcoles
+x|188|2023-11-30 20:04:59||Jueves|Thursday|Dijous|Jueves
+x|189|2023-11-30 20:04:59||Viernes|Friday|Divendres|Viernes
+x|190|2023-11-30 20:04:59||SÃ¡bado|Saturday|Dissabte|SÃ¡bado
+x|192|2023-11-30 20:04:59|PDFWhatRecipient|Destinatario|Addressee||Destinatario
+x|193|2023-11-30 20:04:59|PDFWhatPassword|Clave|Key||Clave
+x|194|2023-11-30 20:04:59|PDFWhatData|PeticiÃ³n de datos|Data request||
+x|195|2023-11-30 20:04:59|PDF Download|Descargar|Download||Descargar
+x|196|2023-11-30 20:04:59|PDF|Creado por|Created by||Creado por
+x|197|2023-11-30 20:04:59||Falta seleccionar la subficha &quot;#&quot;|Missing to select subtab &quot;#&quot;||Falta seleccionar la subficha &quot;#&quot;
+x|198|2023-11-30 20:04:59||La subficha &quot;#&quot; no puede estar en modo alta|Subtab &quot;#&quot; cannot be in high mode||La subficha &quot;#&quot; no puede estar en modo alta
+x|199|2023-11-30 20:04:59||Si continÃºa se perderÃ¡n los datos&#60;br&#62;introducidos en la ficha.|If you continue, the data&#60;br&#62;entered in the file will be lost.||Si continÃºa se perderÃ¡n los datos&#60;br&#62;introducidos en la ficha.
+x|200|2023-11-30 20:04:59||El dato &quot;#&quot; es obligatorio|The data &quot;#&quot; is mandatory||El dato &quot;#&quot; es obligatorio
+x|201|2023-11-30 20:04:59|Lunes|Lu|Mo|L|Lu
+x|202|2023-11-30 20:04:59|Martes|Ma|Tu|M|Ma
+x|203|2023-11-30 20:04:59|Miercoles|Mi|We|X|Mi
+x|204|2023-11-30 20:04:59|Jueves|Ju|Th|J|Ju
+x|205|2023-11-30 20:04:59|Viernes|Vi|Fr|V|Vi
+x|206|2023-11-30 20:04:59|SÃ¡bado|SÃ¡|Sa|S|SÃ¡
+x|207|2023-11-30 20:04:59|Domingo|Do|Su|D|Do
+x|208|2023-11-30 20:04:59||Seleccionar Periodo Actual|Select Current Period||Seleccionar Periodo Actual
+x|209|2023-11-30 20:04:59||Mensaje|Message|Missatge|
+x|210|2023-11-30 20:04:59||Confirmar|Confirm|Confirmar|
+x|211|2023-11-30 20:04:59||Aviso|Advice|AvÃ­s|
+x|212|2023-11-30 20:04:59||Error|Error|Error|
+x|213|2023-11-30 20:04:59||Aceptar|Accept|Aceptar|Aceptar
+x|214|2023-11-30 20:04:59||Si|Yes||
+x|215|2023-11-30 20:04:59||No|No||
+x|216|2023-11-30 20:04:59||Cancelar|Cancel|CancelÂ·la|Cancelar
+x|217|2023-11-30 20:04:59||Imprimir|Print||Imprimir
+x|218|2023-11-30 20:04:59||Confirmar la opciÃ³n de imprimir|Confirm the print option|Confirmeu l&#39;opciÃ³ d&#39;imprimir|Confirmar la opciÃ³n de imprimir
+x|219|2023-11-30 20:04:59||Cargando...|Loading...|Carregant...|Cargando...
+x|220|2023-11-30 20:04:59||Sistema ocupado|System in use|Sistema ocupat|Sistema ocupado
+x|221|2023-11-30 20:04:59||AcciÃ³n no permitida|Action not allowed|AcciÃ³ no permesa|AcciÃ³n no permitida
+x|222|2023-11-30 20:04:59||Enviando fichero...|Sending file...|Enviant fitxer...|Enviando fichero...
+x|223|2023-11-30 20:04:59||Grabado|Recorded||Grabado
+x|224|2023-11-30 20:04:59||Calculando...|Calculated...||Calculando...
+x|225|2023-11-30 20:04:59||Descargando...|Downloading...||Descargando...
+x|226|2023-11-30 20:04:59|SubList|Insertar|Insert||Insertar
+x|227|2023-11-30 20:04:59|SubList|Modificar|Update||Modificar
+x|228|2023-11-30 20:04:59|SubList|Borrar|Delete||Borrar
+x|229|2023-11-30 20:04:59||Memorizando valores por defecto...|Storing default values...||Memorizando valores por defecto...
+x|230|2023-11-30 20:04:59||Borrando valores por defecto...|Clearing defaults...||Borrando valores por defecto...
+x|231|2023-11-30 20:04:59||Por motivos internos en # minutos se cerrarÃ¡ la aplicaciÃ³n.|For internal reasons in # minutes the application will be closed.||Por motivos internos en # minutos se cerrarÃ¡ la aplicaciÃ³n.
+x|232|2023-11-30 20:04:59||Esta opciÃ³n no se puede ejecutar en una subventana|This option cannot be executed in a subwindow||Esta opciÃ³n no se puede ejecutar en una subventana
+x|233|2023-11-30 20:04:59|[SortList]|Fila a mover|Row to move||Fila a mover
+x|234|2023-11-30 20:04:59|[SortList]|Fila liberada|Released row||Fila liberada
+x|235|2023-11-30 20:04:59|[SortList]|Fila movida|Row moved||Fila movida
+x|236|2023-11-30 20:04:59||Seleccionar aÃ±o y mes|Select year and month||Seleccionar aÃ±o y mes
+x|237|2023-11-30 20:04:59|al dar de alta un registro en [EditList]|Insertado|Added|Inserit|Insertado
+x|238|2023-11-30 20:04:59|al modificar un registro en [EditList]|Modificado|Modified|Modificat|Modificado
+x|239|2023-11-30 20:04:59||El dato &quot;#&quot; tiene que estar totalmente relleno o vacÃ­o|The data &quot;#&quot; must be completely filled or empty||El dato &quot;#&quot; tiene que estar totalmente relleno o vacÃ­o
+x|240|2023-11-30 20:04:59||Error condiciÃ³n repetida|Repeated condition error||Error condiciÃ³n repetida
+x|241|2023-11-30 20:04:59||Error en el valor de la condiciÃ³n|Condition value error||Error en el valor de la condiciÃ³n
+x|242|2023-11-30 20:04:59||Error en la condiciÃ³n|Condition failed||Error en la condiciÃ³n
+x|243|2023-11-30 20:04:59||Falta el valor de la condiciÃ³n|Missing condition value||Falta el valor de la condiciÃ³n
+x|244|2023-11-30 20:04:59||Falta la condiciÃ³n|Missing condition||Falta la condiciÃ³n
+x|245|2023-11-30 20:04:59||Se ha producido un error, cÃ³digo #|An error has occurred, code #||Se ha producido un error, cÃ³digo #
+x|246|2023-11-30 20:04:59||Zona completa|Full zone||Zona completa
+x|247|2023-11-30 20:04:59||La primera columna no puede ser numÃ¡rica|The first column cannot be numeric||La primera columna no puede ser numÃ¡rica
+x|248|2023-11-30 20:04:59||Columna &quot;#&quot; repetida|Column &quot;#&quot; repeated||Columna &quot;#&quot; repetida
+x|249|2023-11-30 20:04:59||Falta alguna columna numÃ¡rica|Some numeric column is missing||Falta alguna columna numÃ¡rica
+x|250|2023-11-30 20:04:59||Faltan definir mas columnas|Need to define more columns||Faltan definir mas columnas
+x|251|2023-11-30 20:04:59||Las grÃ¡ficas de este tipo no admiten valores negativos|Graphs of this type do not admit negative values||Las grÃ¡ficas de este tipo no admiten valores negativos
+x|252|2023-11-30 20:04:59||El fichero no se puede previsualizar|The file cannot be previewed||El fichero no se puede previsualizar
+x|253|2023-11-30 20:04:59||Fichero demasiado grande para previsualizar|File too big to preview||Fichero demasiado grande para previsualizar
+x|254|2023-11-30 20:04:59||Sistema parado por mantenimiento.|System stopped for maintenance.||Sistema parado por mantenimiento.
+x|255|2023-11-30 20:04:59||Se avisÃ³ a las #.|It was notified at #.||Se avisÃ³ a las #.
+x|256|2023-11-30 20:04:59||La aplicaciÃ³n se cerrarÃ¡ en|The application will close in||La aplicaciÃ³n se cerrarÃ¡ en
+x|257|2023-11-30 20:04:59||Falta definir la variable &quot;S.setup.maxFileUploads&quot;|Missing to define variable &quot;S.setup.maxFileUploads&quot;||Falta definir la variable &quot;S.setup.maxFileUploads&quot;
+x|258|2023-11-30 20:04:59||Nombre de fichero demasiado largo&#60;br&#62;&quot;#&quot;|Filename too long&#60;br&#62;&quot;#&quot;||Nombre de fichero demasiado largo&#60;br&#62;&quot;#&quot;
+x|259|2023-11-30 20:04:59||ExtensiÃ³n no permitida &quot;#1&quot;&#60;br&#62;&quot;#2&quot;|Illegal extension &quot;#1&quot;&#60;br&#62;&quot;#2&quot;||ExtensiÃ³n no permitida &quot;#1&quot;&#60;br&#62;&quot;#2&quot;
+x|260|2023-11-30 20:04:59||Fichero demasiado grande&#60;br&#62;&quot;#1&quot;&#60;br&#62;#2 &#62; #3|File too big&#60;br&#62;&quot;#1&quot;&#60;br&#62;#2 &#62; #3||Fichero demasiado grande&#60;br&#62;&quot;#1&quot;&#60;br&#62;#2 &#62; #3
+x|261|2023-11-30 20:04:59||CarÃ¡cteres no permitidos en el nombre del fichero|Characters not allowed in the file name||CarÃ¡cteres no permitidos en el nombre del fichero
+x|262|2023-11-30 20:04:59||Fichero &quot;#&quot; repetido|File &quot;#&quot; repeated||Fichero &quot;#&quot; repetido
+x|263|2023-11-30 20:04:59||Confirmar cerrar la aplicaciÃ³n|Confirm close the application|Confirmeu tancar l&#39;aplicaciÃ³|Confirmez la fermeture de l&#39;application
+x|264|2023-11-30 20:04:59||Hay ficheros pendientes de enviar|There are files pending to send||Hay ficheros pendientes de enviar
+x|265|2023-11-30 20:04:59||Si cierra perderÃ¡ datos|If you close you will lose data||Si cierra perderÃ¡ datos
+x|266|2023-11-30 20:04:59||Se ha perdido la sessiÃ³n.&#60;br&#62;La aplicaciÃ³n se cerrarÃ¡.|The session has been lost.&#60;br&#62;The application will be closed.||Se ha perdido la sessiÃ³n.&#60;br&#62;La aplicaciÃ³n se cerrarÃ¡.
+x|267|2023-11-30 20:04:59||AplicaciÃ³n cerrada.|Application closed.||AplicaciÃ³n cerrada.
+x|268|2023-11-30 20:04:59||Configurar impresora|Configure printer||Configurar impresora
+r|MultipleFilter|2023-11-30 20:04:59||&#60;TABLE class=&quot;NO_SELECT&quot; border=0px cellspacing=0px cellpadding=0px style=&quot;margin-bottom: 4px;&quot;&#62;&#13;&#10;	&#60;tr&#62;&#60;th class=TITULO&#62;&#60;span style=&quot;vertical-align:sub&quot;&#62;@287@&#60;/span&#62;&#13;&#10;		&#60;i class=&#39;ICONWINDOW&#39; onclick=&#39;_FilterUser(this, &quot;x&quot;)&#39; title=&#39;@289@&#39; style=&#39;float:right; margin-right:-3px; margin-top:1px;&#39;&#62;5&#60;/i&#62;&#13;&#10;		&#60;i class=&#39;ICONWINDOW&#39; onclick=S(this).help(&#39;$condi_list&#39;) style=&#39;float:right; margin-right:3px; margin-top:0px;&#39; title=&#39;@280@&#39;&#62;@&#60;/i&#62;&#13;&#10;		&#60;i class=&#39;ICONWINDOW&#39; id=&#39;{#}&#39; onclick=S(window).clipboardGet(&#39;{#}&#39;) title=&#39;@290@&#39; style=&#39;float:right; margin-right:3px; margin-top:0px;&#39;&#62;P&#60;/i&#62;&#13;&#10;	&#60;/th&#62;&#60;/tr&#62;&#13;&#10;	&#60;tr&#62;&#60;td style=&quot;padding:0px&quot;&#62;&#13;&#10;		&#60;TEXTAREA cols=60 rows=8 id=&quot;{#}&quot; name=&quot;{#}&quot; e-bak=&quot;&quot; tc=&quot;#&quot; leng=&quot;-1&quot; class=&quot;EDITABLE&quot; NotFilter=1 onpaste=&quot;return true&quot; onkeypress=&quot;return true&quot; onkeydown=&quot;return true&quot; style=&quot;margin:0px&quot;&#62;&#60;/TEXTAREA&#62;&#13;&#10;	&#60;/td&#62;&#60;/tr&#62;&#13;&#10;	&#60;tr&#62;&#60;td align=center&#62;@291@&#60;br&#62;&#13;&#10;&#60;center style=&quot;display: inline-flex;&quot;&#62;&#13;&#10;&#60;span class=&quot;AddButton AddButton2&quot; onclick=&quot;_FilterUser(this, &#39;d&#39;)&quot; style=&quot;zoom:0.75; padding-right:7px;&quot;&#62;&#60;i class=&quot;ICONINPUT&quot;&#62;Â·&#60;/i&#62;@288@&#60;/span&#62;&#13;&#10;&#13;&#10;&#60;span class=&quot;AddButton&quot; e-op=1 onclick=&quot;_FilterUser(this, &#39;u&#39;)&quot; style=&quot;zoom:0.75; padding-right:7px;&quot;&#62;&#60;i class=&quot;ICONINPUT ICONUPDATE&quot;&#62;U&#60;/i&#62;@213@&#60;/span&#62;&#13;&#10;&#60;/center&#62;&#13;&#10;	&#60;/td&#62;&#60;/tr&#62;&#13;&#10;&#60;/table&#62;|||
+r|GetCondition|2023-11-30 20:04:59||<table id=&quot;GetCondition&quot; border=0px cellspacing=0px cellpadding=0px class=TOOLBAR no=SubLista style=&#39;padding-left:5px; padding-right:5px; padding-bottom:2px; text-align:center&#39;>{&#13;}{&#10;}	<tr>{&#13;}{&#10;}		<td style=&quot;background-color:transparent&quot;>		{&#13;}{&#10;}			<table border=0px cellspacing=0px cellpadding=0px style=&#39;width:100%;background:transparent;&#39;>{&#13;}{&#10;}				<tr>{&#13;}{&#10;}					<th style=&quot;width:100%;background:transparent;white-space:nowrap;cursor:default&quot;>@282@</th>{&#13;}{&#10;}					<th style=&quot;width:1px; background:transparent&quot; class=&quot;ICONTAB&quot;>{&#13;}{&#10;}						<i class=&quot;ICONWINDOW&quot; onclick=&quot;_EditConditionClose()&quot; title=&quot;@283@&quot;>5</i>{&#13;}{&#10;}					</th>{&#13;}{&#10;}				</tr>{&#13;}{&#10;}			</table>{&#13;}{&#10;}		</td>{&#13;}{&#10;}	</tr><tr>{&#13;}{&#10;}		<td>{&#13;}{&#10;}			<form name=&quot;GETCONDITION&quot; autocomplete=&quot;new_password&quot;>{&#13;}{&#10;}				<table class=&quot;BROWSE NO_SHADOW&quot; style=&#39;border-collapse:separate;&#39;>{&#13;}{&#10;}					<tr style=&#39;cursor:default&#39;>{&#13;}{&#10;}						<th style=&#39;cursor:default&#39;>@284@</th>{&#13;}{&#10;}						<th style=&#39;cursor:default&#39;>@285@</th>{&#13;}{&#10;}					</tr><tr>{&#13;}{&#10;}						<td align=&#39;center&#39; style=&#39;background-color:transparent&#39;>{&#13;}{&#10;}							<INPUT NAME=&#39;_cnd_type_1&#39; id=&#39;_cnd_type_1&#39; TYPE=&#39;HIDDEN&#39; onfocus=&quot;S.key(&#39;CN&#39;)&quot;>{&#13;}{&#10;}							<span class=&quot;SELECTINPUT&quot; onclick=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}								<INPUT NAME=&#39;_INPUT__cnd_type_1&#39; id=&#39;_INPUT__cnd_type_1&#39; SIZE=2 MAXLENGTH=2 class=&#39;EDITABLE&#39; onfocus=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}							</span>{&#13;}{&#10;}							<DIV class=&quot;SELECT EDITABLE SCROLLBAR&quot;>{&#13;}{&#10;}								<TABLE INIT=0 id=&#39;_cnd_type_1_TABLE&#39; width=1px cols=2><COL id=o><COL>{&#13;}{&#10;}									<TR v=&quot;&quot; r=0><TD><TD>Â {&#13;}{&#10;}									<TR v=&quot;>&quot; r=1><TD>><TD>>{&#13;}{&#10;}									<TR v=&quot;>=&quot; r=2><TD>>=<TD>>={&#13;}{&#10;}									<TR v=&quot;<&quot; r=3><TD><<TD><{&#13;}{&#10;}									<TR v=&quot;<=&quot; r=4><TD><=<TD><={&#13;}{&#10;}									<TR v=&quot;<>&quot; r=5><TD><><TD><>{&#13;}{&#10;}									<TR v=&quot;=&quot; r=6><TD>=<TD>={&#13;}{&#10;}								</TABLE>{&#13;}{&#10;}							</DIV>{&#13;}{&#10;}						</td><td style=&#39;width:100px;height:1px;text-align:center;background-color:transparent;&#39;>{&#13;}{&#10;}							<nobr>{&#13;}{&#10;}							<input type=&#39;text&#39; id=&#39;_cnd_value_1&#39; name=&#39;_cnd_value_1&#39; class=&#39;EDITABLE&#39; onkeypress=ePattern() onkeydown=ePatternDel() style=&#39;border:0px;width:100px&#39;><i class=&#39;ICONINPUT&#39;>,</i>{&#13;}{&#10;}						</td>{&#13;}{&#10;}					</tr><tr>{&#13;}{&#10;}						<td align=&#39;center&#39; style=&#39;background-color:transparent&#39;>{&#13;}{&#10;}							<INPUT NAME=&#39;_cnd_type_2&#39; id=&#39;_cnd_type_2&#39; TYPE=&#39;HIDDEN&#39; onfocus=&quot;S.key(&#39;CN&#39;)&quot;>{&#13;}{&#10;}							<span class=&quot;SELECTINPUT&quot; onclick=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}								<INPUT NAME=&#39;_INPUT__cnd_type_2&#39; id=&#39;_INPUT__cnd_type_2&#39; SIZE=2 MAXLENGTH=2 class=&#39;EDITABLE&#39; onfocus=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}							</span>{&#13;}{&#10;}							<DIV class=&quot;SELECT EDITABLE SCROLLBAR&quot;>{&#13;}{&#10;}								<TABLE INIT=0 id=&#39;_cnd_type_2_TABLE&#39; width=1px cols=2><COL id=o><COL>{&#13;}{&#10;}									<TR v=&quot;&quot; r=0><TD><TD>Â {&#13;}{&#10;}									<TR v=&quot;>&quot; r=1><TD>><TD>>{&#13;}{&#10;}									<TR v=&quot;>=&quot; r=2><TD>>=<TD>>={&#13;}{&#10;}									<TR v=&quot;<&quot; r=3><TD><<TD><{&#13;}{&#10;}									<TR v=&quot;<=&quot; r=4><TD><=<TD><={&#13;}{&#10;}									<TR v=&quot;<>&quot; r=5><TD><><TD><>{&#13;}{&#10;}									<TR v=&quot;=&quot; r=6><TD>=<TD>={&#13;}{&#10;}								</TABLE>{&#13;}{&#10;}							</DIV>{&#13;}{&#10;}						</td><td style=&#39;width:100px;height:1px;text-align:center;background-color:transparent;&#39;>{&#13;}{&#10;}							<nobr>{&#13;}{&#10;}							<input type=&#39;text&#39; id=&#39;_cnd_value_2&#39; name=&#39;_cnd_value_2&#39; class=&#39;EDITABLE&#39; onkeypress=ePattern() onkeydown=ePatternDel() style=&#39;border:0px;width:100px&#39;>{&#13;}{&#10;}							<i class=&#39;ICONINPUT&#39;>,</i>{&#13;}{&#10;}						</td>{&#13;}{&#10;}					</tr><tr>{&#13;}{&#10;}						<td align=&#39;center&#39; style=&#39;background-color:transparent&#39;>{&#13;}{&#10;}							<INPUT NAME=&#39;_cnd_type_3&#39; id=&#39;_cnd_type_3&#39; TYPE=&#39;HIDDEN&#39; onfocus=&quot;S.key(&#39;CN&#39;)&quot;>{&#13;}{&#10;}							<span class=&quot;SELECTINPUT&quot; onclick=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}								<INPUT NAME=&#39;_INPUT__cnd_type_3&#39; id=&#39;_INPUT__cnd_type_3&#39; SIZE=2 MAXLENGTH=2 class=&#39;EDITABLE&#39; onfocus=&quot;S.key(&#39;S&#39;)&quot;>{&#13;}{&#10;}							</span>{&#13;}{&#10;}							<DIV class=&quot;SELECT EDITABLE SCROLLBAR&quot;>{&#13;}{&#10;}								<TABLE INIT=0 id=&#39;_cnd_type_3_TABLE&#39; width=1px cols=2><COL id=o><COL>{&#13;}{&#10;}									<TR v=&quot;&quot; r=0><TD><TD>Â {&#13;}{&#10;}									<TR v=&quot;>&quot; r=1><TD>><TD>>{&#13;}{&#10;}									<TR v=&quot;>=&quot; r=2><TD>>=<TD>>={&#13;}{&#10;}									<TR v=&quot;<&quot; r=3><TD><<TD><{&#13;}{&#10;}									<TR v=&quot;<=&quot; r=4><TD><=<TD><={&#13;}{&#10;}									<TR v=&quot;<>&quot; r=5><TD><><TD><>{&#13;}{&#10;}									<TR v=&quot;=&quot; r=6><TD>=<TD>={&#13;}{&#10;}								</TABLE>{&#13;}{&#10;}							</DIV>{&#13;}{&#10;}						</td><td style=&#39;width:100px;height:1px;text-align:center;background-color:transparent;&#39;>{&#13;}{&#10;}							<nobr>{&#13;}{&#10;}							<input type=&#39;text&#39; id=&#39;_cnd_value_3&#39; name=&#39;_cnd_value_3&#39; class=&#39;EDITABLE&#39; onkeypress=ePattern() onkeydown=ePatternDel() style=&#39;border:0px;width:100px&#39;>{&#13;}{&#10;}							<i class=&#39;ICONINPUT&#39;>,</i>{&#13;}{&#10;}						</td>{&#13;}{&#10;}					</tr>{&#13;}{&#10;}				</table>{&#13;}{&#10;}			</form>{&#13;}{&#10;}		</td>{&#13;}{&#10;}	</tr><tr>{&#13;}{&#10;}		<td align=center style=&quot;background-color:transparent&quot;>{&#13;}{&#10;}			<span class=&#39;AddButton ZOOM90&#39; onclick=&quot;S.public(1);_EditConditionOk();S.public();&quot; title=&quot;@286@&quot; >{&#13;}{&#10;}				<i class=&quot;ICONINPUT&quot; >U</i>@137@{&#13;}{&#10;}			</span>{&#13;}{&#10;}		</td>{&#13;}{&#10;}	</tr>{&#13;}{&#10;}</table>|||
+c|css/desktop.css|2025-06-01 12:47:56||(storage)|||
+x|270|2023-11-30 20:04:59||Si|Yes||
+x|271|2023-11-30 20:04:59||No|No||
+x|272|2023-11-30 20:04:59||Cancelar|Cancel||Cancelar
+x|273|2023-11-30 20:04:59||Aceptar|Accept||Aceptar
+x|274|2023-11-30 20:04:59||Alerta del sistema|System alert||Alerta del sistema
+x|275|2023-11-30 20:04:59||Ventanas minimizadas|Minimized windows||Ventanas minimizadas
+c|css/message.css|2025-06-01 12:47:57||(storage)|||
+c|css/message_big.css|2025-06-01 12:47:57||(storage)|||
+c|css/message_tlf.css|2025-06-01 12:47:58||(storage)|||
+c|css/message_small.css|2025-06-01 12:47:58||(storage)|||
+x|276|2023-11-30 20:04:59||La fecha de nacimiento no se puede condicionar a la vez por fecha y por edad|The date of birth cannot be conditioned both by date and by age||La fecha de nacimiento no se puede condicionar a la vez por fecha y por edad
+x|277|2023-11-30 20:04:59||Tiene una SubFicha a medias|It has a half SubTab||Tiene una SubFicha a medias
+x|278|2023-11-30 20:04:59||Pulsar|Press|Press|Pulsar
+r|CALCULATOR|2023-11-30 20:04:59||<div Estado=0 id=&quot;CALCULATOR&quot; class=&quot;CALCULATOR&quot; style=&quot;position:absolute;left:0px;top:0px;z-index:99999999;display:none&quot;>{&#13;}{&#10;}	<table cellspacing=0px border=0px>{&#13;}{&#10;}		<col cla-ss=&#39;Celda&#39;><col id=&quot;D&quot; cla-ss=&#39;Celda&#39;><col id=&quot;C&quot; cl-ass=&#39;Celda&#39;>{&#13;}{&#10;}		<tr><th><th>@279@<th onclick=&#39;_CalculatorClose()&#39;><i class=&quot;ICONWINDOW&quot; title=&quot;@280@&quot;>@</i> <i class=&quot;ICONWINDOW&quot; title=&quot;@281@&quot;>5</i>{&#13;}{&#10;}	</table>{&#13;}{&#10;}</div>|||
+s|notification|2023-11-30 20:04:59|||||
+s|warning|2023-11-30 20:04:59|||||
+x|279|2023-11-30 20:04:59|Recurso calculadora|Calculadora|Calculator|Calculadora|Calculatrice
+x|280|2023-11-30 20:04:59||Ayuda|Help|Ajuda|Aide
+x|281|2023-11-30 20:04:59|Recurso calculadora|Cerrar|To close|Tancar|Fermer
+x|282|2023-11-30 20:04:59|Recurso GetCondition|CondiciÃ³n mÃºltiple|Multiple condition|CondiciÃ³ mÃºltiple|Conditions multiples
+x|283|2023-11-30 20:04:59|Recurso GetCondition|Cerrar ventana|Close the window|Tancar finestra|Fermer fenÃªtre
+x|284|2023-11-30 20:04:59|Recurso GetCondicion|CondiciÃ³n|Condition|CondiciÃ³|Condition
+x|285|2023-11-30 20:04:59|Recurso GetCondition|Valor|Value|Valor|La peine
+x|286|2023-11-30 20:04:59|Recurso GenCondition|Aceptar las condiciones|Accept the conditions|Acceptar les condicions|Acceptez les conditions
+x|287|2023-11-30 20:04:59|Recurso MultipleFilter|Lista de selecciÃ³n|Selection list|Llista de selecciÃ³|Liste de sÃ©lection
+x|288|2023-11-30 20:04:59|Recurso MultiFilter|Limpiar datos|Clean data|Netejar dades|Nettoyer les donnÃ©es
+x|289|2023-11-30 20:04:59||Cierra ventana y<br>limpia los datos|Close window and<br>clean data|Tanca finestra i<br>neta les dades|Fermer la fenÃªtre et<br>nettoyer les donnÃ©es
+x|290|2023-11-30 20:04:59|Recurso FiltroMultiple|Copiar del exterior|Copy from outside|Copiar de l&#39;exterior|Copier de l&#39;extÃ©rieur
+x|291|2023-11-30 20:04:59|Recurso CondicionMultiple|Lista de valores, uno por linea y/o separados por coma|List of values, one per line and/or separated by commas|Llista de valors, un per lÃ­nia i/o separats per coma|Liste de valeurs, une par ligne et/ou sÃ©parÃ©es par des virgules
+c|css/list_card.css|2025-06-01 12:47:58||(storage)|||
+x|292|2023-11-30 20:04:59|SubList|Consultar|View||
+x|293|2023-11-30 20:04:59||Exportar a Excel|Export to Excel||
+x|294|2023-11-30 20:04:59||MenÃº|Menu|MenÃº|Menu
+x|295|2023-11-30 20:04:59||Acceso restringido por seguridad, activa la VPN|Restricted access for security, activate the VPN||
+x|296|2023-11-30 20:04:59||Faltan definir datos|Missing to define data||
+x|297|2023-11-30 20:04:59||AÃ±o|Year||
+x|298|2023-11-30 20:04:59||Mes|Month||
+x|299|2023-11-30 20:04:59||PÃ¡gina anterior|Previous page||
+x|300|2023-11-30 20:04:59||Siguiente pÃ¡gina|Next page||
+x|301|2023-11-30 20:04:59||BuscarÃ¡ los datos vacÃ­os|It will look for the empty data||
+x|302|2023-11-30 20:04:59||Idioma por defecto &quot;#&quot;|Default language &quot;#&quot;||
+x|303|2023-11-30 20:04:59||La sesiÃ³n caducarÃ¡ en 5 minutos.&#60;br&#62;&#60;b&#62;La aplicaciÃ³n se cerrarÃ¡.|The session will expire in 5 minutes.&#60;br&#62;&#60;b&#62;The application will be closed.||
+x|304|2023-11-30 20:04:59||OpciÃ³n no encontrada|Option not found||
+x|305|2023-11-30 20:04:59||SesiÃ³n activa hasta #|Active session until #||
+x|306|2023-11-30 20:04:59||El proceso se ejecutarÃ¡ en 2Âº plano|The process will run in the background||
+x|307|2023-11-30 20:04:59||No caben mas favoritos|There are no more favorites||
+x|308|2023-11-30 20:04:59||Ejecutar en..|Execute on..||
+x|309|2023-11-30 20:04:59||Zona principal|Main||
+x|310|2023-11-30 20:04:59||Subventana|Subwindow||
+x|311|2023-11-30 20:04:59||Cascada|Cascade||
+x|312|2023-11-30 20:04:59||Vista previa|Preview||
+x|313|2023-11-30 20:04:59||Favorito #|Favorite #||
+x|314|2023-11-30 20:04:59||Editar fuente|Edit Source||
+c|cssMAC|2023-12-19 18:31:42||:root {&#13;&#10;	--cText: text;&#13;&#10;	--cAuto: cell;&#13;&#10;	--cPointer: default;&#13;&#10;	--cContext: context-menu;&#13;&#10;}|||
+c|cssWIN|2023-12-19 18:52:18||:root {&#13;&#10;	--cText: text;&#13;&#10;	--cAuto: crosshair;&#13;&#10;	--cPointer: default;&#13;&#10;	--cContext: copy;&#13;&#10;}|||
+c|315|2023-11-30 20:04:59||(varios datos)|(various data)||
+x|315|2023-11-30 20:04:59||Ordenar y filtrar|Sort & filter||
+x|316|2023-11-30 20:04:59||Ordenar de A a Z|Sort A to Z||
+x|317|2023-11-30 20:04:59||Ordenar de A a Z&#43;|Sort A to Z&#43;||
+x|318|2023-11-30 20:04:59||Ordenar de Z a A|Sort Z to A||
+x|319|2023-12-27 09:02:48||Ordenar de Z a A&#43;|Sort Z to A&#43;|Ordenar de Z a A&#43;|
+x|320|2023-11-30 20:04:59||Filtrar|Filter||
+x|321|2023-11-30 20:04:59||Ficheros subidos en segundo plano|Files uploaded in background||
+x|322|2023-11-30 20:04:59||Modo selecciÃ³n|Selection mode||
+x|323|2023-11-30 20:04:59||SelecciÃ³n en ventana actual|Selection in current window||
+x|324|2023-11-30 20:04:59||SelecciÃ³n en subventana|Selection in subwindow||
+x|325|2023-11-30 20:04:59||Filtro repetido|Repeated filter||
+x|326|2023-11-30 20:04:59||Los archivos estÃ¡n siendo enviados.&#60;br&#62;Por favor, espere hasta que se hayan completado.|The files are being sent.&#60;br&#62;Please wait until they are complete.||
+x|327|2023-11-30 20:04:59||El valor de &quot;#&quot; no puede tener acentos|The value of &quot;#&quot; cannot have accents||
+x|328|2023-11-30 20:04:59||Error en la longitud del campo &quot;#&quot;|Error in the length of the field &quot;#&quot;||
+x|329|2023-11-30 20:04:59||Error en el campo &quot;#&quot;|Error in field &quot;#&quot;||
+x|330|2023-11-30 20:04:59||El valor de &quot;#1&quot; no puede ser superior a &quot;#2&quot;|The value of &quot;#1&quot; cannot be greater than &quot;#2&quot;||
+x|331|2023-11-30 20:04:59||El valor de &quot;#1&quot; no puede ser inferior a &quot;#2&quot;|The value of &quot;#1&quot; cannot be less than &quot;#2&quot;||
+x|332|2023-11-30 20:04:59||Fecha erronea|Wrong date||
+x|333|2023-11-30 20:04:59||Dato erroneo en &quot;#&quot;|Wrong data in &quot;#&quot;||
+x|334|2023-11-30 20:04:59||Al campo &quot;#&quot; le faltan caracteres|Field &quot;#&quot; is missing characters||
+x|335|2023-11-30 20:04:59||El periodo no puede ser inferior a &quot;#&quot;|The period cannot be less than &quot;#&quot;||
+x|336|2023-11-30 20:04:59||El periodo no puede ser superior a &quot;#&quot;|The period cannot be greater than &quot;#&quot;||
+x|337|2023-11-30 20:04:59||Mes no permitido|Month not allowed||
+x|338|2023-11-30 20:04:59||Fecha erronea en &quot;#&quot;|Wrong date in &quot;#&quot;||
+x|339|2023-11-30 20:04:59||D?a de la semana no permitido|Day of the week not allowed||
+x|340|2023-11-30 20:04:59||La fecha no puede ser inferior a &quot;#&quot;|Date cannot be less than &quot;#&quot;||
+x|341|2023-11-30 20:04:59||La fecha no puede ser superior a &quot;#&quot;|Date cannot be greater than &quot;#&quot;||
+x|342|2023-11-30 20:04:59||C?digo postal erroneo|Wrong zip code||
+x|343|2023-11-30 20:04:59||Bloqueado por inactividad|Locked for inactivity||
+x|344|2023-11-30 20:04:59||Usuario|User||
+x|345|2023-11-30 20:04:59||ContraseÃ±a|Password||
+x|346|2023-11-30 20:04:59||Columnas visibles|Visible columns||
+x|347|2023-11-30 20:04:59||No hay ninguna columna visible|No column visible||
+x|348|2023-11-30 20:04:59||Recuentos|Counts||
+x|349|2023-11-30 20:04:59||Registros encontrados: #|Records found: #||
+x|350|2023-11-30 20:04:59||Espaciado|Spacing||
+x|351|2023-11-30 20:04:59||PequeÃ±o|Little||
+x|352|2023-11-30 20:04:59||Normal|Normal||
+x|353|2023-11-30 20:04:59||Grande|Big||
+x|354|2023-11-30 20:04:59|dateformat|Rango de dias|Day range||
+x|355|2024-02-04 21:39:47|dateformat|Anterior|Previous||
+x|356|2023-11-30 20:04:59|dateformat|Actual|Current||
+x|357|2023-11-30 20:04:59|dateformat|DÃ­a|Day||
+x|358|2023-11-30 20:04:59|dateformat|Semana|Week||
+x|359|2023-11-30 20:04:59|dateformat|Mes|Month||
+x|360|2023-11-30 20:04:59|dateformat|Trimestre|Quarter||
+x|361|2023-11-30 20:04:59|dateformat|Cuatrimestre|Four-month period||
+x|362|2023-11-30 20:04:59|dateformat|Semestre|Semester||
+x|363|2023-11-30 20:04:59|dateformat|AÃ±o|Year||
+x|364|2023-11-30 20:04:59|dateformat|Personalizado|Personalized||
+r|dateformat|2023-11-30 20:04:59||&#60;table id=&quot;DATEFORMAT&quot; class=&quot;BROWSE col_1c col_2c&quot; style=&quot;display:none&quot;&#62;&#13;&#10;	&#60;thead&#62;&#13;&#10;		&#60;tr&#62;&#60;th&#62;@354@&#60;th&#62;@355@&#60;th&#62;@356@&#13;&#10;	&#60;/thead&#62;&#13;&#10;	&#60;tbody onclick=&quot;S(this).setFilterDate()&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;Day&quot;&#62; &#60;td&#62;@357@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;Week&quot;&#62;&#60;td&#62;@358@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;,1&quot;&#62; &#60;td&#62;@359@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;,3&quot;&#62; &#60;td&#62;@360@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;,4&quot;&#62; &#60;td&#62;@361@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;,6&quot;&#62; &#60;td&#62;@362@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;,12&quot;&#62; &#60;td&#62;@363@&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#60;td&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;		&#60;tr e-type=&quot;user&quot;&#62;&#60;td&#62;@364@&#60;td colspan=2&#62;&#60;input type=&quot;radio&quot; name=&quot;op_&quot;&#62;&#13;&#10;	&#60;/tbody&#62;&#13;&#10;&#60;/table&#62;|||
+x|365|2023-11-30 20:04:59|dateformat|Hoy|Today||
+x|366|2023-11-30 20:04:59||Formulario copiado al portapapeles|Form copied to Clipboard||
+x|367|2023-11-30 20:04:59||AcciÃ³n establecida por defecto|Action set by default||
+x|368|2023-11-30 20:04:59||&#60;b&#62;La sesiÃ³n ha caducado&#60;/b&#62;&#60;hr&#62;#&#60;hr&#62;Por favor, inicia sesiÃ³n nuevamente|&#60;b&#62;Session has expired&#60;/b&#62;&#60;hr&#62;#&#60;hr&#62;Please log in again||
+x|369|2023-11-30 20:04:59||Borrado|Erased||
+x|370|2023-12-02 10:40:40||Se cerrarÃ¡n los editores:|Editors will be closed:||
+x|371|2023-12-10 22:28:44||Ver clave|See key||
+x|372|2023-12-10 22:29:00||Ocultar clave|Hide key||
+x|373|2024-02-20 18:21:00||&#60;span style=&quot;text-align:left;display: inline-block;&quot;&#62;&#13;&#10;&#60;center&#62;&#60;b&#62;Filtra filas del listado&#60;/b&#62;&#60;/center&#62;&#60;br&#62;&#13;&#10;Introduzca el texto a buscar que coincidirÃ¡ con cualquier posiciÃ³n de la cadena.&#60;br&#62;&#13;&#10;Los caracteres especiales que puede utilizar son:&#60;br&#62;&#13;&#10;- &quot;*&quot;: Define cualquier caracter o grupo de caracteres.&#60;br&#62;&#13;&#10;- &quot;{&#124;}&quot;: Utilice este sÃ­mbolo para separar uno de varios textos a buscar.&#60;br&#62;&#13;&#10;- &quot;^&quot;: Si el texto comienza con &quot;^&quot;, indica que la celda debe comenzar con la cadena indicada.&#60;br&#62;&#13;&#10;- &quot;$&quot;: Si el texto comienza con &quot;$&quot;, indica que la celda debe terminar con la cadena indicada.&#60;br&#62;&#13;&#10;- &quot;=&quot;: Si el texto comienza con &quot;=&quot;, la bÃºsqueda se limitarÃ¡ al texto que coincida exactamente con toda la celda. Es similar a iniciar con &quot;^&quot; y terminar con &quot;$&quot;.&#13;&#10;&#60;/span&#62;|&#60;span style=&quot;text-align:left;display: inline-block;&quot;&#62;&#13;&#10;&#60;center&#62;&#60;b&#62;Filter rows from the list&#60;/b&#62;&#60;/center&#62;&#60;br&#62;&#13;&#10;Enter the text to search for that will match any position in the string.&#60;br&#62;&#13;&#10;The special characters you can use are:&#60;br&#62;&#13;&#10;- &quot;*&quot;: Defines any character or group of characters.&#60;br&#62;&#13;&#10;- &quot;{&#124;}&quot;: Use this symbol to separate one of several texts to search.&#60;br&#62;&#13;&#10;- &quot;^&quot;: If the text begins with &quot;^&quot;, it indicates that the cell should begin with the indicated string.&#60;br&#62;&#13;&#10;- &quot;$&quot;: If the text begins with &quot;$&quot;, it indicates that the cell must end with the indicated string.&#60;br&#62;&#13;&#10;- &quot;=&quot;: If the text starts with &quot;=&quot;, the search will be limited to text that exactly matches the entire cell. It is similar to starting with &quot;^&quot; and ending with &quot;$&quot;.&#13;&#10;&#60;/span&#62;||
+c|print|2024-03-23 09:45:21||@media print {&#13;&#10;	body {&#13;&#10;		display: none !important;&#13;&#10;	}&#13;&#10;}|||
+x|374|2024-04-19 22:02:21||La sesiÃ³n se ha ampliado 15 minÃºtos|The session has been extended by 15 minutes||
+x|375|2024-05-30 20:39:26||MenÃº Screenshot|Menu Screenshot||
+x|376|2024-05-30 20:40:37||Cerrar Screenshot|Close Screenshot||
+x|377|2024-06-01 18:13:02||OpciÃ³n no disponible en ScreenShot|Option not available in ScreenShot||

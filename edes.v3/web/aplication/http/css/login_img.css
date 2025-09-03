@@ -1,0 +1,73 @@
+#LONGITUD {
+min_login: 5;
+max_login: 15;
+min_password: 5;
+max_password: 10;
+}
+#xyLogin	{ position:absolute; left: 169; top: 116; }
+#xyPassword	{ position:absolute; left: 169; top: 141; }
+#PAGINA {
+width: 400;
+height: 250;
+border: outset #FF99FF 0px;
+background-image: url(g/login_fondo.jpg);
+background-repeat: no-repeat;
+}
+#POSICION {
+margin-left: 145;
+margin-top: 84;
+}
+#OffsetPass {
+height: 14;
+}
+#Iconos {
+margin-top: 23;
+margin-left: 110;
+}
+#TITULO {
+color: #33CC66;
+FONT-SIZE: 120%;
+FONT-WEIGHT: bold;
+text-align: center;
+}
+#EtiLogin {
+FONT-FAMILY: ARIAL;
+font-size: 16;
+color: #AD5A39;
+FONT-WEIGHT: bold;
+cursor: default;
+padding-right: 10;
+}
+#EtiPassword {
+FONT-FAMILY: ARIAL;
+font-size: 16;
+color: #AD5A39;
+FONT-WEIGHT: bold;
+cursor: default;
+padding-right: 10;
+}
+#Datos {
+FONT-FAMILY: ARIAL;
+font-size: 16;
+width: 200;
+color: #8C846B;
+cursor: default;
+}
+#Password {
+FONT-FAMILY: ARIAL;
+font-size: 16;
+width: 200;
+color: #8C846B;
+cursor: default;
+}
+#CURSOR {
+color: #009900;
+font-size: 16;
+}
+#Aceptar {
+cursor: hand;
+}
+#Cancelar {
+cursor: hand;
+margin-left: 45;
+}

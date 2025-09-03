@@ -1,0 +1,21 @@
+<div style="width: 100%; text-align: center;"><strong>Search options</strong></div>
+<hr />
+<table style="b-order-collapse: collapse;" border="1px" cellpadding="1px">
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>[Enter] / [Tab]</strong></td>
+<td style="text-align: left;">Start the search</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>[Cursor down] / [Cursor right]</strong></td>
+<td style="text-align: left;">Next string</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>[Cursor up] / [Cursor left]</strong></td>
+<td style="text-align: left;">Previous string</td>
+</tr>
+<tr>
+<td style="text-align: left;" colspan="2">If the [Control] key is pressed when clicking on the icon<br />will search the full content.</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>HELP EDES-LABELS</TITLE>
+<LINK REL="stylesheet" HREF="edes.php?R:$h/i/label.css" TYPE="text/css">
+</HEAD>
+<BODY style='margin:0px' scroll=no oncontextmenu='return false;' onhelp='return false'><table id="Esquema" style="height: 1327px; width: 100%;" width="100%" cellspacing="1" cellpadding="2">
+<tbody>
+<tr style="position: relative;">
+<td id="Etiqueta" style="height: 17px;">Fields</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tSintaxis" style="height: 17px;">SINTAXIS</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Sintaxis" style="height: 17px;">[Fields]  [ TCol / ISubList / Condition / card ]  [ | Mode ]  [ [ | XLS / XML / PDF / MDB / TXT / CSV / iSubList  / MIX / TRIM / GRID / TFOOT ]<br />[Fields] XLS / XML / PDF / MDB / TXT / CSV [ | ListaCamposOrdenación ]</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tDescripcion" style="height: 17px;">DESCRIPCIÓN</td>
+</tr>
+<tr>
+<td id="Descripcion">
+<table id="Opciones" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td> 1 </td>
+<td> Etiqueta</td>
+</tr>
+<tr>
+<td> 2</td>
+<td> Nombre del campo</td>
+</tr>
+<tr>
+<td> 3</td>
+<td> Tipo de edición</td>
+</tr>
+<tr>
+<td> 4</td>
+<td> Tipo de control</td>
+</tr>
+<tr>
+<td> 5</td>
+<td> Longitud</td>
+</tr>
+<tr>
+<td> 6</td>
+<td> Ancho en pixels</td>
+</tr>
+<tr>
+<td> 7</td>
+<td> Modo</td>
+</tr>
+<tr>
+<td> 8</td>
+<td> Valor por defecto</td>
+</tr>
+<tr>
+<td> 9</td>
+<td> Condición del campo</td>
+</tr>
+<tr>
+<td> 10</td>
+<td> Mensaje en caso de errror en la condición del campo</td>
+</tr>
+</tbody>
+</table>
+ATENCIÓN: cada campo ha de estar en una sola línea, el hecho de separar cada parámetro del campo en una línea diferente es simplemente por claridad visual en este manual. Los parámetros pueden ir en cualquier orden y los dos son opcionales.<br />Dada la importancia de esta etiqueta, dispone de una ayuda por cada columna.</td>
+</tr>
+<tr>
+<td id="tParametro">PARAMETROS</td>
+</tr>
+<tr>
+<td id="Parametro"><strong>Mode:</strong> Puede contener cualquier modo mas el modo particular "else" para cuando se definen varias etiquetas [Fields] en el mismo DF y la última asume cualquier modo no representado anteriormente, si se omite el parámetro entrará en todos los modos. Si el modo es "?" tendrá encuentra las condiciones definidas en la columna 9 condición del campo, enn otro caso solo en los modos "a", mR", y "bR"<br />También soporta condicíones.<br />Mediante la condición definida en [CC] como en:<br /><code>[CC] #Etiqueta | Condición php</code><br /><code>[Fileds] #Etiqueta</code><br /><br />Y mediante una condición php<br /><code>[Fields] $_TipoListado=="n"</code><br /><br />Si el parámetro es "ISubList" será la definición cuando se ejecute una "ISubList" y las columnas cambirán de sentido:<br />5: definirá el ancho en px<br />7: color de la columna<br />8: operadores de la etiqueta [ColsOp]<br /><br />Cuando es un Fields solo para exportar datos se pueden poder en el parámetro el o los formatos a extraer: XLS, XML, PDF, MDB, TXT y CSV separados por "," o espacio, pudiendo en este modo definir en el segundo parámetro la lista de campos de ordenación si no coincide con la ordenación de DBOrder.<br /><strong>TCol</strong>: Total de columnas en el que se divide el formulario, teniendo en cuenta que se entiende por columna la combinación "Label" y "Control", si se omite se considerar? como una columna.<br /><strong>El tercer parámetro:</strong> <br />XLS, PDF, MDB, etc: Define el listado a extraer según el tipo de dato a extraer.<br />iSubList: Este Fields solo se tendrá en cuenta si se est? ejecutando una SubList<br />MIX: El comportamiento de las columnas de Fields cambia en 3 columnas<br />TRIM: Los campos de longitud variable tendrán el menor ancho posible, si se quiere poner de foma global poner la variable "$_ColsTrim = true;" en el fichero "sql.ini".<br />(este parámetro si es el único puede estar en la primera posición y opcionalmente en la segunda posición el campo por el que se ordena)<br />GRID: Pone las lineas verticales en el listado.<br />TFOOT: Los listados con linea de totales se verán estos en la primera y en la última fila.</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Ejemplo" style="height: 17px;">[Fields] 2</td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">Formulario con dos columnas.</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 17px;">
+<td id="Ejemplo" style="height: 17px;">[Fields] else</td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">En cualquier otro caso mostrará este formato, esta definición tiene que estar la última.</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 72px;">
+<td id="Ejemplo" style="height: 72px;"><code>$_Variable[&#39;#GPForm&#39;] = true;// Se puede dar el valor que se quiera a una variable [CC]</code><br /><br /><code>[Fields] #GPForm</code><br /><code>...</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;"> </td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 72px;">
+<td id="Ejemplo" style="height: 72px;"><code>#( $_TipoListado==&#39;n&#39; ) [DBOrder] ...</code><br /><br /><code>[Fields] $_TipoListado==&#39;n&#39;</code><br /><code>...</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">Las etiquetas [Fields] y [DBOrder] se ejecutan solo cuando la expresi?n es verdadera</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 54px;">
+<td id="Ejemplo" style="height: 54px;"><code>[Fields] l || mix</code><br /><code>.        | | | | | ColsWidth | | ColsColor | ColsOp | </code><br /><code>...</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">Si el modo es "l" y el 3? par?metro es "mix" hay 3 columnas de la definici?n de [Fields] que cambia su significado</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 54px;">
+<td id="Ejemplo" style="height: 54px;"><code>[Fields] ISubList</code><br /><code>.        | | | | | ColsWidth | | ColsColor | ColsOp | </code><br /><code>...</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">Solo aplicable a las ISubList</td>
+</tr>
+<tr style="height: 17px;">
+<td id="tEjemplo" style="height: 17px;">EJEMPLO</td>
+</tr>
+<tr style="height: 54px;">
+<td id="Ejemplo" style="height: 54px;"><code>[Fields] PDF | email</code><br /><code>     DNI / NIE | dni   | D | T | 9  | | - | | |</code><br /><code>     E-Mail    | email | @ | T | 65 | | - | | |</code></td>
+</tr>
+<tr style="height: 17px;">
+<td id="txt" style="height: 17px;">Define los campos a extraer en formato PDF y su ordenación por "email", si no se define tomará la ordenación de [DBorder]</td>
+</tr>
+<tr>
+<td id="tEjemplo">EJEMPLO</td>
+</tr>
+<tr>
+<td id="Ejemplo"><code>[PHPIni] l</code><br /><code>function uFunc($row){</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TABLE border=0px cellspacing=1px cellpadding=0px style="display:table"&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TR&gt;&lt;TD rowspan=2&gt;&lt;img src="g/background_clipri.png" height=100px&gt;&lt;/TD&gt;&lt;TD class=&#39;title-color&#39;&gt;&lt;?=$row[1]?&gt;&lt;/TD&gt;&lt;/TR&gt;</code><br /><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;TR&gt;&lt;TD style="font-weight:normal"&gt;&lt;?=$row[2]?&gt;&lt;/TD&gt;&lt;/TR&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TABLE&gt;</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?PHP</code><br /><code>}</code><br /><br /><br /><code>[Fields] card</code><br /><code>. | cd_dele_semanal | 0 | T |&nbsp; 9 | | * | | |</code><br /><code>.-| Titulo2</code><br /><code>.=| cd_visita&nbsp; &nbsp; &nbsp; &nbsp;| X | S | 30 | | - | | |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;uFunc</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raz&oacute;n Visita.&nbsp; &nbsp; | cd_visita&nbsp; &nbsp; &nbsp; &nbsp;| X | S | 30 | | - | | |</code><br /><code>.&nbsp; &nbsp; -</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delegado&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| cd_delegado&nbsp; &nbsp; &nbsp;| X | S | 50 | | - | | |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empresa Visitada | cd_empre&nbsp; &nbsp; &nbsp; &nbsp; | + | S | 60 | | - | | |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | dt_visita&nbsp; &nbsp; &nbsp; &nbsp;| F4| T | 10 | | - | | |</code><br /><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ver&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | fichero as icon | X | T |&nbsp; 5 | | - | | |</code><br /><br /><code>. Fichero | fichero | X | T | 50 | | * | | |</code><br /><code>. Cliente | cd_cli&nbsp; | 0 | T |&nbsp; 5 | | * | | |</code></td>
+</tr>
+<tr>
+<td id="txt">En los listados si hay un [Fields] con el atributo "card" son estas las que se mostrarán al ver el listado en modo card, sino se mostrará la visualización por defecto.</td>
+</tr>
+</tbody>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+Esquema.cellSpacing = 0;
+if( Ejemplo.length==undefined && Ejemplo.innerHTML.length==0 ){
+tEjemplo.parentElement.style.display = 'none';
+}else{
+for(var i=0; i<Ejemplo.length; i++){
+if( Ejemplo[i].innerHTML.length==0 ) Ejemplo[i].parentElement.style.display = 'none';
+}
+}
+if( Parametro.innerHTML.length==0 ) tParametro.parentElement.style.display = 'none';
+if( window.frameElement.getAttribute("eSubWin")==1 ) Etiqueta.style.display = "none";
+window.focus();
+</SCRIPT>
+</BODY></HTML>

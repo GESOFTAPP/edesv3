@@ -1,0 +1,27 @@
+#!(l) [CSSAdd] * | fch_{$_GRUPOMENU}
+#(l)  [CSSAdd] * | lst_{$_GRUPOMENU}
+[Title]TABLE {$_table}
+[Fields]
+Position|position|+|T|3||AQ||#|
+Name|name|d|T|20||M||#|
+Type|type|d|T|20||M|||
+NULL|is_null|d|C|1||M|||
+Key|key|d|T|3||M|||
+Defaul|default|d|T|25||M|||
+Extra|extra|d|T|15||M|||
+[DBSql]l
+$usuCursor = array();
+$_schema = $_GET["_schema"];
+$_table  = $_GET["_table"];
+qQuery("SELECT ORDINAL_POSITION, COLUMN_NAME, DATA_TYPE,  CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_TYPE, COLUMN_KEY, EXTRA  FROM information_schema.columns where TABLE_SCHEMA='{$_schema}' and TABLE_NAME='{$_table}' order by ORDINAL_POSITION");
+while($r=qArray()){
+array_push($usuCursor, array(
+$r["ORDINAL_POSITION"]
+,$r["COLUMN_NAME"]
+,$r["COLUMN_TYPE"]
+,($r["IS_NULLABLE"]=="YES" ? $_ENV['ON'] : $_ENV['OFF'])
+,$r["COLUMN_KEY"]
+,$r["COLUMN_DEFAULT"]
+,$r["EXTRA"]
+));
+}

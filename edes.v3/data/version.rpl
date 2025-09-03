@@ -1,0 +1,6 @@
+210610|<?=_FileNoCache('edes.js')?>|<SCRIPT>top.S.edes(window);</SCRIPT> 
+210610|<?= include('../../edesweb/edes.js'); ?>|top.S.edes(window);
+210610|<?= include(DIREDES.'edes.js'); ?>|top.S.edes(window);
+210610|<SCRIPT LANGUAGE="JavaScript" SRC="edes.php?R:$edes.js"></SCRIPT>|<SCRIPT>top.S.edes(window);</SCRIPT>
+210610|<SCRIPT  SRC="edes.php?R:$edes.js"></SCRIPT>|<SCRIPT>top.S.edes(window);</SCRIPT>
+210610|_SESSION[|_ENV[SESS][

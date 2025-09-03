@@ -1,0 +1,14 @@
+#include(*) $a/d/pack_log.edf
+[JSEnd]?
+ePF("cd_gs_user", "");
+[Title]=Solicitudes Internet
+[FormAction]?|Ll:
+[JSIni]l
+var _lastRow = null;
+[JSOnClickRow]l
+if( _lastRow!=null ){
+_lastRow.style.backgroundColor = "";
+}
+_oTR.style.backgroundColor = "#ffffec";
+_lastRow = _oTR;
+top.eSWOpen(window, "Fa:_prueba/restore_pack.edf&_cdi="+_ValCol["cdi"]+"&_user="+_ValCol["cd_gs_user"], "PACK");

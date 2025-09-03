@@ -1,0 +1,80 @@
+[Title]=Generar "index.html"
+[Button]a|Generar
+[AddCode]a|no_dir|I|eFitHeight
+[Fields]
+]  Directorios a no entrar|no_dir|#|A|900,80,4||M|||
+<  Sobrescribir|overwrite|D|C|1||M|||
+,  Solo ver directorios|view_path|D|C|1||M|$_ENV['ON']||
+[PHPEnd]a
+$file = "../_d_/usr/create_index.".S::$_User;
+if( file_exists($file) ){
+$txt = file_get_contents($file);
+$txt = str_replace(
+array(CHR13 , CHR10 , " "),
+array( '&#13;',  '&#10;', "" ),
+$txt
+);
+eJS("S(':no_dir').val(S.replace('{$txt}', '&#13;', S.char(13), '&#10;',S.char(10)))");
+}
+[PHPIni]A
+eInit();
+$txt = $_POST["no_dir"];
+$txt = str_replace(
+array( '&#13;',  '&#10;'),
+array(CHR13 , CHR10 ),
+$txt
+);
+$dim = mb_split('/[\s\n\r,]+/', $txt);
+sort($dim);
+$noDir = array();
+for($n=0; $n<count($dim); $n++){
+if( empty($dim[$n]) ){
+continue;
+}
+array_push($noDir, $dim[$n]);
+}
+$noDir = array_unique($noDir);
+$file = "../_d_/usr/create_index.".S::$_User;
+if( file_exists($file) ){
+copy($file, $file.".bak");
+}
+file_put_contents($file, implode("\n", $noDir));
+$_ENV["nLinea"] = 0;
+CreateIndex(DIRAPP.'http', ($_ENV['ON']==$_POST["overwrite"]), $noDir);
+echo("<BR><BR>END");
+eEnd();
+function CreateIndex($dorg, $overwrite=false, $noDir){
+$xIndex = "<!DOCTYPE HTML><HTML><HEAD></HEAD><BODY></BODY></HTML>";
+$lengIndex = mb_strlen(trim($xIndex));
+$sdorg = mb_substr($dorg, mb_strlen(DIRAPP.'http')+1);
+$Rastro = ($_ENV['ON']==$_POST["view_path"]);
+if( $Rastro ){
+$color = (file_exists("{$dorg}/index.html") || file_exists("{$dorg}/index.php")) ? "blue" : "red";
+echo "<BR><span style='color:{$color}'>[{$sdorg}]</span>";
+}else{
+if( !file_exists("{$dorg}/index.html") || $overwrite ){
+if( $overwrite && !file_exists("{$dorg}/index.html.php") && file_exists("{$dorg}/index.html") ){
+$oldFile = file_get_contents("{$dorg}/index.html");
+if( $lengIndex!=mb_strlen(trim($oldFile)) ){
+file_put_contents("{$dorg}/index.html.php", "<"."?PHP exit; ?".">\n".$oldFile);
+}
+}
+echo("<BR>Create [{$dorg}/index.html]");
+file_put_contents("{$dorg}/index.html", $xIndex);
+}
+}
+$di = opendir($dorg);
+while( $file = readdir($di) ){
+if( $file=='.' || $file=='..' ){
+continue;
+}
+if( is_dir("{$dorg}/{$file}") ){
+$newDir = mb_substr("{$dorg}/{$file}", mb_strlen(DIRAPP.'http')+1);
+if( in_array($newDir, $noDir) ){
+continue;
+}
+CreateIndex("$dorg/$file", $overwrite, $noDir);
+}
+}
+closedir($di);
+}

@@ -1,0 +1,136 @@
+[Language] es,ca,en,fr
+1|Insertar|Inserir|Insert|Insertar
+2|Modificar|Modificar|Modify|Modificar
+3|Consultar|Consultar|Consult|Consultar~View Advice
+4|Borrar|Esborrar|Delete|Borrar
+5|Utilidades|Utilitats|Utilities|Utilidades
+6|Listado #|LLISTAT #|Listing #|LISTADO #
+7|Seleccionar # a modificar|SELECCIONAR # A MODIFICAR|Select # to modify|SELECCIONAR # A MODIFICAR
+8|Seleccionar # a consultar|SELECCIONAR # A CONSULTAR|Select # to consult|SELECCIONAR # A CONSULTAR
+9|Seleccionar # a borrar|SELECCIONAR # A ESBORRAR|Select # to delete|SELECCIONAR # A BORRAR
+10|Seleccionar # a recuperar|SELECCIONAR # A RECUPERAR|Select # to recover|SELECCIONAR # A RECUPERAR
+11|Contador de páginas|Comptador de pàgines|Page counter|Contador de páginas
+12|Contador de registros|Comptador de registres|Record counter|Contador de registros
+13|Página actual|Pàgina actual|Actual page|Página actual
+14|Registro actual|Registre actual|Current record|Registro actual
+15|Última página|Última pàgina|Last page|Ultima página
+16|Último registro|Últim registre|Last record|Ultimo registro
+17|Grabar ordenación|Gravar Ordenació|Record sorting|Grabar Ordenación
+18|Primeros #1 de #2 regístros|Primers #1 de #2 registres|First #1 of #2 records|Primeros #1 de #2 regístros
+19|Se ha llegado al límite de la extracción #1 de #2 regístros|S´ha arribat al límit de l´extracció #1 de #2 registres|Limit reached for extraction #1 of #2 records|Se ha llegado al límite de la extracción #1 de #2 regístros
+20|Página #1 de #2 (Total registros #3)|Pàgina #1 de #2 (Total registres #3)|Page #1 of #2 (Total records #3)|Página #1 de #2 (Total registros #3)
+21|# Registros|# Registres|# Records|# Registros
+22|Utilidades|Utilitats|Utilities|Utilidades~Title
+23|Selección en la ventana actual|Selecció en la finestra actual|Selection in current window|Selección en la ventana actual
+24|Registros por página|Registres per pàgina|Records per page|Registros por página
+25|Primera página|Primera pàgina|First page|Primera página
+26|Página anterior|Pàgina anterior|Previous page|Página anterior
+27|Página siguiente|Pàgina següent|Next page|Página siguiente
+28|Última página|Última pàgina|Last page|Ultima página
+29|Cadena a buscar|Cadena a buscar|String to search|Cadena a buscar
+30|Click Izq: Anterior\nClick Dch: Anterior (dato completo)|Clic ESQ: Anterior\nClic DRET: Anterior (dada complet)|Click Left: Previous\nClick Right: Previous (complete data)|Click Izq: Anterior\nClick Dcha: Anterior (dato completo)
+31|Click Izq: Buscar\nClick Dch: Buscar (dato completo)|Clic ESQ: Buscar\nClic DRET: Buscar (dada complet)|Click Left: Search\nClick Right: Search (complete data)|Search
+32|Click Izq: Siguiente\nClick Dch: Siguiente (dato completo)|Clic ESQ: Següent\nClic DRET: Següent (dada complet)|Click Left: Next\nClick Right: Next (complete data)|Next
+33|Filtrar datos|Filtrar dades|Filter data|Filtrar datos
+34|Click Izq: PDF en Color\nClick Dch: PDF en B/N|Click ESQ: Canviar a PDF Color\nClic DRET: Canviar a PDF B/N|Click Left: PDF in Color\nClick Right: PDF in B/W|Click Izq: PDF en Color\nClick Dcha: PDF en B/N
+35|Click Izq: Pasar a Excel\nClick Dch: Pasar a Excel la pantalla|Clic ESQ:Passar a Excel\nClic DRET: Passar a Excel la pantalla|Click Left: Go to Excel\nClick Right: Go to Excel the screen|Click Izq: Pasar a Excel\nClick Dcha: Pasar a Excel la pantalla
+36|Pasar a Access|Passar a Access|Go to Access|Pasar a Access
+37|Imprimir|Imprimir|Print|Imprimir
+38|Listado|Llistat|List|Listado
+39|Imprimir|Imprimir|Print|Imprimir
+40|Ver gráfica|Veure gràfica|See graph|Ver gráfica
+41|Si|Si|Yes|Si
+42|No|No|No|No
+43|Condiciones|CONDICIONS|Conditions|CONDICIONES
+44|Ver documento|Veure document|View document|Ver documento
+45|Editar documento|Editar document|Edit document|Editar documento
+46|Dato vacío|dada buida|Empty data|dato vacío
+47|Dato relleno|dada farcida|Fill data|dato relleno
+48|Dato vacío - nulo|dada buida - nul·la|Empty data - null|dato vacío - nulo
+49|Dato no nulo|dada no nul·la|Not null data|dato no nulo
+50|y|i|and|y
+51|o|o|either|o
+52|Página actual|Pàgina actual|Actual page|Página actual
+53|Nº total de páginas|Nº total de pàgines|Total number of pages|Nº total de páginas
+54|No se puede mover la fila a la posición<br>indicada por ser de otro grupo.|No es pot moure la fila a la posició<br>indicada per ser d´un altre grup.|The row cannot be moved to the indicated position<br>because it belongs to another group.|No se puede mover la fila a la posición<br>indicada por ser de otro grupo.
+55|El tamaño máximo por fichero excede la configuración: # Bytes|La grandària màxima per fitxer excedeix la configuració: # Bytes|The maximum size per file exceeds the setting: # Bytes|El tamaño máximo por fichero excede la configuración: # Bytes
+56|Error:<br>Variable "#1" no definida correctamente<br>Contenido "#2"|ERROR:<br>Variable "#1" no definida correctament<br>Contingut "#2"|Error:<br>Variable "#1" not defined correctly<br>Content "#2"|ERROR:<br>Variable "#1" no definida correctamente<br>Contenido "#2"
+57|Página|Pàgina|Page|Página
+58|de|de|of|de
+59|Ver Fichero|Veure Fitxer|See File|Ver Fichero
+60|Pasar a TXT||Go to TXT|Pasar a TXT
+61|Pasar a XML|Passar a XML|Go to XML|Pasar a XML
+62|Volver al formulario|Tornar al formulari|Back to the form|
+63|Pasar a PDF en Color|Canviar a PDF Color|Go to Color PDF|Pasar a PDF en Color
+64|Pasar a PDF en B/N|Canviar a PDF B/N|Go to PDF in B/W|Pasar a PDF en B/N
+65|Pasar a Excel|Passar a Excel|Go to Excel|Pasar a Excel
+66|Pasar a Excel la pantalla|Passar a Excel la pantalla|Switch to Excel the screen|Pasar a Excel la pantalla
+67|Cerrar||Close|
+68|Selección en subventana|Selecció en una subventana|Selection in a subwindow|Selección en una subventana
+69|Selección en ficha deslizante|Selecció en fitxa lliscant|Slider tab selection|Selección en ficha deslizante
+70|Selección en ventana actual|Selecció en la finestra actual|Selection in current window|Selección en la ventana actual
+71|Modo SubVentana||SubWindow Mode|
+72|Pasar a CSV||Go to CSV|Pasar a CSV
+73|Criterio a filtrar||Filter criteria|
+74|Minimizar||Minimize|
+75|Gráficos||Graphics|
+76|Gráficos del Sistema||System Graphics|
+77|Total registros|Total registres|Total records|Total registros
+78|Condición|CONDICIÓN|Condition|CONDICIÓN
+79|Pasar a PDF|Canviar a PDF|Go to PDF|Pasar a PDF
+80|Informe Resumido|Informe Resumit|Summary Report|Rapport Sommaire
+81|Click Izq: Ver imagen\nClick Dch: Descargar imagen||Click Left: View image\nClick Right: Download image|
+82|Últimos registros gestionados:||Last records managed:|
+83|Columnas a visualizar||Columns to display|
+84|Espaciado||Spacing|
+85|Filtrar...||Filter...|
+86|Opciones||Options|
+87|Ver condiciones||See conditions|
+88|Tarjetas||Cards|
+89|Últimos registros||Last records|
+99|Paginar||Page|
+100|Comparar Informes||Compare Reports|
+101|Exportar con Clave||Export with Key|
+102|Exportar por EMail||Export by email|
+103|Exportar||Export|
+104|Recuperar registro borrado||Recover deleted record|
+105|Ayuda||Help|
+106|Lineas verticales||Vertical lines|
+107|Informe Expandido|Informe Expandit|Expanded Report|Rapport étendu
+108|Buscar||Seek
+109|Limpiar||Clear
+110|Limpiar Filtro||Clear Filter
+111|Filtrar||Filter
+112|Filtrar datos||Filter data
+
+113|Añadir condición||Add condition
+114|Condición obligatoria||Mandatory condition
+115|Listar grupos||List groups
+116|Eliminar condición||Remove condition
+117|Click Izq: Seleccionar filas\nClick Dcha: Desmarcar filas||Click LEFT: Select rows\onClick RIGHT: Uncheck rows
+118|Seleccionar condición||Select condition
+
+119|Click Izq: Minimizar\nClick Dcha: Mostrar todos los filtros||Click Left: Minimize\nClick Right: Show all filters
+120|Click Izq: Cerrar\nClick Dcha: Cierra todos los filtros||Click Left: Close\nClick Right: Close all filters
+
+121|Anterior||Previous
+122|Siguiente||Following
+123|Página||Page
+124|Mostrar||Show
+
+125|Se filtra al pulsar [Enter]||Filtered when pressing [Enter]
+126|Al no tener historial de gestión sólo tiene estas opciones disponibles.||Since you have no management history, you only have these options available.
+
+DocLabelUserFrom|De||Of|
+DocLabelUserTo|Para||For|
+
+127|Eliminar||Eliminate
+128|Eliminando||Removing
+129|Consultando||Consulting
+130|Modificando||Modifying
+131|Acción por defecto||Default action
+
+132|Modificado||Modified
+133|Borrado||Erased
+134|Insertado||Inserted
+135|Visualizado||Visualized

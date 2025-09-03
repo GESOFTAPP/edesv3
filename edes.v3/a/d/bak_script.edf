@@ -1,0 +1,76 @@
+#include(*) $lng/activity.edf.lng
+[DBTable]{$_ENV['eDesDictionary']}gs_activity
+[DBIndex]cd_gs_user,cdi
+[DBOrder]cdi desc
+[MaxRec]0
+[ColsOp]C
+[NoTools]-
+[PHPIni]*--
+function LoadUser(){
+if( eSqlType('mysql,mysqli') ){
+$sql = "select cd_gs_user,concat(user_name,' ',user_surname) from {$_ENV['eDesDictionary']}gs_user where cd_gs_user in (select cd_gs_user from {$_ENV['eDesDictionary']}gs_activity) order by 2";
+}else{
+$sql = "select cd_gs_user,user_name||' '||user_surname from {$_ENV['eDesDictionary']}gs_user where cd_gs_user in (select cd_gs_user from {$_ENV['eDesDictionary']}gs_activity) order by 2";
+}
+$Dim = array(array('',''));
+qQuery($sql);
+while($r=qRow()) $Dim[] = $r;
+return $Dim;
+}
+[Fields]
+Action|cdi as icono|#|T|6||-|||
+@CDI@|cdi|CDI|T|19||-||=|
+FTP|cdi_ftp|CDI|T|19||-||=|
+@Script@|script|#|T|70||*|||
+@Desarrolladores@|cd_gs_user{gs_user,cd_gs_user,user_name,' ',user_surname|N|S|50||-|||
+[PHPIni]l
+$_nDaily  = eFileGetVar('../_d_/cfg/edes.ini->$_nDaily');
+$_cdiMaxDaily = date('Y-m-d H:i:s', mktime(date('H'),date('i'),date('s'), date('m'), date('d')-$_nDaily, date('Y')));
+$_DayBak = array();
+for($n=0; $n<31; $n++) $_DayBak[$n] = false;
+[Format]
+global $_cdiMaxDaily, $_DayBak;
+$icon = false;
+if( $_vF[1]>=$_cdiMaxDaily ){
+$icon = true;
+}else{
+$day = mb_substr($_vF[1],8,2)*1;
+if( !$_DayBak[$day] ){
+$_DayBak[$day] = true;
+$icon = true;
+}else{
+$_CellsStyle[1] = "color:#cccccc";
+}
+}
+$_vF[0] = '';
+if( $icon ){
+$_vF[0] = '<i class="ICONWINDOW" op="S">&#281;</i><i class="ICONWINDOW" op="R">&#118;</i>';
+if( mb_substr($_vF[1],0,10)>"2022-07-24" ){
+$_vF[0] .= '<i class="ICONWINDOW" op="D">&#347;</i>';
+}
+}
+[PHPIni]l
+$_DBADDFILTER = "script='{$script}'";
+[JSOnClickRow]l||0
+switch( S(_objClick).attr("op") ){
+case "D":
+break;
+case "S":
+break;
+case "R":
+break;
+default:
+}
+S(_objClick).css("color:#b30000");
+S.callSrv("refererScript="+S(_objClick).attr("op")+","+$script+","+$cdi);
+[CallSrv]refererScript
+list($op, $script, $cdi) = explode(",", $refererScript);
+$tmp = str_replace(array(" ",":"), array("-","-"), $cdi);
+list($y,$m,$d, $ho,$mi,$sg) = explode("-", $tmp);
+$timeSg = mktime($ho,$mi,$sg,  $m,$d,$y);
+echo "<script>";
+if( $op=="R" ){
+}else{
+echo "top.S.window('E:\$a/d/script.php&_Script={$op},{$script},{$cdi},{$timeSg}', {title:'Script: <b>{$script}</b> CDI: <b>{$cdi}</b>', fullscreen:true, print:false});";
+}
+echo "</script>";
