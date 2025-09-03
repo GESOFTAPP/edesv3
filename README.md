@@ -1,4 +1,4 @@
-# 🚀 Crear una nueva intranet con edesv3 en local (Mac + Portainer)
+# 🚀 Crear una nueva APP con edesv3 en local (Mac + Portainer)
 
 Este proyecto permite generar y desplegar intranets basadas en **edesv3** de forma automática usando Docker y Portainer.  
 
@@ -6,9 +6,9 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ---
 
-## 1️⃣ Instalación de requisitos
+Instalación de requisitos
 
-### Instalar Docker Desktop (Mac)
+## Instalar Docker Desktop (Mac)
 - Descarga desde [Docker Desktop Mac](https://www.docker.com/products/docker-desktop/).
 - Instálalo y asegúrate de que funciona:
   ```bash
@@ -16,10 +16,13 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ## Instalar Portainer en local
 
-# Crear volumen de datos para Portainer
-docker volume create portainer_data
+## Crear volumen de datos para Portainer
+  ```bash
+   docker volume create portainer_data
 
-# Levantar Portainer en el puerto 9000
+## Levantar Portainer en el puerto 9000
+
+  ```bash
 docker run -d \
   -p 9000:9000 \
   -p 8000:8000 \
@@ -35,8 +38,8 @@ Accede a Portainer en tu navegador:
 Crea un usuario admin la primera vez que entres.
 
 ## 3. Clonar este repositorio
-
-it clone https://github.com/GESOFTAPP/edesv3.git
+  ```bash
+git clone https://github.com/GESOFTAPP/edesv3.git
 cd edesv3/new_app
 
 ## Crear una APP
@@ -44,19 +47,20 @@ Da permisos al script:
 	chmod +x create_intranet.sh
 
 Ejecuta 
-	Ejemplo: ./create_intranet.sh app01 app01.local app01_db
+  ```bash
+	 ./create_intranet.sh app01 app01.local app01_db
 
 Eesto genera
-
+  ```bash
 app01/
 ├── docker-compose.yml
 └── .env
 
-#Configurar el dominio en /etc/hosts
+# Configurar el dominio en /etc/hosts
 
 127.0.0.1 app01.local
 
-##Subir el stack a Portainer
+## Subir el stack a Portainer
 
 Ir a Stacks > Add stack
 
