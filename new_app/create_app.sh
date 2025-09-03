@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script para crear una nueva intranet con stack Docker + Portainer
-# Uso: ./create_intranet.sh <APP_NAME> <APP_DOMAIN> <MYSQL_DATABASE>
-# Ejemplo: ./create_intranet.sh iu84 appiu84.local iu84_db
+# Uso: ./create_app.sh <APP_NAME> <APP_DOMAIN> <MYSQL_DATABASE>
+# Ejemplo: ./create_app.sh iu84 appiu84.local iu84_db
 
 if [ $# -lt 3 ]; then
   echo "❌ Uso: $0 <APP_NAME> <APP_DOMAIN> <MYSQL_DATABASE>"
@@ -17,8 +17,9 @@ MYSQL_HOST="mysql.remoto.com"
 MYSQL_PORT="3306"
 MYSQL_USER="${APP_NAME}_user"
 MYSQL_PASSWORD="$(openssl rand -base64 12)" # password aleatoria segura
-SSH_PORT=$(shuf -i 2200-2299 -n 1)
-XDEBUG_PORT=$(shuf -i 9000-9099 -n 1)
+SSH_PORT=$((2200 + RANDOM % 100))     # rango 2200-2299
+XDEBUG_PORT=$((9000 + RANDOM % 100))  # rango 9000-9099
+
 
 # Crear carpeta del proyecto
 mkdir -p ${APP_NAME}
