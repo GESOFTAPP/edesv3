@@ -1,5 +1,18 @@
-/vendor
-/node_modules
-.env
+# Ignorar configuraciones y temporales
 *.log
+*.bak
+*.swp
+*.tmp
 
+# Composer
+/vendor/
+composer.lock
+
+# Archivos del sistema
+.DS_Store
+.env
+.env.local
+
+# Docker temporales
+*.tar.gz
+*.tar
