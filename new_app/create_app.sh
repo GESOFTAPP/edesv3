@@ -16,7 +16,7 @@ MYSQL_DATABASE=$3
 MYSQL_HOST="mysql.remoto.com"
 MYSQL_PORT="3306"
 MYSQL_USER="${APP_NAME}_user"
-MYSQL_PASSWORD="$(openssl rand -base64 12)" # password aleatoria
+MYSQL_PASSWORD="$(openssl rand -base64 12)" # password aleatoria segura
 SSH_PORT=$(shuf -i 2200-2299 -n 1)
 XDEBUG_PORT=$(shuf -i 9000-9099 -n 1)
 
@@ -41,15 +41,16 @@ PHP_UPLOAD_MAX_FILESIZE=64M
 
 SSH_PORT=${SSH_PORT}
 XDEBUG_PORT=${XDEBUG_PORT}
+VOLUME_NAME=${APP_NAME}_data
 EOF
 
-# Copiar docker-compose.yml plantilla
+# Generar docker-compose.yml compatible con Portainer
 cat > docker-compose.yml <<'EOF'
 version: "3.9"
 
 services:
-  ${APP_NAME}_app:
-    image: gesoft/iu_participa:php83-pass
+  app:
+    image: gesoft/grs:local
     container_name: ${APP_NAME}
     restart: always
     environment:
@@ -62,13 +63,13 @@ services:
       PHP_UPLOAD_MAX_FILESIZE: ${PHP_UPLOAD_MAX_FILESIZE}
       DOC_ROOT: ${DOC_ROOT}
     volumes:
-      - ${APP_NAME}_data:${DOC_ROOT}
+      - ${VOLUME_NAME}:${DOC_ROOT}
     ports:
       - "${SSH_PORT}:22"
       - "${XDEBUG_PORT}:9003"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${APP_NAME}.rule=Host(\`${APP_DOMAIN}\`)"
+      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
       - "traefik.http.routers.${APP_NAME}.entrypoints=web,websecure"
       - "traefik.http.routers.${APP_NAME}.tls.certresolver=myresolver"
       - "traefik.http.services.${APP_NAME}.loadbalancer.server.port=80"
@@ -76,7 +77,8 @@ services:
       - traefik-net
 
 volumes:
-  ${APP_NAME}_data:
+  default_volume:
+    name: ${VOLUME_NAME}
     external: true
 
 networks:
@@ -113,10 +115,6 @@ echo "   - Red: traefik-net"
 echo ""
 echo "👉 Recuerda añadir al /etc/hosts en tu Mac:"
 echo "   127.0.0.1 ${APP_DOMAIN}"
-
-echo ""
-echo "👉 Para desplegar con Docker Compose local:"
-echo "   cd ${APP_NAME} && docker compose up -d"
 
 echo ""
 echo "👉 Para subir a Portainer:"
