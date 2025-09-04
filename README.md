@@ -6,7 +6,7 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ---
 
-Instalación de requisitos
+## Instalación
 
 ## Instalar Docker Desktop (Mac)
 - Descarga desde [Docker Desktop Mac](https://www.docker.com/products/docker-desktop/).
@@ -16,8 +16,9 @@ Instalación de requisitos
 
 ## Instalar Portainer en local
 
-## Crear volumen en local
+### Crear volumen en local
 
+  ```bash
 docker volume create portainer_data
 
 ## Levantar Portainer en el puerto 9000
