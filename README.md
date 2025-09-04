@@ -8,7 +8,7 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ## Instalación
 
-### Instalar Docker Desktop (Mac)
+* ### Instalar Docker Desktop (Mac)
 - Descarga desde [Docker Desktop Mac](https://www.docker.com/products/docker-desktop/).
 - Instálalo y asegúrate de que funciona, si ya lo tienes instalado pasa al siguiente paso.
   ```bash
