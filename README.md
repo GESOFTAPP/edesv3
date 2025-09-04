@@ -54,7 +54,7 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
   	> El script tiene 3 parametros: *la apicación* , *url local* y *base de datos* y genera el un directorio con el nombre de la aplicación con dos ficheros, **docker_compose.yml** que debes copiar en Portainer y **var.env* con las variables de entorno que debes exportar
 	```
 		app01/
-		├── docker-compose.yml
+		├── docker_compose.yml
 		└── var.env
 	```
 
@@ -83,6 +83,7 @@ services:
     ports:
       - "${SSH_PORT}:22"
       - "${XDEBUG_PORT}:9003"
+      - "${HTTP_PORT}:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
@@ -94,7 +95,8 @@ services:
 
 volumes:
   app01_data:
-    external: true
+    external:
+      name: app01_data
 
 networks:
   traefik-net:
@@ -134,7 +136,7 @@ networks:
 	```
 	* Prueba que la url funciona
     ```
-		app01.local
+		http://app01.local
 	```
 
 ---
@@ -154,21 +156,21 @@ En el README, **no confundes `new_app/` con un stack real**
 
 edesv3/                        ← Repositorio Git principal
 └── new_app/                   ← Carpeta “fábrica de stacks”
-    ├── create_intranet.sh     ← Script que genera intranets nuevas
+    ├── create_app.sh 		   ← Script que genera intranets nuevas
     └── README.md              ← Manual paso a paso (instalar Docker, Portainer, usar el script)
 
 # Cuando ejecutas el script se crean carpetas nuevas (stacks reales):
 
 app01/                          ← Stack real generado (ejemplo 1)
-├── docker-compose.yml
+├── docker_compose.yml
 └── .env
 
 app02/                          ← Stack real generado (ejemplo 2)
-├── docker-compose.yml
+├── docker_compose.yml
 └── .env
 
 app03/                          ← Stack real generado (ejemplo 3)
-├── docker-compose.yml
+├── docker_compose.yml
 └── .env
 
 
