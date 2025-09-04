@@ -16,13 +16,12 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ### Instalar Portainer en local
 
-### Crear volumen en local
+#### Crear volumen en local
 
-  ```bash
+  ```
 docker volume create portainer_data
-  
-### Levantar Portainer en el puerto 9000
-
+  ```
+#### Levantar Portainer en el puerto 9000
   ```
 docker run -d \
   -p 9000:9000 \
@@ -33,43 +32,48 @@ docker run -d \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
   ```
-## Accede a Portainer en tu navegador con el usuario admin:
+#### Accede a Portainer en tu navegador con el usuario admin:
   ```
 👉 http://localhost:9000
   ```
-## Clonar el repositorio en local para generar los ficheros de instalación y creación de APPS
-	1. colocate en un directorio de trabajo local para la desxcarga del repositorio
-  ```bash
+- Cambia la clave y dejalo pendiente para crear el primer STACK 
+### Clonar el repositorio en local para generar los ficheros de instalación y creación de APPS
+
+1. colocate en un directorio de trabajo local para la descarga del repositorio
+```
 	git clone https://github.com/GESOFTAPP/edesv3.git
 	cd edesv3/new_app  // situate en el directorio new_app para generar la app
 	chmod +x create_app.sh // Da permisos al script: 
-```bash
-	2. Crear una APP
-	#### En el directorio edesv3/new_app hay 2 ficheros create_app.sh  y var.env
+```
+2. Crear una APP
 
-
+#### En el directorio edesv3/new_app hay 2 ficheros create_app.sh  y var.env
+#### Ejecuta el siguiente Script
+```
 	 ./create_intranet.sh app01 app01.local app01_db
-
-Eesto genera
-  ```bash
+```
+#### Este Script genera el siguiente directorio
+Estos dos ficheros contienen el docker_compose.yml que debes copiar en Portainer y las variables de entorno que debes exportar
+```
 app01/
 ├── docker-compose.yml
-└── .env
+└── var.env
+```
 
-# Configurar el dominio en /etc/hosts
+3. Crear el STACK en Portainer
+- Entra en portainer y crea un stack por ejemplo app01 
+- Copia el contenido del fichero docker_compose.yml
+- Carga las variables de entorno subiendo el fichero var.env
+- despliega
+- 
+  
+4. Configurar el dominio en /etc/hosts
 
 127.0.0.1 app01.local
+5. Prueba que la app funciona
 
-## Subir el stack a Portainer
-
-Ir a Stacks > Add stack
-
-Nombre: app01
-
-copia contenido de  docker-compose.yml y cargar el fichero .env
-
-Desplegar
-
+---
+### Instalar la primera aplicación en el repositorio creado
 
 ---
 
