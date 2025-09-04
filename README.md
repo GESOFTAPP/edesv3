@@ -16,9 +16,11 @@ Instalación de requisitos
 
 ## Instalar Portainer en local
 
-## Crear volumen de datos para Portainer
   ```bash
-   docker volume create portainer_data
+
+## Crear volumen en local
+
+docker volume create portainer_data
 
 ## Levantar Portainer en el puerto 9000
 
