@@ -26,7 +26,7 @@ mkdir -p ${APP_NAME}
 cd ${APP_NAME}
 
 # Generar archivo .env
-cat > .env <<EOF
+cat > var.env <<EOF
 APP_NAME=${APP_NAME}
 APP_DOMAIN=${APP_DOMAIN}
 DOC_ROOT=/var/www/html
