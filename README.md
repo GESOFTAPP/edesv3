@@ -18,9 +18,9 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 
 ### Crear volumen en local
 
-  ```
+  ```bash
 docker volume create portainer_data
-  ```
+  
 ### Levantar Portainer en el puerto 9000
 
   ```
