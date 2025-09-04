@@ -11,33 +11,33 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 * ### Instalar Docker Desktop (Mac)
 	* Descarga desde [Docker Desktop Mac](https://www.docker.com/products/docker-desktop/).
  	* Instálalo y asegúrate de que funciona, si ya lo tienes instalado pasa al siguiente paso.
-```
-  docker --version
-```
-### Instalar Portainer en local
+	```
+  	docker --version
+	```
+* ### Instalar Portainer en local
 
-#### Crear volumen en local
+	* Crear volumen en local
 
-  ```
-docker volume create portainer_data
-  ```
-#### Levantar Portainer en el puerto 9000
-  ```
-docker run -d \
-  -p 9000:9000 \
-  -p 8000:8000 \
-  --name=portainer \
-  --restart=always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v portainer_data:/data \
-  portainer/portainer-ce:latest
-  ```
-#### Accede a Portainer en tu navegador con el usuario admin:
-  ```
-👉 http://localhost:9000
-  ```
-- Cambia la clave y dejalo pendiente para crear el primer STACK 
-### Clonar el repositorio en local para generar los ficheros de instalación y creación de APPS
+  	```
+	docker volume create portainer_data
+  	```
+	* Levantar Portainer en el puerto 9000
+  	```
+	docker run -d \
+	  -p 9000:9000 \
+	  -p 8000:8000 \
+	  --name=portainer \
+	  --restart=always \
+	  -v /var/run/docker.sock:/var/run/docker.sock \
+	  -v portainer_data:/data \
+	  portainer/portainer-ce:latest
+  	```
+	* Accede a Portainer en tu navegador con el usuario admin:
+  	```
+	👉 http://localhost:9000
+  	```
+	Cambia la clave y dejalo pendiente para crear el primer STACK 
+* ### Clonar el repositorio en local para generar los ficheros de instalación y creación de APPS
 
 1. colocate en un directorio de trabajo local para la descarga del repositorio
 ```
