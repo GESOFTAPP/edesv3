@@ -1,6 +1,6 @@
 # 🚀 Crear una nueva APP con edesv3 en local (Mac + Portainer)
 
-Este proyecto permite generar y desplegar intranets basadas en **edesv3** de forma automática usando Docker y Portainer.  
+Este proyecto permite generar y desplegar APPS basadas en **edesv3** de forma automática usando Docker y Portainer.  
 
 Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servidores Linux con Portainer.
 
@@ -33,22 +33,21 @@ docker run -d \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
   ```
-## Accede a Portainer en tu navegador:
+## Accede a Portainer en tu navegador con el usuario admin:
+  ```
 👉 http://localhost:9000
-
-Crea un usuario admin la primera vez que entres.
-
-## 3. Clonar este repositorio
+  ```
+## Clonar el repositorio en local para generar los ficheros de instalación y creación de APPS
+	1. colocate en un directorio de trabajo local para la desxcarga del repositorio
   ```bash
-git clone https://github.com/GESOFTAPP/edesv3.git
-cd edesv3/new_app
+	git clone https://github.com/GESOFTAPP/edesv3.git
+	cd edesv3/new_app  // situate en el directorio new_app para generar la app
+	chmod +x create_app.sh // Da permisos al script: 
+```bash
+	2. Crear una APP
+	#### En el directorio edesv3/new_app hay 2 ficheros create_app.sh  y var.env
 
-## Crear una APP
-Da permisos al script: 
-	chmod +x create_intranet.sh
 
-Ejecuta 
-  ```bash
 	 ./create_intranet.sh app01 app01.local app01_db
 
 Eesto genera
