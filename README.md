@@ -51,8 +51,7 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 	```
 		./create_intranet.sh app01 app01.local app01_db
 	```
-	##### Este Script genera el siguiente directorio
-	##### Estos dos ficheros contienen el docker_compose.yml que debes copiar en Portainer y las variables de entorno que debes exportar
+  	> Este Script genera el siguiente directorio y loss dos ficheros contienen el docker_compose.yml que debes copiar en Portainer y las variables de entorno que debes exportar
 	```
 		app01/
 		├── docker-compose.yml
