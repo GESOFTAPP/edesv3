@@ -49,9 +49,9 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 	##### En el directorio edesv3/new_app hay 2 ficheros create_app.sh  y var.env
 	* Ejecuta el siguiente Script
 	```
-		./create_intranet.sh app01 app01.local app01_db
+		./create_app.sh app01 app01.local app01_db
 	```
-  	> Este Script genera el siguiente directorio y loss dos ficheros contienen el docker_compose.yml que debes copiar en Portainer y las variables de entorno que debes exportar
+  	> El script tiene 3 parametros: *la apicación* , *url local* y *base de datos* y genera el un directorio con el nombre de la aplicación con dos ficheros, **docker_compose.yml** que debes copiar en Portainer y **var.env* con las variables de entorno que debes exportar
 	```
 		app01/
 		├── docker-compose.yml
@@ -61,7 +61,69 @@ Funciona en **Mac local con Docker Desktop** y luego se puede replicar en servid
 * ### Crear el STACK en Portainer
 	* Entra en portainer y crea un stack por ejemplo app01
  	* Copia el contenido del fichero docker_compose.yml
+```
+version: "3.9"
+
+services:
+  app:
+    image: gesoft/grs:local
+    container_name: ${APP_NAME}
+    restart: always
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      PHP_MEMORY_LIMIT: ${PHP_MEMORY_LIMIT}
+      PHP_UPLOAD_MAX_FILESIZE: ${PHP_UPLOAD_MAX_FILESIZE}
+      DOC_ROOT: ${DOC_ROOT}
+    volumes:
+      - app01_data:/var/www/html
+    ports:
+      - "${SSH_PORT}:22"
+      - "${XDEBUG_PORT}:9003"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.http.routers.${APP_NAME}.entrypoints=web,websecure"
+      - "traefik.http.routers.${APP_NAME}.tls.certresolver=myresolver"
+      - "traefik.http.services.${APP_NAME}.loadbalancer.server.port=80"
+    networks:
+      - traefik-net
+
+volumes:
+  app01_data:
+    external: true
+
+networks:
+  traefik-net:
+    external: true
+```
+>> 👉 A tener en cuenta en Portainer los tabuladores...
+
   	* Carga las variables de entorno subiendo el fichero var.env
+
+>> Las variables son creadas por defecto pero se debn modificar para cada proyecto  	
+  ```
+	APP_NAME=app01
+	APP_DOMAIN=app01.local
+	DOC_ROOT=/var/www/html
+
+	MYSQL_HOST=mysql.remoto.com
+	MYSQL_PORT=3306
+	MYSQL_DATABASE=app01_db
+	MYSQL_USER=app01_user
+	MYSQL_PASSWORD=+9nr9jveVwSUGFxR
+
+	PHP_MEMORY_LIMIT=512M
+	PHP_UPLOAD_MAX_FILESIZE=64M
+
+	SSH_PORT=2238
+	XDEBUG_PORT=9033
+	VOLUME_NAME=app01_data
+
+  ```	
  	* despliega
 
   

@@ -13,13 +13,13 @@ APP_DOMAIN=$2
 MYSQL_DATABASE=$3
 
 # Configuración por defecto (ajusta según tu entorno)
-MYSQL_HOST="mysql.remoto.com"
+MYSQL_HOST="mysql.local"
 MYSQL_PORT="3306"
 MYSQL_USER="${APP_NAME}_user"
 MYSQL_PASSWORD="$(openssl rand -base64 12)" # password aleatoria segura
 SSH_PORT=$((2200 + RANDOM % 100))     # rango 2200-2299
 XDEBUG_PORT=$((9000 + RANDOM % 100))  # rango 9000-9099
-
+HTTP_PORT=$((8000 + RANDOM % 100))  # rango 9000-9099
 
 # Crear carpeta del proyecto
 mkdir -p ${APP_NAME}
@@ -46,7 +46,7 @@ VOLUME_NAME=${APP_NAME}_data
 EOF
 
 # Generar docker-compose.yml compatible con Portainer
-cat > docker-compose.yml <<'EOF'
+cat > docker_compose.yml <<'EOF'
 version: "3.9"
 
 services:
@@ -64,10 +64,11 @@ services:
       PHP_UPLOAD_MAX_FILESIZE: ${PHP_UPLOAD_MAX_FILESIZE}
       DOC_ROOT: ${DOC_ROOT}
     volumes:
-      - ${VOLUME_NAME}:${DOC_ROOT}
+      - app01_data:${DOC_ROOT}
     ports:
       - "${SSH_PORT}:22"
       - "${XDEBUG_PORT}:9003"
+      - "${HTTP_PORT}:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
@@ -78,10 +79,10 @@ services:
       - traefik-net
 
 volumes:
-  default_volume:
-    name: ${VOLUME_NAME}
-    external: true
-
+  app01_data:
+    external:
+      name: app01_data
+    
 networks:
   traefik-net:
     external: true
@@ -120,5 +121,5 @@ echo "   127.0.0.1 ${APP_DOMAIN}"
 echo ""
 echo "👉 Para subir a Portainer:"
 echo "   - Ve a Stacks > Add stack"
-echo "   - Sube docker-compose.yml y .env de la carpeta ${APP_NAME}"
+echo "   - Sube docker_compose.yml y var.env de la carpeta ${APP_NAME}"
 
