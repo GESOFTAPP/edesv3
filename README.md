@@ -16,8 +16,6 @@ Instalación de requisitos
 
 ## Instalar Portainer en local
 
-  ```bash
-
 ## Crear volumen en local
 
 docker volume create portainer_data
