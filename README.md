@@ -1,3 +1,4 @@
+#!/bin/bash
 # 🚀 Crear una nueva APP con edesv3 en local (Mac + Portainer)
 
 Este proyecto permite generar y desplegar APPS basadas en **edesv3** de forma automática usando Docker y Portainer.  
@@ -81,26 +82,14 @@ services:
     volumes:
       - app01_data:/var/www/html
     ports:
-      - "${SSH_PORT}:22"
       - "${XDEBUG_PORT}:9003"
       - "${HTTP_PORT}:80"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
-      - "traefik.http.routers.${APP_NAME}.entrypoints=web,websecure"
-      - "traefik.http.routers.${APP_NAME}.tls.certresolver=myresolver"
-      - "traefik.http.services.${APP_NAME}.loadbalancer.server.port=80"
-    networks:
-      - traefik-net
-
+  
 volumes:
   app01_data:
     external:
       name: app01_data
 
-networks:
-  traefik-net:
-    external: true
 ```
 >> 👉 A tener en cuenta en Portainer los tabuladores...
 
@@ -121,7 +110,6 @@ networks:
 	PHP_MEMORY_LIMIT=512M
 	PHP_UPLOAD_MAX_FILESIZE=64M
 
-	SSH_PORT=2238
 	XDEBUG_PORT=9033
 	VOLUME_NAME=app01_data
 

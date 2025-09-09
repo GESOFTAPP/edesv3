@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script para crear una nueva intranet con stack Docker + Portainer
 # Uso: ./create_app.sh <APP_NAME> <APP_DOMAIN> <MYSQL_DATABASE>
-# Ejemplo: ./create_app.sh iu84 appiu84.local iu84_db
+# Ejemplo: ./create_app.sh app01 app01.local app01_db
 
 if [ $# -lt 3 ]; then
   echo "❌ Uso: $0 <APP_NAME> <APP_DOMAIN> <MYSQL_DATABASE>"
@@ -17,15 +17,15 @@ MYSQL_HOST="mysql.local"
 MYSQL_PORT="3306"
 MYSQL_USER="${APP_NAME}_user"
 MYSQL_PASSWORD="$(openssl rand -base64 12)" # password aleatoria segura
-SSH_PORT=$((2200 + RANDOM % 100))     # rango 2200-2299
+# SSH_PORT=$((2200 + RANDOM % 100))     # rango 2200-2299
 XDEBUG_PORT=$((9000 + RANDOM % 100))  # rango 9000-9099
-HTTP_PORT=$((8000 + RANDOM % 100))  # rango 9000-9099
+HTTP_PORT=$((8001 + RANDOM % 98))  # rango 8001-8099
 
 # Crear carpeta del proyecto
 mkdir -p ${APP_NAME}
 cd ${APP_NAME}
 
-# Generar archivo .env
+# Generar archivo var.env
 cat > var.env <<EOF
 APP_NAME=${APP_NAME}
 APP_DOMAIN=${APP_DOMAIN}
@@ -39,21 +39,21 @@ MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
 PHP_MEMORY_LIMIT=512M
 PHP_UPLOAD_MAX_FILESIZE=64M
+DOC_ROOT: ${DOC_ROOT}
 
-SSH_PORT=${SSH_PORT}
 XDEBUG_PORT=${XDEBUG_PORT}
 VOLUME_NAME=${APP_NAME}_data
 EOF
-
+# SSH_PORT=${SSH_PORT} Quitado del var.env
 # Generar docker-compose.yml compatible con Portainer
 cat > docker_compose.yml <<'EOF'
 version: "3.9"
 
 services:
   app:
-    image: gesoft/grs:local
+    image: gesoft/raul:local
     container_name: ${APP_NAME}
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_HOST: ${MYSQL_HOST}
       MYSQL_PORT: ${MYSQL_PORT}
@@ -66,26 +66,17 @@ services:
     volumes:
       - app01_data:${DOC_ROOT}
     ports:
-      - "${SSH_PORT}:22"
       - "${XDEBUG_PORT}:9003"
       - "${HTTP_PORT}:80"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
-      - "traefik.http.routers.${APP_NAME}.entrypoints=web,websecure"
-      - "traefik.http.routers.${APP_NAME}.tls.certresolver=myresolver"
-      - "traefik.http.services.${APP_NAME}.loadbalancer.server.port=80"
-    networks:
-      - traefik-net
-
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 volumes:
   app01_data:
     external:
-      name: app01_data
-    
-networks:
-  traefik-net:
-    external: true
+      name: app01_data  
 EOF
 
 # Crear volumen externo si no existe
@@ -110,9 +101,8 @@ echo "   - Dominio: ${APP_DOMAIN}"
 echo "   - Base de datos: ${MYSQL_DATABASE}"
 echo "   - Usuario DB: ${MYSQL_USER}"
 echo "   - Password DB: ${MYSQL_PASSWORD}"
-echo "   - SSH Port: ${SSH_PORT}, Xdebug Port: ${XDEBUG_PORT}"
+echo "   - Xdebug Port: ${XDEBUG_PORT}"
 echo "   - Volumen: ${APP_NAME}_data"
-echo "   - Red: traefik-net"
 
 echo ""
 echo "👉 Recuerda añadir al /etc/hosts en tu Mac:"
